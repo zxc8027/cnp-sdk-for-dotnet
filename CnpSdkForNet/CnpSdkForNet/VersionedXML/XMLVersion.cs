@@ -4,8 +4,6 @@
  * Stores version information and compares versions.
  */
 
-using System;
-
 namespace Cnp.Sdk.VersionedXML
 {
     public class XMLVersion
@@ -49,14 +47,52 @@ namespace Cnp.Sdk.VersionedXML
             return ((XMLVersion) obj).ToString() == this.ToString();
         }
         
+        /*
+         * Returns if two versions are equals.
+         */
         public static bool operator ==(XMLVersion version1,XMLVersion version2)
         {
             return !(version1 is null) && version1.Equals(version2);
         }
-
+        
+        /*
+         * Returns if two versions are not equals.
+         */
         public static bool operator !=(XMLVersion version1,XMLVersion version2)
         {
             return !(version1 == version2);
+        }
+        
+        /*
+         * Returns if a version is greater than another version.
+         */
+        public static bool operator >(XMLVersion version1,XMLVersion version2)
+        {
+            return version1.MainVersion > version2.MainVersion || (version1.MainVersion == version2.MainVersion && version1.SubVersion > version2.SubVersion);
+        }
+        
+        /*
+         * Returns if a version is less than another version.
+         */
+        public static bool operator <(XMLVersion version1,XMLVersion version2)
+        {
+            return !(version1 > version2 || version1 == version2);
+        }
+        
+        /*
+         * Returns if a version is greater or equal to than another version.
+         */
+        public static bool operator >=(XMLVersion version1,XMLVersion version2)
+        {
+            return !(version1 < version2);
+        }
+        
+        /*
+         * Returns if a version is less or equal to than another version.
+         */
+        public static bool operator <=(XMLVersion version1,XMLVersion version2)
+        {
+            return !(version1 > version2);
         }
     }
 }

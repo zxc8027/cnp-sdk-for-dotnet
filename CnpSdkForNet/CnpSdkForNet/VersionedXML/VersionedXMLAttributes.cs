@@ -15,8 +15,8 @@ namespace Cnp.Sdk.VersionedXML
     [AttributeUsage(AttributeTargets.All, Inherited = true, AllowMultiple = true)]
     public class XMLVersionInformation : Attribute
     {
-        public double FirstVersion { get; set; } = double.MinValue;
-        public double RemovedVersion { get; set; } = double.MaxValue;
+        public XMLVersion FirstVersion { get; set; } = null;
+        public XMLVersion RemovedVersion { get; set; } = null;
     }
     
     /*
