@@ -51,6 +51,24 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
         }
         
         /*
+         * Tests the base case without versions with xml characters.
+         */
+        [Test]
+        public void TestBasicNoVersionXMLCharacters()
+        {
+            // Create the object.
+            var xmlObject = new BasicNoVersion();
+            xmlObject.TestAttribute1 = 1;
+            xmlObject.TestAttribute2 = "Test 1>";
+            xmlObject.TestElement1 = 2;
+            xmlObject.TestElement2 = "Test <2";
+            
+            // Assert the element is generated correctly.
+            Assert.AreEqual(xmlObject.Serialize(0),"<TestXMLElement testAttribute1=\"1\" testAttribute2=\"Test 1&gt;\"><testElement1>2</testElement1><testElement2>Test &lt;2</testElement2></TestXMLElement>");
+            Assert.AreEqual(xmlObject.Serialize(0,"CustomName"),"<CustomName testAttribute1=\"1\" testAttribute2=\"Test 1&gt;\"><testElement1>2</testElement1><testElement2>Test &lt;2</testElement2></CustomName>");
+        }
+        
+        /*
          * Test class for TestInheritance.
          */
         [XMLElement(Name = "TestExtendedXMLElement")]

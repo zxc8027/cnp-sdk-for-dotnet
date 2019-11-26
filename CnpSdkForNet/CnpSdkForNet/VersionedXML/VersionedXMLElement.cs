@@ -5,6 +5,8 @@
  * with limitations based on the version.
  */
 
+using System.Security;
+
 namespace Cnp.Sdk.VersionedXML
 {
     [XMLElement(Name = "BaseXMLElement")]
@@ -28,7 +30,7 @@ namespace Cnp.Sdk.VersionedXML
             }
 
             // Return the ToString result.
-            return objectToConvert.ToString();
+            return SecurityElement.Escape(objectToConvert.ToString());
         }
         
         /*
