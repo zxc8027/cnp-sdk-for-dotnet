@@ -24,7 +24,18 @@ namespace Cnp.Sdk.VersionedXML
      */
     public class OverlappingVersionsException : Exception
     {
-        public OverlappingVersionsException(string name,double version) : base(name + " has overlapping version information for version " + version + ". This makes the serialization ambiguous.")
+        public OverlappingVersionsException(string name,XMLVersion version) : base(name + " has overlapping version information for version " + version.MainVersion + "." + version.SubVersion + ". This makes the serialization ambiguous.")
+        {
+            
+        }
+    }
+    
+    /*
+     * Exception for no version being valid.
+     */
+    public class InvalidVersionException : Exception
+    {
+        public InvalidVersionException(string name,XMLVersion version) : base(name + " can't be used for version " + version.MainVersion + "." + version.SubVersion + ".")
         {
             
         }

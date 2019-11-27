@@ -15,7 +15,7 @@ namespace Cnp.Sdk.VersionedXML
         /*
          * Converts an object to a string.
          */
-        public static string ConvertToString(object objectToConvert, double version)
+        public static string ConvertToString(object objectToConvert,XMLVersion version)
         {
             // Return an XML string if it is an XML object.
             if (objectToConvert is VersionedXMLElement)
@@ -36,15 +36,41 @@ namespace Cnp.Sdk.VersionedXML
         /*
          * Serializes the element.
          */
-        public string Serialize(double version)
+        public string Serialize(XMLVersion version)
         {
             // Get the name.
+            string name = null;
+            bool attributeDefined = false;
             var selfType = this.GetType();
-            var name = selfType.Name;
             foreach (XMLElement attribute in selfType.GetCustomAttributes(typeof(XMLElement),true))
             {
-                name = attribute.Name;
-                break;
+                attributeDefined = true;
+                if (attribute.IsVersionValid(version))
+                {
+                    if (name == null)
+                    {
+                        // Set the name if it is null.
+                        name = attribute.Name;
+                    }
+                    else
+                    {
+                        // Throw an exception if overlapping names exist (could cause unexpected behavior).
+                        throw new OverlappingVersionsException(selfType.Name,version);
+                    }
+                }
+            }
+            
+            // Throw an exception if an attribute is defined but the name isn't. This happens
+            // when the serializing version is invalid.
+            if (name == null && attributeDefined)
+            {
+                throw new InvalidVersionException(selfType.Name, version);
+            }
+
+            // Set the name to the object name if no attribute is present.
+            if (name == null)
+            {
+                name = selfType.Name;
             }
             
             // Serialize the object.
@@ -54,7 +80,7 @@ namespace Cnp.Sdk.VersionedXML
         /*
          * Serializes the element with a give name.
          */
-        public string Serialize(double version, string elementName)
+        public string Serialize(XMLVersion version,string elementName)
         {
             var selfType = this.GetType();
             var members = selfType.GetMembers();
@@ -63,16 +89,29 @@ namespace Cnp.Sdk.VersionedXML
             // Add the attributes.
             foreach (var member in members)
             {
+                bool attributeAdded = false;
                 foreach (XMLAttribute attribute in member.GetCustomAttributes(typeof(XMLAttribute),true))
                 {
                     var property = selfType.GetProperty(member.Name);
                     if (property != null)
                     {
-                        var value = property.GetValue(this,null);
-                        if (value != null)
-                        {
-                            // Add the attribute.
-                            xmlString += " " + attribute.Name + "=\"" + ConvertToString(value,version) + "\"";
+                        if (attribute.IsVersionValid(version)) {
+                            if (attributeAdded)
+                            {
+                                // Throw an exception if the attribute overlaps.
+                                throw new OverlappingVersionsException(member.Name,version);
+                            }
+                            else
+                            {
+                                // Add the attribute if it isn't null.
+                                attributeAdded = true;
+                                var value = property.GetValue(this, null);
+                                if (value != null)
+                                {
+                                    // Add the attribute.
+                                    xmlString += " " + attribute.Name + "=\"" + ConvertToString(value, version) + "\"";
+                                }
+                            }
                         }
                     }
                     else
@@ -87,6 +126,7 @@ namespace Cnp.Sdk.VersionedXML
             // Add the child elements.
             foreach (var member in members)
             {
+                bool elementAdded = false;
                 foreach (XMLElement attribute in member.GetCustomAttributes(typeof(XMLElement),true))
                 {
                     var property = selfType.GetProperty(member.Name);
@@ -95,14 +135,28 @@ namespace Cnp.Sdk.VersionedXML
                         var value = property.GetValue(this, null);
                         if (value != null)
                         {
-                            // Add the child element.
-                            if (value is VersionedXMLElement)
+                            if (attribute.IsVersionValid(version))
                             {
-                                xmlString += ((VersionedXMLElement) value).Serialize(version, attribute.Name);
-                            }
-                            else
-                            {
-                                xmlString += "<" + attribute.Name + ">" + ConvertToString(value,version) + "</" + attribute.Name + ">";
+                                if (elementAdded)
+                                {
+                                    // Throw an exception if the element overlaps.
+                                    throw new OverlappingVersionsException(member.Name,version);
+                                }
+                                else
+                                {
+                                    // Add the child element.
+                                    elementAdded = true;
+                                    if (value is VersionedXMLElement)
+                                    {
+                                        xmlString += ((VersionedXMLElement) value).Serialize(version, attribute.Name);
+                                    }
+                                    else
+                                    {
+                                        xmlString += "<" + attribute.Name + ">" + ConvertToString(value, version) +
+                                                     "</" +
+                                                     attribute.Name + ">";
+                                    }
+                                }
                             }
                         }
                     }

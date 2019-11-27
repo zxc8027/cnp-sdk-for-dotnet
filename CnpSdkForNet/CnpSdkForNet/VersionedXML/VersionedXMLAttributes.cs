@@ -15,8 +15,33 @@ namespace Cnp.Sdk.VersionedXML
     [AttributeUsage(AttributeTargets.All, Inherited = true, AllowMultiple = true)]
     public class XMLVersionInformation : Attribute
     {
-        public XMLVersion FirstVersion { get; set; } = null;
-        public XMLVersion RemovedVersion { get; set; } = null;
+        public string FirstVersion { get; set; } = null;
+        public string RemovedVersion { get; set; } = null;
+        
+        /*
+         * Returns if a version is valid.
+         */
+        public bool IsVersionValid(XMLVersion otherVersion)
+        {
+            // Create the versions to compare. If they are null, the versions will be null.
+            var firstVersion = XMLVersion.FromString(this.FirstVersion);
+            var removedVersion = XMLVersion.FromString(this.RemovedVersion);
+            
+            // Return if the version is valid.
+            if (firstVersion != null && removedVersion != null)
+            {
+                return firstVersion <= otherVersion && removedVersion > otherVersion;
+            } else if (firstVersion != null)
+            {
+                return firstVersion <= otherVersion;
+            } else if (removedVersion != null)
+            {
+                return removedVersion > otherVersion;
+            }
+            
+            // Return true (first and removed versions not defined).
+            return true;
+        }
     }
     
     /*

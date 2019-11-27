@@ -29,6 +29,18 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             Assert.AreEqual(version.MainVersion,1);
             Assert.AreEqual(version.SubVersion,2);
             Assert.AreEqual(version.ToString(),"1.2");
+            
+            // Test the string constructors.
+            version = XMLVersion.FromString(null);
+            Assert.IsNull(version);
+            version = XMLVersion.FromString("12");
+            Assert.AreEqual(version.MainVersion,12);
+            Assert.AreEqual(version.SubVersion,0);
+            Assert.AreEqual(version.ToString(),"12.0");
+            version = XMLVersion.FromString("12.13");
+            Assert.AreEqual(version.MainVersion,12);
+            Assert.AreEqual(version.SubVersion,13);
+            Assert.AreEqual(version.ToString(),"12.13");
         }
         
         /*

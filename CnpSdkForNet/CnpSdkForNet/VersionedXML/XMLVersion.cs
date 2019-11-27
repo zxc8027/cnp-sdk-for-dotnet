@@ -12,6 +12,29 @@ namespace Cnp.Sdk.VersionedXML
         public int SubVersion = 0;
         
         /*
+         * Creates a version from a string.
+         */
+        public static XMLVersion FromString(string versionString)
+        {
+            // Return null if the string is null.
+            if (versionString == null)
+            {
+                return null;
+            }
+            
+            // Split the string and return the version.
+            var sections = versionString.Split('.');
+            if (sections.Length == 2)
+            {
+                return new XMLVersion(int.Parse(sections[0]), int.Parse(sections[1]));
+            }
+            else
+            {
+                return new XMLVersion(int.Parse(sections[0]), 0);
+            }
+        }
+        
+        /*
          * Creates a version.
          */
         public XMLVersion()
@@ -52,7 +75,7 @@ namespace Cnp.Sdk.VersionedXML
          */
         public static bool operator ==(XMLVersion version1,XMLVersion version2)
         {
-            return !(version1 is null) && version1.Equals(version2);
+            return (version1 is null && version2 is null) || (!(version1 is null) && version1.Equals(version2));
         }
         
         /*
