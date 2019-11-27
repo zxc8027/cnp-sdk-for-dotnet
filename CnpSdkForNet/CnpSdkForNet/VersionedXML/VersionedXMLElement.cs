@@ -32,7 +32,7 @@ namespace Cnp.Sdk.VersionedXML
             // Return the ToString result.
             return SecurityElement.Escape(objectToConvert.ToString());
         }
-        
+
         /*
          * Serializes the element.
          */
