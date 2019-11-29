@@ -39,14 +39,18 @@ namespace Cnp.Sdk.VersionedXML
         }
 
         /*
-         * Deserializes a string to an XML element.
+         * Deserializes an object. Used internally because method<T> can't be
+         * used with the type class.
          */
-        public static T Deserialize<T>(string xmlString,XMLVersion version)
+        private static object DeserializeType(string xmlString, XMLVersion version, Type type)
         {
+            
+            
+            
             xmlString = xmlString.Trim();
             
             // Create the new object.
-            var newObject = (T) Activator.CreateInstance(typeof(T),new object[] {});
+            var newObject = Convert.ChangeType(Activator.CreateInstance(type,new object[] {}),type);
             var selfType = newObject.GetType();
             var members = selfType.GetMembers();
             
@@ -137,7 +141,7 @@ namespace Cnp.Sdk.VersionedXML
                     {
                         if (xmlElement.Value.Length != 0)
                         {
-                            throw new Exception("Can't parse XML yet: " + xmlElement);
+                            property.SetValue(newObject, DeserializeType(xmlElement.ToString(),version,property.PropertyType));
                         }
                     }
                     else
@@ -150,6 +154,14 @@ namespace Cnp.Sdk.VersionedXML
             
             // Return the new object.
             return newObject;
+        }
+
+        /*
+         * Deserializes a string to an XML element.
+         */
+        public static T Deserialize<T>(string xmlString,XMLVersion version)
+        {
+            return (T) DeserializeType(xmlString,version,typeof(T));
         }
     }
 }
