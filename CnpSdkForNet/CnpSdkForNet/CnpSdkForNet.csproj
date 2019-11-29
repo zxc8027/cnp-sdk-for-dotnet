@@ -6,4 +6,9 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="SSH.NET" Version="2016.1.0" />
+      <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0-preview3.19551.4" />
+    </ItemGroup>
+
 </Project>
