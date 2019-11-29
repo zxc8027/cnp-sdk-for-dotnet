@@ -321,5 +321,42 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
                 Assert.IsTrue(e.Message.Contains("BasicVersion"),"Element name is not included:\n" + e.Message);
             }
         }
+        
+        /*
+        * Test class for TestPreSerialize.
+        */
+        [XMLElement(Name = "TestXMLElement")]
+        public class PreSerializeElement : VersionedXMLElement
+        {
+            [XMLAttribute(Name = "testAttribute")]
+            public XMLVersion TestAttribute { get; set; }
+            
+            [XMLElement(Name = "testElement")]
+            public XMLVersion TestElement { get; set; }
+            
+            /*
+             * Invoked before serializing the object to finalize
+             * setting of elements.
+             */
+            public override void PreSerialize(XMLVersion version)
+            {
+                this.TestAttribute = version;
+                this.TestElement = version;
+            }
+        }
+        
+        /*
+         * Tests the PreSerialize method.
+         */
+        [Test]
+        public void TestPreSerialize()
+        {
+            // Create the object.
+            var xmlObject = new PreSerializeElement();
+            
+            // Assert the element is generated correctly.
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion(1,2)),"<TestXMLElement testAttribute=\"1.2\"><testElement>1.2</testElement></TestXMLElement>");
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion(1,2),"CustomName"),"<CustomName testAttribute=\"1.2\"><testElement>1.2</testElement></CustomName>");
+        }
     }
 }

@@ -5,6 +5,7 @@
  * with limitations based on the version.
  */
 
+using System;
 using System.Security;
 
 namespace Cnp.Sdk.VersionedXML
@@ -85,6 +86,9 @@ namespace Cnp.Sdk.VersionedXML
             var selfType = this.GetType();
             var members = selfType.GetMembers();
             var xmlString = "<" + elementName;
+            
+            // Pre-serialize the object.
+            this.PreSerialize(version);
             
             // Add the attributes.
             foreach (var member in members)
@@ -170,6 +174,15 @@ namespace Cnp.Sdk.VersionedXML
 
             // Return the final string with the ending tag.
             return xmlString + "</" + elementName + ">";
+        }
+        
+        /*
+         * Invoked before serializing the object to finalize
+         * setting of elements.
+         */
+        public virtual void PreSerialize(XMLVersion version)
+        {
+            Console.WriteLine("CALL");
         }
     }
 }
