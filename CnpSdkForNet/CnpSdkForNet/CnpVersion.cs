@@ -10,7 +10,7 @@ namespace Cnp.Sdk
 {
     public class CnpVersion
     {
-        public static readonly XMLVersion CurrentCNPXMLVersion = new XMLVersion(12,10);
-        public static readonly string CurrentCNPSDKVersion = "DotNet;" + CurrentCNPXMLVersion + ".3";
+        public const string CurrentCNPXMLVersion = "12.10";
+        public const string CurrentCNPSDKVersion = "DotNet;" + CurrentCNPXMLVersion + ".3";
     }
 }
