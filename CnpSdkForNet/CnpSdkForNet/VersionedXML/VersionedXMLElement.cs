@@ -203,5 +203,13 @@ namespace Cnp.Sdk.VersionedXML
         {
             return null;
         }
+        
+        /*
+         * Parses elements that aren't defined by properties.
+         */
+        public virtual void ParseAdditionalElements(XMLVersion version, List<string> elements)
+        {
+            
+        }
     }
 }

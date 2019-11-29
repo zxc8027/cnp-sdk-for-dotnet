@@ -5,6 +5,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
@@ -44,34 +45,36 @@ namespace Cnp.Sdk.VersionedXML
         public static object DeserializeType(string xmlString, XMLVersion version, Type type)
         {
             xmlString = xmlString.Trim();
-            
+
             // Create the new object.
-            var newObject = Convert.ChangeType(Activator.CreateInstance(type,new object[] {}),type);
+            var newObject = Convert.ChangeType(Activator.CreateInstance(type, new object[] { }), type);
             var selfType = newObject.GetType();
             var members = selfType.GetMembers();
-            
+
             // Create an XML parser and get the attributes and elements.
             var xmlDocument = XDocument.Parse(xmlString);
             var elements = xmlDocument.Root.Elements().ToArray();
             var attributes = xmlDocument.Root.Attributes().ToArray();
-            
+
             // Set the attributes.
             foreach (var xmlAttribute in attributes)
             {
                 // Find the attribute to add to.
-                MemberInfo memberToSet = null; 
+                MemberInfo memberToSet = null;
                 foreach (var member in members)
                 {
-                    foreach (XMLAttribute attribute in member.GetCustomAttributes(typeof(XMLAttribute),true))
+                    foreach (XMLAttribute attribute in member.GetCustomAttributes(typeof(XMLAttribute), true))
                     {
                         var property = selfType.GetProperty(member.Name);
                         if (property != null)
                         {
-                            if (attribute.IsVersionValid(version) && attribute.Name.ToLower() == xmlAttribute.Name.LocalName.ToLower()) {
+                            if (attribute.IsVersionValid(version) &&
+                                attribute.Name.ToLower() == xmlAttribute.Name.LocalName.ToLower())
+                            {
                                 if (memberToSet != null)
                                 {
                                     // Throw an exception if the attribute overlaps.
-                                    throw new OverlappingVersionsException(member.Name,version);
+                                    throw new OverlappingVersionsException(member.Name, version);
                                 }
                                 else
                                 {
@@ -86,33 +89,36 @@ namespace Cnp.Sdk.VersionedXML
                         }
                     }
                 }
-                
+
                 // If the attribute exists, set the value.
                 if (memberToSet != null)
                 {
                     var property = selfType.GetProperty(memberToSet.Name);
                     var typeConverter = TypeDescriptor.GetConverter(property.PropertyType);
-                    property.SetValue(newObject,typeConverter.ConvertFromString(xmlAttribute.Value));
+                    property.SetValue(newObject, typeConverter.ConvertFromString(xmlAttribute.Value));
                 }
             }
-            
+
             // Set the elements.
+            var unknownElements = new List<string>();
             foreach (var xmlElement in elements)
             {
                 // Find the attribute to add to.
-                MemberInfo memberToSet = null; 
+                MemberInfo memberToSet = null;
                 foreach (var member in members)
                 {
-                    foreach (XMLElement attribute in member.GetCustomAttributes(typeof(XMLElement),true))
+                    foreach (XMLElement attribute in member.GetCustomAttributes(typeof(XMLElement), true))
                     {
                         var property = selfType.GetProperty(member.Name);
                         if (property != null)
                         {
-                            if (attribute.IsVersionValid(version) && attribute.Name.ToLower() == xmlElement.Name.LocalName.ToLower()) {
+                            if (attribute.IsVersionValid(version) &&
+                                attribute.Name.ToLower() == xmlElement.Name.LocalName.ToLower())
+                            {
                                 if (memberToSet != null)
                                 {
                                     // Throw an exception if the attribute overlaps.
-                                    throw new OverlappingVersionsException(member.Name,version);
+                                    throw new OverlappingVersionsException(member.Name, version);
                                 }
                                 else
                                 {
@@ -127,7 +133,7 @@ namespace Cnp.Sdk.VersionedXML
                         }
                     }
                 }
-                
+
                 // If the attribute exists, set the value.
                 if (memberToSet != null)
                 {
@@ -137,7 +143,8 @@ namespace Cnp.Sdk.VersionedXML
                     {
                         if (xmlElement.Value.Length != 0)
                         {
-                            property.SetValue(newObject, DeserializeType(xmlElement.ToString(),version,property.PropertyType));
+                            property.SetValue(newObject,
+                                DeserializeType(xmlElement.ToString(), version, property.PropertyType));
                         }
                     }
                     else
@@ -146,7 +153,15 @@ namespace Cnp.Sdk.VersionedXML
                         property.SetValue(newObject, typeConverter.ConvertFromString(xmlElement.Value));
                     }
                 }
+                else
+                {
+                    unknownElements.Add(xmlElement.ToString());
+                }
             }
+
+            // Parse unknown elements.
+            var method = type.GetMethod("ParseAdditionalElements");
+            method.Invoke(newObject, new object[2] { version, unknownElements });
             
             // Return the new object.
             return newObject;

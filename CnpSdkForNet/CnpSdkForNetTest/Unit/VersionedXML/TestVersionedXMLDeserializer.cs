@@ -4,6 +4,8 @@
  * Tests the VersionedXMLDeserializer class.
  */
 
+using System.Collections.Generic;
+using System.Linq;
 using Cnp.Sdk.VersionedXML;
 using NUnit.Framework;
 
@@ -165,6 +167,38 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             // Assert the elements were deserialized correctly.
             Assert.AreEqual(xmlObject1.switchingItem,"Test","Item wasn't deserialized correctly.");
             Assert.AreEqual(xmlObject2.switchingItem,"Test","Item wasn't deserialized correctly.");
+        }
+        
+        /*
+         * XML element used for DeserializeUnknownElements.
+         */
+        [XMLElement(Name = "TestXMLElement")]
+        public class TestXMLElementUnknownElements : VersionedXMLElement
+        {
+            public string TestAttribute { get; set; }
+            
+            /*
+             * Parses elements that aren't defined by properties.
+             */
+            public override void ParseAdditionalElements(XMLVersion version,List<string> elements)
+            {
+                this.TestAttribute = string.Concat(elements.ToArray());
+            }
+        }
+        
+        /*
+         * Tests deserializing with unknown elements.
+         */
+        [Test]
+        public void DeserializeUnknownElements()
+        {
+            // Deserialize two objects.
+            var xmlObject1 = VersionedXMLDeserializer.Deserialize<TestXMLElementUnknownElements>("<TestXMLElement></TestXMLElement>", new XMLVersion());
+            var xmlObject2 = VersionedXMLDeserializer.Deserialize<TestXMLElementUnknownElements>("<TestXMLElement><Element1>Test1</Element1><Element2>Test1</Element2></TestXMLElement>", new XMLVersion());
+
+            // Assert the attributes are set correctly.
+            Assert.AreEqual(xmlObject1.TestAttribute,"");
+            Assert.AreEqual(xmlObject2.TestAttribute,"<Element1>Test1</Element1><Element2>Test1</Element2>");
         }
     }
 }
