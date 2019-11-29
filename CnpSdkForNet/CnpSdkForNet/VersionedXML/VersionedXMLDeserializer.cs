@@ -39,14 +39,10 @@ namespace Cnp.Sdk.VersionedXML
         }
 
         /*
-         * Deserializes an object. Used internally because method<T> can't be
-         * used with the type class.
+         * Deserializes an object.
          */
-        private static object DeserializeType(string xmlString, XMLVersion version, Type type)
+        public static object DeserializeType(string xmlString, XMLVersion version, Type type)
         {
-            
-            
-            
             xmlString = xmlString.Trim();
             
             // Create the new object.
