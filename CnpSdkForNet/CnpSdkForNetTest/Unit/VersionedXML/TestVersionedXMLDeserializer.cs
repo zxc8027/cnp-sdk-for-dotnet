@@ -45,8 +45,8 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             [XMLElement(Name = "customElement4",FirstVersion = "1.0")]
             public TestXMLElement TestElement4 { get; set; }
             
-            [XMLElement(Name = "switchingAttribute",RemovedVersion = "1.0")]
-            [XMLElement(Name = "switchingElement",FirstVersion = "1.0")]
+            [XMLAttribute(Name = "switchingItem",RemovedVersion = "2.0")]
+            [XMLElement(Name = "switchingItem",FirstVersion = "2.0")]
             public string switchingItem { get; set; }
         }
         
@@ -152,7 +152,19 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             Assert.AreEqual(xmlObject.TestElement4.TestElement3,false,"Element wasn't deserialized correctly.");
         }
         
-        // TODO: Recursive element
-        // TODO: Attribute one version, element another
+        /*
+         * Tests an item and switches from between attribute and element between versions.
+         */
+        [Test]
+        public void DeserializeSwitchingType()
+        {
+            // Deserialize 2 objects.
+            var xmlObject1 = VersionedXMLDeserializer.Deserialize<TestXMLElement>("<TestXMLElement switchingItem=\"Test\"></TestXMLElement>", new XMLVersion(1,0));
+            var xmlObject2 = VersionedXMLDeserializer.Deserialize<TestXMLElement>("<TestXMLElement><switchingItem>Test</switchingItem></TestXMLElement>", new XMLVersion(2,0));
+            
+            // Assert the elements were deserialized correctly.
+            Assert.AreEqual(xmlObject1.switchingItem,"Test","Item wasn't deserialized correctly.");
+            Assert.AreEqual(xmlObject2.switchingItem,"Test","Item wasn't deserialized correctly.");
+        }
     }
 }
