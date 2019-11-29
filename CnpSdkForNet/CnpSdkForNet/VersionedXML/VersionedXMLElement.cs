@@ -5,7 +5,6 @@
  * with limitations based on the version.
  */
 
-using System;
 using System.Security;
 
 namespace Cnp.Sdk.VersionedXML
@@ -182,7 +181,7 @@ namespace Cnp.Sdk.VersionedXML
          */
         public virtual void PreSerialize(XMLVersion version)
         {
-            Console.WriteLine("CALL");
+            
         }
     }
 }
