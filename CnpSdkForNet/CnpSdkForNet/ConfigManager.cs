@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cnp.Sdk.VersionedXML;
 
 namespace Cnp.Sdk
@@ -74,18 +75,18 @@ namespace Cnp.Sdk
         /*
          * Returns the configuration as a dictionary.
          */
-        [Obsolete("Deprecated in favor of ConfigManager.GetConfig")]
+        [Obsolete("Deprecated in favor of ConfigManager.GetValue")]
         public Dictionary<string,string> getConfig()
         {
-            return this.GetConfig();
+            return this.config;
         }
         
         /*
-         * Returns the configuration as a dictionary.
+         * Returns the value in the config for a given key.
          */
-        public Dictionary<string,string> GetConfig()
+        public string GetValue(string key)
         {
-            return config;
+            return this.config[key];
         }
         
         /*
@@ -105,6 +106,36 @@ namespace Cnp.Sdk
             
             // Return the version from the string.
             return XMLVersion.FromString(config["version"]);
+        }
+        
+        /*
+         * Returns if two configs are equal.
+         */
+        public override bool Equals(object obj)
+        {
+            // Return false if the type is incorrect.
+            if (!(obj is ConfigManager)) return false;
+            
+            // Compare the strings.
+            var dictionary1 = this.config;
+            var dictionary2 = ((ConfigManager) obj).config;
+            return dictionary1.Count == dictionary2.Count && !dictionary1.Except(dictionary2).Any();
+        }
+        
+        /*
+         * Returns if two config managers are equal.
+         */
+        public static bool operator ==(ConfigManager config1,ConfigManager config2)
+        {
+            return (config1 is null && config2 is null) || (!(config1 is null) && config1.Equals(config2));
+        }
+
+        /*
+         * Returns if two config managers are not equal.
+         */
+        public static bool operator !=(ConfigManager config1, ConfigManager config2)
+        {
+            return !(config1 == config1);
         }
     }
 }
