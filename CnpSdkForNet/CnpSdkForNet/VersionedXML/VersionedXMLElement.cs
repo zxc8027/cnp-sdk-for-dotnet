@@ -5,6 +5,7 @@
  * with limitations based on the version.
  */
 
+using System.Collections.Generic;
 using System.Security;
 
 namespace Cnp.Sdk.VersionedXML
@@ -170,6 +171,16 @@ namespace Cnp.Sdk.VersionedXML
                     }
                 }
             }
+            
+            // Add additional child elements.
+            var additionalElements = this.GetAdditionalElements(version);
+            if (additionalElements != null)
+            {
+                foreach (var additionalElement in additionalElements)
+                {
+                    xmlString += additionalElement;
+                }
+            }
 
             // Return the final string with the ending tag.
             return xmlString + "</" + elementName + ">";
@@ -182,6 +193,15 @@ namespace Cnp.Sdk.VersionedXML
         public virtual void PreSerialize(XMLVersion version)
         {
             
+        }
+        
+        /*
+         * Returns additional elements to add when serializing.
+         * This method must handle all escaping of special characters.
+         */
+        public virtual List<string> GetAdditionalElements(XMLVersion version)
+        {
+            return null;
         }
     }
 }

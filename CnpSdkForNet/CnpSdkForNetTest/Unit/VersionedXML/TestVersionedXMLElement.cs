@@ -5,6 +5,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using Cnp.Sdk.VersionedXML;
 using NUnit.Framework;
 
@@ -358,5 +359,47 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             Assert.AreEqual(xmlObject.Serialize(new XMLVersion(1,2)),"<TestXMLElement testAttribute=\"1.2\"><testElement>1.2</testElement></TestXMLElement>");
             Assert.AreEqual(xmlObject.Serialize(new XMLVersion(1,2),"CustomName"),"<CustomName testAttribute=\"1.2\"><testElement>1.2</testElement></CustomName>");
         }
+        
+        /*
+        * Test class for TestGetAdditionalElements.
+        */
+        [XMLElement(Name = "TestXMLElement")]
+        public class AdditionalElementsElement : VersionedXMLElement
+        {
+            [XMLAttribute(Name = "testAttribute")]
+            public string TestAttribute { get; set; }
+            
+            [XMLElement(Name = "testElement")]
+            public string TestElement { get; set; }
+            
+            /*
+             * Returns additional elements to add when serializing.
+             * This method must handle all escaping of special characters.
+             */
+            public override List<string> GetAdditionalElements(XMLVersion version)
+            {
+                return new List<string>
+                {
+                    "<testElement>Test 3</testElement>",
+                    "<testElement>Test 4</testElement>",
+                };
+            }
+        }
+        
+        /*
+         * Tests the GetAdditionalElements method.
+         */
+        [Test]
+        public void TestGetAdditionalElements()
+        {
+            // Create the object.
+            var xmlObject = new AdditionalElementsElement();
+            xmlObject.TestAttribute = "Test 1";
+            xmlObject.TestElement = "Test 2";
+
+            // Assert the element is generated correctly.
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion()), "<TestXMLElement testAttribute=\"Test 1\"><testElement>Test 2</testElement><testElement>Test 3</testElement><testElement>Test 4</testElement></TestXMLElement>");
+        }
+        
     }
 }
