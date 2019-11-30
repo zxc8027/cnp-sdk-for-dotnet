@@ -28,7 +28,6 @@ namespace Cnp.Sdk.Test.Functional
                 {"url", Properties.Settings.Default.url},
                 {"reportGroup", "Default Report Group"},
                 {"username", "DOTNET"},
-                {"version", CnpVersion.CurrentCNPXMLVersion},
                 {"timeout", "5000"},
                 {"merchantId", "101"},
                 {"password", "TESTCASE"},
