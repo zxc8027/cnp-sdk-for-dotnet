@@ -8,6 +8,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Threading;
 using NUnit.Framework;
 
 namespace Cnp.Sdk.Test.Functional
@@ -47,7 +48,6 @@ namespace Cnp.Sdk.Test.Functional
             {
                 // attributes.
                 id = "1",
-                reportGroup = "Default Report Group",
                 // required child elements.
                 accountInfo = new echeckType()
                 {
@@ -63,11 +63,57 @@ namespace Cnp.Sdk.Test.Functional
 
             var response = cnp.VendorDebit(vendorDebit);
             Assert.AreEqual("000", response.response);
-            
-            
-            Assembly asm = typeof(transactionRequest).Assembly;
-            Type type = asm.GetType("Cnp.Sdk.vendorDebit");
-            Console.WriteLine("TYPE: " + type);
+        }
+        
+        [Test]
+        public void ReserveDebitWithFundingCustomerId()
+        {
+            var vendorDebit = new vendorDebit
+            {
+                // attributes.
+                id = "1",
+                reportGroup = "Default Report Group",
+                // required child elements.
+                accountInfo = new echeckType()
+                {
+                    accType = echeckAccountTypeEnum.Savings,
+                    accNum = "1234",
+                    routingNum = "12345678"
+                },
+                amount = 1500,
+                fundsTransferId = "value for fundsTransferId",
+                fundingCustomerId = "value for fundingCustomerId",
+                vendorName = "WorldPay"
+            };
+
+            var response = cnp.VendorDebit(vendorDebit);
+            Assert.AreEqual("000", response.response);
+        }
+
+        [Test]
+        public void TestReserveDebitAsync()
+        {
+            var vendorDebit = new vendorDebit
+            {
+                // attributes.
+                id = "1",
+                reportGroup = "Default Report Group",
+                // required child elements.
+                accountInfo = new echeckType()
+                {
+                    accType = echeckAccountTypeEnum.Savings,
+                    accNum = "1234",
+                    routingNum = "12345678"
+                },
+                amount = 1500,
+                fundingSubmerchantId = "value for fundingSubmerchantId",
+                fundsTransferId = "value for fundsTransferId",
+                vendorName = "WorldPay"
+            };
+
+            CancellationToken cancellationToken = new CancellationToken(false);
+            var response = cnp.VendorDebitAsync(vendorDebit, cancellationToken);
+            Assert.AreEqual("000", response.Result.response);
         }
     }
 }

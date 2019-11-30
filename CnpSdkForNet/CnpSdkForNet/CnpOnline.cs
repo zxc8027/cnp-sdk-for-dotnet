@@ -6,96 +6,80 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Xml.Serialization;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Cnp.Sdk.VersionedXML;
 
 namespace Cnp.Sdk
 {
-    // Represent an online request.
-    // Defining all transactions supported for online processing.
     public class CnpOnline
     {
-        // Configuration object containing credentials and settings.
-        private Dictionary<string, string> _config;
-        // 
-        private Communications _communication;
-
-        /**
-         * Construct a Cnp online using the configuration specified in CnpSdkForNet.dll.config
-         */
-        public CnpOnline()
-        {
-            _config = new Dictionary<string, string>();
-            _config["url"] = Properties.Settings.Default.url;
-            _config["reportGroup"] = Properties.Settings.Default.reportGroup;
-            _config["username"] = Properties.Settings.Default.username;
-            _config["printxml"] = Properties.Settings.Default.printxml;
-            _config["timeout"] = Properties.Settings.Default.timeout;
-            _config["proxyHost"] = Properties.Settings.Default.proxyHost;
-            _config["merchantId"] = Properties.Settings.Default.merchantId;
-            _config["password"] = Properties.Settings.Default.password;
-            _config["proxyPort"] = Properties.Settings.Default.proxyPort;
-            _config["logFile"] = Properties.Settings.Default.logFile;
-            _config["neuterAccountNums"] = Properties.Settings.Default.neuterAccountNums;
-            _communication = new Communications();
-
-        }
-
-        /**
-         * Construct a CnpOnline specifying the configuration in code.  This should be used by integration that have another way
-         * to specify their configuration settings or where different configurations are needed for different instances of CnpOnline.
-         * 
-         * Properties that *must* be set are:
-         * url (eg https://payments.cnp.com/vap/communicator/online)
-         * reportGroup (eg "Default Report Group")
-         * username
-         * merchantId
-         * password
-         * timeout (in seconds)
-         * Optional properties are:
-         * proxyHost
-         * proxyPort
-         * printxml (possible values "true" and "false" - defaults to false)
-         */
-        public CnpOnline(Dictionary<string, string> config)
-        {
-            this._config = config;
-            _communication = new Communications();
-        }
-
-        /*
+        public const string XML_HEADER = "<?xml version='1.0' encoding='utf-8'?>";
+        
+        private Communications communication;
+        private ConfigManager config;
+        
         public event EventHandler HttpAction
         {
-            add { _communication.HttpAction += value; }
-            remove { _communication.HttpAction -= value; }
+            add { this.communication.HttpAction += value; }
+            remove { this.communication.HttpAction -= value; }
         }
-
+        
+        /*
+         * Creates a CNP Online object.
+         */
+        public CnpOnline(ConfigManager config)
+        {
+            this.communication = new Communications();
+            this.config = config;
+        }
+        
+        /*
+         * Creates a CNP Online object.
+         */
+        public CnpOnline() : this(new ConfigManager())
+        {
+            
+        }
+        
+        /*
+         * Creates a CNP Online object.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline(ConfigManager config)")]
+        public CnpOnline(Dictionary<string,string> config) : this(new ConfigManager(config))
+        {
+            
+        }
+    
+        /*
+         * Sets the Communications object to use.
+         */
         public void SetCommunication(Communications communication)
         {
-            this._communication = communication;
+            this.communication = communication;
         }
 
+
+        /*
         public Task<authorizationResponse> AuthorizeAsync(authorization auth, CancellationToken cancellationToken)
         {
             return SendRequestAsync(response => response.authorizationResponse, auth, cancellationToken);
         }
 */
-        private T SendRequest<T>(Func<cnpOnlineResponse, T> getResponse, transactionRequest transaction)
-        {
-            var request = CreateRequest(transaction);
-            cnpOnlineResponse response = SendToCnp(request);
-
-            return getResponse(response);
-        }
+        
         private cnpOnlineRequest CreateRequest(transactionRequest transaction)
         {
+            // Create the request.
             var request = CreateCnpOnlineRequest();
             request.AddTransaction(transaction);
 
+            // Add the report group.
+            if (transaction is transactionTypeWithReportGroup)
+            {
+                ((transactionTypeWithReportGroup) transaction).reportGroup = this.config.GetValue("reportGroup");
+            }
+            
+            // Return the request.
             return request;
         }
 /*
@@ -479,36 +463,87 @@ namespace Cnp.Sdk
             return SendRequestAsync(response => response.translateToLowValueTokenResponse, translateToLowValueTokenRequest, cancellationToken);
         }
 */
+
+        /*
+         * Sends a VendorDebit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<vendorDebitResponse>(transactionRequest transaction)")]
         public vendorDebitResponse VendorDebit(vendorDebit vendorDebit)
         {
-            return SendRequest(response => response.vendorDebitResponse, vendorDebit);
+            return this.SendTransaction<vendorDebitResponse>(vendorDebit);
         }
         
-        private cnpOnlineRequest CreateCnpOnlineRequest()
+        /*
+         * Sends a VendorDebit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<vendorDebitResponse>(transactionRequest transaction,CancellationToken cancellationToken)")]
+        public Task<vendorDebitResponse> VendorDebitAsync(vendorDebit vendorDebit,CancellationToken cancellationToken)
         {
-            var request = new cnpOnlineRequest();
-            request.merchantId = _config["merchantId"];
-            var authentication = new authentication();
-            authentication.password = _config["password"];
-            authentication.user = _config["username"];
-            request.authentication = authentication;
-            return request;
+            return this.SendTransactionAsync<vendorDebitResponse>(vendorDebit,cancellationToken);
         }
 
-        private cnpOnlineResponse SendToCnp(cnpOnlineRequest request)
+        /*
+         * Sends a transaction request.
+         */
+        public T SendTransaction<T>(transactionRequest transaction)
         {
-            var xmlRequest = "<?xml version='1.0' encoding='utf-8'?>" + request.Serialize(new XMLVersion(12,10));
-            var xmlResponse = _communication.HttpPost(xmlRequest, _config);
-            xmlResponse = xmlResponse.Substring(xmlResponse.IndexOf(">") + 1);
+            // Create the CNP Online request.
+            var request = CreateRequest(transaction);
+            
+            // Send the request and return the response.
+            var cnpResponse = this.SendToCnp(request);
+            return cnpResponse.GetResponse<T>();
+        }
+        
+        /*
+         * Sends a transaction request asynchronously.
+         */
+        public async Task<T> SendTransactionAsync<T>(transactionRequest transaction, CancellationToken cancellationToken)
+        {
+            // Create the CNP Online request.
+            var request = CreateRequest(transaction);
+
+            // Send the request and return the response.
+            var cnpResponse = await this.SendToCnpAsync(request,cancellationToken).ConfigureAwait(false);
+            return cnpResponse.GetResponse<T>();
+        }
+        
+        /*
+         * Creates a CNP Online request.
+         */
+        private cnpOnlineRequest CreateCnpOnlineRequest()
+        {
+            // Create the request.
+            var request = new cnpOnlineRequest();
+            request.merchantId = this.config.GetValue("merchantId");
+            
+            // Create and add the authentication.
+            var authentication = new authentication();
+            authentication.password = this.config.GetValue("password");
+            authentication.user = this.config.GetValue("username");
+            request.authentication = authentication;
+            
+            // Return the request.
+            return request;
+        }
+        
+        /*
+         * Parses a CNP response.
+         */
+        private cnpOnlineResponse DeserializeResponse(string xmlResponse)
+        {
             try
             {
-                var cnpOnlineResponse = VersionedXMLDeserializer.Deserialize<cnpOnlineResponse>(xmlResponse,new XMLVersion(12,10));
-                if (_config.ContainsKey("printxml") && Convert.ToBoolean(_config["printxml"]))
+                // Deserialize the response and output the response. 
+                var cnpOnlineResponse = VersionedXMLDeserializer.Deserialize<cnpOnlineResponse>(xmlResponse,this.config.GetVersion());
+                if (Convert.ToBoolean(this.config.GetValue("printxml")))
                 {
                     
                     Console.WriteLine(cnpOnlineResponse.response);
                     
                 }
+                
+                // If the response isn't "0" (success), throw an exception if an error is valid.
                 if (!"0".Equals(cnpOnlineResponse.response))
                 {
                     if ("2".Equals(cnpOnlineResponse.response) || "3".Equals(cnpOnlineResponse.response))
@@ -530,76 +565,32 @@ namespace Cnp.Sdk
                 }
                 return cnpOnlineResponse;
             }
-            catch (InvalidOperationException ioe)
+            catch (InvalidOperationException invalidOperationException)
             {
-                throw new CnpOnlineException("Error validating xml data against the schema", ioe);
-            }
-        }
-/*
-        private async Task<T> SendRequestAsync<T>(Func<cnpOnlineResponse, T> getResponse, transactionRequest transaction, CancellationToken cancellationToken)
-        {
-            var request = CreateRequest(transaction);
-
-            cnpOnlineResponse response = await SendToCnpAsync(request, cancellationToken).ConfigureAwait(false);
-            return getResponse(response);
-        }
-
-        private async Task<cnpOnlineResponse> SendToCnpAsync(cnpOnlineRequest request, CancellationToken cancellationToken)
-        {
-            string xmlRequest = request.Serialize();
-            string xmlResponse = await _communication.HttpPostAsync(xmlRequest, _config, cancellationToken).ConfigureAwait(false);
-            return DeserializeResponse(xmlResponse);
-        }
-
-        private cnpOnlineResponse DeserializeResponse(string xmlResponse)
-        {
-            try
-            {
-                cnpOnlineResponse cnpOnlineResponse = DeserializeObject(xmlResponse);
-                if ("1".Equals(cnpOnlineResponse.response))
-                {
-                    throw new CnpOnlineException(cnpOnlineResponse.message);
-                }
-                return cnpOnlineResponse;
-            }
-            catch (InvalidOperationException ioe)
-            {
-                throw new CnpOnlineException("Error validating xml data against the schema", ioe);
+                throw new CnpOnlineException("Error validating xml data against the schema", invalidOperationException);
             }
         }
 
-        public static string SerializeObject(cnpOnlineRequest req)
+        /*
+         * Sends a CNP request.
+         */
+        private cnpOnlineResponse SendToCnp(cnpOnlineRequest request)
         {
-            var serializer = new XmlSerializer(typeof(cnpOnlineRequest));
-            var ms = new MemoryStream();
-            serializer.Serialize(ms, req);
-            return Encoding.UTF8.GetString(ms.GetBuffer());//return string is UTF8 encoded.
-        }// serialize the xml
+            var xmlRequest = XML_HEADER + request.Serialize(this.config.GetVersion());
+            var xmlResponse = this.communication.HttpPost(xmlRequest,config);
 
-        public static cnpOnlineResponse DeserializeObject(string response)
-        {
-            var serializer = new XmlSerializer(typeof(cnpOnlineResponse));
-            var reader = new StringReader(response);
-            var i = (cnpOnlineResponse)serializer.Deserialize(reader);
-            return i;
-
-        }// deserialize the object
-
-        private void FillInReportGroup(transactionTypeWithReportGroup txn)
-        {
-            if (txn.reportGroup == null)
-            {
-                txn.reportGroup = _config["reportGroup"];
-            }
+            return this.DeserializeResponse(xmlResponse);
         }
-
-        private void FillInReportGroup(transactionTypeWithReportGroupAndPartial txn)
+        
+        /*
+         * Sends a CNP request asynchronously.
+         */
+        private async Task<cnpOnlineResponse> SendToCnpAsync(cnpOnlineRequest request,CancellationToken cancellationToken)
         {
-            if (txn.reportGroup == null)
-            {
-                txn.reportGroup = _config["reportGroup"];
-            }
+            var xmlRequest = request.Serialize(this.config.GetVersion());
+            var xmlResponse = await this.communication.HttpPostAsync(xmlRequest, this.config, cancellationToken).ConfigureAwait(false);
+            
+            return this.DeserializeResponse(xmlResponse);
         }
-        */
     }
 }
