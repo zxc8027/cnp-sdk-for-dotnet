@@ -455,6 +455,30 @@ namespace Cnp.Sdk
         FinalRecurring
     }
     
+    public sealed class orderSourceType
+    {
+        public static readonly orderSourceType ecommerce = new orderSourceType("ecommerce");
+        public static readonly orderSourceType installment = new orderSourceType("installment");
+        public static readonly orderSourceType mailorder = new orderSourceType("mailorder");
+        public static readonly orderSourceType recurring = new orderSourceType("recurring");
+        public static readonly orderSourceType retail = new orderSourceType("retail");
+        public static readonly orderSourceType telephone = new orderSourceType("telephone");
+        public static readonly orderSourceType item3dsAuthenticated = new orderSourceType("3dsAuthenticated");
+        public static readonly orderSourceType item3dsAttempted = new orderSourceType("3dsAttempted");
+        public static readonly orderSourceType recurringtel = new orderSourceType("recurringtel");
+        public static readonly orderSourceType echeckppd = new orderSourceType("echeckppd");
+        public static readonly orderSourceType applepay = new orderSourceType("applepay");
+        public static readonly orderSourceType androidpay = new orderSourceType("androidpay");
+
+        private orderSourceType(string value) { this.value = value; }
+        private string value;
+
+        public override string ToString()
+        {
+            return value;
+        }
+    }
+    
     /*
      * Element declarations.
      */
@@ -468,7 +492,7 @@ namespace Cnp.Sdk
         public string password { get; set; }
     }
     
-    [XMLElement(Name = "fraudCheckType")]
+    [XMLElement(Name = "fraudCheck")]
     public class fraudCheckType
     {
         [XMLElement(Name = "authenticationValue")]
@@ -677,7 +701,7 @@ namespace Cnp.Sdk
         public string cardAcceptorTaxId { get; set; }
     }
     
-    [XMLElement(Name = "echeckForTokenType")]
+    [XMLElement(Name = "echeckForToken")]
     public class echeckForTokenType : VersionedXMLElement
     {
         
@@ -688,7 +712,7 @@ namespace Cnp.Sdk
         public string routingNum { get; set; }
     }
     
-    [XMLElement(Name = "echeckType")]
+    [XMLElement(Name = "echeck")]
     public class echeckType : VersionedXMLElement
     {
         [XMLElement(Name = "accType")]
@@ -733,7 +757,7 @@ namespace Cnp.Sdk
         }
     }
     
-    [XMLElement(Name = "echeckTokenType")]
+    [XMLElement(Name = "echeckToken")]
     public class echeckTokenType : VersionedXMLElement
     {
         [XMLElement(Name = "cnpToken")]
@@ -784,7 +808,7 @@ namespace Cnp.Sdk
         public string transactionId { get; set; }
     }
     
-    [XMLElement(Name = "merchantDataType")]
+    [XMLElement(Name = "merchantData")]
     public class merchantDataType : VersionedXMLElement
     {
         [XMLElement(Name = "campaign")]
@@ -797,7 +821,7 @@ namespace Cnp.Sdk
         public string merchantGroupingId { get; set; }
     }
     
-    [XMLElement(Name = "cardTokenType")]
+    [XMLElement(Name = "cardToken")]
     public class cardTokenType : VersionedXMLElement
     {
         [XMLElement(Name = "cnpToken")]
@@ -819,7 +843,7 @@ namespace Cnp.Sdk
         public string checkoutId { get; set; }
     }
     
-    [XMLElement(Name = "cardPaypageType")]
+    [XMLElement(Name = "cardPaypage")]
     public class cardPaypageType : VersionedXMLElement
     {
         [XMLElement(Name = "paypageRegistrationId")]
@@ -893,7 +917,7 @@ namespace Cnp.Sdk
         public long? authAmount { get; set; }
     }
     
-    [XMLElement(Name = "recyclingRequestType")]
+    [XMLElement(Name = "recyclingRequest")]
     public class recyclingRequestType : VersionedXMLElement
     {
         [XMLElement(Name = "recycleBy")]
@@ -902,5 +926,547 @@ namespace Cnp.Sdk
         [XMLElement(Name = "recycleId")]
         public string recycleId { get; set; }
     }
+    
+    [XMLElement(Name = "cnpInternalRecurringRequest")]
+    public class cnpInternalRecurringRequest : VersionedXMLElement
+    {
+        [XMLElement(Name = "subscriptionId")]
+        public string subscriptionId { get; set; }
+        
+        [XMLElement(Name = "recurringTxnId")]
+        public string recurringTxnId { get; set; }
+        
+        [XMLElement(Name = "finalPayment")]
+        public bool? finalPayment { get; set; }
+    }
+    
+    [XMLElement(Name = "createDiscount")]
+    public class createDiscount : VersionedXMLElement
+    {
+        [XMLElement(Name = "discountCode")]
+        public string discountCode { get; set; }
+        
+        [XMLElement(Name = "name")]
+        public string name { get; set; }
+        
+        [XMLElement(Name = "amount")]
+        public long? amount { get; set; }
+        
+        [XMLElement(Name = "startDate")]
+        public DateTime startDate { get; set; }
+        
+        [XMLElement(Name = "endDate")]
+        public DateTime endDate { get; set; }
+    }
+    
+    [XMLElement(Name = "updateDiscount")]
+    public class updateDiscount : VersionedXMLElement
+    {
+        [XMLElement(Name = "discountCode")]
+        public string discountCode { get; set; }
+        
+        [XMLElement(Name = "name")]
+        public string name { get; set; }
+        
+        [XMLElement(Name = "amount")]
+        public long? amount { get; set; }
+        
+        [XMLElement(Name = "startDate")]
+        public DateTime startDate { get; set; }
+        
+        [XMLElement(Name = "endDate")]
+        public DateTime endDate { get; set; }
+    }
+    
+    [XMLElement(Name = "deleteDiscount")]
+    public class deleteDiscount : VersionedXMLElement
+    {
+        [XMLElement(Name = "discountCode")]
+        public string discountCode { get; set; }
+    }
+    
+    [XMLElement(Name = "createAddOn")]
+    public class createAddOn : VersionedXMLElement
+    {
+        [XMLElement(Name = "addOnCode")]
+        public string addOnCode { get; set; }
+        
+        [XMLElement(Name = "name")]
+        public string name { get; set; }
+        
+        [XMLElement(Name = "amount")]
+        public long? amount { get; set; }
+        
+        [XMLElement(Name = "startDate")]
+        public DateTime startDate { get; set; }
+        
+        [XMLElement(Name = "endDate")]
+        public DateTime endDate { get; set; }
+    }
+    
+    [XMLElement(Name = "updateAddOn")]
+    public class updateAddOn : VersionedXMLElement
+    {
+        [XMLElement(Name = "addOnCode")]
+        public string addOnCode { get; set; }
+        
+        [XMLElement(Name = "name")]
+        public string name { get; set; }
+        
+        [XMLElement(Name = "amount")]
+        public long? amount { get; set; }
+        
+        [XMLElement(Name = "startDate")]
+        public DateTime startDate { get; set; }
+        
+        [XMLElement(Name = "endDate")]
+        public DateTime endDate { get; set; }
+    }
+    
+    [XMLElement(Name = "deleteAddOn")]
+    public class deleteAddOn : VersionedXMLElement
+    {
+        [XMLElement(Name = "addOnCode")]
+        public string addOnCode { get; set; }
+    }
+    
+    [XMLElement(Name = "subscription")]
+    public class subscription : VersionedXMLElement
+    {
+        [XMLElement(Name = "planCode")]
+        public string planCode { get; set; }
+        
+        [XMLElement(Name = "numberOfPayments")]
+        public int? numberOfPayments { get; set; }
+        
+        [XMLElement(Name = "startDate")]
+        public DateTime startDate { get; set; }
+        
+        [XMLElement(Name = "amount")]
+        public long? amount { get; set; }
 
+        public List<createDiscount> createDiscounts;
+        public List<createAddOn> createAddOns;
+
+        public subscription()
+        {
+            createDiscounts = new List<createDiscount>();
+            createAddOns = new List<createAddOn>();
+        }
+        
+        /*
+         * Returns additional elements to add when serializing.
+         * This method must handle all escaping of special characters.
+         */
+        public override List<string> GetAdditionalElements(XMLVersion version)
+        {
+            // Serialize the elements.
+            var elements = new List<string>();
+            foreach (var element in this.createDiscounts)
+            {
+                elements.Add(element.Serialize(version));
+            }
+            foreach (var element in this.createAddOns)
+            {
+                elements.Add(element.Serialize(version));
+            }
+            
+            // Return the elements.
+            return elements;
+        }
+    }
+    
+    [XMLElement(Name = "filteringType")]
+    public class filteringType : VersionedXMLElement
+    {
+        [XMLElement(Name = "prepaid")]
+        public bool? prepaid { get; set; }
+        
+        [XMLElement(Name = "international")]
+        public bool? international { get; set; }
+        
+        [XMLElement(Name = "chargeback")]
+        public bool? chargeback { get; set; }
+    }
+    
+    [XMLElement(Name = "healthcareIIAS")]
+    public class healthcareIIAS : VersionedXMLElement
+    {
+        [XMLElement(Name = "healthcareAmounts")]
+        public healthcareAmounts healthcareAmounts { get; set; }
+        
+        [XMLElement(Name = "IIASFlag")]
+        public IIASFlagType? IIASFlag { get; set; }
+    }
+    
+    [XMLElement(Name = "lodgingInfo")]
+    public class lodgingInfo : VersionedXMLElement
+    {
+        [XMLElement(Name = "hotelFolioNumber")]
+        public string hotelFolioNumber { get; set; }
+        
+        [XMLElement(Name = "checkInDate")]
+        public DateTime checkInDate { get; set; }
+        
+        [XMLElement(Name = "checkOutDate")]
+        public DateTime checkOutDate { get; set; }
+        
+        [XMLElement(Name = "duration")]
+        public int? duration { get; set; }
+        
+        [XMLElement(Name = "customerServicePhone")]
+        public string customerServicePhone { get; set; }
+
+        [XMLElement(Name = "programCode")]
+        public lodgingProgramCodeType? programCode { get; set; } = lodgingProgramCodeType.LODGING;
+        
+        [XMLElement(Name = "roomRate")]
+        public int? roomRate { get; set; }
+        
+        [XMLElement(Name = "roomTax")]
+        public int? roomTax { get; set; }
+        
+        [XMLElement(Name = "numAdults")]
+        public int? numAdults { get; set; }
+        
+        [XMLElement(Name = "propertyLocalPhone")]
+        public string propertyLocalPhone { get; set; }
+        
+        [XMLElement(Name = "fireSafetyIndicator")]
+        public bool? fireSafetyIndicator { get; set; }
+
+        public List<lodgingCharge> lodgingCharges;
+
+        public lodgingInfo()
+        {
+            lodgingCharges = new List<lodgingCharge>();
+        }
+        
+        /*
+         * Returns additional elements to add when serializing.
+         * This method must handle all escaping of special characters.
+         */
+        public override List<string> GetAdditionalElements(XMLVersion version)
+        {
+            // Serialize the elements.
+            var elements = new List<string>();
+            foreach (var element in this.lodgingCharges)
+            {
+                elements.Add(element.Serialize(version));
+            }
+            
+            // Return the elements.
+            return elements;
+        }
+    }
+    
+    [XMLElement(Name = "lodgingCharge")]
+    public class lodgingCharge : VersionedXMLElement
+    {
+        [XMLElement(Name = "name")]
+        public lodgingExtraChargeEnum? name { get; set; }
+    }
+    
+    [XMLElement(Name = "recurringRequest")]
+    public class recurringRequest : VersionedXMLElement
+    {
+        [XMLElement(Name = "subscription")]
+        public subscription subscription { get; set; }
+    }
+    
+    [XMLElement(Name = "healthcareAmounts")]
+    public class healthcareAmounts : VersionedXMLElement
+    {
+        [XMLElement(Name = "totalHealthcareAmount")]
+        public int? totalHealthcareAmount { get; set; }
+        
+        [XMLElement(Name = "RxAmount")]
+        public int? RxAmount { get; set; }
+        
+        [XMLElement(Name = "visionAmount")]
+        public int? visionAmount { get; set; }
+        
+        [XMLElement(Name = "clinicOtherAmount")]
+        public int? clinicOtherAmount { get; set; }
+        
+        [XMLElement(Name = "dentalAmount")]
+        public int? dentalAmount { get; set; }
+    }
+    
+    [XMLElement(Name = "contact")]
+    public class contact : VersionedXMLElement
+    {
+        [XMLElement(Name = "name")]
+        public string name { get; set; }
+        
+        [XMLElement(Name = "firstName")]
+        public string firstName { get; set; }
+        
+        [XMLElement(Name = "middleInitial")]
+        public string middleInitial { get; set; }
+        
+        [XMLElement(Name = "lastName")]
+        public string lastName { get; set; }
+        
+        [XMLElement(Name = "companyName")]
+        public string companyName { get; set; }
+        
+        [XMLElement(Name = "addressLine1")]
+        public string addressLine1 { get; set; }
+
+        [XMLElement(Name = "addressLine2")]
+        public string addressLine2 { get; set; }
+        
+        [XMLElement(Name = "addressLine3")]
+        public string addressLine3 { get; set; }
+        
+        [XMLElement(Name = "city")]
+        public string city { get; set; }
+        
+        [XMLElement(Name = "state")]
+        public string state { get; set; }
+        
+        [XMLElement(Name = "zip")]
+        public string zip { get; set; }
+        
+        [XMLElement(Name = "country")]
+        public countryTypeEnum? country { get; set; }
+        
+        [XMLElement(Name = "email")]
+        public string email { get; set; }
+        
+        [XMLElement(Name = "phone")]
+        public string phone { get; set; }
+    }
+
+    [XMLElement(Name = "advancedFraudChecks")]
+    public class advancedFraudChecksType : VersionedXMLElement
+    {
+        [XMLElement(Name = "threatMetrixSessionId")]
+        public string threatMetrixSessionId { get; set; }
+        
+        [XMLElement(Name = "customAttribute1")]
+        public string customAttribute1 { get; set; }
+        
+        [XMLElement(Name = "customAttribute2")]
+        public string customAttribute2 { get; set; }
+        
+        [XMLElement(Name = "customAttribute3")]
+        public string customAttribute3 { get; set; }
+        
+        [XMLElement(Name = "customAttribute4")]
+        public string customAttribute4 { get; set; }
+        
+        [XMLElement(Name = "customAttribute5")]
+        public string customAttribute5 { get; set; }
+    }
+    
+    [XMLElement(Name = "mpos")]
+    public class mposType : VersionedXMLElement
+    {
+        [XMLElement(Name = "ksn")]
+        public string ksn { get; set; }
+        
+        [XMLElement(Name = "formatId")]
+        public string formatId { get; set; }
+        
+        [XMLElement(Name = "encryptedTrack")]
+        public string encryptedTrack { get; set; }
+        
+        [XMLElement(Name = "track1Status")]
+        public int? track1Status { get; set; }
+        
+        [XMLElement(Name = "track2Status")]
+        public int? track2Status { get; set; }
+    }
+    
+    [XMLElement(Name = "card")]
+    public class cardType : VersionedXMLElement
+    {
+        [XMLElement(Name = "type")]
+        public methodOfPaymentTypeEnum? type { get; set; }
+        
+        [XMLElement(Name = "number")]
+        public string number { get; set; }
+        
+        [XMLElement(Name = "expDate")]
+        public string expDate { get; set; }
+        
+        [XMLElement(Name = "track")]
+        public string track { get; set; }
+        
+        [XMLElement(Name = "cardValidationNum")]
+        public string cardValidationNum { get; set; }
+        
+        [XMLElement(Name = "pin")]
+        public string pin { get; set; }
+    }
+    
+    [XMLElement(Name = "giftCardCard")]
+    public class giftCardCardType : VersionedXMLElement
+    {
+        [XMLElement(Name = "type")]
+        public methodOfPaymentTypeEnum? type { get; set; }
+        
+        [XMLElement(Name = "number")]
+        public string number { get; set; }
+        
+        [XMLElement(Name = "expDate")]
+        public string expDate { get; set; }
+        
+        [XMLElement(Name = "track")]
+        public string track { get; set; }
+        
+        [XMLElement(Name = "cardValidationNum")]
+        public string cardValidationNum { get; set; }
+        
+        [XMLElement(Name = "pin")]
+        public string pin { get; set; }
+    }
+    
+    [XMLElement(Name = "virtualGiftCard")]
+    public class virtualGiftCardType : VersionedXMLElement
+    {
+        [XMLElement(Name = "accountNumberLength")]
+        public int? accountNumberLength { get; set; }
+        
+        [XMLElement(Name = "giftCardBin")]
+        public string giftCardBin { get; set; }
+    }
+    
+    [XMLElement(Name = "accountUpdateFileRequestData")]
+    public class accountUpdateFileRequestData : VersionedXMLElement
+    {
+        [XMLElement(Name = "merchantId")]
+        public string merchantId { get; set; }
+        
+        [XMLElement(Name = "postDay")]
+        public DateTime postDay { get; set; }
+    }
+    
+    [XMLElement(Name = "applepay")]
+    public class applepayType : VersionedXMLElement
+    {
+        [XMLElement(Name = "data")]
+        public string data { get; set; }
+        
+        [XMLElement(Name = "header")]
+        public applepayHeaderType header { get; set; }
+        
+        [XMLElement(Name = "signature")]
+        public string signature { get; set; }
+        
+        [XMLElement(Name = "version")]
+        public string version { get; set; }
+    }
+    
+    [XMLElement(Name = "applepayHeader")]
+    public class applepayHeaderType : VersionedXMLElement
+    {
+        [XMLElement(Name = "applicationData")]
+        public string applicationData { get; set; }
+        
+        [XMLElement(Name = "ephemeralPublicKey")]
+        public string ephemeralPublicKey { get; set; }
+        
+        [XMLElement(Name = "publicKeyHash")]
+        public string publicKeyHash { get; set; }
+        
+        [XMLElement(Name = "transactionId")]
+        public string transactionId { get; set; }
+    }
+    
+    [XMLElement(Name = "wallet")]
+    public class wallet : VersionedXMLElement
+    {
+        [XMLElement(Name = "walletSourceType")]
+        public walletWalletSourceType walletSourceType { get; set; }
+        
+        [XMLElement(Name = "walletSourceTypeId")]
+        public string walletSourceTypeId { get; set; }
+    }
+    
+    [XMLElement(Name = "pinlessDebitRequest")]
+    public class pinlessDebitRequestType : VersionedXMLElement
+    {
+        [XMLElement(Name = "routingPreference")]
+        public routingPreferenceEnum? routingPreference { get; set; }
+        
+        [XMLElement(Name = "preferredDebitNetworks")]
+        public preferredDebitNetworksType preferredDebitNetworks { get; set; }
+    }
+    
+    [XMLElement(Name = "preferredDebitNetworks")]
+    public class preferredDebitNetworksType : VersionedXMLElement
+    {
+        public List<string> debitNetworkName;
+
+        public preferredDebitNetworksType()
+        {
+            debitNetworkName = new List<string>();
+        }
+            
+        /*
+         * Returns additional elements to add when serializing.
+         * This method must handle all escaping of special characters.
+         */
+        public override List<string> GetAdditionalElements(XMLVersion version)
+        {
+            // Serialize the elements.
+            var elements = new List<string>();
+            foreach (var element in this.debitNetworkName)
+            {
+                elements.Add("<debitNetworkName>" + SecurityElement.Escape(element) + "</debitNetworkName>");
+            }
+            
+            // Return the elements.
+            return elements;
+        }
+    }
+    
+    [XMLElement(Name = "sepaDirectDebit")]
+    public class sepaDirectDebitType : VersionedXMLElement
+    {
+        [XMLElement(Name = "mandateProvider")]
+        public mandateProviderType mandateProvider { get; set; }
+        
+        [XMLElement(Name = "sequenceType")]
+        public sequenceTypeType sequenceType { get; set; }
+        
+        [XMLElement(Name = "mandateReference")]
+        public string mandateReference { get; set; }
+        
+        [XMLElement(Name = "mandateUrl")]
+        public string mandateUrl { get; set; }
+        
+        [XMLElement(Name = "mandateSignatureDate")]
+        public DateTime mandateSignatureDate { get; set; }
+        
+        [XMLElement(Name = "iban")]
+        public string iban { get; set; }
+        
+        [XMLElement(Name = "preferredLanguage")]
+        public countryTypeEnum preferredLanguage { get; set; }
+    }
+    
+    [XMLElement(Name = "ideal")]
+    public class idealType : VersionedXMLElement
+    {
+        [XMLElement(Name = "preferredLanguage")]
+        public countryTypeEnum preferredLanguage { get; set; }
+    }
+    
+    [XMLElement(Name = "giropay")]
+    public class giropayType : VersionedXMLElement
+    {
+        [XMLElement(Name = "preferredLanguage")]
+        public countryTypeEnum? preferredLanguage { get; set; }
+    }
+    
+    [XMLElement(Name = "sofort")]
+    public class sofortType : VersionedXMLElement
+    {
+        [XMLElement(Name = "preferredLanguage")]
+        public countryTypeEnum? preferredLanguage { get; set; }
+    }
 }
