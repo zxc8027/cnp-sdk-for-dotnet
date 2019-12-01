@@ -499,7 +499,7 @@ namespace Cnp.Sdk
         public payPal paypal { get; set; }
         
         [XMLElement(Name = "taxType")]
-        public taxTypeIdentifierEnum? taxType { get; set; }
+        public taxTypeIdentifierEnum taxType { get; set; }
         
         [XMLElement(Name = "merchantData")]
         public merchantDataType merchantData { get; set; }
@@ -612,7 +612,7 @@ namespace Cnp.Sdk
     }
     
     [XMLElement(Name = "echeckRedeposit")]
-    public class echeckRedeposit : baseRequestTransactionEcheckRedeposit
+    public class echeckRedeposit : transactionTypeWithReportGroup
     {
         [XMLElement(Name = "cnpTxnId")]
         public long? cnpTxnId { get; set; }
@@ -829,7 +829,7 @@ namespace Cnp.Sdk
         public string orderId { get; set; }
     
         [XMLElement(Name = "orderSource")]
-        public orderSourceType? orderSource { get; set; }
+        public orderSourceType orderSource { get; set; }
     }
     
     [XMLElement(Name = "load")]

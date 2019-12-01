@@ -8,6 +8,7 @@
 using System;
 using System.Collections.Generic;
 using System.Security;
+using System.Xml.Linq;
 using Cnp.Sdk.VersionedXML;
 
 namespace Cnp.Sdk
@@ -479,6 +480,215 @@ namespace Cnp.Sdk
         }
     }
     
+    public enum ItemsChoiceType
+    {
+        expDate,
+        number,
+        track,
+        type,
+    }
+
+    public enum posCapabilityTypeEnum
+    {
+        notused,
+        magstripe,
+        keyedonly,
+    }
+
+    public enum posEntryModeTypeEnum
+    {
+        notused,
+        keyed,
+        track1,
+        track2,
+        completeread,
+    }
+
+    public sealed class posCatLevelEnum
+    {
+        public static readonly posCatLevelEnum selfservice = new posCatLevelEnum("self service");
+
+        private posCatLevelEnum(String value) { this.value = value; }
+        private string value;
+
+        public override string ToString()
+        {
+            return value;
+        }
+    }
+
+    public enum posCardholderIdTypeEnum
+    {
+        signature,
+        pin,
+        nopin,
+        directmarket,
+    }
+
+    public enum ItemChoiceType1
+    {
+        city,
+        phone,
+        url,
+    }
+
+    public enum govtTaxTypeEnum
+    {
+        payment,
+        fee,
+    }
+    public enum enhancedDataDeliveryType
+    {
+        CNC,
+        DIG,
+        PHY,
+        SVC,
+        TBD,
+    }
+    
+    
+    public sealed class taxTypeIdentifierEnum
+    {
+        public static readonly taxTypeIdentifierEnum Item00 = new taxTypeIdentifierEnum("00");
+        public static readonly taxTypeIdentifierEnum Item01 = new taxTypeIdentifierEnum("01");
+        public static readonly taxTypeIdentifierEnum Item02 = new taxTypeIdentifierEnum("02");
+        public static readonly taxTypeIdentifierEnum Item03 = new taxTypeIdentifierEnum("03");
+        public static readonly taxTypeIdentifierEnum Item04 = new taxTypeIdentifierEnum("04");
+        public static readonly taxTypeIdentifierEnum Item05 = new taxTypeIdentifierEnum("05");
+        public static readonly taxTypeIdentifierEnum Item06 = new taxTypeIdentifierEnum("06");
+        public static readonly taxTypeIdentifierEnum Item10 = new taxTypeIdentifierEnum("10");
+        public static readonly taxTypeIdentifierEnum Item11 = new taxTypeIdentifierEnum("11");
+        public static readonly taxTypeIdentifierEnum Item12 = new taxTypeIdentifierEnum("12");
+        public static readonly taxTypeIdentifierEnum Item13 = new taxTypeIdentifierEnum("13");
+        public static readonly taxTypeIdentifierEnum Item14 = new taxTypeIdentifierEnum("14");
+        public static readonly taxTypeIdentifierEnum Item20 = new taxTypeIdentifierEnum("20");
+        public static readonly taxTypeIdentifierEnum Item21 = new taxTypeIdentifierEnum("21");
+        public static readonly taxTypeIdentifierEnum Item22 = new taxTypeIdentifierEnum("22");
+
+        private taxTypeIdentifierEnum(String value) { this.value = value; }
+        private string value;
+
+        public override string ToString()
+        {
+            return value;
+        }
+    }
+
+    public enum IIASFlagType
+    {
+        Y,
+    }
+    
+    public enum recycleByTypeEnum
+    {
+        Merchant,
+        Cnp,
+        None,
+    }
+    
+    public enum ItemChoiceType2
+    {
+        payerEmail,
+        payerId,
+    }
+
+    public enum ItemsChoiceType1
+    {
+        amexAggregatorData,
+        amount,
+        billMeLaterRequest,
+        billToAddress,
+        card,
+        customBilling,
+        enhancedData,
+        cnpTxnId,
+        merchantData,
+        orderId,
+        orderSource,
+        paypage,
+        paypal,
+        pos,
+        processingInstructions,
+        taxType,
+        token,
+    }
+
+    public enum ItemsChoiceType3
+    {
+        amount,
+        billToAddress,
+        customBilling,
+        echeck,
+        echeckOrEcheckToken,
+        echeckToken,
+        cnpTxnId,
+        merchantData,
+        orderId,
+        orderSource,
+    }
+
+    public enum ItemsChoiceType4
+    {
+        amount,
+        billToAddress,
+        customBilling,
+        echeck,
+        echeckOrEcheckToken,
+        echeckToken,
+        cnpTxnId,
+        merchantData,
+        orderId,
+        orderSource,
+        shipToAddress,
+        verify,
+    }
+
+    public enum Item1ChoiceType
+    {
+        cardholderAuthentication,
+        fraudCheck,
+    }
+    
+    public enum ItemsChoiceType2
+    {
+        extendedCardResponse,
+        newAccountInfo,
+        newCardInfo,
+        newCardTokenInfo,
+        newTokenInfo,
+        originalAccountInfo,
+        originalCardInfo,
+        originalCardTokenInfo,
+        originalTokenInfo,
+    }
+    
+    public enum accountUpdateSourceType {
+        R,
+        N,
+    }
+    
+    public enum fundingSourceTypeEnum
+    {
+        UNKNOWN,
+        PREPAID,
+        FSA,
+        CREDIT,
+        DEBIT,
+    }
+
+    public enum affluenceTypeEnum
+    {
+        AFFLUENT,
+        MASSAFFLUENT,
+    }
+
+    public enum cardProductTypeEnum
+    {
+        UNKNOWN,
+        COMMERCIAL,
+        CONSUMER,
+    }
+    
     /*
      * Element declarations.
      */
@@ -695,7 +905,7 @@ namespace Cnp.Sdk
         public string taxRate { get; set; }
         
         [XMLElement(Name = "taxTypeIdentifier")]
-        public taxTypeIdentifierEnum? taxTypeIdentifier { get; set; }
+        public taxTypeIdentifierEnum taxTypeIdentifier { get; set; }
         
         [XMLElement(Name = "cardAcceptorTaxId")]
         public string cardAcceptorTaxId { get; set; }
@@ -789,7 +999,7 @@ namespace Cnp.Sdk
         public string terminalId { get; set; }
         
         [XMLElement(Name = "catLevel")]
-        public posCatLevelEnum? catLevel { get; set; }
+        public posCatLevelEnum catLevel { get; set; }
     }
     
     [XMLElement(Name = "payPal")]
@@ -892,13 +1102,45 @@ namespace Cnp.Sdk
         public string cardValidationResult { get; set; }
         
         [XMLElement(Name = "authenticationResult")]
-        public authenticationResultType? authenticationResult { get; set; }
+        public string authenticationResult { get; set; }
         
         [XMLElement(Name = "advancedAVSResult")]
         public string advancedAVSResult { get; set; }
         
         [XMLElement(Name = "advancedFraudResults")]
-        public advancedFraudResultsType? advancedFraudResults { get; set; }
+        public advancedFraudResultsType advancedFraudResults { get; set; }
+    }
+    
+    [XMLElement(Name = "advancedFraudResults")]
+    public class advancedFraudResultsType : VersionedXMLElement
+    {
+        [XMLElement(Name = "deviceReviewStatus")]
+        public string deviceReviewStatus { get; set; }
+        
+        [XMLElement(Name = "deviceReputationScore")]
+        public int? deviceReputationScore { get; set; }
+        
+        public string[] triggeredRuleField;
+            
+        /*
+         * Parses elements that aren't defined by properties.
+         */
+        public override void ParseAdditionalElements(XMLVersion version,List<string> elements)
+        {
+            // Get the rule field.
+            var newTriggeredRuleField = new List<string>();
+            foreach (var element in elements)
+            {
+                var xmlDocument = XDocument.Parse(element);
+                var elementName = xmlDocument.Root.Name.LocalName;
+                
+                // Add the triggered rule field.
+                newTriggeredRuleField.Add(xmlDocument.Root.Value);
+            }
+            
+            // Set the rule fields.
+            this.triggeredRuleField = newTriggeredRuleField.ToArray();
+        }
     }
     
     [XMLElement(Name = "authInformation")]
@@ -1469,4 +1711,35 @@ namespace Cnp.Sdk
         [XMLElement(Name = "preferredLanguage")]
         public countryTypeEnum? preferredLanguage { get; set; }
     }
+    
+    [XMLElement(Name = "driversLicenseInfo")]
+    public class driversLicenseInfo : VersionedXMLElement
+    {
+        [XMLAttribute(Name = "licenseNumber")]
+        public string licenseNumber { get; set; }
+        
+        [XMLAttribute(Name = "state")]
+        public string state { get; set; }
+        
+        [XMLAttribute(Name = "dateOfBirth")]
+        public string dateOfBirth { get; set; }
+    }
+
+    [XMLElement(Name = "recycleAdviceType")]
+    public class recycleAdviceType : VersionedXMLElement
+    {
+        [XMLAttribute(Name = "nextRecycleTime")]
+        public DateTime nextRecycleTime { get; set; }
+        
+        [XMLAttribute(Name = "recycleAdviceEnd")]
+        public string recycleAdviceEnd { get; set; }
+    }
+    
+    
+    <xs:complexType name="recyclingResponseType">
+    <xs:sequence>
+    <xs:element name="recycleAdvice" type="xp:recycleAdviceType" minOccurs="0"/>
+    <xs:element name="recycleEngineActive" type="xs:boolean" minOccurs="0"/>
+    </xs:sequence>
+    </xs:complexType>
 }
