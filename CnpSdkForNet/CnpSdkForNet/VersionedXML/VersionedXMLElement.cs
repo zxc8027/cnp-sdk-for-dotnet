@@ -5,6 +5,7 @@
  * with limitations based on the version.
  */
 
+using System;
 using System.Collections.Generic;
 using System.Security;
 
@@ -16,14 +17,37 @@ namespace Cnp.Sdk.VersionedXML
         /*
          * Converts an object to a string.
          */
-        public static string ConvertToString(object objectToConvert,XMLVersion version)
+        public static string ConvertToString(object objectToConvert, XMLVersion version)
         {
             // Return an XML string if it is an XML object.
             if (objectToConvert is VersionedXMLElement)
             {
                 return ((VersionedXMLElement) objectToConvert).Serialize(version);
             }
-            
+
+            // Return an XSD time if it is a DateTime.
+            if (objectToConvert is DateTime)
+            {
+                // Get the components.
+                var dateTime = (DateTime) objectToConvert;
+                var year = dateTime.Year.ToString();
+                var month = dateTime.Month.ToString();
+                var day = dateTime.Day.ToString();
+                
+                // Add the leading zeros.
+                if (dateTime.Month < 10)
+                {
+                    month = "0" + month;
+                }
+                if (dateTime.Day < 10)
+                {
+                    day = "0" + day;
+                }
+
+                // Return the formatted time.
+                return year + "-" + month + "-" + day;
+            }
+
             // Return a boolean as lowercase if it is a bool.
             if (objectToConvert is bool)
             {

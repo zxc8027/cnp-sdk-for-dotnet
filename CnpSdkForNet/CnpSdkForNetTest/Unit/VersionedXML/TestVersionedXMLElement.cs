@@ -401,5 +401,32 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             Assert.AreEqual(xmlObject.Serialize(new XMLVersion()), "<TestXMLElement testAttribute=\"Test 1\"><testElement>Test 2</testElement><testElement>Test 3</testElement><testElement>Test 4</testElement></TestXMLElement>");
         }
         
+        /*
+         * Test class for TestDateTime.
+         */
+        [XMLElement(Name = "TestXMLElement")]
+        public class DateTimeElement : VersionedXMLElement
+        {
+            [XMLAttribute(Name = "testAttribute")]
+            public DateTime TestAttribute { get; set; }
+
+            [XMLElement(Name = "testElement")]
+            public DateTime TestElement { get; set; }
+        }
+        
+        /*
+         * Tests elements with DateTime.
+         */
+        [Test]
+        public void TestDateTime()
+        {
+            // Create the object.
+            var xmlObject = new DateTimeElement();
+            xmlObject.TestAttribute = new DateTime(2020,4,23);
+            xmlObject.TestElement = new DateTime(2020,11,4);;
+            
+            // Assert the element is generated correctly.
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion()),"<TestXMLElement testAttribute=\"2020-04-23\"><testElement>2020-11-04</testElement></TestXMLElement>");
+        }
     }
 }
