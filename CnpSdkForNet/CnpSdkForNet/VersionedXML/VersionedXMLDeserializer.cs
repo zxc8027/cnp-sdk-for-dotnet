@@ -141,7 +141,7 @@ namespace Cnp.Sdk.VersionedXML
                     var property = selfType.GetProperty(memberToSet.Name);
                     if (IsXMLElement(property))
                     {
-                        if (xmlElement.Value.Length != 0)
+                        if (xmlElement.ToString().Length != 0)
                         {
                             property.SetValue(newObject,
                                 DeserializeType(xmlElement.ToString(), version, property.PropertyType));
