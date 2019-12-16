@@ -135,6 +135,18 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             Assert.AreEqual(xmlObject.TestElement2,null,"Element was initialized (should be null).");
             Assert.AreEqual(xmlObject.TestElement3,false,"Element wasn't deserialized correctly.");
             Assert.AreEqual(xmlObject.TestElement4,null,"Element was initialized (should be null).");
+            
+            // Deserialize an object with attributes.
+            xmlObject = VersionedXMLDeserializer.Deserialize<TestXMLElement>("<TestXMLElement TestAttribute1= \"1\" TestAttribute2 ='Test \"1\"' TestAttribute3= \"true\"><TestElement1>2</TestElement1> <TestElement3>false</TestElement3><TestElement4 TestAttribute3=\"true\"></TestElement4></TestXMLElement>", new XMLVersion());
+            
+            // Assert the element was deserialized correctly.
+            Assert.AreEqual(xmlObject.TestAttribute1,1,"Attribute wasn't deserialized correctly.");
+            Assert.AreEqual(xmlObject.TestAttribute2,"Test \"1\"","Attribute wasn't deserialized correctly.");
+            Assert.AreEqual(xmlObject.TestAttribute3,true,"Attribute wasn't deserialized correctly.");
+            Assert.AreEqual(xmlObject.TestElement1,2,"Element wasn't deserialized correctly.");
+            Assert.AreEqual(xmlObject.TestElement2,null,"Element was initialized (should be null).");
+            Assert.AreEqual(xmlObject.TestElement3,false,"Element wasn't deserialized correctly.");
+            Assert.AreEqual(xmlObject.TestElement4.TestAttribute3,true,"Element wasn't deserialized correctly.");
         }
         
         /*
