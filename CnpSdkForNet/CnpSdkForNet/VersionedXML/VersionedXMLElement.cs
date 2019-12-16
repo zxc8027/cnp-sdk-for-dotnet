@@ -6,6 +6,7 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Security;
 
@@ -56,6 +57,21 @@ namespace Cnp.Sdk.VersionedXML
 
             // Return the ToString result.
             return SecurityElement.Escape(objectToConvert.ToString());
+        }
+        
+        /*
+         * Converts an object to an XML element string.
+         */
+        public static string ConvertToElement(string name,object objectToConvert,XMLVersion version)
+        {
+            // Return a serialized XML element if it is an XML element.
+            if (objectToConvert is VersionedXMLElement)
+            {
+                return ((VersionedXMLElement) objectToConvert).Serialize(version,name);
+            }
+            
+            // Return the object as a string.
+            return "<" + name + ">" + ConvertToString(objectToConvert,version) + "</" + name + ">";
         }
 
         /*
@@ -174,15 +190,14 @@ namespace Cnp.Sdk.VersionedXML
                                 {
                                     // Add the child element.
                                     elementAdded = true;
-                                    if (value is VersionedXMLElement)
+                                    if (value is IList)
                                     {
-                                        xmlString += ((VersionedXMLElement) value).Serialize(version, attribute.Name);
-                                    }
-                                    else
-                                    {
-                                        xmlString += "<" + attribute.Name + ">" + ConvertToString(value, version) +
-                                                     "</" +
-                                                     attribute.Name + ">";
+                                        foreach (var listObject in (IList) value)
+                                        {
+                                            xmlString += ConvertToElement(attribute.Name,listObject,version);
+                                        }
+                                    } else {
+                                        xmlString += ConvertToElement(attribute.Name,value,version);
                                     }
                                 }
                             }

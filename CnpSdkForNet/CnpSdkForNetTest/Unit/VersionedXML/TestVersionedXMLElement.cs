@@ -428,5 +428,31 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             // Assert the element is generated correctly.
             Assert.AreEqual(xmlObject.Serialize(new XMLVersion()),"<TestXMLElement testAttribute=\"2020-04-23\"><testElement>2020-11-04</testElement></TestXMLElement>");
         }
+        
+        /*
+         * Test class for TestList.
+         */
+        [XMLElement(Name = "TestXMLElement")]
+        public class ListElement : VersionedXMLElement
+        {
+            [XMLElement(Name = "testElement")]
+            public List<string> TestElement { get; set; } = new List<string>();
+        }
+        
+        /*
+         * Tests elements with Lists.
+         */
+        [Test]
+        public void TestList()
+        {
+            // Create the object.
+            var xmlObject = new ListElement();
+            xmlObject.TestElement.Add("element1");
+            xmlObject.TestElement.Add("element1");
+            xmlObject.TestElement.Add("element2");
+            
+            // Assert the element is generated correctly.
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion()),"<TestXMLElement><testElement>element1</testElement><testElement>element1</testElement><testElement>element2</testElement></TestXMLElement>");
+        }
     }
 }
