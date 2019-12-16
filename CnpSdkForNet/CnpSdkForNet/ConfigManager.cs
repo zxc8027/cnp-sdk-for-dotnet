@@ -33,12 +33,6 @@ namespace Cnp.Sdk
             config["proxyPort"] = Properties.Settings.Default.proxyPort;
             config["logFile"] = Properties.Settings.Default.logFile;
             config["neuterAccountNums"] = Properties.Settings.Default.neuterAccountNums;
-            config["multiSite"] = Properties.Settings.Default.multiSite;
-            config["printMultiSiteDebug"] = Properties.Settings.Default.printMultiSiteDebug;
-            config["multiSiteUrl1"] = Properties.Settings.Default.multiSiteUrl1;
-            config["multiSiteUrl2"] = Properties.Settings.Default.multiSiteUrl2;
-            config["multiSiteErrorThreshold"] = Properties.Settings.Default.multiSiteErrorThreshold;
-            config["maxHoursWithoutSwitch"] = Properties.Settings.Default.maxHoursWithoutSwitch;
             config["sftpUrl"] = Properties.Settings.Default.sftpUrl;
             config["sftpUsername"] = Properties.Settings.Default.sftpUsername;
             config["sftpPassword"] = Properties.Settings.Default.sftpPassword;
@@ -135,7 +129,7 @@ namespace Cnp.Sdk
          */
         public static bool operator !=(ConfigManager config1, ConfigManager config2)
         {
-            return !(config1 == config1);
+            return !(config1 == config2);
         }
     }
 }

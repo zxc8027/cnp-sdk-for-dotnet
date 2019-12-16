@@ -22,7 +22,6 @@ namespace Cnp.Sdk.Test.Functional
         [OneTimeSetUp]
         public void SetUpCnp()
         {
-            CommManager.reset();
             config = new Dictionary<string, string>
             {
                 {"url", Properties.Settings.Default.url},

@@ -136,7 +136,7 @@ namespace Cnp.Sdk
         /*
          * Creates a web request to send.
          */
-        public HttpWebRequest CreateWebRequest(string xmlRequest,ConfigManager config,RequestTarget requestTarget)
+        public HttpWebRequest CreateWebRequest(string xmlRequest,ConfigManager config)
         { 
             // Get the log file.
             string logFile = null;
@@ -151,7 +151,7 @@ namespace Cnp.Sdk
             var printXml = "true".Equals(config.GetValue("printxml"));
 
             // Get the request target information.
-            var url = requestTarget.GetUrl();
+            var url = config.GetValue("url");
             ServicePointManager.SecurityProtocol = ServicePointManager.SecurityProtocol | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
             var request = (HttpWebRequest)WebRequest.Create(url);
 
@@ -216,8 +216,7 @@ namespace Cnp.Sdk
             var printXml = "true".Equals(config.GetValue("printxml"));
             
             // Get the request.
-            var requestTarget = CommManager.GetInstance(config).FindUrl();
-            var request = this.CreateWebRequest(xmlRequest,config,requestTarget);
+            var request = this.CreateWebRequest(xmlRequest,config);
 
             // Submit the request.
             using (var writer = new StreamWriter(await request.GetRequestStreamAsync().ConfigureAwait(false)))
@@ -229,7 +228,6 @@ namespace Cnp.Sdk
             string xmlResponse = null;
             var response = await request.GetResponseAsync().ConfigureAwait(false);
             var httpResponse = (HttpWebResponse)response;
-            CommManager.GetInstance().ReportResult(requestTarget,CommManager.REQUEST_RESULT_RESPONSE_RECEIVED,(int) httpResponse.StatusCode);
             try
             {
                 // Read the XML.
@@ -252,13 +250,7 @@ namespace Cnp.Sdk
                 }
             } catch (WebException webException)
             {
-                // Report the exception.
-                var result = CommManager.REQUEST_RESULT_CONNECTION_FAILED;
-                if (webException.Status == WebExceptionStatus.Timeout)
-                {
-                    result = CommManager.REQUEST_RESULT_RESPONSE_TIMEOUT;
-                }
-                CommManager.GetInstance().ReportResult(requestTarget,result,0);
+                
             }
 
             // Return the response.
@@ -292,8 +284,7 @@ namespace Cnp.Sdk
             var printXml = "true".Equals(config.GetValue("printxml"));
             
             // Get the request.
-            var requestTarget = CommManager.GetInstance(config).FindUrl();
-            var request = this.CreateWebRequest(xmlRequest,config,requestTarget);
+            var request = this.CreateWebRequest(xmlRequest,config);
 
             // Submit the request.
             using (var writer = new StreamWriter(request.GetRequestStream()))
@@ -306,11 +297,7 @@ namespace Cnp.Sdk
             try
             {
                 var resp = request.GetResponse();
-                var httpResp = (HttpWebResponse) resp;
-
-                // Report the request as recieved.
-                CommManager.GetInstance().ReportResult(requestTarget,CommManager.REQUEST_RESULT_RESPONSE_RECEIVED,(int) httpResp.StatusCode);
-
+                
                 // Read the response.
                 using (var reader = new StreamReader(resp.GetResponseStream()))
                 {
@@ -331,14 +318,7 @@ namespace Cnp.Sdk
                 }
             } catch (WebException webException)
             {
-                // Report the exception.
-                var result = CommManager.REQUEST_RESULT_CONNECTION_FAILED;
-                if (webException.Status == WebExceptionStatus.Timeout)
-                {
-                    result = CommManager.REQUEST_RESULT_RESPONSE_TIMEOUT;
-                }
-               
-                CommManager.GetInstance().ReportResult(requestTarget,result,0);
+                
             }
             
             // Return the XML response.
