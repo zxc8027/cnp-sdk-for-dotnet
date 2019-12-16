@@ -268,11 +268,11 @@ namespace Cnp.Sdk
         [XMLAttribute(Name = "responseTime")]
         public DateTime responseTime { get; set; }
         
-        [XMLAttribute(Name = "applepayResponse")]
-        public applepayResponse applepayResponse { get; set; }
+        // [XMLAttribute(Name = "applepayResponse")]
+        // public applepayResponse applepayResponse { get; set; }
         
-        [XMLAttribute(Name = "androidpayResponse")]
-        public androidpayResponse androidpayResponse { get; set; }
+        // [XMLAttribute(Name = "androidpayResponse")]
+        // public androidpayResponse androidpayResponse { get; set; }
         
         [XMLAttribute(Name = "accountRangeId")]
         public long? accountRangeId { get; set; }
@@ -342,23 +342,23 @@ namespace Cnp.Sdk
         [XMLElement(Name = "tokenResponse")]
         public tokenResponseType tokenResponse { get; set; }
         
-        [XMLElement(Name = "enhancedAuthResponse")]
-        public enhancedAuthResponse enhancedAuthResponse { get; set; }
+        // [XMLElement(Name = "enhancedAuthResponse")]
+        // public enhancedAuthResponse enhancedAuthResponse { get; set; }
         
-        [XMLElement(Name = "recyclingResponse")]
-        public recyclingResponseType recyclingResponse { get; set; }
+        // [XMLElement(Name = "recyclingResponse")]
+        // public recyclingResponseType recyclingResponse { get; set; }
         
         [XMLElement(Name = "recurringResponse")]
         public recurringResponse recurringResponse { get; set; }
         
-        [XMLElement(Name = "giftCardResponse")]
-        public giftCardResponse giftCardResponse { get; set; }
+        // [XMLElement(Name = "giftCardResponse")]
+        // public giftCardResponse giftCardResponse { get; set; }
         
-        [XMLElement(Name = "applepayResponse")]
-        public applepayResponse applepayResponse { get; set; }
+        // [XMLElement(Name = "applepayResponse")]
+        // public applepayResponse applepayResponse { get; set; }
         
-        [XMLElement(Name = "androidpayResponse")]
-        public androidpayResponse androidpayResponse { get; set; }
+        // [XMLElement(Name = "androidpayResponse")]
+        // public androidpayResponse androidpayResponse { get; set; }
         
         [XMLElement(Name = "networkTransactionId")]
         public string networkTransactionId { get; set; }

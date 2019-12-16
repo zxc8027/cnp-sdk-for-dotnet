@@ -1734,12 +1734,4 @@ namespace Cnp.Sdk
         [XMLAttribute(Name = "recycleAdviceEnd")]
         public string recycleAdviceEnd { get; set; }
     }
-    
-    
-    <xs:complexType name="recyclingResponseType">
-    <xs:sequence>
-    <xs:element name="recycleAdvice" type="xp:recycleAdviceType" minOccurs="0"/>
-    <xs:element name="recycleEngineActive" type="xs:boolean" minOccurs="0"/>
-    </xs:sequence>
-    </xs:complexType>
 }
