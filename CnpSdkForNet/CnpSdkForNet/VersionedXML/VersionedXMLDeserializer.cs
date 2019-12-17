@@ -5,6 +5,7 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,29 +17,46 @@ namespace Cnp.Sdk.VersionedXML
     public class VersionedXMLDeserializer
     {
         /*
-         * Returns if a property is an XML element.
+         * Returns if a property is of a type.
          */
-        public static bool IsXMLElement(PropertyInfo property)
+        public static bool IsOfType(Type type,Type typeToMatch)
         {
-            var type = property.PropertyType;
-
-            // Move up the type until null is reached.
-            while (type != null)
+            // Return if the interface is implemented.
+            foreach (var interfaceImplemented in type.GetInterfaces())
             {
-                // If the type matches, return true.
-                if (type == typeof(VersionedXMLElement))
+                if (interfaceImplemented == typeToMatch)
                 {
                     return true;
                 }
-
-                // Move up the type.
-                type = type.BaseType;
             }
-
-            // Return false (base case).
-            return false;
+            
+            // Return if type type matches or it is a subclass.
+            return type == typeToMatch || type.IsSubclassOf(typeToMatch);
         }
-
+        
+        /*
+         * Converts an XML element to an object.
+         */
+        public static object DeserializeToObject(XElement xmlElement,Type propertyType,XMLVersion version)
+        {
+            // Return a parsed XML element.
+            if (IsOfType(propertyType,typeof(VersionedXMLElement)))
+            {
+                if (xmlElement.Value != "" || xmlElement.FirstAttribute != null)
+                {
+                    return DeserializeType(xmlElement.ToString(),version,propertyType);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            
+            // Return a converted string.
+            var typeConverter = TypeDescriptor.GetConverter(propertyType);
+            return typeConverter.ConvertFromString(xmlElement.Value);
+        }
+        
         /*
          * Deserializes an object.
          */
@@ -139,18 +157,16 @@ namespace Cnp.Sdk.VersionedXML
                 {
                     // Set the value.
                     var property = selfType.GetProperty(memberToSet.Name);
-                    if (IsXMLElement(property))
+                    var propertyType = property.PropertyType;
+                    if (IsOfType(propertyType,typeof(IList)))
                     {
-                        if (xmlElement.Value != "" || xmlElement.FirstAttribute != null)
-                        {
-                            property.SetValue(newObject,
-                                DeserializeType(xmlElement.ToString(), version, property.PropertyType));
-                        }
+                        var deserializedObject = DeserializeToObject(xmlElement,propertyType.GetGenericArguments()[0],version);
+                        ((IList) property.GetValue(newObject)).Add(deserializedObject);
                     }
                     else
                     {
-                        var typeConverter = TypeDescriptor.GetConverter(property.PropertyType);
-                        property.SetValue(newObject, typeConverter.ConvertFromString(xmlElement.Value));
+                        var deserializedObject = DeserializeToObject(xmlElement,propertyType,version);
+                        property.SetValue(newObject,deserializedObject);
                     }
                 }
                 else
@@ -161,8 +177,11 @@ namespace Cnp.Sdk.VersionedXML
 
             // Parse unknown elements.
             var method = type.GetMethod("ParseAdditionalElements");
-            method.Invoke(newObject, new object[2] { version, unknownElements });
-            
+            if (method != null)
+            {
+                method.Invoke(newObject, new object[2] { version, unknownElements });
+            }
+
             // Return the new object.
             return newObject;
         }
