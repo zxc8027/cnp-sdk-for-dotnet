@@ -12,22 +12,6 @@ namespace Cnp.Sdk.Test
     public class EnvironmentVariableTestFlags
     {
         /*
-         * Returns if performance tests are enabled. Defaults
-         * to true.
-         */
-        public static bool ArePerformanceTestsEnabled()
-        {
-            var performanceTestsEnabled = Environment.GetEnvironmentVariable("performanceTestsEnabled");
-            if (performanceTestsEnabled == null)
-            {
-                Console.WriteLine("performanceTestsEnabled environment variable is not defined. Defaulting to true.");
-                return true;
-            }
-
-            return !performanceTestsEnabled.ToLower().Equals("false");
-        }
-
-        /*
          * Returns if PGP functional tests are enabled. Defaults
          * to true.
          */
@@ -73,17 +57,6 @@ namespace Cnp.Sdk.Test
             }
 
             return !preliveOnlineTestsEnabled.ToLower().Equals("false");
-        }
-
-        /*
-         * Sets the test as ignored if performance tests are disabled.
-         */
-        public static void RequirePerformanceTestsEnabled()
-        {
-            if (!ArePerformanceTestsEnabled())
-            {
-                Assert.Ignore("Performance tests are disabled.");
-            }
         }
 
         /*
