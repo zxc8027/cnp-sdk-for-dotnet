@@ -1,6 +1,0 @@
-<CoverageParams>
-	<TargetArguments>test CnpSdkForNet.sln -v n</TargetArguments>
-	<TargetWorkingDir>CnpSdkForNet</TargetWorkingDir>
-	<Output>coverage/report.html</Output>
-	<ReportType>HTML</ReportType>
-</CoverageParams>
