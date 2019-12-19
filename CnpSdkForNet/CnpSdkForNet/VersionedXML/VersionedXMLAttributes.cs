@@ -60,4 +60,12 @@ namespace Cnp.Sdk.VersionedXML
     {
         public string Name { get; set; }
     }
+    
+    /*
+     * Stores information for encoding an enum.
+     */
+    public class XMLEnum : XMLVersionInformation
+    {
+        public string Name { get; set; }
+    }
 }
