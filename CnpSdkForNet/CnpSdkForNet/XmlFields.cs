@@ -7,6 +7,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using Cnp.Sdk.VersionedXML;
 
 namespace Cnp.Sdk
@@ -1750,7 +1751,7 @@ namespace Cnp.Sdk
 		public int? deviceReputationScore { get; set; }
 
 		[XMLElement(Name = "triggeredRule",FirstVersion = "8.24")]
-		public string triggeredRule { get; set; }
+		public List<string> triggeredRule { get; set; } = new List<string>();
 
 	}
 
@@ -1825,22 +1826,22 @@ namespace Cnp.Sdk
 		public DateTime billingDate { get; set; }
 
 		[XMLElement(Name = "createDiscount",FirstVersion = "8.21")]
-		public createDiscountType createDiscount { get; set; }
+		public List<createDiscountType> createDiscount { get; set; } = new List<createDiscountType>();
 
 		[XMLElement(Name = "updateDiscount",FirstVersion = "8.21")]
-		public updateDiscountType updateDiscount { get; set; }
+		public List<updateDiscountType> updateDiscount { get; set; } = new List<updateDiscountType>();
 
 		[XMLElement(Name = "deleteDiscount",FirstVersion = "8.21")]
-		public deleteDiscountType deleteDiscount { get; set; }
+		public List<deleteDiscountType> deleteDiscount { get; set; } = new List<deleteDiscountType>();
 
 		[XMLElement(Name = "createAddOn",FirstVersion = "8.21")]
-		public createAddOnType createAddOn { get; set; }
+		public List<createAddOnType> createAddOn { get; set; } = new List<createAddOnType>();
 
 		[XMLElement(Name = "updateAddOn",FirstVersion = "8.21")]
-		public updateAddOnType updateAddOn { get; set; }
+		public List<updateAddOnType> updateAddOn { get; set; } = new List<updateAddOnType>();
 
 		[XMLElement(Name = "deleteAddOn",FirstVersion = "8.21")]
-		public deleteAddOnType deleteAddOn { get; set; }
+		public List<deleteAddOnType> deleteAddOn { get; set; } = new List<deleteAddOnType>();
 
 	}
 
@@ -1938,10 +1939,10 @@ namespace Cnp.Sdk
 		public int? amount { get; set; }
 
 		[XMLElement(Name = "createDiscount",FirstVersion = "8.21")]
-		public createDiscountType createDiscount { get; set; }
+		public List<createDiscountType> createDiscount { get; set; } = new List<createDiscountType>();
 
 		[XMLElement(Name = "createAddOn",FirstVersion = "8.21")]
-		public createAddOnType createAddOn { get; set; }
+		public List<createAddOnType> createAddOn { get; set; } = new List<createAddOnType>();
 
 		[XMLElement(Name = "numberOfPaymentsRemaining",FirstVersion = "8.18",RemovedVersion = "8.19")]
 		public int? numberOfPaymentsRemaining { get; set; }
@@ -3096,10 +3097,10 @@ namespace Cnp.Sdk
 		public DateTime orderDate { get; set; }
 
 		[XMLElement(Name = "detailTax")]
-		public detailTax detailTax { get; set; }
+		public List<detailTax> detailTax { get; set; } = new List<detailTax>();
 
 		[XMLElement(Name = "lineItemData")]
-		public lineItemData lineItemData { get; set; }
+		public List<lineItemData> lineItemData { get; set; } = new List<lineItemData>();
 
 	}
 
@@ -3160,7 +3161,7 @@ namespace Cnp.Sdk
 		public string unitCost { get; set; }
 
 		[XMLElement(Name = "detailTax")]
-		public detailTax detailTax { get; set; }
+		public List<detailTax> detailTax { get; set; } = new List<detailTax>();
 
 	}
 
@@ -3455,7 +3456,7 @@ namespace Cnp.Sdk
 		public string fieldValue { get; set; }
 
 		[XMLElement(Name = "networkSubField",FirstVersion = "10.4")]
-		public networkSubField networkSubField { get; set; }
+		public List<networkSubField> networkSubField { get; set; } = new List<networkSubField>();
 
 		[XMLAttribute(Name = "fieldNumber",FirstVersion = "10.4")]
 		public int? fieldNumber { get; set; }
@@ -3472,7 +3473,7 @@ namespace Cnp.Sdk
 		public string endpoint { get; set; }
 
 		[XMLElement(Name = "networkField",FirstVersion = "10.4")]
-		public networkField networkField { get; set; }
+		public List<networkField> networkField { get; set; } = new List<networkField>();
 
 	}
 
@@ -4758,7 +4759,7 @@ namespace Cnp.Sdk
 	public partial class ctxPaymentInformationType : VersionedXMLElement
 	{
 		[XMLElement(Name = "ctxPaymentDetail",FirstVersion = "12.7")]
-		public string ctxPaymentDetail { get; set; }
+		public List<string> ctxPaymentDetail { get; set; } = new List<string>();
 
 	}
 
@@ -5836,7 +5837,7 @@ namespace Cnp.Sdk
 	public partial class preferredDebitNetworksType : VersionedXMLElement
 	{
 		[XMLElement(Name = "debitNetworkName",FirstVersion = "12.3")]
-		public string debitNetworkName { get; set; }
+		public List<string> debitNetworkName { get; set; } = new List<string>();
 
 	}
 
@@ -5877,7 +5878,7 @@ namespace Cnp.Sdk
 		public bool? fireSafetyIndicator { get; set; }
 
 		[XMLElement(Name = "lodgingCharge",FirstVersion = "12.2")]
-		public lodgingCharge lodgingCharge { get; set; }
+		public List<lodgingCharge> lodgingCharge { get; set; } = new List<lodgingCharge>();
 
 	}
 
@@ -5889,7 +5890,7 @@ namespace Cnp.Sdk
 		public authentication authentication { get; set; }
 
 		[XMLElement(Name = "batchRequest")]
-		public batchRequest batchRequest { get; set; }
+		public List<batchRequest> batchRequest { get; set; } = new List<batchRequest>();
 
 		[XMLElement(Name = "RFRRequest")]
 		public RFRRequest RFRRequest { get; set; }
@@ -5923,10 +5924,10 @@ namespace Cnp.Sdk
 	public partial class batchRequest : VersionedXMLElement
 	{
 		[XMLElement(Name = "transaction")]
-		public transaction transaction { get; set; }
+		public List<transaction> transaction { get; set; } = new List<transaction>();
 
 		[XMLElement(Name = "recurringTransaction",FirstVersion = "8.20")]
-		public recurringTransaction recurringTransaction { get; set; }
+		public List<recurringTransaction> recurringTransaction { get; set; } = new List<recurringTransaction>();
 
 		[XMLAttribute(Name = "merchantSdk",FirstVersion = "8.21")]
 		public string merchantSdk { get; set; }
@@ -6201,7 +6202,7 @@ namespace Cnp.Sdk
 	public partial class cnpResponse : VersionedXMLElement
 	{
 		[XMLElement(Name = "batchResponse")]
-		public batchResponse batchResponse { get; set; }
+		public List<batchResponse> batchResponse { get; set; } = new List<batchResponse>();
 
 		[XMLElement(Name = "RFRResponse")]
 		public RFRResponse RFRResponse { get; set; }
@@ -6241,10 +6242,10 @@ namespace Cnp.Sdk
 	public partial class batchResponse : VersionedXMLElement
 	{
 		[XMLElement(Name = "transactionResponse")]
-		public transactionResponse transactionResponse { get; set; }
+		public List<transactionResponse> transactionResponse { get; set; } = new List<transactionResponse>();
 
 		[XMLElement(Name = "recurringTransactionResponse",FirstVersion = "8.20")]
-		public recurringTransactionResponse recurringTransactionResponse { get; set; }
+		public List<recurringTransactionResponse> recurringTransactionResponse { get; set; } = new List<recurringTransactionResponse>();
 
 		[XMLAttribute(Name = "id")]
 		public string id { get; set; }
@@ -6918,7 +6919,7 @@ namespace Cnp.Sdk
 	public partial class results_max10 : VersionedXMLElement
 	{
 		[XMLElement(Name = "transactionResponse",FirstVersion = "9.5")]
-		public transactionResponse transactionResponse { get; set; }
+		public List<transactionResponse> transactionResponse { get; set; } = new List<transactionResponse>();
 
 	}
 
