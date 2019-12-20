@@ -93,15 +93,10 @@ namespace Cnp.Sdk
             this.communication = communication;
         }
 
-
         /*
-        public Task<authorizationResponse> AuthorizeAsync(authorization auth, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.authorizationResponse, auth, cancellationToken);
-        }
-*/
-        
-        private cnpOnlineRequest CreateRequest(transactionType transactionObject)
+         * Creates a request object to send.
+         */
+        private cnpOnlineRequest CreateRequest(cnpTransactionInterface transactionObject)
         {
             // Create the request.
             var request = CreateCnpOnlineRequest();
@@ -118,410 +113,713 @@ namespace Cnp.Sdk
             // Return the request.
             return request;
         }
-/*
-        public authorizationResponse Authorize(authorization auth)
+        
+        /*
+         * Sends a Authorize request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<authorizationResponse>(cnpTransactionInterface transaction)")]
+        public authorizationResponse Authorize(authorization transaction)
         {
-            return SendRequest(response => response.authorizationResponse, auth);
-        }
-
-        public authReversalResponse AuthReversal(authReversal reversal)
-        {
-            return SendRequest(response => response.authReversalResponse, reversal);
-        }
-
-        public Task<authReversalResponse> AuthReversalAsync(authReversal reversal, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.authReversalResponse, reversal, cancellationToken);
-        }
-
-        public giftCardAuthReversalResponse GiftCardAuthReversal(giftCardAuthReversal giftCard)
-        {
-            return SendRequest(response => response.giftCardAuthReversalResponse, giftCard);
-        }
-
-        public Task<giftCardAuthReversalResponse> GiftCardAuthReversalAsync(giftCardAuthReversal giftCard, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.giftCardAuthReversalResponse, giftCard, cancellationToken);
-        }
-
-        public Task<captureResponse> CaptureAsync(capture capture, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.captureResponse, capture, cancellationToken);
-        }
-
-        public captureResponse Capture(capture capture)
-        {
-            return SendRequest(response => response.captureResponse, capture);
-        }
-
-        public giftCardCaptureResponse GiftCardCapture(giftCardCapture giftCardCapture)
-        {
-            return SendRequest(response => response.giftCardCaptureResponse, giftCardCapture);
-        }
-
-        public Task<giftCardCaptureResponse> GiftCardCaptureAsync(giftCardCapture giftCardCapture, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.giftCardCaptureResponse, giftCardCapture, cancellationToken);
-        }
-
-        public Task<captureGivenAuthResponse> CaptureGivenAuthAsync(captureGivenAuth captureGivenAuth, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.captureGivenAuthResponse, captureGivenAuth, cancellationToken);
-        }
-
-        public captureGivenAuthResponse CaptureGivenAuth(captureGivenAuth captureGivenAuth)
-        {
-            return SendRequest(response => response.captureGivenAuthResponse, captureGivenAuth);
-        }
-
-        public creditResponse Credit(credit credit)
-        {
-            return SendRequest(response => response.creditResponse, credit);
-        }
-
-        public Task<creditResponse> CreditAsync(credit credit, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.creditResponse, credit, cancellationToken);
-        }
-
-        public Task<vendorDebitResponse> VendorDebitAsync(vendorDebit vendorDebit, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.vendorDebitResponse, vendorDebit, cancellationToken);
-        }
-
-        public giftCardCreditResponse GiftCardCredit(giftCardCredit giftCardCredit)
-        {
-            return SendRequest(response => response.giftCardCreditResponse, giftCardCredit);
-        }
-
-        public Task<giftCardCreditResponse> GiftCardCreditAsync(giftCardCredit giftCardCredit, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.giftCardCreditResponse, giftCardCredit, cancellationToken);
-        }
-
-        public Task<echeckCreditResponse> EcheckCreditAsync(echeckCredit echeckCredit, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.echeckCreditResponse, echeckCredit, cancellationToken);
-        }
-
-        public echeckCreditResponse EcheckCredit(echeckCredit echeckCredit)
-        {
-            return SendRequest(response => response.echeckCreditResponse, echeckCredit);
-        }
-
-        public Task<echeckRedepositResponse> EcheckRedepositAsync(echeckRedeposit echeckRedeposit, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.echeckRedepositResponse, echeckRedeposit, cancellationToken);
-        }
-
-        public echeckRedepositResponse EcheckRedeposit(echeckRedeposit echeckRedeposit)
-        {
-            return SendRequest(response => response.echeckRedepositResponse, echeckRedeposit);
-        }
-
-        public Task<echeckSalesResponse> EcheckSaleAsync(echeckSale echeckSale, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.echeckSalesResponse, echeckSale, cancellationToken);
-        }
-
-        public echeckSalesResponse EcheckSale(echeckSale echeckSale)
-        {
-            return SendRequest(response => response.echeckSalesResponse, echeckSale);
-        }
-
-        public echeckVerificationResponse EcheckVerification(echeckVerification echeckVerification)
-        {
-            return SendRequest(response => response.echeckVerificationResponse, echeckVerification);
-        }
-
-        public Task<echeckVerificationResponse> EcheckVerificationAsync(echeckVerification echeckVerification, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.echeckVerificationResponse, echeckVerification, cancellationToken);
-        }
-
-        public forceCaptureResponse ForceCapture(forceCapture forceCapture)
-        {
-            return SendRequest(response => response.forceCaptureResponse, forceCapture);
-        }
-
-        public Task<forceCaptureResponse> ForceCaptureAsync(forceCapture forceCapture, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.forceCaptureResponse, forceCapture, cancellationToken);
-        }
-
-        public saleResponse Sale(sale sale)
-        {
-            return SendRequest(response => response.saleResponse, sale);
-        }
-
-        public Task<saleResponse> SaleAsync(sale sale, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.saleResponse, sale, cancellationToken);
-        }
-
-        public Task<registerTokenResponse> RegisterTokenAsync(registerTokenRequestType tokenRequest, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.registerTokenResponse, tokenRequest, cancellationToken);
-        }
-
-        public registerTokenResponse RegisterToken(registerTokenRequestType tokenRequest)
-        {
-            return SendRequest(response => response.registerTokenResponse, tokenRequest);
-        }
-
-        public voidResponse DoVoid(voidTxn v)
-        {
-            return SendRequest(response => response.voidResponse, v);
-        }
-
-        public Task<voidResponse> DoVoidAsync(voidTxn v, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.voidResponse, v, cancellationToken);
-        }
-
-        public echeckVoidResponse EcheckVoid(echeckVoid v)
-        {
-            return SendRequest(response => response.echeckVoidResponse, v);
-        }
-
-        public Task<echeckVoidResponse> EcheckVoidAsync(echeckVoid v, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.echeckVoidResponse, v, cancellationToken);
-        }
-
-        public updateCardValidationNumOnTokenResponse UpdateCardValidationNumOnToken(updateCardValidationNumOnToken updateCardValidationNumOnToken)
-        {
-            return SendRequest(response => response.updateCardValidationNumOnTokenResponse, updateCardValidationNumOnToken);
-        }
-
-        public Task<updateCardValidationNumOnTokenResponse> UpdateCardValidationNumOnTokenAsync(updateCardValidationNumOnToken update, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.updateCardValidationNumOnTokenResponse, update, cancellationToken);
-        }
-
-        public cancelSubscriptionResponse CancelSubscription(cancelSubscription cancelSubscription)
-        {
-            return SendRequest(response => response.cancelSubscriptionResponse, cancelSubscription);
-        }
-
-        public updateSubscriptionResponse UpdateSubscription(updateSubscription updateSubscription)
-        {
-            return SendRequest(response => response.updateSubscriptionResponse, updateSubscription);
-        }
-
-        public activateResponse Activate(activate activate)
-        {
-            return SendRequest(response => response.activateResponse, activate);
-        }
-
-        public deactivateResponse Deactivate(deactivate deactivate)
-        {
-            return SendRequest(response => response.deactivateResponse, deactivate);
-        }
-
-        public loadResponse Load(load load)
-        {
-            return SendRequest(response => response.loadResponse, load);
-        }
-
-        public unloadResponse Unload(unload unload)
-        {
-            return SendRequest(response => response.unloadResponse, unload);
-        }
-
-        public balanceInquiryResponse BalanceInquiry(balanceInquiry balanceInquiry)
-        {
-            return SendRequest(response => response.balanceInquiryResponse, balanceInquiry);
-        }
-
-        public Task<balanceInquiryResponse> BalanceInquiryAsync(balanceInquiry balanceInquiry, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.balanceInquiryResponse, balanceInquiry, cancellationToken);
-        }
-
-        public createPlanResponse CreatePlan(createPlan createPlan)
-        {
-            return SendRequest(response => response.createPlanResponse, createPlan);
-        }
-
-        public updatePlanResponse UpdatePlan(updatePlan updatePlan)
-        {
-            return SendRequest(response => response.updatePlanResponse, updatePlan);
-        }
-
-        public refundReversalResponse RefundReversal(refundReversal refundReversal)
-        {
-            return SendRequest(response => response.refundReversalResponse, refundReversal);
-        }
-
-        public depositReversalResponse DepositReversal(depositReversal depositReversal)
-        {
-            return SendRequest(response => response.depositReversalResponse, depositReversal);
-        }
-
-        public activateReversalResponse ActivateReversal(activateReversal activateReversal)
-        {
-            return SendRequest(response => response.activateReversalResponse, activateReversal);
-        }
-
-        public deactivateReversalResponse DeactivateReversal(deactivateReversal deactivateReversal)
-        {
-            return SendRequest(response => response.deactivateReversalResponse, deactivateReversal);
-        }
-
-        public loadReversalResponse LoadReversal(loadReversal loadReversal)
-        {
-            return SendRequest(response => response.loadReversalResponse, loadReversal);
-        }
-
-        public unloadReversalResponse UnloadReversal(unloadReversal unloadReversal)
-        {
-            return SendRequest(response => response.unloadReversalResponse, unloadReversal);
-        }
-
-        public Task<transactionTypeWithReportGroup> QueryTransactionAsync(queryTransaction queryTransaction, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => (response.queryTransactionResponse ?? (transactionTypeWithReportGroup)response.queryTransactionUnavailableResponse), queryTransaction, cancellationToken);
-        }
-
-        public transactionTypeWithReportGroup QueryTransaction(queryTransaction queryTransaction)
-        {
-            return SendRequest(response =>(response.queryTransactionResponse ?? (transactionTypeWithReportGroup)response.queryTransactionUnavailableResponse), queryTransaction);
-        }
-
-        public fraudCheckResponse FraudCheck(fraudCheck fraudCheck)
-        {
-            return SendRequest(response => response.fraudCheckResponse, fraudCheck);
-        }
-
-        public fastAccessFundingResponse FastAccessFunding(fastAccessFunding fastAccessFunding)
-        {
-            return SendRequest(response => response.fastAccessFundingResponse, fastAccessFunding);
+            return this.SendTransaction<authorizationResponse>(transaction);
         }
         
-        public payFacCreditResponse PayFacCredit(payFacCredit payFacCredit)
+        /*
+         * Sends a Authorize request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<authorizationResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<authorizationResponse> AuthorizeAsync(authorization transaction,CancellationToken cancellationToken)
         {
-            return SendRequest(response => response.payFacCreditResponse, payFacCredit);
+            return this.SendTransactionAsync<authorizationResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a AuthReversal request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<authReversalResponse>(cnpTransactionInterface transaction)")]
+        public authReversalResponse AuthReversal(authReversal transaction)
+        {
+            return this.SendTransaction<authReversalResponse>(transaction);
+        }
+        
+        /*
+         * Sends a AuthReversal request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<authReversalResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<authReversalResponse> AuthReversalAsync(authReversal transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<authReversalResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a GiftCardAuthReversal request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<giftCardAuthReversalResponse>(cnpTransactionInterface transaction)")]
+        public giftCardAuthReversalResponse GiftCardAuthReversal(giftCardAuthReversal transaction)
+        {
+            return this.SendTransaction<giftCardAuthReversalResponse>(transaction);
+        }
+        
+        /*
+         * Sends a GiftCardAuthReversal request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<giftCardAuthReversalResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<giftCardAuthReversalResponse> GiftCardAuthReversalAsync(giftCardAuthReversal transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<giftCardAuthReversalResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a Capture request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<captureResponse>(cnpTransactionInterface transaction)")]
+        public captureResponse Capture(capture transaction)
+        {
+            return this.SendTransaction<captureResponse>(transaction);
+        }
+        
+        /*
+         * Sends a Capture request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<captureResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<captureResponse> CaptureAsync(capture transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<captureResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a GiftCardCapture request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<giftCardCaptureResponse>(cnpTransactionInterface transaction)")]
+        public giftCardCaptureResponse GiftCardCapture(giftCardCapture transaction)
+        {
+            return this.SendTransaction<giftCardCaptureResponse>(transaction);
+        }
+        
+        /*
+         * Sends a GiftCardCapture request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<giftCardCaptureResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<giftCardCaptureResponse> GiftCardCaptureAsync(giftCardCapture transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<giftCardCaptureResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a CaptureGivenAuth request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<captureGivenAuthResponse>(cnpTransactionInterface transaction)")]
+        public captureGivenAuthResponse CaptureGivenAuth(captureGivenAuth transaction)
+        {
+            return this.SendTransaction<captureGivenAuthResponse>(transaction);
+        }
+        
+        /*
+         * Sends a CaptureGivenAuth request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<captureGivenAuthResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<captureGivenAuthResponse> CaptureGivenAuthAsync(captureGivenAuth transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<captureGivenAuthResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a Credit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<creditResponse>(cnpTransactionInterface transaction)")]
+        public creditResponse Credit(credit transaction)
+        {
+            return this.SendTransaction<creditResponse>(transaction);
+        }
+        
+        /*
+         * Sends a Credit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<creditResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<creditResponse> CreditAsync(credit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<creditResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a GiftCardCredit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<giftCardCreditResponse>(cnpTransactionInterface transaction)")]
+        public giftCardCreditResponse GiftCardCredit(giftCardCredit transaction)
+        {
+            return this.SendTransaction<giftCardCreditResponse>(transaction);
+        }
+        
+        /*
+         * Sends a GiftCardCredit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<giftCardCreditResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<giftCardCreditResponse> GiftCardCreditAsync(giftCardCredit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<giftCardCreditResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a EcheckCredit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<echeckCreditResponse>(cnpTransactionInterface transaction)")]
+        public echeckCreditResponse EcheckCredit(echeckCredit transaction)
+        {
+            return this.SendTransaction<echeckCreditResponse>(transaction);
+        }
+        
+        /*
+         * Sends a EcheckCredit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<echeckCreditResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<echeckCreditResponse> EcheckCreditAsync(echeckCredit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<echeckCreditResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a EcheckRedeposit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<echeckRedepositResponse>(cnpTransactionInterface transaction)")]
+        public echeckRedepositResponse EcheckRedeposit(echeckRedeposit transaction)
+        {
+            return this.SendTransaction<echeckRedepositResponse>(transaction);
+        }
+        
+        /*
+         * Sends a EcheckRedeposit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<echeckRedepositResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<echeckRedepositResponse> EcheckRedepositAsync(echeckRedeposit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<echeckRedepositResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a EcheckSale request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<echeckSalesResponse>(cnpTransactionInterface transaction)")]
+        public echeckSalesResponse EcheckSale(echeckSale transaction)
+        {
+            return this.SendTransaction<echeckSalesResponse>(transaction);
+        }
+        
+        /*
+         * Sends a EcheckSale request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<echeckSalesResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<echeckSalesResponse> EcheckSaleAsync(echeckSale transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<echeckSalesResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a EcheckVerification request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<echeckVerificationResponse>(cnpTransactionInterface transaction)")]
+        public echeckVerificationResponse EcheckVerification(echeckVerification transaction)
+        {
+            return this.SendTransaction<echeckVerificationResponse>(transaction);
+        }
+        
+        /*
+         * Sends a EcheckVerification request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<echeckVerificationResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<echeckVerificationResponse> EcheckVerificationAsync(echeckVerification transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<echeckVerificationResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a ForceCapture request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<forceCaptureResponse>(cnpTransactionInterface transaction)")]
+        public forceCaptureResponse ForceCapture(forceCapture transaction)
+        {
+            return this.SendTransaction<forceCaptureResponse>(transaction);
+        }
+        
+        /*
+         * Sends a ForceCapture request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<forceCaptureResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<forceCaptureResponse> ForceCaptureAsync(forceCapture transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<forceCaptureResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a Sale request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<saleResponse>(cnpTransactionInterface transaction)")]
+        public saleResponse Sale(sale transaction)
+        {
+            return this.SendTransaction<saleResponse>(transaction);
+        }
+        
+        /*
+         * Sends a Sale request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<saleResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<saleResponse> SaleAsync(sale transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<saleResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a RegisterToken request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<registerTokenResponse>(cnpTransactionInterface transaction)")]
+        public registerTokenResponse RegisterToken(registerTokenRequestType transaction)
+        {
+            return this.SendTransaction<registerTokenResponse>(transaction);
+        }
+        
+        /*
+         * Sends a RegisterToken request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<registerTokenResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<registerTokenResponse> RegisterTokenAsync(registerTokenRequestType transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<registerTokenResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a Void request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<voidResponse>(cnpTransactionInterface transaction)")]
+        public voidResponse DoVoid(voidTxn transaction)
+        {
+            return this.SendTransaction<voidResponse>(transaction);
+        }
+        
+        /*
+         * Sends a Void request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<voidResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<voidResponse> DoVoidAsync(voidTxn transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<voidResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a EcheckVoid request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<echeckVoidResponse>(cnpTransactionInterface transaction)")]
+        public echeckVoidResponse EcheckVoid(echeckVoid transaction)
+        {
+            return this.SendTransaction<echeckVoidResponse>(transaction);
+        }
+        
+        /*
+         * Sends a EcheckVoid request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<echeckVoidResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<echeckVoidResponse> EcheckVoidAsync(echeckVoid transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<echeckVoidResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a UpdateCardValidationNumOnToken request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<updateCardValidationNumOnTokenResponse>(cnpTransactionInterface transaction)")]
+        public updateCardValidationNumOnTokenResponse UpdateCardValidationNumOnToken(updateCardValidationNumOnToken transaction)
+        {
+            return this.SendTransaction<updateCardValidationNumOnTokenResponse>(transaction);
+        }
+        
+        /*
+         * Sends a UpdateCardValidationNumOnToken request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<updateCardValidationNumOnTokenResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<updateCardValidationNumOnTokenResponse> UpdateCardValidationNumOnTokenAsync(updateCardValidationNumOnToken transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<updateCardValidationNumOnTokenResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a CancelSubscription request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<cancelSubscriptionResponse>(cnpTransactionInterface transaction)")]
+        public cancelSubscriptionResponse CancelSubscription(cancelSubscription transaction)
+        {
+            return this.SendTransaction<cancelSubscriptionResponse>(transaction);
+        }
+        
+        /*
+         * Sends a UpdateSubscription request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<updateCardValidationNumOnTokenResponse>(cnpTransactionInterface transaction)")]
+        public updateSubscriptionResponse UpdateSubscription(updateSubscription transaction)
+        {
+            return this.SendTransaction<updateSubscriptionResponse>(transaction);
+        }
+        
+        /*
+         * Sends a Activate request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<activateResponse>(cnpTransactionInterface transaction)")]
+        public activateResponse Activate(activate transaction)
+        {
+            return this.SendTransaction<activateResponse>(transaction);
+        }
+        
+        /*
+         * Sends a Deactivate request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<deactivateResponse>(cnpTransactionInterface transaction)")]
+        public deactivateResponse Deactivate(deactivate transaction)
+        {
+            return this.SendTransaction<deactivateResponse>(transaction);
+        }
+        
+        /*
+         * Sends a Load request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<loadResponse>(cnpTransactionInterface transaction)")]
+        public loadResponse Load(load transaction)
+        {
+            return this.SendTransaction<loadResponse>(transaction);
+        }
+        
+        /*
+         * Sends a Unload request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<unloadResponse>(cnpTransactionInterface transaction)")]
+        public unloadResponse Unload(unload transaction)
+        {
+            return this.SendTransaction<unloadResponse>(transaction);
+        }
+        
+        /*
+         * Sends a BalanceInquiry request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<balanceInquiryResponse>(cnpTransactionInterface transaction)")]
+        public balanceInquiryResponse BalanceInquiry(updateCardValidationNumOnToken transaction)
+        {
+            return this.SendTransaction<balanceInquiryResponse>(transaction);
+        }
+        
+        /*
+         * Sends a BalanceInquiry request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<balanceInquiryResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<balanceInquiryResponse> BalanceInquiryAsync(updateCardValidationNumOnToken transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<balanceInquiryResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a CreatePlan request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<createPlanResponse>(cnpTransactionInterface transaction)")]
+        public createPlanResponse CreatePlan(createPlan transaction)
+        {
+            return this.SendTransaction<createPlanResponse>(transaction);
+        }
+        
+        /*
+         * Sends a UpdatePlan request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<updatePlanResponse>(cnpTransactionInterface transaction)")]
+        public updatePlanResponse UpdatePlan(updatePlan transaction)
+        {
+            return this.SendTransaction<updatePlanResponse>(transaction);
+        }
+        
+        /*
+         * Sends a RefundReversal request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<refundReversalResponse>(cnpTransactionInterface transaction)")]
+        public refundReversalResponse RefundReversal(refundReversal transaction)
+        {
+            return this.SendTransaction<refundReversalResponse>(transaction);
+        }
+        
+        /*
+         * Sends a DepositReversal request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<depositReversalResponse>(cnpTransactionInterface transaction)")]
+        public depositReversalResponse DepositReversal(depositReversal transaction)
+        {
+            return this.SendTransaction<depositReversalResponse>(transaction);
+        }
+        
+        /*
+         * Sends a ActivateReversal request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<activateReversalResponse>(cnpTransactionInterface transaction)")]
+        public activateReversalResponse ActivateReversal(activateReversal transaction)
+        {
+            return this.SendTransaction<activateReversalResponse>(transaction);
+        }
+        
+        /*
+         * Sends a DeactivateReversal request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<deactivateReversalResponse>(cnpTransactionInterface transaction)")]
+        public deactivateReversalResponse DeactivateReversal(deactivateReversal transaction)
+        {
+            return this.SendTransaction<deactivateReversalResponse>(transaction);
+        }
+        
+        /*
+         * Sends a ActivateReversal request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<loadReversalResponse>(cnpTransactionInterface transaction)")]
+        public loadReversalResponse LoadReversal(loadReversal transaction)
+        {
+            return this.SendTransaction<loadReversalResponse>(transaction);
+        }
+        
+        /*
+         * Sends a DeactivateReversal request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<unloadReversalResponse>(cnpTransactionInterface transaction)")]
+        public unloadReversalResponse UnloadReversal(unloadReversal transaction)
+        {
+            return this.SendTransaction<unloadReversalResponse>(transaction);
         }
 
-        public Task<payFacCreditResponse> PayFacCreditAsync(payFacCredit payFacCredit, CancellationToken cancellationToken)
+        /*
+         * Sends a QueryTransaction request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<cnpTransactionInterfaceWithReportGroup>(cnpTransactionInterface transaction)")]
+        public transactionTypeWithReportGroup QueryTransaction(queryTransaction transaction)
         {
-            return SendRequestAsync(response => response.payFacCreditResponse, payFacCredit, cancellationToken);
+            return this.SendTransaction<transactionTypeWithReportGroup>(transaction);
+        }
+        
+        /*
+         * Sends a QueryTransaction request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<cnpTransactionInterfaceWithReportGroup>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<transactionTypeWithReportGroup> QueryTransactionAsync(queryTransaction transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<transactionTypeWithReportGroup>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a FraudCheck request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<payFacCreditResponse>(cnpTransactionInterface transaction)")]
+        public fraudCheckResponse FraudCheck(fraudCheck transaction)
+        {
+            return this.SendTransaction<fraudCheckResponse>(transaction);
+        }
+        
+        /*
+         * Sends a FastAccessFunding request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<fastAccessFundingResponse>(cnpTransactionInterface transaction)")]
+        public fastAccessFundingResponse FastAccessFunding(fastAccessFunding transaction)
+        {
+            return this.SendTransaction<fastAccessFundingResponse>(transaction);
         }
 
-        public payFacDebitResponse PayFacDebit(payFacDebit payFacDebit)
+        /*
+         * Sends a PayFacCredit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<payFacCreditResponse>(cnpTransactionInterface transaction)")]
+        public payFacCreditResponse PayFacCredit(payFacCredit transaction)
         {
-            return SendRequest(response => response.payFacDebitResponse, payFacDebit);
+            return this.SendTransaction<payFacCreditResponse>(transaction);
+        }
+        
+        /*
+         * Sends a PayFacCredit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<payFacCreditResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<payFacCreditResponse> PayFacCreditAsync(payFacCredit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<payFacCreditResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a PayFacDebit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<payFacDebitResponse>(cnpTransactionInterface transaction)")]
+        public payFacDebitResponse PayFacDebit(payFacDebit transaction)
+        {
+            return this.SendTransaction<payFacDebitResponse>(transaction);
+        }
+        
+        /*
+         * Sends a PayFacDebit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<payFacDebitResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<payFacDebitResponse> PayFacDebitAsync(payFacDebit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<payFacDebitResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a PhysicalCheckCredit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<physicalCheckCreditResponse>(cnpTransactionInterface transaction)")]
+        public physicalCheckCreditResponse PhysicalCheckCredit(physicalCheckCredit transaction)
+        {
+            return this.SendTransaction<physicalCheckCreditResponse>(transaction);
+        }
+        
+        /*
+         * Sends a PhysicalCheckCredit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<physicalCheckCreditResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<physicalCheckCreditResponse> PhysicalCheckCreditAsync(physicalCheckCredit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<physicalCheckCreditResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a PhysicalCheckDebit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<physicalCheckDebitResponse>(cnpTransactionInterface transaction)")]
+        public physicalCheckDebitResponse PhysicalCheckDebit(physicalCheckDebit transaction)
+        {
+            return this.SendTransaction<physicalCheckDebitResponse>(transaction);
+        }
+        
+        /*
+         * Sends a PhysicalCheckDebit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<physicalCheckDebitResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<physicalCheckDebitResponse> PhysicalCheckDebitAsync(physicalCheckDebit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<physicalCheckDebitResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a ReserveCredit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<reserveCreditResponse>(cnpTransactionInterface transaction)")]
+        public reserveCreditResponse ReserveCredit(reserveCredit transaction)
+        {
+            return this.SendTransaction<reserveCreditResponse>(transaction);
+        }
+        
+        /*
+         * Sends a ReserveCredit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<reserveCreditResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<reserveCreditResponse> ReserveCreditAsync(reserveCredit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<reserveCreditResponse>(transaction,cancellationToken);
         }
 
-        public Task<payFacDebitResponse> PayFacDebitAsync(payFacDebit payFacDebit, CancellationToken cancellationToken)
+        /*
+         * Sends a ReserveDebit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<reserveDebitResponse>(cnpTransactionInterface transaction)")]
+        public reserveDebitResponse ReserveDebit(reserveDebit transaction)
         {
-            return SendRequestAsync(response => response.payFacDebitResponse, payFacDebit, cancellationToken);
+            return this.SendTransaction<reserveDebitResponse>(transaction);
+        }
+        
+        /*
+         * Sends a ReserveDebit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<reserveDebitResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<reserveDebitResponse> ReserveDebitAsync(reserveDebit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<reserveDebitResponse>(transaction,cancellationToken);
+        }
+        
+        /*
+         * Sends a SubmerchantCredit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<submerchantCreditResponse>(cnpTransactionInterface transaction)")]
+        public submerchantCreditResponse SubmerchantCredit(submerchantCredit transaction)
+        {
+            return this.SendTransaction<submerchantCreditResponse>(transaction);
+        }
+        
+        /*
+         * Sends a SubmerchantCredit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<submerchantCreditResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<submerchantCreditResponse> SubmerchantCreditAsync(submerchantCredit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<submerchantCreditResponse>(transaction,cancellationToken);
         }
 
-        public physicalCheckCreditResponse PhysicalCheckCredit(physicalCheckCredit physicalCheckCredit)
+        /*
+         * Sends a SubmerchantDebit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<submerchantDebitResponse>(cnpTransactionInterface transaction)")]
+        public submerchantDebitResponse SubmerchantDebit(submerchantDebit transaction)
         {
-            return SendRequest(response => response.physicalCheckCreditResponse, physicalCheckCredit);
+            return this.SendTransaction<submerchantDebitResponse>(transaction);
+        }
+        
+        /*
+         * Sends a SubmerchantDebit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<submerchantDebitResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<submerchantDebitResponse> SubmerchantDebitAsync(submerchantDebit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<submerchantDebitResponse>(transaction,cancellationToken);
         }
 
-        public Task<physicalCheckCreditResponse> PhysicalCheckCreditAsync(physicalCheckCredit physicalCheckCredit, CancellationToken cancellationToken)
+        /*
+         * Sends a VendorCredit request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<vendorCreditResponse>(cnpTransactionInterface transaction)")]
+        public vendorCreditResponse VendorCredit(vendorCredit transaction)
         {
-            return SendRequestAsync(response => response.physicalCheckCreditResponse, physicalCheckCredit, cancellationToken);
+            return this.SendTransaction<vendorCreditResponse>(transaction);
         }
-
-        public physicalCheckDebitResponse PhysicalCheckDebit(physicalCheckDebit physicalCheckDebit)
+        
+        /*
+         * Sends a VendorCredit request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<vendorCreditResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<vendorCreditResponse> VendorCreditAsync(vendorCredit transaction,CancellationToken cancellationToken)
         {
-            return SendRequest(response => response.physicalCheckDebitResponse, physicalCheckDebit);
+            return this.SendTransactionAsync<vendorCreditResponse>(transaction,cancellationToken);
         }
-
-        public Task<physicalCheckDebitResponse> PhysicalCheckDebitAsync(physicalCheckDebit physicalCheckDebit, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.physicalCheckDebitResponse, physicalCheckDebit, cancellationToken);
-        }
-
-        public reserveCreditResponse ReserveCredit(reserveCredit reserveCredit)
-        {
-            return SendRequest(response => response.reserveCreditResponse, reserveCredit);
-        }
-
-        public Task<reserveCreditResponse> ReserveCreditAsync(reserveCredit reserveCredit, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.reserveCreditResponse, reserveCredit, cancellationToken);
-        }
-
-        public reserveDebitResponse ReserveDebit(reserveDebit reserveDebit)
-        {
-            return SendRequest(response => response.reserveDebitResponse, reserveDebit);
-        }
-
-        public Task<reserveDebitResponse> ReserveDebitAsync(reserveDebit reserveDebit, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.reserveDebitResponse, reserveDebit, cancellationToken);
-        }
-
-        public submerchantCreditResponse SubmerchantCredit(submerchantCredit submerchantCredit)
-        {
-            return SendRequest(response => response.submerchantCreditResponse, submerchantCredit);
-        }
-
-        public Task<submerchantCreditResponse> SubmerchantCreditAsync(submerchantCredit submerchantCredit, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.submerchantCreditResponse, submerchantCredit, cancellationToken);
-        }
-
-        public submerchantDebitResponse SubmerchantDebit(submerchantDebit submerchantDebit)
-        {
-            return SendRequest(response => response.submerchantDebitResponse, submerchantDebit);
-        }
-
-        public Task<submerchantDebitResponse> SubmerchantDebitAsync(submerchantDebit submerchantDebit, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.submerchantDebitResponse, submerchantDebit, cancellationToken);
-        }
-
-        public vendorCreditResponse VendorCredit(vendorCredit vendorCredit)
-        {
-            return SendRequest(response => response.vendorCreditResponse, vendorCredit);
-        }
-
-        public Task<vendorCreditResponse> VendorCreditAsync(vendorCredit vendorCredit, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.vendorCreditResponse, vendorCredit, cancellationToken);
-        }
-
-        public translateToLowValueTokenResponse TranslateToLowValueTokenRequest(translateToLowValueTokenRequest translateToLowValueTokenRequest)
-        {
-            return SendRequest(response => response.translateToLowValueTokenResponse, translateToLowValueTokenRequest);
-        }
-
-        public Task<translateToLowValueTokenResponse> TranslateToLowValueTokenRequestAsync(translateToLowValueTokenRequest translateToLowValueTokenRequest, CancellationToken cancellationToken)
-        {
-            return SendRequestAsync(response => response.translateToLowValueTokenResponse, translateToLowValueTokenRequest, cancellationToken);
-        }
-*/
-
+        
         /*
          * Sends a VendorDebit request.
          */
-        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<vendorDebitResponse>(transactionRequest transaction)")]
-        public vendorDebitResponse VendorDebit(vendorDebit vendorDebit)
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<vendorDebitResponse>(cnpTransactionInterface transaction)")]
+        public vendorDebitResponse VendorDebit(vendorDebit transaction)
         {
-            return this.SendTransaction<vendorDebitResponse>(vendorDebit);
+            return this.SendTransaction<vendorDebitResponse>(transaction);
         }
         
         /*
          * Sends a VendorDebit request asynchronously.
          */
-        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<vendorDebitResponse>(transactionRequest transaction,CancellationToken cancellationToken)")]
-        public Task<vendorDebitResponse> VendorDebitAsync(vendorDebit vendorDebit,CancellationToken cancellationToken)
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<vendorDebitResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<vendorDebitResponse> VendorDebitAsync(vendorDebit transaction,CancellationToken cancellationToken)
         {
-            return this.SendTransactionAsync<vendorDebitResponse>(vendorDebit,cancellationToken);
+            return this.SendTransactionAsync<vendorDebitResponse>(transaction,cancellationToken);
         }
-
+        
+        /*
+         * Sends a TranslateToLowValueTokenRequest request.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<translateToLowValueTokenResponse>(cnpTransactionInterface transaction)")]
+        public translateToLowValueTokenResponse TranslateToLowValueTokenRequest(vendorCredit transaction)
+        {
+            return this.SendTransaction<translateToLowValueTokenResponse>(transaction);
+        }
+        
+        /*
+         * Sends a TranslateToLowValueTokenRequest request asynchronously.
+         */
+        [Obsolete("Deprecated in favor of CnpOnline.SendTransactionAsync<translateToLowValueTokenResponse>(cnpTransactionInterface transaction,CancellationToken cancellationToken)")]
+        public Task<translateToLowValueTokenResponse> TranslateToLowValueTokenRequestAsync(vendorCredit transaction,CancellationToken cancellationToken)
+        {
+            return this.SendTransactionAsync<translateToLowValueTokenResponse>(transaction,cancellationToken);
+        }
+        
         /*
          * Sends a transaction request.
          */
-        public T SendTransaction<T>(transactionType transaction)
+        public T SendTransaction<T>(cnpTransactionInterface transaction)
         {
             // Create the CNP Online request.
             var request = CreateRequest(transaction);
@@ -534,7 +832,7 @@ namespace Cnp.Sdk
         /*
          * Sends a transaction request asynchronously.
          */
-        public async Task<T> SendTransactionAsync<T>(transactionType transaction, CancellationToken cancellationToken)
+        public async Task<T> SendTransactionAsync<T>(cnpTransactionInterface transaction, CancellationToken cancellationToken)
         {
             // Create the CNP Online request.
             var request = CreateRequest(transaction);
