@@ -15,6 +15,8 @@ namespace Cnp.Sdk.VersionedXML
     [XMLElement(Name = "BaseXMLElement")]
     public class VersionedXMLElement
     {
+        private Dictionary<string,string> additionalAttributes = new Dictionary<string, string>();
+        
         /*
          * Converts an object to a string.
          */
@@ -119,6 +121,14 @@ namespace Cnp.Sdk.VersionedXML
         }
         
         /*
+         * Sets an additional attribute.
+         */
+        public void SetAdditionalAttribute(string name,string value)
+        {
+            this.additionalAttributes.Add(name,SecurityElement.Escape(value));
+        }
+        
+        /*
          * Serializes the element with a give name.
          */
         public string Serialize(XMLVersion version,string elementName)
@@ -164,6 +174,12 @@ namespace Cnp.Sdk.VersionedXML
                         throw new MissingGetterException(member.Name);
                     }
                 }
+            }
+            
+            // Add the additional attributes.
+            foreach (var attributeName in this.additionalAttributes.Keys)
+            {
+                xmlString += " " + attributeName + "=\"" + this.additionalAttributes[attributeName] + "\"";
             }
             xmlString += ">";
             
