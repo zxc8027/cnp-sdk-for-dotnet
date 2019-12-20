@@ -5,8 +5,6 @@
  * using Sandbox.
  */
 
-using System.Collections.Generic;
-using System.Threading;
 using Cnp.Sdk.VersionedXML;
 using NUnit.Framework;
 
