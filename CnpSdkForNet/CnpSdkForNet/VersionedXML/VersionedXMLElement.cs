@@ -57,6 +57,43 @@ namespace Cnp.Sdk.VersionedXML
             {
                 return objectToConvert.ToString().ToLower();
             }
+            
+            // Return an enum value if it is an enum.
+            if (objectToConvert.GetType().IsEnum)
+            {
+                // Get the name of the enum.
+                var enumType = objectToConvert.GetType();
+                var enumName = Enum.GetName(enumType,objectToConvert);
+                var attributeDefined = false;
+                var nameDefined = false;
+                foreach (XMLEnum attribute in enumType.GetField(enumName).GetCustomAttributes(typeof(XMLEnum),false))
+                {
+                    attributeDefined = true;
+                    if (attribute.IsVersionValid(version))
+                    {
+                        if (nameDefined == false)
+                        {
+                            // Set the name if it is null.
+                            nameDefined = true;
+                            enumName = attribute.Name;
+                        }
+                        else
+                        {
+                            // Throw an exception if overlapping names exist (could cause unexpected behavior).
+                            throw new OverlappingVersionsException(enumType.Name + "." + Enum.GetName(enumType,objectToConvert),version);
+                        }
+                    }
+                }
+                
+                // Throw an exception if the attribute is defined but not set.
+                if (attributeDefined && !nameDefined)
+                {
+                    throw new InvalidVersionException(objectToConvert.GetType().Name + "." +  enumName,version);
+                }
+                
+                // Return the escaped enum value.
+                return SecurityElement.Escape(enumName);
+            }
 
             // Return the ToString result.
             return SecurityElement.Escape(objectToConvert.ToString());

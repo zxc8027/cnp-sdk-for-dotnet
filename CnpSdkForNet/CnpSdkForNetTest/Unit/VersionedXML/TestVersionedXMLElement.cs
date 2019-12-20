@@ -464,5 +464,102 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             // Assert the element is generated correctly.
             Assert.AreEqual(xmlObject.Serialize(new XMLVersion()),"<TestXMLElement><testElement>element1</testElement><testElement>element1</testElement><testElement>element2</testElement></TestXMLElement>");
         }
+        
+        /*
+         * Enums for TestEnums.
+         */
+        public enum TestEnum
+        {
+            Value1,
+            
+            [XMLEnum(Name = "TestValue")]
+            Value2,
+            
+            [XMLEnum(Name = "Value3",RemovedVersion = "2.0")]
+            Value3,
+            
+            [XMLEnum(Name = "Value3",FirstVersion = "2.0")]
+            Value4,
+            
+            [XMLEnum(Name = "Value6",RemovedVersion = "3.0")]
+            [XMLEnum(Name = "Value7",FirstVersion = "2.0")]
+            Value5,
+        }
+        
+        /*
+         * Test class for TestEnums.
+         */
+        [XMLElement(Name = "TestXMLElement")]
+        public class XMLWithEnums : VersionedXMLElement
+        {
+            [XMLAttribute(Name = "testAttribute")]
+            public TestEnum? TestAttribute { get; set; }
+            
+            [XMLElement(Name = "testElement")]
+            public TestEnum? TestElement { get; set; }
+        }
+        
+        /*
+         * Tests serializing with enums.
+         */
+        [Test]
+        public void TestEnums()
+        {
+            var xmlObject = new XMLWithEnums();
+            
+            // Assert the object is serialized correctly.
+            xmlObject.TestAttribute = TestEnum.Value1;
+            xmlObject.TestElement = TestEnum.Value1;
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion()),"<TestXMLElement testAttribute=\"Value1\"><testElement>Value1</testElement></TestXMLElement>");
+            xmlObject.TestAttribute = TestEnum.Value2;
+            xmlObject.TestElement = TestEnum.Value2;
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion()),"<TestXMLElement testAttribute=\"TestValue\"><testElement>TestValue</testElement></TestXMLElement>");
+            xmlObject.TestAttribute = TestEnum.Value3;
+            xmlObject.TestElement = TestEnum.Value3;
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion()),"<TestXMLElement testAttribute=\"Value3\"><testElement>Value3</testElement></TestXMLElement>");
+            xmlObject.TestAttribute = TestEnum.Value4;
+            xmlObject.TestElement = TestEnum.Value4;
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion(3,0)),"<TestXMLElement testAttribute=\"Value3\"><testElement>Value3</testElement></TestXMLElement>");
+            xmlObject.TestAttribute = TestEnum.Value5;
+            xmlObject.TestElement = TestEnum.Value5;
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion(1,0)),"<TestXMLElement testAttribute=\"Value6\"><testElement>Value6</testElement></TestXMLElement>");
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion(3,0)),"<TestXMLElement testAttribute=\"Value7\"><testElement>Value7</testElement></TestXMLElement>");
+            
+            // Assert the exceptions are thrown.
+            try
+            {
+                xmlObject.TestAttribute = TestEnum.Value3;
+                xmlObject.TestElement = TestEnum.Value1;
+                xmlObject.Serialize(new XMLVersion(3,0));
+                Assert.Fail("Exception not thrown.");
+            }
+            catch (InvalidVersionException e)
+            {
+                Assert.IsTrue(e.Message.Contains("3.0"),"Version is not included:\n" + e.Message);
+                Assert.IsTrue(e.Message.Contains("TestEnum.Value3"),"Element name is not included:\n" + e.Message);
+            }
+            try
+            {
+                xmlObject.TestAttribute = TestEnum.Value4;
+                xmlObject.Serialize(new XMLVersion(1,0));
+                Assert.Fail("Exception not thrown.");
+            }
+            catch (InvalidVersionException e)
+            {
+                Assert.IsTrue(e.Message.Contains("1.0"),"Version is not included:\n" + e.Message);
+                Assert.IsTrue(e.Message.Contains("TestEnum.Value4"),"Attribute name is not included:\n" + e.Message);
+            }
+            try
+            {
+                xmlObject.TestAttribute = TestEnum.Value5;
+                xmlObject.Serialize(new XMLVersion(2,0));
+                Assert.Fail("Exception not thrown.");
+            }
+            catch (OverlappingVersionsException e)
+            {
+                Assert.IsTrue(e.Message.Contains("2.0"),"Version is not included:\n" + e.Message);
+                Assert.IsTrue(e.Message.Contains("TestEnum.Value5"),"Element name is not included:\n" + e.Message);
+            }
+        }
     }
 }
