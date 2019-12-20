@@ -232,10 +232,107 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             // Deserialize two objects.
             var xmlObject1 = VersionedXMLDeserializer.Deserialize<TestXMLElementListElements>("<TestXMLElement><testElement>String1</testElement></TestXMLElement>", new XMLVersion());
             var xmlObject2 = VersionedXMLDeserializer.Deserialize<TestXMLElementListElements>("<TestXMLElement><testElement>String1</testElement><testElement>String2</testElement><testElement>String3</testElement></TestXMLElement>", new XMLVersion());
-
+            
             // Assert the attributes are set correctly.
             Assert.AreEqual(xmlObject1.TestElement,new List<string>() { "String1" });
             Assert.AreEqual(xmlObject2.TestElement,new List<string>() { "String1","String2","String3" });
+        }
+        
+        /*
+         * Enums for TestDeserializeEnums.
+         */
+        public enum TestEnum
+        {
+            Value1,
+            
+            [XMLEnum(Name = "TestValue")]
+            Value2,
+            
+            [XMLEnum(Name = "Value3",FirstVersion="0.0",RemovedVersion = "2.0")]
+            Value3,
+            
+            [XMLEnum(Name = "Value3",FirstVersion = "2.0")]
+            Value4,
+            
+            [XMLEnum(Name = "Value6",RemovedVersion = "3.0")]
+            [XMLEnum(Name = "Value7",FirstVersion = "2.0")]
+            Value5,
+        }
+        
+        /*
+         * Test class for TestDeserializeEnums.
+         */
+        [XMLElement(Name = "TestXMLElement")]
+        public class XMLWithEnums : VersionedXMLElement
+        {
+            [XMLAttribute(Name = "testAttribute")]
+            public TestEnum? TestAttribute { get; set; }
+            
+            [XMLElement(Name = "testElement")]
+            public TestEnum? TestElement { get; set; }
+        }
+        
+        /*
+         * Tests deserializing enums.
+         */
+        [Test]
+        public void TestDeserializeEnums()
+        {
+            // Deserialize two objects.
+            var xmlObject1 = VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"Value1\"><testElement>Value1</testElement></TestXMLElement>", new XMLVersion());
+            var xmlObject2 = VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"TestValue\"><testElement>TestValue</testElement></TestXMLElement>", new XMLVersion());
+            var xmlObject3 = VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"Value3\"><testElement>Value3</testElement></TestXMLElement>", new XMLVersion());
+            var xmlObject4 = VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"Value3\"><testElement>Value3</testElement></TestXMLElement>", new XMLVersion(3,0));
+            var xmlObject5 = VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"Value6\"><testElement>Value6</testElement></TestXMLElement>", new XMLVersion());
+            var xmlObject6 = VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"Value7\"><testElement>Value7</testElement></TestXMLElement>", new XMLVersion(3,0));
+
+            // Assert the attributes are set correctly.
+            Assert.AreEqual(xmlObject1.TestAttribute,TestEnum.Value1);
+            Assert.AreEqual(xmlObject1.TestElement,TestEnum.Value1);
+            Assert.AreEqual(xmlObject2.TestAttribute,TestEnum.Value2);
+            Assert.AreEqual(xmlObject2.TestElement,TestEnum.Value2);
+            Assert.AreEqual(xmlObject3.TestAttribute,TestEnum.Value3);
+            Assert.AreEqual(xmlObject3.TestElement,TestEnum.Value3);
+            Assert.AreEqual(xmlObject4.TestAttribute,TestEnum.Value4);
+            Assert.AreEqual(xmlObject4.TestElement,TestEnum.Value4);
+            Assert.AreEqual(xmlObject5.TestAttribute,TestEnum.Value5);
+            Assert.AreEqual(xmlObject5.TestElement,TestEnum.Value5);
+            Assert.AreEqual(xmlObject6.TestAttribute,TestEnum.Value5);
+            Assert.AreEqual(xmlObject6.TestElement,TestEnum.Value5);
+            
+            //  Assert that exceptions are thrown for invalid versions.
+            try
+            {
+                VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"Value6\"><testElement>Value3</testElement></TestXMLElement>", new XMLVersion(-1,0));
+                Assert.Fail("Exception not thrown.");
+            }
+            catch (InvalidVersionException e)
+            {
+                Assert.IsTrue(e.Message.Contains("-1.0"),"Version is not included:\n" + e.Message);
+                Assert.IsTrue(e.Message.Contains("TestEnum.Value3"),"Enum name is not included:\n" + e.Message);
+            }
+            try
+            {
+                VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"Value3\"><testElement>Value6</testElement></TestXMLElement>", new XMLVersion(-1,0));
+                Assert.Fail("Exception not thrown.");
+            }
+            catch (InvalidVersionException e)
+            {
+                Assert.IsTrue(e.Message.Contains("-1.0"),"Version is not included:\n" + e.Message);
+                Assert.IsTrue(e.Message.Contains("TestEnum.Value3"),"Enum name is not included:\n" + e.Message);
+            }
+            
+            // Assert that exceptions are thrown for unusable enums.
+            try
+            {
+                VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"Value5\"><testElement>Value5</testElement></TestXMLElement>", new XMLVersion());
+                Assert.Fail("Exception not thrown.");
+            }
+            catch (InvalidVersionException e)
+            {
+                Assert.IsTrue(e.Message.Contains("0.0"),"Version is not included:\n" + e.Message);
+                Assert.IsTrue(e.Message.Contains("TestEnum.Value5"),"Enum name is not included:\n" + e.Message);
+            }
         }
     }
 }

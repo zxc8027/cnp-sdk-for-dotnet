@@ -35,6 +35,50 @@ namespace Cnp.Sdk.VersionedXML
         }
         
         /*
+         * Converts a string to an object.
+         */
+        public static object DeserializeToObject(string value,Type propertyType,XMLVersion version)
+        {
+            // Get the underlying type if it is nullable.
+            if (propertyType.IsGenericType && propertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
+            {
+                propertyType = propertyType.GetGenericArguments()[0];
+            }
+            
+            // Return an enum if a name matches.
+            if (propertyType.IsEnum)
+            {
+                // Return if an attribute matches.
+                foreach (var enumItem in Enum.GetValues(propertyType))
+                {
+                    foreach (XMLEnum attribute in propertyType.GetField(enumItem.ToString()).GetCustomAttributes(typeof(XMLEnum),false))
+                    {
+                        if (attribute.IsVersionValid(version) && attribute.Name == value)
+                        {
+                            return enumItem;
+                        }
+                    }
+                }
+                
+                // Return if a name matches.
+                foreach (var enumItem in Enum.GetValues(propertyType))
+                {
+                    if (enumItem.ToString() == value && propertyType.GetField(enumItem.ToString()).GetCustomAttributes(typeof(XMLEnum), false).Length == 0)
+                    {
+                        return enumItem;
+                    }
+                }
+                
+                // Throw an exception.
+                throw new InvalidVersionException(propertyType.Name + "." + value,version);
+            }
+            
+            // Return a converted string.
+            var typeConverter = TypeDescriptor.GetConverter(propertyType);
+            return typeConverter.ConvertFromString(value);
+        }
+
+        /*
          * Converts an XML element to an object.
          */
         public static object DeserializeToObject(XElement xmlElement,Type propertyType,XMLVersion version)
@@ -53,8 +97,7 @@ namespace Cnp.Sdk.VersionedXML
             }
             
             // Return a converted string.
-            var typeConverter = TypeDescriptor.GetConverter(propertyType);
-            return typeConverter.ConvertFromString(xmlElement.Value);
+            return DeserializeToObject(xmlElement.Value,propertyType,version);
         }
         
         /*
@@ -112,8 +155,8 @@ namespace Cnp.Sdk.VersionedXML
                 if (memberToSet != null)
                 {
                     var property = selfType.GetProperty(memberToSet.Name);
-                    var typeConverter = TypeDescriptor.GetConverter(property.PropertyType);
-                    property.SetValue(newObject, typeConverter.ConvertFromString(xmlAttribute.Value));
+                    var deserializedObject = DeserializeToObject(xmlAttribute.Value,property.PropertyType,version);
+                    property.SetValue(newObject, deserializedObject);
                 }
             }
 
