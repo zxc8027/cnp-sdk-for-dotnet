@@ -7,6 +7,7 @@
 
 using System.Collections.Generic;
 using System.Threading;
+using Cnp.Sdk.VersionedXML;
 using NUnit.Framework;
 
 namespace Cnp.Sdk.Test.Functional
@@ -22,16 +23,12 @@ namespace Cnp.Sdk.Test.Functional
         {
             config = new Dictionary<string, string>
             {
-                {"url", Properties.Settings.Default.url},
                 {"reportGroup", "Default Report Group"},
                 {"username", "DOTNET"},
                 {"timeout", "5000"},
                 {"merchantId", "101"},
                 {"password", "TESTCASE"},
                 {"printxml", "true"},
-                {"proxyHost", Properties.Settings.Default.proxyHost},
-                {"proxyPort", Properties.Settings.Default.proxyPort},
-                {"logFile", Properties.Settings.Default.logFile},
                 {"neuterAccountNums", "true"},
                 {"version", CnpVersion.CurrentCNPXMLVersion}
             };
@@ -41,11 +38,9 @@ namespace Cnp.Sdk.Test.Functional
         [Test]
         public void ReserveDebit()
         {
-            var vendorDebit = new vendorDebit
+            var transaction = new vendorDebit
             {
-                // attributes.
                 id = "1",
-                // required child elements.
                 accountInfo = new echeckType()
                 {
                     accType = echeckAccountTypeEnum.Savings,
@@ -58,8 +53,18 @@ namespace Cnp.Sdk.Test.Functional
                 vendorName = "WorldPay"
             };
 
-            var response = cnp.VendorDebit(vendorDebit);
-            Assert.AreEqual("000", response.response);
+            var test = new BaseCnpOnlineTest();
+            test.GetVersionsToRun();
+            test.SetExceptionExpected(typeof(InvalidVersionException),null,"9.2");
+            test.SetExpectedPopulated("id",transaction.id,null,null);
+            test.SetExpectedUnpopulated("customerId",null,null);
+            test.SetExpectedPopulated("cnpTxnId","12.0",null);
+            test.SetExpectedPopulated("fundsTransferId",transaction.fundsTransferId,"9.2",null);
+            test.SetExpectedPopulated("response","000","9.2",null);
+            test.SetExpectedPopulated("responseTime","9.2",null);
+            test.SetExpectedPopulated("message","Approved","9.2",null);
+            test.SetExpectedPopulated("litleTxnId","9.2","12.0");
+            test.RunCnpTestThreaded<vendorDebitResponse>(transaction);
         }
         
         [Test]
