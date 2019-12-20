@@ -227,7 +227,6 @@ namespace Cnp.Sdk
             // Read the response.
             string xmlResponse = null;
             var response = await request.GetResponseAsync().ConfigureAwait(false);
-            var httpResponse = (HttpWebResponse)response;
             try
             {
                 // Read the XML.
@@ -250,7 +249,7 @@ namespace Cnp.Sdk
                 }
             } catch (WebException webException)
             {
-                
+                throw new CnpOnlineException("Failed to get response",webException);
             }
 
             // Return the response.
@@ -318,7 +317,7 @@ namespace Cnp.Sdk
                 }
             } catch (WebException webException)
             {
-                
+                throw new CnpOnlineException("Failed to get response",webException);
             }
             
             // Return the XML response.
