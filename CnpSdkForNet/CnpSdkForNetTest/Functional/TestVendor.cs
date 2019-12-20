@@ -32,7 +32,6 @@ namespace Cnp.Sdk.Test.Functional
             };
 
             var test = new BaseCnpOnlineTest();
-            test.GetVersionsToRun();
             test.SetExceptionExpected(typeof(InvalidVersionException),null,"9.2");
             test.SetExpectedPopulated("id",transaction.id,null,null);
             test.SetExpectedUnpopulated("customerId",null,null);
@@ -64,7 +63,6 @@ namespace Cnp.Sdk.Test.Functional
             };
 
             var test = new BaseCnpOnlineTest();
-            test.GetVersionsToRun();
             test.SetExceptionExpected(typeof(InvalidVersionException),null,"9.2");
             test.SetExceptionExpected(typeof(CnpOnlineException),"9.2","12.9");
             test.SetExpectedPopulated("id",transaction.id,null,null);
@@ -97,7 +95,6 @@ namespace Cnp.Sdk.Test.Functional
             };
 
             var test = new BaseCnpOnlineTest();
-            test.GetVersionsToRun();
             test.SetExceptionExpected(typeof(InvalidVersionException),null,"9.2");
             test.SetExpectedPopulated("id",transaction.id,null,null);
             test.SetExpectedUnpopulated("customerId",null,null);
@@ -129,7 +126,6 @@ namespace Cnp.Sdk.Test.Functional
             };
 
             var test = new BaseCnpOnlineTest();
-            test.GetVersionsToRun();
             test.SetExceptionExpected(typeof(InvalidVersionException),null,"9.2");
             test.SetExceptionExpected(typeof(CnpOnlineException),"9.2","12.9");
             test.SetExpectedPopulated("id",transaction.id,null,null);
