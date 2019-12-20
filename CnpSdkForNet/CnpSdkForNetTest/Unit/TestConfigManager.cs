@@ -69,6 +69,10 @@ namespace Cnp.Sdk.Test.Unit
             Assert.AreEqual(config1,config2);
             Assert.AreNotEqual(config1,config3);
             Assert.AreNotEqual(config2,config3);
+            Assert.AreNotEqual(config1,"Test");
+            Assert.IsTrue(config1 == config2);
+            Assert.IsTrue(config1 != config3);
+            Assert.IsTrue(config2 != config3);
         }
     }
 }
