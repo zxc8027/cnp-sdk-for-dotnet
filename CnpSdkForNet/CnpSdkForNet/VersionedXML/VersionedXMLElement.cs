@@ -16,6 +16,7 @@ namespace Cnp.Sdk.VersionedXML
     public class VersionedXMLElement
     {
         private Dictionary<string,string> additionalAttributes = new Dictionary<string, string>();
+        private List<string> additionalElements = new List<string>();
         
         /*
          * Converts an object to a string.
@@ -126,6 +127,14 @@ namespace Cnp.Sdk.VersionedXML
         public void SetAdditionalAttribute(string name,string value)
         {
             this.additionalAttributes.Add(name,SecurityElement.Escape(value));
+        }
+        
+        /*
+         * Adds an additional element.
+         */
+        public void AddAdditionalElement(string element)
+        {
+            this.additionalElements.Add(element);
         }
         
         /*
@@ -256,7 +265,7 @@ namespace Cnp.Sdk.VersionedXML
          */
         public virtual List<string> GetAdditionalElements(XMLVersion version)
         {
-            return null;
+            return this.additionalElements;
         }
         
         /*

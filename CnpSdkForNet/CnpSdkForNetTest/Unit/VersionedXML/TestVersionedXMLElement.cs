@@ -55,6 +55,10 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             Assert.AreEqual(xmlObject.Serialize(new XMLVersion()),"<TestXMLElement testAttribute1=\"1\" testAttribute2=\"Test 1\" testAttribute3=\"test\"><testElement1>2</testElement1><testElement2>Test 2</testElement2></TestXMLElement>");
             Assert.AreEqual(xmlObject.Serialize(new XMLVersion(),"CustomName"),"<CustomName testAttribute1=\"1\" testAttribute2=\"Test 1\" testAttribute3=\"test\"><testElement1>2</testElement1><testElement2>Test 2</testElement2></CustomName>");
 
+            // Add an additional element and assert it is generated correctly.
+            xmlObject.AddAdditionalElement("<testElement3>Test 3</testElement3>");
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion()),"<TestXMLElement testAttribute1=\"1\" testAttribute2=\"Test 1\" testAttribute3=\"test\"><testElement1>2</testElement1><testElement2>Test 2</testElement2><testElement3>Test 3</testElement3></TestXMLElement>");
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion(),"CustomName"),"<CustomName testAttribute1=\"1\" testAttribute2=\"Test 1\" testAttribute3=\"test\"><testElement1>2</testElement1><testElement2>Test 2</testElement2><testElement3>Test 3</testElement3></CustomName>");
         }
         
         /*
