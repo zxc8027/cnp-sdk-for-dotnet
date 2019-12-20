@@ -37,17 +37,85 @@ namespace Cnp.Sdk
 		[XMLEnum(Name = "JC")]
 		JC,
 
-		[XMLEnum(Name = "BL",RemovedVersion = "12.0")]
-		BL,
-
-		[XMLEnum(Name = "")]
-		item,
-
 		[XMLEnum(Name = "EC",FirstVersion = "8.2")]
 		EC,
 
 		[XMLEnum(Name = "GC",FirstVersion = "8.18")]
 		GC,
+
+		[XMLEnum(Name = "")]
+		item,
+
+		[XMLEnum(Name = "BL",RemovedVersion = "12.0")]
+		BL,
+
+	}
+
+	public enum actionTypeEnum
+	{
+		[XMLEnum(Name = "A",FirstVersion = "9.5")]
+		A,
+
+		[XMLEnum(Name = "D",FirstVersion = "9.5")]
+		D,
+
+		[XMLEnum(Name = "R",FirstVersion = "9.5")]
+		R,
+
+		[XMLEnum(Name = "AR",FirstVersion = "9.5")]
+		AR,
+
+		[XMLEnum(Name = "G",FirstVersion = "9.5")]
+		G,
+
+		[XMLEnum(Name = "I",FirstVersion = "9.5")]
+		I,
+
+		[XMLEnum(Name = "J",FirstVersion = "9.5")]
+		J,
+
+		[XMLEnum(Name = "L",FirstVersion = "9.5")]
+		L,
+
+		[XMLEnum(Name = "LR",FirstVersion = "9.5")]
+		LR,
+
+		[XMLEnum(Name = "P",FirstVersion = "9.5")]
+		P,
+
+		[XMLEnum(Name = "RR",FirstVersion = "9.5")]
+		RR,
+
+		[XMLEnum(Name = "S",FirstVersion = "9.5")]
+		S,
+
+		[XMLEnum(Name = "T",FirstVersion = "9.5")]
+		T,
+
+		[XMLEnum(Name = "UR",FirstVersion = "9.5")]
+		UR,
+
+		[XMLEnum(Name = "V",FirstVersion = "9.5")]
+		V,
+
+		[XMLEnum(Name = "W",FirstVersion = "9.5")]
+		W,
+
+		[XMLEnum(Name = "X",FirstVersion = "9.5")]
+		X,
+
+		[XMLEnum(Name = "",FirstVersion = "9.5")]
+		item,
+
+	}
+
+	public enum govtTaxTypeEnum
+	{
+		[XMLEnum(Name = "payment",FirstVersion = "8.8")]
+		payment,
+
+		[XMLEnum(Name = "fee",FirstVersion = "8.8")]
+		fee,
 
 	}
 
@@ -180,6 +248,9 @@ namespace Cnp.Sdk
 		[XMLEnum(Name = "BO")]
 		BO,
 
+		[XMLEnum(Name = "BQ",FirstVersion = "8.5")]
+		BQ,
+
 		[XMLEnum(Name = "BA")]
 		BA,
 
@@ -266,6 +337,9 @@ namespace Cnp.Sdk
 
 		[XMLEnum(Name = "CU")]
 		CU,
+
+		[XMLEnum(Name = "CW",FirstVersion = "8.5")]
+		CW,
 
 		[XMLEnum(Name = "CY")]
 		CY,
@@ -684,6 +758,9 @@ namespace Cnp.Sdk
 		[XMLEnum(Name = "SG")]
 		SG,
 
+		[XMLEnum(Name = "SX",FirstVersion = "8.5")]
+		SX,
+
 		[XMLEnum(Name = "SK")]
 		SK,
 
@@ -837,15 +914,6 @@ namespace Cnp.Sdk
 		[XMLEnum(Name = "ME")]
 		ME,
 
-		[XMLEnum(Name = "BQ",FirstVersion = "8.5")]
-		BQ,
-
-		[XMLEnum(Name = "CW",FirstVersion = "8.5")]
-		CW,
-
-		[XMLEnum(Name = "SX",FirstVersion = "8.5")]
-		SX,
-
 		[XMLEnum(Name = "SS",FirstVersion = "8.17")]
 		SS,
 
@@ -855,6 +923,80 @@ namespace Cnp.Sdk
 	{
 		[XMLEnum(Name = "Y")]
 		Y,
+
+	}
+
+	public enum lodgingExtraChargeEnum
+	{
+		[XMLEnum(Name = "RESTAURANT",FirstVersion = "12.2")]
+		RESTAURANT,
+
+		[XMLEnum(Name = "GIFTSHOP",FirstVersion = "12.2")]
+		GIFTSHOP,
+
+		[XMLEnum(Name = "MINIBAR",FirstVersion = "12.2")]
+		MINIBAR,
+
+		[XMLEnum(Name = "TELEPHONE",FirstVersion = "12.2")]
+		TELEPHONE,
+
+		[XMLEnum(Name = "OTHER",FirstVersion = "12.2")]
+		OTHER,
+
+		[XMLEnum(Name = "LAUNDRY",FirstVersion = "12.2")]
+		LAUNDRY,
+
+	}
+
+	public enum lodgingProgramCodeType
+	{
+		[XMLEnum(Name = "LODGING",FirstVersion = "12.2")]
+		LODGING,
+
+		[XMLEnum(Name = "NOSHOW",FirstVersion = "12.2")]
+		NOSHOW,
+
+		[XMLEnum(Name = "ADVANCEDDEPOSIT",FirstVersion = "12.2")]
+		ADVANCEDDEPOSIT,
+
+	}
+
+	public enum yesNoType
+	{
+		[XMLEnum(Name = "Y",FirstVersion = "12.3")]
+		Y,
+
+		[XMLEnum(Name = "N",FirstVersion = "12.3")]
+		N,
+
+	}
+
+	public enum intervalTypeEnum
+	{
+		[XMLEnum(Name = "ANNUAL",FirstVersion = "8.21")]
+		ANNUAL,
+
+		[XMLEnum(Name = "SEMIANNUAL",FirstVersion = "8.21")]
+		SEMIANNUAL,
+
+		[XMLEnum(Name = "QUARTERLY",FirstVersion = "8.21")]
+		QUARTERLY,
+
+		[XMLEnum(Name = "MONTHLY",FirstVersion = "8.21")]
+		MONTHLY,
+
+		[XMLEnum(Name = "WEEKLY",FirstVersion = "8.21")]
+		WEEKLY,
+
+	}
+
+	public enum trialIntervalTypeEnum
+	{
+		[XMLEnum(Name = "MONTH",FirstVersion = "8.21")]
+		MONTH,
+
+		[XMLEnum(Name = "DAY",FirstVersion = "8.21")]
+		DAY,
 
 	}
 
@@ -900,6 +1042,55 @@ namespace Cnp.Sdk
 
 	}
 
+	public enum taxTypeIdentifierEnum
+	{
+		[XMLEnum(Name = "00")]
+		item00,
+
+		[XMLEnum(Name = "01")]
+		item01,
+
+		[XMLEnum(Name = "02")]
+		item02,
+
+		[XMLEnum(Name = "03")]
+		item03,
+
+		[XMLEnum(Name = "04")]
+		item04,
+
+		[XMLEnum(Name = "05")]
+		item05,
+
+		[XMLEnum(Name = "06")]
+		item06,
+
+		[XMLEnum(Name = "10")]
+		item10,
+
+		[XMLEnum(Name = "11")]
+		item11,
+
+		[XMLEnum(Name = "12")]
+		item12,
+
+		[XMLEnum(Name = "13")]
+		item13,
+
+		[XMLEnum(Name = "14")]
+		item14,
+
+		[XMLEnum(Name = "20")]
+		item20,
+
+		[XMLEnum(Name = "21")]
+		item21,
+
+		[XMLEnum(Name = "22")]
+		item22,
+
+	}
+
 	public enum fundingSourceTypeEnum
 	{
 		[XMLEnum(Name = "UNKNOWN")]
@@ -926,6 +1117,113 @@ namespace Cnp.Sdk
 
 		[XMLEnum(Name = "MASS AFFLUENT")]
 		MASSAFFLUENT,
+
+	}
+
+	public enum reloadablePrepaidTypeEnum
+	{
+		[XMLEnum(Name = "UNKNOWN",FirstVersion = "8.4")]
+		UNKNOWN,
+
+		[XMLEnum(Name = "YES",FirstVersion = "8.4")]
+		YES,
+
+		[XMLEnum(Name = "NO",FirstVersion = "8.4")]
+		NO,
+
+	}
+
+	public enum cardProductTypeEnum
+	{
+		[XMLEnum(Name = "UNKNOWN",FirstVersion = "8.5")]
+		UNKNOWN,
+
+		[XMLEnum(Name = "COMMERCIAL",FirstVersion = "8.5")]
+		COMMERCIAL,
+
+		[XMLEnum(Name = "CONSUMER",FirstVersion = "8.5")]
+		CONSUMER,
+
+	}
+
+	public enum recycleByTypeEnum
+	{
+		[XMLEnum(Name = "Merchant",FirstVersion = "8.10")]
+		Merchant,
+
+		[XMLEnum(Name = "Cnp",FirstVersion = "12.0")]
+		Cnp,
+
+		[XMLEnum(Name = "None",FirstVersion = "8.10")]
+		None,
+
+		[XMLEnum(Name = "Litle",FirstVersion = "8.10",RemovedVersion = "12.0")]
+		Litle,
+
+	}
+
+	public enum accountUpdateSourceType
+	{
+		[XMLEnum(Name = "R",FirstVersion = "12.10")]
+		R,
+
+		[XMLEnum(Name = "N",FirstVersion = "12.10")]
+		N,
+
+	}
+
+	public enum networkFieldNameEnumType
+	{
+		[XMLEnum(Name = "Transaction Amount",FirstVersion = "10.4")]
+		TransactionAmount,
+
+		[XMLEnum(Name = "Settlement Amount",FirstVersion = "10.4")]
+		SettlementAmount,
+
+		[XMLEnum(Name = "Cardholder Billing Amount",FirstVersion = "10.4")]
+		CardholderBillingAmount,
+
+		[XMLEnum(Name = "Settlement Conversion Rate",FirstVersion = "10.4")]
+		SettlementConversionRate,
+
+		[XMLEnum(Name = "Cardholder Billing Conversion Rate",FirstVersion = "10.4")]
+		CardholderBillingConversionRate,
+
+		[XMLEnum(Name = "Settlement Date",FirstVersion = "10.4")]
+		SettlementDate,
+
+		[XMLEnum(Name = "Authorization Identification Response",FirstVersion = "10.4")]
+		AuthorizationIdentificationResponse,
+
+		[XMLEnum(Name = "Response Code",FirstVersion = "10.4")]
+		ResponseCode,
+
+		[XMLEnum(Name = "Additional Response Data",FirstVersion = "10.4")]
+		AdditionalResponseData,
+
+		[XMLEnum(Name = "Private Use Additional Data",FirstVersion = "10.4")]
+		PrivateUseAdditionalData,
+
+		[XMLEnum(Name = "Settlement Currency Code",FirstVersion = "10.4")]
+		SettlementCurrencyCode,
+
+		[XMLEnum(Name = "Cardholder Billing Currency Code",FirstVersion = "10.4")]
+		CardholderBillingCurrencyCode,
+
+		[XMLEnum(Name = "Additional Amounts",FirstVersion = "10.4")]
+		AdditionalAmounts,
+
+		[XMLEnum(Name = "Reserved Private",FirstVersion = "10.4")]
+		ReservedPrivate,
+
+		[XMLEnum(Name = "Transaction Description",FirstVersion = "10.4")]
+		TransactionDescription,
+
+		[XMLEnum(Name = "Reserved for National Use",FirstVersion = "10.4")]
+		ReservedforNationalUse,
+
+		[XMLEnum(Name = "Reserved for Private Use",FirstVersion = "10.4")]
+		ReservedforPrivateUse,
 
 	}
 
@@ -1035,140 +1333,26 @@ namespace Cnp.Sdk
 
 	}
 
-	public enum taxTypeIdentifierEnum
-	{
-		[XMLEnum(Name = "00")]
-		item00,
-
-		[XMLEnum(Name = "01")]
-		item01,
-
-		[XMLEnum(Name = "02")]
-		item02,
-
-		[XMLEnum(Name = "03")]
-		item03,
-
-		[XMLEnum(Name = "04")]
-		item04,
-
-		[XMLEnum(Name = "05")]
-		item05,
-
-		[XMLEnum(Name = "06")]
-		item06,
-
-		[XMLEnum(Name = "10")]
-		item10,
-
-		[XMLEnum(Name = "11")]
-		item11,
-
-		[XMLEnum(Name = "12")]
-		item12,
-
-		[XMLEnum(Name = "13")]
-		item13,
-
-		[XMLEnum(Name = "14")]
-		item14,
-
-		[XMLEnum(Name = "20")]
-		item20,
-
-		[XMLEnum(Name = "21")]
-		item21,
-
-		[XMLEnum(Name = "22")]
-		item22,
-
-	}
-
-	public enum reloadablePrepaidTypeEnum
-	{
-		[XMLEnum(Name = "UNKNOWN",FirstVersion = "8.4")]
-		UNKNOWN,
-
-		[XMLEnum(Name = "YES",FirstVersion = "8.4")]
-		YES,
-
-		[XMLEnum(Name = "NO",FirstVersion = "8.4")]
-		NO,
-
-	}
-
-	public enum cardProductTypeEnum
-	{
-		[XMLEnum(Name = "UNKNOWN",FirstVersion = "8.5")]
-		UNKNOWN,
-
-		[XMLEnum(Name = "COMMERCIAL",FirstVersion = "8.5")]
-		COMMERCIAL,
-
-		[XMLEnum(Name = "CONSUMER",FirstVersion = "8.5")]
-		CONSUMER,
-
-	}
-
-	public enum govtTaxTypeEnum
-	{
-		[XMLEnum(Name = "payment",FirstVersion = "8.8")]
-		payment,
-
-		[XMLEnum(Name = "fee",FirstVersion = "8.8")]
-		fee,
-
-	}
-
-	public enum recycleByTypeEnum
-	{
-		[XMLEnum(Name = "Merchant",FirstVersion = "8.10")]
-		Merchant,
-
-		[XMLEnum(Name = "Litle",FirstVersion = "8.10",RemovedVersion = "12.0")]
-		Litle,
-
-		[XMLEnum(Name = "None",FirstVersion = "8.10")]
-		None,
-
-		[XMLEnum(Name = "Cnp",FirstVersion = "12.0")]
-		Cnp,
-
-	}
-
-	public enum intervalTypeEnum
-	{
-		[XMLEnum(Name = "ANNUAL",FirstVersion = "8.21")]
-		ANNUAL,
-
-		[XMLEnum(Name = "SEMIANNUAL",FirstVersion = "8.21")]
-		SEMIANNUAL,
-
-		[XMLEnum(Name = "QUARTERLY",FirstVersion = "8.21")]
-		QUARTERLY,
-
-		[XMLEnum(Name = "MONTHLY",FirstVersion = "8.21")]
-		MONTHLY,
-
-		[XMLEnum(Name = "WEEKLY",FirstVersion = "8.21")]
-		WEEKLY,
-
-	}
-
-	public enum trialIntervalTypeEnum
-	{
-		[XMLEnum(Name = "MONTH",FirstVersion = "8.21")]
-		MONTH,
-
-		[XMLEnum(Name = "DAY",FirstVersion = "8.21")]
-		DAY,
-
-	}
-
 	public enum posCatLevelEnum
 	{
 		[XMLEnum(Name = "self service",FirstVersion = "8.23")]
 		selfservice,
+
+	}
+
+	public enum eventType
+	{
+		[XMLEnum(Name = "payment",FirstVersion = "12.2")]
+		payment,
+
+		[XMLEnum(Name = "login",FirstVersion = "12.2")]
+		login,
+
+		[XMLEnum(Name = "account_creation",FirstVersion = "12.2")]
+		account_creation,
+
+		[XMLEnum(Name = "details_change",FirstVersion = "12.2")]
+		details_change,
 
 	}
 
@@ -1221,64 +1405,6 @@ namespace Cnp.Sdk
 
 	}
 
-	public enum actionTypeEnum
-	{
-		[XMLEnum(Name = "A",FirstVersion = "9.5")]
-		A,
-
-		[XMLEnum(Name = "D",FirstVersion = "9.5")]
-		D,
-
-		[XMLEnum(Name = "R",FirstVersion = "9.5")]
-		R,
-
-		[XMLEnum(Name = "AR",FirstVersion = "9.5")]
-		AR,
-
-		[XMLEnum(Name = "G",FirstVersion = "9.5")]
-		G,
-
-		[XMLEnum(Name = "I",FirstVersion = "9.5")]
-		I,
-
-		[XMLEnum(Name = "J",FirstVersion = "9.5")]
-		J,
-
-		[XMLEnum(Name = "L",FirstVersion = "9.5")]
-		L,
-
-		[XMLEnum(Name = "LR",FirstVersion = "9.5")]
-		LR,
-
-		[XMLEnum(Name = "P",FirstVersion = "9.5")]
-		P,
-
-		[XMLEnum(Name = "RR",FirstVersion = "9.5")]
-		RR,
-
-		[XMLEnum(Name = "S",FirstVersion = "9.5")]
-		S,
-
-		[XMLEnum(Name = "T",FirstVersion = "9.5")]
-		T,
-
-		[XMLEnum(Name = "UR",FirstVersion = "9.5")]
-		UR,
-
-		[XMLEnum(Name = "V",FirstVersion = "9.5")]
-		V,
-
-		[XMLEnum(Name = "W",FirstVersion = "9.5")]
-		W,
-
-		[XMLEnum(Name = "X",FirstVersion = "9.5")]
-		X,
-
-		[XMLEnum(Name = "",FirstVersion = "9.5")]
-		item,
-
-	}
-
 	public enum mandateProvider
 	{
 		[XMLEnum(Name = "Merchant",FirstVersion = "9.12",RemovedVersion = "10.0")]
@@ -1311,61 +1437,6 @@ namespace Cnp.Sdk
 
 	}
 
-	public enum networkFieldNameEnumType
-	{
-		[XMLEnum(Name = "Transaction Amount",FirstVersion = "10.4")]
-		TransactionAmount,
-
-		[XMLEnum(Name = "Settlement Amount",FirstVersion = "10.4")]
-		SettlementAmount,
-
-		[XMLEnum(Name = "Cardholder Billing Amount",FirstVersion = "10.4")]
-		CardholderBillingAmount,
-
-		[XMLEnum(Name = "Settlement Conversion Rate",FirstVersion = "10.4")]
-		SettlementConversionRate,
-
-		[XMLEnum(Name = "Cardholder Billing Conversion Rate",FirstVersion = "10.4")]
-		CardholderBillingConversionRate,
-
-		[XMLEnum(Name = "Settlement Date",FirstVersion = "10.4")]
-		SettlementDate,
-
-		[XMLEnum(Name = "Authorization Identification Response",FirstVersion = "10.4")]
-		AuthorizationIdentificationResponse,
-
-		[XMLEnum(Name = "Response Code",FirstVersion = "10.4")]
-		ResponseCode,
-
-		[XMLEnum(Name = "Additional Response Data",FirstVersion = "10.4")]
-		AdditionalResponseData,
-
-		[XMLEnum(Name = "Private Use Additional Data",FirstVersion = "10.4")]
-		PrivateUseAdditionalData,
-
-		[XMLEnum(Name = "Settlement Currency Code",FirstVersion = "10.4")]
-		SettlementCurrencyCode,
-
-		[XMLEnum(Name = "Cardholder Billing Currency Code",FirstVersion = "10.4")]
-		CardholderBillingCurrencyCode,
-
-		[XMLEnum(Name = "Additional Amounts",FirstVersion = "10.4")]
-		AdditionalAmounts,
-
-		[XMLEnum(Name = "Reserved Private",FirstVersion = "10.4")]
-		ReservedPrivate,
-
-		[XMLEnum(Name = "Transaction Description",FirstVersion = "10.4")]
-		TransactionDescription,
-
-		[XMLEnum(Name = "Reserved for National Use",FirstVersion = "10.4")]
-		ReservedforNationalUse,
-
-		[XMLEnum(Name = "Reserved for Private Use",FirstVersion = "10.4")]
-		ReservedforPrivateUse,
-
-	}
-
 	public enum routingPreferenceEnum
 	{
 		[XMLEnum(Name = "pinlessDebitOnly",FirstVersion = "12.1")]
@@ -1376,67 +1447,6 @@ namespace Cnp.Sdk
 
 		[XMLEnum(Name = "regular",FirstVersion = "12.1")]
 		regular,
-
-	}
-
-	public enum lodgingExtraChargeEnum
-	{
-		[XMLEnum(Name = "RESTAURANT",FirstVersion = "12.2")]
-		RESTAURANT,
-
-		[XMLEnum(Name = "GIFTSHOP",FirstVersion = "12.2")]
-		GIFTSHOP,
-
-		[XMLEnum(Name = "MINIBAR",FirstVersion = "12.2")]
-		MINIBAR,
-
-		[XMLEnum(Name = "TELEPHONE",FirstVersion = "12.2")]
-		TELEPHONE,
-
-		[XMLEnum(Name = "OTHER",FirstVersion = "12.2")]
-		OTHER,
-
-		[XMLEnum(Name = "LAUNDRY",FirstVersion = "12.2")]
-		LAUNDRY,
-
-	}
-
-	public enum lodgingProgramCodeType
-	{
-		[XMLEnum(Name = "LODGING",FirstVersion = "12.2")]
-		LODGING,
-
-		[XMLEnum(Name = "NOSHOW",FirstVersion = "12.2")]
-		NOSHOW,
-
-		[XMLEnum(Name = "ADVANCEDDEPOSIT",FirstVersion = "12.2")]
-		ADVANCEDDEPOSIT,
-
-	}
-
-	public enum eventType
-	{
-		[XMLEnum(Name = "payment",FirstVersion = "12.2")]
-		payment,
-
-		[XMLEnum(Name = "login",FirstVersion = "12.2")]
-		login,
-
-		[XMLEnum(Name = "account_creation",FirstVersion = "12.2")]
-		account_creation,
-
-		[XMLEnum(Name = "details_change",FirstVersion = "12.2")]
-		details_change,
-
-	}
-
-	public enum yesNoType
-	{
-		[XMLEnum(Name = "Y",FirstVersion = "12.3")]
-		Y,
-
-		[XMLEnum(Name = "N",FirstVersion = "12.3")]
-		N,
 
 	}
 
@@ -1513,33 +1523,23 @@ namespace Cnp.Sdk
 
 	}
 
-	public enum accountUpdateSourceType
-	{
-		[XMLEnum(Name = "R",FirstVersion = "12.10")]
-		R,
-
-		[XMLEnum(Name = "N",FirstVersion = "12.10")]
-		N,
-
-	}
-
 
 
 	/*
 	 * Type declarations.
 	 */
 	[XMLElement(Name = "threatMetrixSessionIdType",FirstVersion = "8.23")]
-	public class threatMetrixSessionIdType : token
+	public partial class threatMetrixSessionIdType : token
 	{
 	}
 
 	[XMLElement(Name = "webSessionIdType",FirstVersion = "12.3")]
-	public class webSessionIdType : token
+	public partial class webSessionIdType : token
 	{
 	}
 
 	[XMLElement(Name = "authentication")]
-	public class authentication : VersionedXMLElement
+	public partial class authentication : VersionedXMLElement
 	{
 		[XMLElement(Name = "user")]
 		public string user { get; set; }
@@ -1549,60 +1549,8 @@ namespace Cnp.Sdk
 
 	}
 
-	[XMLElement(Name = "transactionType")]
-	public class transactionType : VersionedXMLElement
-	{
-		[XMLAttribute(Name = "id")]
-		public string id { get; set; }
-
-		[XMLAttribute(Name = "customerId")]
-		public string customerId { get; set; }
-
-	}
-
-	[XMLElement(Name = "transactionTypeWithReportGroup")]
-	public class transactionTypeWithReportGroup : transactionType
-	{
-		[XMLAttribute(Name = "reportGroup")]
-		public string reportGroup { get; set; }
-
-	}
-
-	[XMLElement(Name = "transactionTypeWithReportGroupAndPartial")]
-	public class transactionTypeWithReportGroupAndPartial : transactionType
-	{
-		[XMLAttribute(Name = "reportGroup")]
-		public string reportGroup { get; set; }
-
-		[XMLAttribute(Name = "partial")]
-		public bool? partial { get; set; }
-
-	}
-
-	[XMLElement(Name = "transactionTypeOptionReportGroup")]
-	public class transactionTypeOptionReportGroup : transactionType
-	{
-		[XMLAttribute(Name = "reportGroup")]
-		public string reportGroup { get; set; }
-
-	}
-
-	[XMLElement(Name = "driversLicenseInfo")]
-	public class driversLicenseInfo : VersionedXMLElement
-	{
-		[XMLElement(Name = "licenseNumber")]
-		public string licenseNumber { get; set; }
-
-		[XMLElement(Name = "state")]
-		public string state { get; set; }
-
-		[XMLElement(Name = "dateOfBirth")]
-		public string dateOfBirth { get; set; }
-
-	}
-
 	[XMLElement(Name = "contact")]
-	public class contact : VersionedXMLElement
+	public partial class contact : VersionedXMLElement
 	{
 		[XMLElement(Name = "name")]
 		public string name { get; set; }
@@ -1648,8 +1596,564 @@ namespace Cnp.Sdk
 
 	}
 
+	[XMLElement(Name = "mposType",FirstVersion = "8.25")]
+	public partial class mposType : VersionedXMLElement
+	{
+		[XMLElement(Name = "ksn",FirstVersion = "8.25")]
+		public string ksn { get; set; }
+
+		[XMLElement(Name = "formatId",FirstVersion = "8.25")]
+		public string formatId { get; set; }
+
+		[XMLElement(Name = "encryptedTrack",FirstVersion = "8.25")]
+		public string encryptedTrack { get; set; }
+
+		[XMLElement(Name = "track1Status",FirstVersion = "8.25")]
+		public int? track1Status { get; set; }
+
+		[XMLElement(Name = "track2Status",FirstVersion = "8.25")]
+		public int? track2Status { get; set; }
+
+	}
+
+	[XMLElement(Name = "cardType")]
+	public partial class cardType : VersionedXMLElement
+	{
+		[XMLElement(Name = "type")]
+		public methodOfPaymentTypeEnum? type { get; set; }
+
+		[XMLElement(Name = "number")]
+		public string number { get; set; }
+
+		[XMLElement(Name = "expDate")]
+		public string expDate { get; set; }
+
+		[XMLElement(Name = "track")]
+		public string track { get; set; }
+
+		[XMLElement(Name = "cardValidationNum")]
+		public string cardValidationNum { get; set; }
+
+		[XMLElement(Name = "pin",FirstVersion = "9.9",RemovedVersion = "10.0")]
+		[XMLElement(Name = "pin",FirstVersion = "10.3")]
+		public string pin { get; set; }
+
+	}
+
+	[XMLElement(Name = "giftCardCardType",FirstVersion = "11.0")]
+	public partial class giftCardCardType : cardType
+	{
+	}
+
+	[XMLElement(Name = "cardTokenType",FirstVersion = "8.2")]
+	public partial class cardTokenType : VersionedXMLElement
+	{
+		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
+		public string cnpToken { get; set; }
+
+		[XMLElement(Name = "tokenURL",FirstVersion = "12.8")]
+		public string tokenURL { get; set; }
+
+		[XMLElement(Name = "expDate",FirstVersion = "8.2")]
+		public string expDate { get; set; }
+
+		[XMLElement(Name = "cardValidationNum",FirstVersion = "8.2")]
+		public string cardValidationNum { get; set; }
+
+		[XMLElement(Name = "type",FirstVersion = "8.2")]
+		public methodOfPaymentTypeEnum? type { get; set; }
+
+		[XMLElement(Name = "checkoutId",FirstVersion = "11.1")]
+		public string checkoutId { get; set; }
+
+		[XMLElement(Name = "litleToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
+		public string litleToken { get; set; }
+
+	}
+
+	[XMLElement(Name = "cardPaypageType",FirstVersion = "8.5")]
+	public partial class cardPaypageType : VersionedXMLElement
+	{
+		[XMLElement(Name = "paypageRegistrationId",FirstVersion = "8.5")]
+		public string paypageRegistrationId { get; set; }
+
+		[XMLElement(Name = "expDate",FirstVersion = "8.5")]
+		public string expDate { get; set; }
+
+		[XMLElement(Name = "cardValidationNum",FirstVersion = "8.5")]
+		public string cardValidationNum { get; set; }
+
+		[XMLElement(Name = "type",FirstVersion = "8.5")]
+		public methodOfPaymentTypeEnum? type { get; set; }
+
+	}
+
+	[XMLElement(Name = "tokenResponseType")]
+	public partial class tokenResponseType : VersionedXMLElement
+	{
+		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
+		public string cnpToken { get; set; }
+
+		[XMLElement(Name = "tokenResponseCode")]
+		public string tokenResponseCode { get; set; }
+
+		[XMLElement(Name = "tokenMessage")]
+		public string tokenMessage { get; set; }
+
+		[XMLElement(Name = "type")]
+		public methodOfPaymentTypeEnum? type { get; set; }
+
+		[XMLElement(Name = "bin")]
+		public string bin { get; set; }
+
+		[XMLElement(Name = "eCheckAccountSuffix",FirstVersion = "8.2")]
+		public string eCheckAccountSuffix { get; set; }
+
+		[XMLElement(Name = "litleToken",RemovedVersion = "12.0")]
+		public string litleToken { get; set; }
+
+	}
+
+	[XMLElement(Name = "advancedFraudChecksType",FirstVersion = "8.23")]
+	public partial class advancedFraudChecksType : VersionedXMLElement
+	{
+		[XMLElement(Name = "threatMetrixSessionId",FirstVersion = "8.23")]
+		public threatMetrixSessionIdType threatMetrixSessionId { get; set; }
+
+		[XMLElement(Name = "webSessionId",FirstVersion = "12.3")]
+		public webSessionIdType webSessionId { get; set; }
+
+		[XMLElement(Name = "customAttribute1",FirstVersion = "9.3")]
+		public string customAttribute1 { get; set; }
+
+		[XMLElement(Name = "customAttribute2",FirstVersion = "9.3")]
+		public string customAttribute2 { get; set; }
+
+		[XMLElement(Name = "customAttribute3",FirstVersion = "9.3")]
+		public string customAttribute3 { get; set; }
+
+		[XMLElement(Name = "customAttribute4",FirstVersion = "9.3")]
+		public string customAttribute4 { get; set; }
+
+		[XMLElement(Name = "customAttribute5",FirstVersion = "9.3")]
+		public string customAttribute5 { get; set; }
+
+	}
+
+	[XMLElement(Name = "advancedFraudResultsType",FirstVersion = "8.23")]
+	public partial class advancedFraudResultsType : VersionedXMLElement
+	{
+		[XMLElement(Name = "deviceReviewStatus",FirstVersion = "8.23")]
+		public string deviceReviewStatus { get; set; }
+
+		[XMLElement(Name = "deviceReputationScore",FirstVersion = "8.23")]
+		public int? deviceReputationScore { get; set; }
+
+		[XMLElement(Name = "triggeredRule",FirstVersion = "8.24")]
+		public string triggeredRule { get; set; }
+
+	}
+
+	[XMLElement(Name = "lodgingCharge",FirstVersion = "12.2")]
+	public partial class lodgingCharge : VersionedXMLElement
+	{
+		[XMLElement(Name = "name",FirstVersion = "12.2")]
+		public lodgingExtraChargeEnum? name { get; set; }
+
+	}
+
+	[XMLElement(Name = "cnpTransactionInterface",FirstVersion = "12.0")]
+	public partial class cnpTransactionInterface : VersionedXMLElement
+	{
+	}
+
+	[XMLElement(Name = "recurringTransactionType",FirstVersion = "8.20")]
+	public partial class recurringTransactionType : cnpTransactionInterface
+	{
+	}
+
+	[XMLElement(Name = "recurringTransactionResponseType",FirstVersion = "8.20")]
+	public partial class recurringTransactionResponseType : cnpTransactionInterface
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.20")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.20")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.20")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.20",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "cancelSubscription",FirstVersion = "8.20")]
+	public partial class cancelSubscription : recurringTransactionType
+	{
+		[XMLElement(Name = "subscriptionId",FirstVersion = "8.20")]
+		public long? subscriptionId { get; set; }
+
+	}
+
+	[XMLElement(Name = "updateSubscription",FirstVersion = "8.20")]
+	public partial class updateSubscription : recurringTransactionType
+	{
+		[XMLElement(Name = "subscriptionId",FirstVersion = "8.20")]
+		public long? subscriptionId { get; set; }
+
+		[XMLElement(Name = "planCode",FirstVersion = "8.20")]
+		public string planCode { get; set; }
+
+		[XMLElement(Name = "billToAddress",FirstVersion = "8.20")]
+		public billToAddress billToAddress { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "8.20")]
+		public cardType card { get; set; }
+
+		[XMLElement(Name = "token",FirstVersion = "8.22")]
+		public cardTokenType token { get; set; }
+
+		[XMLElement(Name = "paypage",FirstVersion = "8.22")]
+		public cardPaypageType paypage { get; set; }
+
+		[XMLElement(Name = "billingDate",FirstVersion = "8.20")]
+		public DateTime billingDate { get; set; }
+
+		[XMLElement(Name = "createDiscount",FirstVersion = "8.21")]
+		public createDiscountType createDiscount { get; set; }
+
+		[XMLElement(Name = "updateDiscount",FirstVersion = "8.21")]
+		public updateDiscountType updateDiscount { get; set; }
+
+		[XMLElement(Name = "deleteDiscount",FirstVersion = "8.21")]
+		public deleteDiscountType deleteDiscount { get; set; }
+
+		[XMLElement(Name = "createAddOn",FirstVersion = "8.21")]
+		public createAddOnType createAddOn { get; set; }
+
+		[XMLElement(Name = "updateAddOn",FirstVersion = "8.21")]
+		public updateAddOnType updateAddOn { get; set; }
+
+		[XMLElement(Name = "deleteAddOn",FirstVersion = "8.21")]
+		public deleteAddOnType deleteAddOn { get; set; }
+
+	}
+
+	[XMLElement(Name = "createPlan",FirstVersion = "8.21")]
+	public partial class createPlan : recurringTransactionType
+	{
+		[XMLElement(Name = "planCode",FirstVersion = "8.21")]
+		public string planCode { get; set; }
+
+		[XMLElement(Name = "name",FirstVersion = "8.21")]
+		public string name { get; set; }
+
+		[XMLElement(Name = "description",FirstVersion = "8.21")]
+		public string description { get; set; }
+
+		[XMLElement(Name = "intervalType",FirstVersion = "8.21")]
+		public intervalTypeEnum? intervalType { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "8.21")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "numberOfPayments",FirstVersion = "8.21")]
+		public int? numberOfPayments { get; set; }
+
+		[XMLElement(Name = "trialNumberOfIntervals",FirstVersion = "8.21")]
+		public int? trialNumberOfIntervals { get; set; }
+
+		[XMLElement(Name = "trialIntervalType",FirstVersion = "8.21")]
+		public trialIntervalTypeEnum? trialIntervalType { get; set; }
+
+		[XMLElement(Name = "active",FirstVersion = "8.21")]
+		public bool? active { get; set; }
+
+	}
+
+	[XMLElement(Name = "updatePlan",FirstVersion = "8.21")]
+	public partial class updatePlan : recurringTransactionType
+	{
+		[XMLElement(Name = "planCode",FirstVersion = "8.21")]
+		public string planCode { get; set; }
+
+		[XMLElement(Name = "active",FirstVersion = "8.21")]
+		public bool? active { get; set; }
+
+	}
+
+	[XMLElement(Name = "cancelSubscriptionResponse",FirstVersion = "8.20")]
+	public partial class cancelSubscriptionResponse : recurringTransactionResponseType
+	{
+		[XMLElement(Name = "subscriptionId",FirstVersion = "8.20")]
+		public long? subscriptionId { get; set; }
+
+	}
+
+	[XMLElement(Name = "updateSubscriptionResponse",FirstVersion = "8.20")]
+	public partial class updateSubscriptionResponse : recurringTransactionResponseType
+	{
+		[XMLElement(Name = "subscriptionId",FirstVersion = "8.20")]
+		public long? subscriptionId { get; set; }
+
+		[XMLElement(Name = "tokenResponse",FirstVersion = "8.22")]
+		public tokenResponseType tokenResponse { get; set; }
+
+	}
+
+	[XMLElement(Name = "createPlanResponse",FirstVersion = "8.21")]
+	public partial class createPlanResponse : recurringTransactionResponseType
+	{
+		[XMLElement(Name = "planCode",FirstVersion = "8.21")]
+		public string planCode { get; set; }
+
+	}
+
+	[XMLElement(Name = "updatePlanResponse",FirstVersion = "8.21")]
+	public partial class updatePlanResponse : recurringTransactionResponseType
+	{
+		[XMLElement(Name = "planCode",FirstVersion = "8.21")]
+		public string planCode { get; set; }
+
+	}
+
+	[XMLElement(Name = "recurringSubscriptionType",FirstVersion = "8.18")]
+	public partial class recurringSubscriptionType : VersionedXMLElement
+	{
+		[XMLElement(Name = "planCode",FirstVersion = "8.18")]
+		public string planCode { get; set; }
+
+		[XMLElement(Name = "numberOfPayments",FirstVersion = "8.19")]
+		public int? numberOfPayments { get; set; }
+
+		[XMLElement(Name = "startDate",FirstVersion = "8.19")]
+		public DateTime startDate { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "8.19")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "createDiscount",FirstVersion = "8.21")]
+		public createDiscountType createDiscount { get; set; }
+
+		[XMLElement(Name = "createAddOn",FirstVersion = "8.21")]
+		public createAddOnType createAddOn { get; set; }
+
+		[XMLElement(Name = "numberOfPaymentsRemaining",FirstVersion = "8.18",RemovedVersion = "8.19")]
+		public int? numberOfPaymentsRemaining { get; set; }
+
+	}
+
+	[XMLElement(Name = "cnpInternalRecurringRequestType",FirstVersion = "12.0")]
+	public partial class cnpInternalRecurringRequestType : VersionedXMLElement
+	{
+		[XMLElement(Name = "subscriptionId",FirstVersion = "12.0")]
+		public long? subscriptionId { get; set; }
+
+		[XMLElement(Name = "recurringTxnId",FirstVersion = "12.0")]
+		public long? recurringTxnId { get; set; }
+
+		[XMLElement(Name = "finalPayment",FirstVersion = "12.0")]
+		public bool? finalPayment { get; set; }
+
+	}
+
+	[XMLElement(Name = "recurringRequestType",FirstVersion = "8.18")]
+	public partial class recurringRequestType : VersionedXMLElement
+	{
+		[XMLElement(Name = "createSubscription",FirstVersion = "12.0")]
+		public recurringSubscriptionType createSubscription { get; set; }
+
+		[XMLElement(Name = "subscription",FirstVersion = "8.18",RemovedVersion = "12.0")]
+		public recurringSubscriptionType subscription { get; set; }
+
+	}
+
+	[XMLElement(Name = "recurringResponseType",FirstVersion = "8.18")]
+	public partial class recurringResponseType : VersionedXMLElement
+	{
+		[XMLElement(Name = "subscriptionId",FirstVersion = "8.18")]
+		public long? subscriptionId { get; set; }
+
+		[XMLElement(Name = "responseCode",FirstVersion = "8.18")]
+		public string responseCode { get; set; }
+
+		[XMLElement(Name = "responseMessage",FirstVersion = "8.18")]
+		public string responseMessage { get; set; }
+
+		[XMLElement(Name = "recurringTxnId",FirstVersion = "8.18")]
+		public long? recurringTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "createDiscountType",FirstVersion = "8.21")]
+	public partial class createDiscountType : VersionedXMLElement
+	{
+		[XMLElement(Name = "discountCode",FirstVersion = "8.21")]
+		public string discountCode { get; set; }
+
+		[XMLElement(Name = "name",FirstVersion = "8.21")]
+		public string name { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "8.21")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "startDate",FirstVersion = "8.21")]
+		public DateTime startDate { get; set; }
+
+		[XMLElement(Name = "endDate",FirstVersion = "8.21")]
+		public DateTime endDate { get; set; }
+
+	}
+
+	[XMLElement(Name = "updateDiscountType",FirstVersion = "8.21")]
+	public partial class updateDiscountType : VersionedXMLElement
+	{
+		[XMLElement(Name = "discountCode",FirstVersion = "8.21")]
+		public string discountCode { get; set; }
+
+		[XMLElement(Name = "name",FirstVersion = "8.21")]
+		public string name { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "8.21")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "startDate",FirstVersion = "8.21")]
+		public DateTime startDate { get; set; }
+
+		[XMLElement(Name = "endDate",FirstVersion = "8.21")]
+		public DateTime endDate { get; set; }
+
+	}
+
+	[XMLElement(Name = "deleteDiscountType",FirstVersion = "8.21")]
+	public partial class deleteDiscountType : VersionedXMLElement
+	{
+		[XMLElement(Name = "discountCode",FirstVersion = "8.21")]
+		public string discountCode { get; set; }
+
+	}
+
+	[XMLElement(Name = "createAddOnType",FirstVersion = "8.21")]
+	public partial class createAddOnType : VersionedXMLElement
+	{
+		[XMLElement(Name = "addOnCode",FirstVersion = "8.21")]
+		public string addOnCode { get; set; }
+
+		[XMLElement(Name = "name",FirstVersion = "8.21")]
+		public string name { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "8.21")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "startDate",FirstVersion = "8.21")]
+		public DateTime startDate { get; set; }
+
+		[XMLElement(Name = "endDate",FirstVersion = "8.21")]
+		public DateTime endDate { get; set; }
+
+	}
+
+	[XMLElement(Name = "updateAddOnType",FirstVersion = "8.21")]
+	public partial class updateAddOnType : VersionedXMLElement
+	{
+		[XMLElement(Name = "addOnCode",FirstVersion = "8.21")]
+		public string addOnCode { get; set; }
+
+		[XMLElement(Name = "name",FirstVersion = "8.21")]
+		public string name { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "8.21")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "startDate",FirstVersion = "8.21")]
+		public DateTime startDate { get; set; }
+
+		[XMLElement(Name = "endDate",FirstVersion = "8.21")]
+		public DateTime endDate { get; set; }
+
+	}
+
+	[XMLElement(Name = "deleteAddOnType",FirstVersion = "8.21")]
+	public partial class deleteAddOnType : VersionedXMLElement
+	{
+		[XMLElement(Name = "addOnCode",FirstVersion = "8.21")]
+		public string addOnCode { get; set; }
+
+	}
+
+	[XMLElement(Name = "transactionType")]
+	public partial class transactionType : cnpTransactionInterface
+	{
+		[XMLAttribute(Name = "id")]
+		public string id { get; set; }
+
+		[XMLAttribute(Name = "customerId")]
+		public string customerId { get; set; }
+
+	}
+
+	[XMLElement(Name = "transactionTypeWithReportGroup")]
+	public partial class transactionTypeWithReportGroup : transactionType
+	{
+		[XMLAttribute(Name = "reportGroup")]
+		public string reportGroup { get; set; }
+
+	}
+
+	[XMLElement(Name = "merchantDataType",FirstVersion = "8.8")]
+	public partial class merchantDataType : VersionedXMLElement
+	{
+		[XMLElement(Name = "campaign",FirstVersion = "8.8")]
+		public string campaign { get; set; }
+
+		[XMLElement(Name = "affiliate",FirstVersion = "8.8")]
+		public string affiliate { get; set; }
+
+		[XMLElement(Name = "merchantGroupingId",FirstVersion = "8.8")]
+		public string merchantGroupingId { get; set; }
+
+	}
+
+	[XMLElement(Name = "transactionTypeWithReportGroupAndPartial")]
+	public partial class transactionTypeWithReportGroupAndPartial : transactionType
+	{
+		[XMLAttribute(Name = "reportGroup")]
+		public string reportGroup { get; set; }
+
+		[XMLAttribute(Name = "partial")]
+		public bool? partial { get; set; }
+
+	}
+
+	[XMLElement(Name = "transactionTypeOptionReportGroup")]
+	public partial class transactionTypeOptionReportGroup : transactionType
+	{
+		[XMLAttribute(Name = "reportGroup")]
+		public string reportGroup { get; set; }
+
+	}
+
+	[XMLElement(Name = "driversLicenseInfo")]
+	public partial class driversLicenseInfo : VersionedXMLElement
+	{
+		[XMLElement(Name = "licenseNumber")]
+		public string licenseNumber { get; set; }
+
+		[XMLElement(Name = "state")]
+		public string state { get; set; }
+
+		[XMLElement(Name = "dateOfBirth")]
+		public string dateOfBirth { get; set; }
+
+	}
+
 	[XMLElement(Name = "customerInfo")]
-	public class customerInfo : VersionedXMLElement
+	public partial class customerInfo : VersionedXMLElement
 	{
 		[XMLElement(Name = "ssn")]
 		public string ssn { get; set; }
@@ -1692,8 +2196,4977 @@ namespace Cnp.Sdk
 
 	}
 
+	[XMLElement(Name = "fraudCheckType")]
+	public partial class fraudCheckType : VersionedXMLElement
+	{
+		[XMLElement(Name = "authenticationValue")]
+		public string authenticationValue { get; set; }
+
+		[XMLElement(Name = "authenticationTransactionId")]
+		public string authenticationTransactionId { get; set; }
+
+		[XMLElement(Name = "customerIpAddress")]
+		public string customerIpAddress { get; set; }
+
+		[XMLElement(Name = "authenticatedByMerchant")]
+		public bool? authenticatedByMerchant { get; set; }
+
+	}
+
+	[XMLElement(Name = "authorization")]
+	public partial class authorization : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "amount")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
+		public int? secondaryAmount { get; set; }
+
+		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
+		public int? surchargeAmount { get; set; }
+
+		[XMLElement(Name = "orderSource")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "customerInfo")]
+		public customerInfo customerInfo { get; set; }
+
+		[XMLElement(Name = "billToAddress")]
+		public billToAddress billToAddress { get; set; }
+
+		[XMLElement(Name = "shipToAddress")]
+		public shipToAddress shipToAddress { get; set; }
+
+		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
+		public mposType mpos { get; set; }
+
+		[XMLElement(Name = "card")]
+		public cardType card { get; set; }
+
+		[XMLElement(Name = "paypal")]
+		public paypal paypal { get; set; }
+
+		[XMLElement(Name = "token")]
+		public cardTokenType token { get; set; }
+
+		[XMLElement(Name = "paypage",FirstVersion = "8.5")]
+		public cardPaypageType paypage { get; set; }
+
+		[XMLElement(Name = "applepay",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "applepay",FirstVersion = "9.2")]
+		public applepayType applepay { get; set; }
+
+		[XMLElement(Name = "cardholderAuthentication")]
+		public fraudCheckType cardholderAuthentication { get; set; }
+
+		[XMLElement(Name = "processingInstructions")]
+		public processingInstructions processingInstructions { get; set; }
+
+		[XMLElement(Name = "pos")]
+		public pos pos { get; set; }
+
+		[XMLElement(Name = "customBilling")]
+		public customBilling customBilling { get; set; }
+
+		[XMLElement(Name = "taxType",FirstVersion = "8.8")]
+		public govtTaxTypeEnum? taxType { get; set; }
+
+		[XMLElement(Name = "enhancedData")]
+		public enhancedData enhancedData { get; set; }
+
+		[XMLElement(Name = "allowPartialAuth")]
+		public bool? allowPartialAuth { get; set; }
+
+		[XMLElement(Name = "healthcareIIAS")]
+		public healthcareIIAS healthcareIIAS { get; set; }
+
+		[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
+		public lodgingInfo lodgingInfo { get; set; }
+
+		[XMLElement(Name = "filtering",FirstVersion = "8.3")]
+		public filteringType filtering { get; set; }
+
+		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
+		public merchantDataType merchantData { get; set; }
+
+		[XMLElement(Name = "recyclingRequest",FirstVersion = "8.10")]
+		public recyclingRequestType recyclingRequest { get; set; }
+
+		[XMLElement(Name = "fraudFilterOverride",FirstVersion = "8.13")]
+		public bool? fraudFilterOverride { get; set; }
+
+		[XMLElement(Name = "recurringRequest",FirstVersion = "8.19")]
+		public recurringRequestType recurringRequest { get; set; }
+
+		[XMLElement(Name = "debtRepayment",FirstVersion = "8.19")]
+		public bool? debtRepayment { get; set; }
+
+		[XMLElement(Name = "advancedFraudChecks",FirstVersion = "8.23")]
+		public advancedFraudChecksType advancedFraudChecks { get; set; }
+
+		[XMLElement(Name = "wallet",FirstVersion = "8.27")]
+		public wallet wallet { get; set; }
+
+		[XMLElement(Name = "processingType",FirstVersion = "8.30",RemovedVersion = "9.0")]
+		[XMLElement(Name = "processingType",FirstVersion = "9.6",RemovedVersion = "10.0")]
+		[XMLElement(Name = "processingType",FirstVersion = "10.5")]
+		public processingTypeEnum? processingType { get; set; }
+
+		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "8.30",RemovedVersion = "9.0")]
+		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "9.10",RemovedVersion = "10.0")]
+		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "10.5")]
+		public string originalNetworkTransactionId { get; set; }
+
+		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "8.30",RemovedVersion = "9.0")]
+		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "9.10",RemovedVersion = "10.0")]
+		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "10.5")]
+		public int? originalTransactionAmount { get; set; }
+
+		[XMLElement(Name = "pinlessDebitRequest",FirstVersion = "12.8")]
+		public pinlessDebitRequestType pinlessDebitRequest { get; set; }
+
+		[XMLElement(Name = "skipRealtimeAU",FirstVersion = "12.10")]
+		public bool? skipRealtimeAU { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "billMeLaterRequest",RemovedVersion = "12.0")]
+		public billMeLaterRequest billMeLaterRequest { get; set; }
+
+		[XMLElement(Name = "amexAggregatorData",RemovedVersion = "12.0")]
+		public amexAggregatorData amexAggregatorData { get; set; }
+
+	}
+
+	[XMLElement(Name = "authReversal")]
+	public partial class authReversal : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "amount")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
+		public int? surchargeAmount { get; set; }
+
+		[XMLElement(Name = "payPalNotes")]
+		public string payPalNotes { get; set; }
+
+		[XMLElement(Name = "actionReason",FirstVersion = "8.9")]
+		public string actionReason { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "txnReversalUserId",FirstVersion = "8.13",RemovedVersion = "8.14")]
+		public string txnReversalUserId { get; set; }
+
+		[XMLElement(Name = "reversalReason",FirstVersion = "8.8",RemovedVersion = "8.9")]
+		public string reversalReason { get; set; }
+
+	}
+
+	[XMLElement(Name = "giftCardAuthReversal",FirstVersion = "11.0")]
+	public partial class giftCardAuthReversal : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "11.0")]
+		public giftCardCardType card { get; set; }
+
+		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
+		public string originalRefCode { get; set; }
+
+		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
+		public int? originalAmount { get; set; }
+
+		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
+		public DateTime originalTxnTime { get; set; }
+
+		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
+		public int? originalSystemTraceId { get; set; }
+
+		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
+		public sequenceType? originalSequenceNumber { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "capture")]
+	public partial class capture : transactionTypeWithReportGroupAndPartial
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "amount")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
+		public int? surchargeAmount { get; set; }
+
+		[XMLElement(Name = "enhancedData")]
+		public enhancedData enhancedData { get; set; }
+
+		[XMLElement(Name = "processingInstructions")]
+		public processingInstructions processingInstructions { get; set; }
+
+		[XMLElement(Name = "payPalOrderComplete")]
+		public bool? payPalOrderComplete { get; set; }
+
+		[XMLElement(Name = "payPalNotes")]
+		public string payPalNotes { get; set; }
+
+		[XMLElement(Name = "customBilling",FirstVersion = "8.12")]
+		public customBilling customBilling { get; set; }
+
+		[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
+		public lodgingInfo lodgingInfo { get; set; }
+
+		[XMLElement(Name = "pin",FirstVersion = "9.9",RemovedVersion = "10.0")]
+		[XMLElement(Name = "pin",FirstVersion = "10.3")]
+		public string pin { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "giftCardCapture",FirstVersion = "11.0")]
+	public partial class giftCardCapture : transactionTypeWithReportGroupAndPartial
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "captureAmount",FirstVersion = "11.0")]
+		public int? captureAmount { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "11.0")]
+		public giftCardCardType card { get; set; }
+
+		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
+		public string originalRefCode { get; set; }
+
+		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
+		public int? originalAmount { get; set; }
+
+		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
+		public DateTime originalTxnTime { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "forceCapture")]
+	public partial class forceCapture : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "amount")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
+		public int? secondaryAmount { get; set; }
+
+		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
+		public int? surchargeAmount { get; set; }
+
+		[XMLElement(Name = "orderSource")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "billToAddress")]
+		public billToAddress billToAddress { get; set; }
+
+		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
+		public mposType mpos { get; set; }
+
+		[XMLElement(Name = "card",RemovedVersion = "8.2")]
+		[XMLElement(Name = "card",FirstVersion = "8.7")]
+		public cardType card { get; set; }
+
+		[XMLElement(Name = "token",RemovedVersion = "8.2")]
+		[XMLElement(Name = "token",FirstVersion = "8.7")]
+		public cardTokenType token { get; set; }
+
+		[XMLElement(Name = "paypage",FirstVersion = "8.7")]
+		public cardPaypageType paypage { get; set; }
+
+		[XMLElement(Name = "customBilling")]
+		public customBilling customBilling { get; set; }
+
+		[XMLElement(Name = "taxType",FirstVersion = "8.8")]
+		public govtTaxTypeEnum? taxType { get; set; }
+
+		[XMLElement(Name = "enhancedData")]
+		public enhancedData enhancedData { get; set; }
+
+		[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
+		public lodgingInfo lodgingInfo { get; set; }
+
+		[XMLElement(Name = "processingInstructions")]
+		public processingInstructions processingInstructions { get; set; }
+
+		[XMLElement(Name = "pos")]
+		public pos pos { get; set; }
+
+		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
+		public merchantDataType merchantData { get; set; }
+
+		[XMLElement(Name = "debtRepayment",FirstVersion = "8.19")]
+		public bool? debtRepayment { get; set; }
+
+		[XMLElement(Name = "processingType",FirstVersion = "8.30",RemovedVersion = "9.0")]
+		[XMLElement(Name = "processingType",FirstVersion = "9.6",RemovedVersion = "10.0")]
+		[XMLElement(Name = "processingType",FirstVersion = "10.5")]
+		public processingTypeEnum? processingType { get; set; }
+
+		[XMLElement(Name = "amexAggregatorData",RemovedVersion = "12.0")]
+		public amexAggregatorData amexAggregatorData { get; set; }
+
+		[XMLElement(Name = "cardOrToken",FirstVersion = "8.2",RemovedVersion = "8.7")]
+		public cardOrToken cardOrToken { get; set; }
+
+	}
+
+	[XMLElement(Name = "captureGivenAuth")]
+	public partial class captureGivenAuth : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "authInformation")]
+		public authInformation authInformation { get; set; }
+
+		[XMLElement(Name = "amount")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
+		public int? secondaryAmount { get; set; }
+
+		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
+		public int? surchargeAmount { get; set; }
+
+		[XMLElement(Name = "orderSource")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "billToAddress")]
+		public billToAddress billToAddress { get; set; }
+
+		[XMLElement(Name = "shipToAddress")]
+		public shipToAddress shipToAddress { get; set; }
+
+		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
+		public mposType mpos { get; set; }
+
+		[XMLElement(Name = "card",RemovedVersion = "8.2")]
+		[XMLElement(Name = "card",FirstVersion = "8.7")]
+		public cardType card { get; set; }
+
+		[XMLElement(Name = "token",RemovedVersion = "8.2")]
+		[XMLElement(Name = "token",FirstVersion = "8.7")]
+		public cardTokenType token { get; set; }
+
+		[XMLElement(Name = "paypage",FirstVersion = "8.7")]
+		public cardPaypageType paypage { get; set; }
+
+		[XMLElement(Name = "customBilling")]
+		public customBilling customBilling { get; set; }
+
+		[XMLElement(Name = "taxType",FirstVersion = "8.8")]
+		public govtTaxTypeEnum? taxType { get; set; }
+
+		[XMLElement(Name = "enhancedData")]
+		public enhancedData enhancedData { get; set; }
+
+		[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
+		public lodgingInfo lodgingInfo { get; set; }
+
+		[XMLElement(Name = "processingInstructions")]
+		public processingInstructions processingInstructions { get; set; }
+
+		[XMLElement(Name = "pos")]
+		public pos pos { get; set; }
+
+		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
+		public merchantDataType merchantData { get; set; }
+
+		[XMLElement(Name = "debtRepayment",FirstVersion = "8.19")]
+		public bool? debtRepayment { get; set; }
+
+		[XMLElement(Name = "processingType",FirstVersion = "8.30",RemovedVersion = "9.0")]
+		[XMLElement(Name = "processingType",FirstVersion = "9.6",RemovedVersion = "10.0")]
+		[XMLElement(Name = "processingType",FirstVersion = "10.5")]
+		public processingTypeEnum? processingType { get; set; }
+
+		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "8.30",RemovedVersion = "9.0")]
+		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "9.10",RemovedVersion = "10.0")]
+		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "10.5")]
+		public string originalNetworkTransactionId { get; set; }
+
+		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "8.30",RemovedVersion = "9.0")]
+		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "9.10",RemovedVersion = "10.0")]
+		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "10.5")]
+		public int? originalTransactionAmount { get; set; }
+
+		[XMLElement(Name = "billMeLaterRequest",RemovedVersion = "12.0")]
+		public billMeLaterRequest billMeLaterRequest { get; set; }
+
+		[XMLElement(Name = "amexAggregatorData",RemovedVersion = "12.0")]
+		public amexAggregatorData amexAggregatorData { get; set; }
+
+		[XMLElement(Name = "cardOrToken",FirstVersion = "8.2",RemovedVersion = "8.7")]
+		public cardOrToken cardOrToken { get; set; }
+
+	}
+
+	[XMLElement(Name = "sale")]
+	public partial class sale : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "amount")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
+		public int? secondaryAmount { get; set; }
+
+		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
+		public int? surchargeAmount { get; set; }
+
+		[XMLElement(Name = "orderSource")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "customerInfo")]
+		public customerInfo customerInfo { get; set; }
+
+		[XMLElement(Name = "billToAddress")]
+		public billToAddress billToAddress { get; set; }
+
+		[XMLElement(Name = "shipToAddress")]
+		public shipToAddress shipToAddress { get; set; }
+
+		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
+		public mposType mpos { get; set; }
+
+		[XMLElement(Name = "card")]
+		public cardType card { get; set; }
+
+		[XMLElement(Name = "paypal")]
+		public paypal paypal { get; set; }
+
+		[XMLElement(Name = "token")]
+		public cardTokenType token { get; set; }
+
+		[XMLElement(Name = "paypage",FirstVersion = "8.5")]
+		public cardPaypageType paypage { get; set; }
+
+		[XMLElement(Name = "applepay",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "applepay",FirstVersion = "9.2")]
+		public applepayType applepay { get; set; }
+
+		[XMLElement(Name = "sepaDirectDebit",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "sepaDirectDebit",FirstVersion = "10.4")]
+		public sepaDirectDebitType sepaDirectDebit { get; set; }
+
+		[XMLElement(Name = "ideal",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "ideal",FirstVersion = "11.0")]
+		public idealType ideal { get; set; }
+
+		[XMLElement(Name = "giropay",FirstVersion = "9.13",RemovedVersion = "10.0")]
+		[XMLElement(Name = "giropay",FirstVersion = "11.0")]
+		public giropayType giropay { get; set; }
+
+		[XMLElement(Name = "sofort",FirstVersion = "9.13",RemovedVersion = "10.0")]
+		[XMLElement(Name = "sofort",FirstVersion = "11.0")]
+		public sofortType sofort { get; set; }
+
+		[XMLElement(Name = "fraudCheck")]
+		public fraudCheckType fraudCheck { get; set; }
+
+		[XMLElement(Name = "cardholderAuthentication")]
+		public fraudCheckType cardholderAuthentication { get; set; }
+
+		[XMLElement(Name = "customBilling")]
+		public customBilling customBilling { get; set; }
+
+		[XMLElement(Name = "taxType",FirstVersion = "8.8")]
+		public govtTaxTypeEnum? taxType { get; set; }
+
+		[XMLElement(Name = "enhancedData")]
+		public enhancedData enhancedData { get; set; }
+
+		[XMLElement(Name = "processingInstructions")]
+		public processingInstructions processingInstructions { get; set; }
+
+		[XMLElement(Name = "pos")]
+		public pos pos { get; set; }
+
+		[XMLElement(Name = "payPalOrderComplete")]
+		public bool? payPalOrderComplete { get; set; }
+
+		[XMLElement(Name = "payPalNotes")]
+		public string payPalNotes { get; set; }
+
+		[XMLElement(Name = "allowPartialAuth")]
+		public bool? allowPartialAuth { get; set; }
+
+		[XMLElement(Name = "healthcareIIAS")]
+		public healthcareIIAS healthcareIIAS { get; set; }
+
+		[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
+		public lodgingInfo lodgingInfo { get; set; }
+
+		[XMLElement(Name = "filtering",FirstVersion = "8.3")]
+		public filteringType filtering { get; set; }
+
+		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
+		public merchantDataType merchantData { get; set; }
+
+		[XMLElement(Name = "recyclingRequest",FirstVersion = "8.10")]
+		public recyclingRequestType recyclingRequest { get; set; }
+
+		[XMLElement(Name = "fraudFilterOverride",FirstVersion = "8.13")]
+		public bool? fraudFilterOverride { get; set; }
+
+		[XMLElement(Name = "recurringRequest",FirstVersion = "8.18")]
+		public recurringRequestType recurringRequest { get; set; }
+
+		[XMLElement(Name = "cnpInternalRecurringRequest",FirstVersion = "12.0")]
+		public cnpInternalRecurringRequestType cnpInternalRecurringRequest { get; set; }
+
+		[XMLElement(Name = "debtRepayment",FirstVersion = "8.19")]
+		public bool? debtRepayment { get; set; }
+
+		[XMLElement(Name = "advancedFraudChecks",FirstVersion = "8.23")]
+		public advancedFraudChecksType advancedFraudChecks { get; set; }
+
+		[XMLElement(Name = "wallet",FirstVersion = "8.27")]
+		public wallet wallet { get; set; }
+
+		[XMLElement(Name = "processingType",FirstVersion = "8.30",RemovedVersion = "9.0")]
+		[XMLElement(Name = "processingType",FirstVersion = "9.6",RemovedVersion = "10.0")]
+		[XMLElement(Name = "processingType",FirstVersion = "10.5")]
+		public processingTypeEnum? processingType { get; set; }
+
+		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "8.30",RemovedVersion = "9.0")]
+		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "9.10",RemovedVersion = "10.0")]
+		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "10.5")]
+		public string originalNetworkTransactionId { get; set; }
+
+		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "8.30",RemovedVersion = "9.0")]
+		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "9.10",RemovedVersion = "10.0")]
+		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "10.5")]
+		public int? originalTransactionAmount { get; set; }
+
+		[XMLElement(Name = "pinlessDebitRequest",FirstVersion = "12.2")]
+		public pinlessDebitRequestType pinlessDebitRequest { get; set; }
+
+		[XMLElement(Name = "skipRealtimeAU",FirstVersion = "12.10")]
+		public bool? skipRealtimeAU { get; set; }
+
+		[XMLElement(Name = "routingPreference",FirstVersion = "12.1",RemovedVersion = "12.2")]
+		public routingPreferenceEnum? routingPreference { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "billMeLaterRequest",RemovedVersion = "12.0")]
+		public billMeLaterRequest billMeLaterRequest { get; set; }
+
+		[XMLElement(Name = "amexAggregatorData",RemovedVersion = "12.0")]
+		public amexAggregatorData amexAggregatorData { get; set; }
+
+		[XMLElement(Name = "litleInternalRecurringRequest",FirstVersion = "8.18",RemovedVersion = "12.0")]
+		public litleInternalRecurringRequestType litleInternalRecurringRequest { get; set; }
+
+	}
+
+	[XMLElement(Name = "paypal")]
+	public partial class paypal : VersionedXMLElement
+	{
+		[XMLElement(Name = "payerId")]
+		public string payerId { get; set; }
+
+		[XMLElement(Name = "payerEmail")]
+		public string payerEmail { get; set; }
+
+		[XMLElement(Name = "token")]
+		public string token { get; set; }
+
+		[XMLElement(Name = "transactionId")]
+		public string transactionId { get; set; }
+
+	}
+
+	[XMLElement(Name = "credit")]
+	public partial class credit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "amount")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
+		public int? secondaryAmount { get; set; }
+
+		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
+		public int? surchargeAmount { get; set; }
+
+		[XMLElement(Name = "customBilling")]
+		public customBilling customBilling { get; set; }
+
+		[XMLElement(Name = "enhancedData")]
+		public enhancedData enhancedData { get; set; }
+
+		[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
+		public lodgingInfo lodgingInfo { get; set; }
+
+		[XMLElement(Name = "processingInstructions")]
+		public processingInstructions processingInstructions { get; set; }
+
+		[XMLElement(Name = "pos")]
+		public pos pos { get; set; }
+
+		[XMLElement(Name = "pin",FirstVersion = "9.9",RemovedVersion = "10.0")]
+		[XMLElement(Name = "pin",FirstVersion = "10.3")]
+		public string pin { get; set; }
+
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "orderSource")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "billToAddress")]
+		public billToAddress billToAddress { get; set; }
+
+		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
+		public mposType mpos { get; set; }
+
+		[XMLElement(Name = "card")]
+		public cardType card { get; set; }
+
+		[XMLElement(Name = "token")]
+		public cardTokenType token { get; set; }
+
+		[XMLElement(Name = "paypage",FirstVersion = "8.7")]
+		public cardPaypageType paypage { get; set; }
+
+		[XMLElement(Name = "paypal")]
+		public paypal paypal { get; set; }
+
+		[XMLElement(Name = "taxType",FirstVersion = "8.8")]
+		public govtTaxTypeEnum? taxType { get; set; }
+
+		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
+		public merchantDataType merchantData { get; set; }
+
+		[XMLElement(Name = "payPalNotes")]
+		public string payPalNotes { get; set; }
+
+		[XMLElement(Name = "actionReason",FirstVersion = "8.12")]
+		public string actionReason { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "billMeLaterRequest",RemovedVersion = "12.0")]
+		public billMeLaterRequest billMeLaterRequest { get; set; }
+
+		[XMLElement(Name = "amexAggregatorData",RemovedVersion = "12.0")]
+		public amexAggregatorData amexAggregatorData { get; set; }
+
+		[XMLElement(Name = "txnReversalUserId",FirstVersion = "8.13",RemovedVersion = "8.14")]
+		public string txnReversalUserId { get; set; }
+
+	}
+
+	[XMLElement(Name = "giftCardCredit",FirstVersion = "11.0")]
+	public partial class giftCardCredit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "creditAmount",FirstVersion = "11.0")]
+		public int? creditAmount { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "11.0")]
+		public giftCardCardType card { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "11.0")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "orderSource",FirstVersion = "11.0")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "activate",FirstVersion = "8.21")]
+	public partial class activate : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.21")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "8.21")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "orderSource",FirstVersion = "8.21")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "8.21")]
+		public giftCardCardType card { get; set; }
+
+		[XMLElement(Name = "virtualGiftCard",FirstVersion = "8.22")]
+		public virtualGiftCardType virtualGiftCard { get; set; }
+
+	}
+
+	[XMLElement(Name = "deactivate",FirstVersion = "8.21")]
+	public partial class deactivate : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.21")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "orderSource",FirstVersion = "8.21")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "8.21")]
+		public giftCardCardType card { get; set; }
+
+	}
+
+	[XMLElement(Name = "load",FirstVersion = "8.21")]
+	public partial class load : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.21")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "8.21")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "orderSource",FirstVersion = "8.21")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "8.21")]
+		public giftCardCardType card { get; set; }
+
+	}
+
+	[XMLElement(Name = "unload",FirstVersion = "8.21")]
+	public partial class unload : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.21")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "8.21")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "orderSource",FirstVersion = "8.21")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "8.21")]
+		public giftCardCardType card { get; set; }
+
+	}
+
+	[XMLElement(Name = "authInformation")]
+	public partial class authInformation : VersionedXMLElement
+	{
+		[XMLElement(Name = "authDate")]
+		public DateTime authDate { get; set; }
+
+		[XMLElement(Name = "authCode")]
+		public string authCode { get; set; }
+
+		[XMLElement(Name = "fraudResult")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "authAmount")]
+		public int? authAmount { get; set; }
+
+	}
+
+	[XMLElement(Name = "balanceInquiry",FirstVersion = "8.21")]
+	public partial class balanceInquiry : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.21")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "orderSource",FirstVersion = "8.21")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "8.21")]
+		public giftCardCardType card { get; set; }
+
+	}
+
+	[XMLElement(Name = "healthcareIIAS")]
+	public partial class healthcareIIAS : VersionedXMLElement
+	{
+		[XMLElement(Name = "healthcareAmounts")]
+		public healthcareAmounts healthcareAmounts { get; set; }
+
+		[XMLElement(Name = "IIASFlag")]
+		public IIASFlagType? IIASFlag { get; set; }
+
+	}
+
+	[XMLElement(Name = "healthcareAmounts")]
+	public partial class healthcareAmounts : VersionedXMLElement
+	{
+		[XMLElement(Name = "totalHealthcareAmount")]
+		public int? totalHealthcareAmount { get; set; }
+
+		[XMLElement(Name = "RxAmount")]
+		public int? RxAmount { get; set; }
+
+		[XMLElement(Name = "visionAmount")]
+		public int? visionAmount { get; set; }
+
+		[XMLElement(Name = "clinicOtherAmount")]
+		public int? clinicOtherAmount { get; set; }
+
+		[XMLElement(Name = "dentalAmount")]
+		public int? dentalAmount { get; set; }
+
+	}
+
+	[XMLElement(Name = "enhancedData")]
+	public partial class enhancedData : VersionedXMLElement
+	{
+		[XMLElement(Name = "customerReference")]
+		public string customerReference { get; set; }
+
+		[XMLElement(Name = "salesTax")]
+		public int? salesTax { get; set; }
+
+		[XMLElement(Name = "deliveryType")]
+		public enhancedDataDeliveryType deliveryType { get; set; } = enhancedDataDeliveryType.TBD;
+
+		[XMLElement(Name = "taxExempt")]
+		public bool? taxExempt { get; set; }
+
+		[XMLElement(Name = "discountAmount")]
+		public int? discountAmount { get; set; }
+
+		[XMLElement(Name = "shippingAmount")]
+		public int? shippingAmount { get; set; }
+
+		[XMLElement(Name = "dutyAmount")]
+		public int? dutyAmount { get; set; }
+
+		[XMLElement(Name = "shipFromPostalCode")]
+		public string shipFromPostalCode { get; set; }
+
+		[XMLElement(Name = "destinationPostalCode")]
+		public string destinationPostalCode { get; set; }
+
+		[XMLElement(Name = "destinationCountryCode")]
+		public countryTypeEnum? destinationCountryCode { get; set; }
+
+		[XMLElement(Name = "invoiceReferenceNumber")]
+		public string invoiceReferenceNumber { get; set; }
+
+		[XMLElement(Name = "orderDate")]
+		public DateTime orderDate { get; set; }
+
+		[XMLElement(Name = "detailTax")]
+		public detailTax detailTax { get; set; }
+
+		[XMLElement(Name = "lineItemData")]
+		public lineItemData lineItemData { get; set; }
+
+	}
+
+	[XMLElement(Name = "detailTax")]
+	public partial class detailTax : VersionedXMLElement
+	{
+		[XMLElement(Name = "taxIncludedInTotal")]
+		public bool? taxIncludedInTotal { get; set; }
+
+		[XMLElement(Name = "taxAmount")]
+		public int? taxAmount { get; set; }
+
+		[XMLElement(Name = "taxRate")]
+		public string taxRate { get; set; }
+
+		[XMLElement(Name = "taxTypeIdentifier")]
+		public taxTypeIdentifierEnum? taxTypeIdentifier { get; set; }
+
+		[XMLElement(Name = "cardAcceptorTaxId")]
+		public string cardAcceptorTaxId { get; set; }
+
+	}
+
+	[XMLElement(Name = "lineItemData")]
+	public partial class lineItemData : VersionedXMLElement
+	{
+		[XMLElement(Name = "itemSequenceNumber")]
+		public int? itemSequenceNumber { get; set; }
+
+		[XMLElement(Name = "itemDescription")]
+		public string itemDescription { get; set; }
+
+		[XMLElement(Name = "productCode")]
+		public string productCode { get; set; }
+
+		[XMLElement(Name = "quantity")]
+		public string quantity { get; set; }
+
+		[XMLElement(Name = "unitOfMeasure")]
+		public string unitOfMeasure { get; set; }
+
+		[XMLElement(Name = "taxAmount")]
+		public int? taxAmount { get; set; }
+
+		[XMLElement(Name = "lineItemTotal")]
+		public int? lineItemTotal { get; set; }
+
+		[XMLElement(Name = "lineItemTotalWithTax")]
+		public int? lineItemTotalWithTax { get; set; }
+
+		[XMLElement(Name = "itemDiscountAmount")]
+		public int? itemDiscountAmount { get; set; }
+
+		[XMLElement(Name = "commodityCode")]
+		public string commodityCode { get; set; }
+
+		[XMLElement(Name = "unitCost")]
+		public string unitCost { get; set; }
+
+		[XMLElement(Name = "detailTax")]
+		public detailTax detailTax { get; set; }
+
+	}
+
+	[XMLElement(Name = "accountInfoType")]
+	public partial class accountInfoType : VersionedXMLElement
+	{
+		[XMLElement(Name = "type")]
+		public methodOfPaymentTypeEnum? type { get; set; }
+
+		[XMLElement(Name = "number")]
+		public string number { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckTokenType",FirstVersion = "8.2")]
+	public partial class echeckTokenType : VersionedXMLElement
+	{
+		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
+		public string cnpToken { get; set; }
+
+		[XMLElement(Name = "routingNum",FirstVersion = "8.2")]
+		public string routingNum { get; set; }
+
+		[XMLElement(Name = "accType",FirstVersion = "8.2")]
+		public echeckAccountTypeEnum? accType { get; set; }
+
+		[XMLElement(Name = "checkNum",FirstVersion = "8.2")]
+		public string checkNum { get; set; }
+
+		[XMLElement(Name = "litleToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
+		public string litleToken { get; set; }
+
+	}
+
+	[XMLElement(Name = "customBilling")]
+	public partial class customBilling : VersionedXMLElement
+	{
+		[XMLElement(Name = "phone")]
+		public string phone { get; set; }
+
+		[XMLElement(Name = "city")]
+		public string city { get; set; }
+
+		[XMLElement(Name = "url")]
+		public string url { get; set; }
+
+		[XMLElement(Name = "descriptor")]
+		public string descriptor { get; set; }
+
+	}
+
+	[XMLElement(Name = "processingInstructions")]
+	public partial class processingInstructions : VersionedXMLElement
+	{
+		[XMLElement(Name = "bypassVelocityCheck")]
+		public bool? bypassVelocityCheck { get; set; }
+
+	}
+
+	[XMLElement(Name = "pos")]
+	public partial class pos : VersionedXMLElement
+	{
+		[XMLElement(Name = "capability")]
+		public posCapabilityTypeEnum? capability { get; set; }
+
+		[XMLElement(Name = "entryMode")]
+		public posEntryModeTypeEnum? entryMode { get; set; }
+
+		[XMLElement(Name = "cardholderId")]
+		public posCardholderIdTypeEnum? cardholderId { get; set; }
+
+		[XMLElement(Name = "terminalId",FirstVersion = "8.17")]
+		public string terminalId { get; set; }
+
+		[XMLElement(Name = "catLevel",FirstVersion = "8.23")]
+		public posCatLevelEnum? catLevel { get; set; }
+
+	}
+
+	[XMLElement(Name = "registerTokenRequestType",FirstVersion = "8.2")]
+	public partial class registerTokenRequestType : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "encryptionKeyId",FirstVersion = "12.5")]
+		public string encryptionKeyId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.2")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
+		public mposType mpos { get; set; }
+
+		[XMLElement(Name = "accountNumber",FirstVersion = "8.2")]
+		public string accountNumber { get; set; }
+
+		[XMLElement(Name = "encryptedAccountNumber",FirstVersion = "12.5")]
+		public string encryptedAccountNumber { get; set; }
+
+		[XMLElement(Name = "echeckForToken",FirstVersion = "8.2")]
+		public echeckForTokenType echeckForToken { get; set; }
+
+		[XMLElement(Name = "paypageRegistrationId",FirstVersion = "8.5")]
+		public string paypageRegistrationId { get; set; }
+
+		[XMLElement(Name = "applepay",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "applepay",FirstVersion = "9.2")]
+		public applepayType applepay { get; set; }
+
+		[XMLElement(Name = "cardValidationNum",FirstVersion = "8.14")]
+		public string cardValidationNum { get; set; }
+
+		[XMLElement(Name = "encryptedCardValidationNum",FirstVersion = "12.5")]
+		public string encryptedCardValidationNum { get; set; }
+
+	}
+
+	[XMLElement(Name = "registerTokenResponse")]
+	public partial class registerTokenResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
+		public string cnpToken { get; set; }
+
+		[XMLElement(Name = "bin")]
+		public string bin { get; set; }
+
+		[XMLElement(Name = "type")]
+		public methodOfPaymentTypeEnum? type { get; set; }
+
+		[XMLElement(Name = "eCheckAccountSuffix",FirstVersion = "8.2")]
+		public string eCheckAccountSuffix { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "applepayResponse",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "applepayResponse",FirstVersion = "9.2")]
+		public applepayResponse applepayResponse { get; set; }
+
+		[XMLElement(Name = "androidpayResponse",FirstVersion = "9.8",RemovedVersion = "10.0")]
+		[XMLElement(Name = "androidpayResponse",FirstVersion = "10.1")]
+		public androidpayResponse androidpayResponse { get; set; }
+
+		[XMLElement(Name = "accountRangeId",FirstVersion = "12.3")]
+		public long? accountRangeId { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "litleToken",RemovedVersion = "12.0")]
+		public string litleToken { get; set; }
+
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+	}
+
+	[XMLElement(Name = "authorizationResponse")]
+	public partial class authorizationResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "cardProductId")]
+		public string cardProductId { get; set; }
+
+		[XMLElement(Name = "postDate")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "authCode")]
+		public string authCode { get; set; }
+
+		[XMLElement(Name = "authorizationResponseSubCode")]
+		public string authorizationResponseSubCode { get; set; }
+
+		[XMLElement(Name = "approvedAmount")]
+		public int? approvedAmount { get; set; }
+
+		[XMLElement(Name = "accountInformation")]
+		public accountInfoType accountInformation { get; set; }
+
+		[XMLElement(Name = "accountUpdater",FirstVersion = "8.3")]
+		public accountUpdater accountUpdater { get; set; }
+
+		[XMLElement(Name = "fraudResult")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "tokenResponse")]
+		public tokenResponseType tokenResponse { get; set; }
+
+		[XMLElement(Name = "enhancedAuthResponse")]
+		public enhancedAuthResponse enhancedAuthResponse { get; set; }
+
+		[XMLElement(Name = "recyclingResponse",FirstVersion = "12.0")]
+		public recyclingResponseType recyclingResponse { get; set; }
+
+		[XMLElement(Name = "recurringResponse",FirstVersion = "8.19")]
+		public recurringResponseType recurringResponse { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "applepayResponse",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "applepayResponse",FirstVersion = "9.2")]
+		public applepayResponse applepayResponse { get; set; }
+
+		[XMLElement(Name = "cardSuffix",FirstVersion = "9.4")]
+		public string cardSuffix { get; set; }
+
+		[XMLElement(Name = "androidpayResponse",FirstVersion = "9.8",RemovedVersion = "10.0")]
+		[XMLElement(Name = "androidpayResponse",FirstVersion = "10.1")]
+		public androidpayResponse androidpayResponse { get; set; }
+
+		[XMLElement(Name = "networkTransactionId",FirstVersion = "8.30",RemovedVersion = "9.0")]
+		[XMLElement(Name = "networkTransactionId",FirstVersion = "9.10",RemovedVersion = "10.0")]
+		[XMLElement(Name = "networkTransactionId",FirstVersion = "10.5")]
+		public string networkTransactionId { get; set; }
+
+		[XMLElement(Name = "paymentAccountReferenceNumber",FirstVersion = "12.4")]
+		public string paymentAccountReferenceNumber { get; set; }
+
+		[XMLElement(Name = "pinlessDebitResponse",FirstVersion = "12.8")]
+		public pinlessDebitResponse pinlessDebitResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "billMeLaterResponseData",RemovedVersion = "12.0")]
+		public billMeLaterResponseData billMeLaterResponseData { get; set; }
+
+		[XMLElement(Name = "recycling",FirstVersion = "8.6",RemovedVersion = "12.0")]
+		public recyclingType recycling { get; set; }
+
+	}
+
+	[XMLElement(Name = "recycleAdviceType",FirstVersion = "8.6")]
+	public partial class recycleAdviceType : VersionedXMLElement
+	{
+		[XMLElement(Name = "nextRecycleTime",FirstVersion = "8.6")]
+		public DateTime nextRecycleTime { get; set; }
+
+		[XMLElement(Name = "recycleAdviceEnd",FirstVersion = "8.6")]
+		public string recycleAdviceEnd { get; set; }
+
+	}
+
+	[XMLElement(Name = "recyclingResponseType",FirstVersion = "12.0")]
+	public partial class recyclingResponseType : VersionedXMLElement
+	{
+		[XMLElement(Name = "recycleAdvice",FirstVersion = "12.0")]
+		public recycleAdviceType recycleAdvice { get; set; }
+
+		[XMLElement(Name = "recycleEngineActive",FirstVersion = "12.0")]
+		public bool? recycleEngineActive { get; set; }
+
+	}
+
+	[XMLElement(Name = "networkSubField",FirstVersion = "10.4")]
+	public partial class networkSubField : VersionedXMLElement
+	{
+		[XMLElement(Name = "fieldValue",FirstVersion = "10.4")]
+		public string fieldValue { get; set; }
+
+		[XMLAttribute(Name = "fieldNumber",FirstVersion = "10.4")]
+		public int? fieldNumber { get; set; }
+
+	}
+
+	[XMLElement(Name = "networkField",FirstVersion = "10.4")]
+	public partial class networkField : VersionedXMLElement
+	{
+		[XMLElement(Name = "fieldValue",FirstVersion = "10.4")]
+		public string fieldValue { get; set; }
+
+		[XMLElement(Name = "networkSubField",FirstVersion = "10.4")]
+		public networkSubField networkSubField { get; set; }
+
+		[XMLAttribute(Name = "fieldNumber",FirstVersion = "10.4")]
+		public int? fieldNumber { get; set; }
+
+		[XMLAttribute(Name = "fieldName",FirstVersion = "10.4")]
+		public networkFieldNameEnumType? fieldName { get; set; }
+
+	}
+
+	[XMLElement(Name = "networkResponse",FirstVersion = "10.4")]
+	public partial class networkResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "endpoint",FirstVersion = "10.4")]
+		public string endpoint { get; set; }
+
+		[XMLElement(Name = "networkField",FirstVersion = "10.4")]
+		public networkField networkField { get; set; }
+
+	}
+
+	[XMLElement(Name = "recyclingRequestType",FirstVersion = "8.10")]
+	public partial class recyclingRequestType : VersionedXMLElement
+	{
+		[XMLElement(Name = "recycleBy",FirstVersion = "8.10")]
+		public recycleByTypeEnum? recycleBy { get; set; }
+
+		[XMLElement(Name = "recycleId",FirstVersion = "8.10")]
+		public string recycleId { get; set; }
+
+	}
+
+	[XMLElement(Name = "fundingSource")]
+	public partial class fundingSource : VersionedXMLElement
+	{
+		[XMLElement(Name = "type")]
+		public fundingSourceTypeEnum? type { get; set; }
+
+		[XMLElement(Name = "availableBalance")]
+		public string availableBalance { get; set; }
+
+		[XMLElement(Name = "reloadable",FirstVersion = "8.4")]
+		public string reloadable { get; set; }
+
+		[XMLElement(Name = "prepaidCardType",FirstVersion = "8.4")]
+		public string prepaidCardType { get; set; }
+
+	}
+
+	[XMLElement(Name = "enhancedAuthResponse")]
+	public partial class enhancedAuthResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "fundingSource")]
+		public fundingSource fundingSource { get; set; }
+
+		[XMLElement(Name = "affluence")]
+		public affluenceTypeEnum? affluence { get; set; }
+
+		[XMLElement(Name = "issuerCountry",FirstVersion = "8.4")]
+		public string issuerCountry { get; set; }
+
+		[XMLElement(Name = "cardProductType",FirstVersion = "8.5")]
+		public cardProductTypeEnum? cardProductType { get; set; }
+
+		[XMLElement(Name = "virtualAccountNumber",FirstVersion = "8.22")]
+		public bool? virtualAccountNumber { get; set; }
+
+		[XMLElement(Name = "networkResponse",FirstVersion = "10.4")]
+		public networkResponse networkResponse { get; set; }
+
+		[XMLElement(Name = "accountRangeId",FirstVersion = "12.3")]
+		public long? accountRangeId { get; set; }
+
+	}
+
+	[XMLElement(Name = "authReversalResponse")]
+	public partial class authReversalResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21",RemovedVersion = "11.0")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "9.3",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "giftCardAuthReversalResponse",FirstVersion = "11.0")]
+	public partial class giftCardAuthReversalResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "11.0")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "11.0")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.0")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "11.0")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "11.0")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "depositReversalResponse",FirstVersion = "8.22")]
+	public partial class depositReversalResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.22")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.22")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.22")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+	}
+
+	[XMLElement(Name = "refundReversalResponse",FirstVersion = "8.22")]
+	public partial class refundReversalResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.22")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.22")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.22")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+	}
+
+	[XMLElement(Name = "activateReversalResponse",FirstVersion = "8.22")]
+	public partial class activateReversalResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.22")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.22")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.22")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+	}
+
+	[XMLElement(Name = "deactivateReversalResponse",FirstVersion = "8.22")]
+	public partial class deactivateReversalResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.22")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.22")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.22")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+	}
+
+	[XMLElement(Name = "loadReversalResponse",FirstVersion = "8.22")]
+	public partial class loadReversalResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.22")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.22")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.22")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+	}
+
+	[XMLElement(Name = "unloadReversalResponse",FirstVersion = "8.22")]
+	public partial class unloadReversalResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.22")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.22")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.22")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+	}
+
+	[XMLElement(Name = "captureResponse")]
+	public partial class captureResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "accountUpdater",FirstVersion = "8.3")]
+		public accountUpdater accountUpdater { get; set; }
+
+		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21",RemovedVersion = "11.0")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "giftCardCaptureResponse",FirstVersion = "11.0")]
+	public partial class giftCardCaptureResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "11.0")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "11.0")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.0")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "11.0")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "fraudResult",FirstVersion = "11.0")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "11.0")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "forceCaptureResponse")]
+	public partial class forceCaptureResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "tokenResponse")]
+		public tokenResponseType tokenResponse { get; set; }
+
+		[XMLElement(Name = "accountUpdater",FirstVersion = "8.3")]
+		public accountUpdater accountUpdater { get; set; }
+
+		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+	}
+
+	[XMLElement(Name = "captureGivenAuthResponse")]
+	public partial class captureGivenAuthResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "tokenResponse")]
+		public tokenResponseType tokenResponse { get; set; }
+
+		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+	}
+
+	[XMLElement(Name = "saleResponse")]
+	public partial class saleResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "cardProductId")]
+		public string cardProductId { get; set; }
+
+		[XMLElement(Name = "postDate")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "authCode")]
+		public string authCode { get; set; }
+
+		[XMLElement(Name = "authorizationResponseSubCode")]
+		public string authorizationResponseSubCode { get; set; }
+
+		[XMLElement(Name = "approvedAmount")]
+		public int? approvedAmount { get; set; }
+
+		[XMLElement(Name = "accountInformation")]
+		public accountInfoType accountInformation { get; set; }
+
+		[XMLElement(Name = "fraudResult")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "tokenResponse")]
+		public tokenResponseType tokenResponse { get; set; }
+
+		[XMLElement(Name = "enhancedAuthResponse")]
+		public enhancedAuthResponse enhancedAuthResponse { get; set; }
+
+		[XMLElement(Name = "accountUpdater",FirstVersion = "8.3")]
+		public accountUpdater accountUpdater { get; set; }
+
+		[XMLElement(Name = "recyclingResponse",FirstVersion = "12.0")]
+		public recyclingResponseType recyclingResponse { get; set; }
+
+		[XMLElement(Name = "recurringResponse",FirstVersion = "8.18")]
+		public recurringResponseType recurringResponse { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "applepayResponse",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "applepayResponse",FirstVersion = "9.2")]
+		public applepayResponse applepayResponse { get; set; }
+
+		[XMLElement(Name = "cardSuffix",FirstVersion = "9.4")]
+		public string cardSuffix { get; set; }
+
+		[XMLElement(Name = "androidpayResponse",FirstVersion = "9.8",RemovedVersion = "10.0")]
+		[XMLElement(Name = "androidpayResponse",FirstVersion = "10.1")]
+		public androidpayResponse androidpayResponse { get; set; }
+
+		[XMLElement(Name = "sepaDirectDebitResponse",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "sepaDirectDebitResponse",FirstVersion = "10.4")]
+		public sepaDirectDebitResponse sepaDirectDebitResponse { get; set; }
+
+		[XMLElement(Name = "idealResponse",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "idealResponse",FirstVersion = "11.0")]
+		public idealResponse idealResponse { get; set; }
+
+		[XMLElement(Name = "giropayResponse",FirstVersion = "9.13",RemovedVersion = "10.0")]
+		[XMLElement(Name = "giropayResponse",FirstVersion = "11.0")]
+		public giropayResponse giropayResponse { get; set; }
+
+		[XMLElement(Name = "sofortResponse",FirstVersion = "9.13",RemovedVersion = "10.0")]
+		[XMLElement(Name = "sofortResponse",FirstVersion = "11.0")]
+		public sofortResponse sofortResponse { get; set; }
+
+		[XMLElement(Name = "networkTransactionId",FirstVersion = "8.30",RemovedVersion = "9.0")]
+		[XMLElement(Name = "networkTransactionId",FirstVersion = "9.10",RemovedVersion = "10.0")]
+		[XMLElement(Name = "networkTransactionId",FirstVersion = "10.5")]
+		public string networkTransactionId { get; set; }
+
+		[XMLElement(Name = "pinlessDebitResponse",FirstVersion = "12.1")]
+		public pinlessDebitResponse pinlessDebitResponse { get; set; }
+
+		[XMLElement(Name = "paymentAccountReferenceNumber",FirstVersion = "12.4")]
+		public string paymentAccountReferenceNumber { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "billMeLaterResponseData",RemovedVersion = "12.0")]
+		public billMeLaterResponseData billMeLaterResponseData { get; set; }
+
+		[XMLElement(Name = "recycling",FirstVersion = "8.6",RemovedVersion = "12.0")]
+		public recyclingType recycling { get; set; }
+
+		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "creditResponse")]
+	public partial class creditResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "tokenResponse")]
+		public tokenResponseType tokenResponse { get; set; }
+
+		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21",RemovedVersion = "11.0")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "giftCardCreditResponse",FirstVersion = "11.0")]
+	public partial class giftCardCreditResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "11.0")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "11.0")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.0")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "11.0")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "fraudResult",FirstVersion = "11.0")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "11.0")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "fraudResult")]
+	public partial class fraudResult : VersionedXMLElement
+	{
+		[XMLElement(Name = "avsResult")]
+		public string avsResult { get; set; }
+
+		[XMLElement(Name = "cardValidationResult")]
+		public string cardValidationResult { get; set; }
+
+		[XMLElement(Name = "authenticationResult")]
+		public string authenticationResult { get; set; }
+
+		[XMLElement(Name = "advancedAVSResult")]
+		public string advancedAVSResult { get; set; }
+
+		[XMLElement(Name = "advancedFraudResults",FirstVersion = "8.23")]
+		public advancedFraudResultsType advancedFraudResults { get; set; }
+
+	}
+
+	[XMLElement(Name = "activateResponse",FirstVersion = "8.21")]
+	public partial class activateResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.21")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.21")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "virtualGiftCardResponse",FirstVersion = "8.22")]
+		public virtualGiftCardResponse virtualGiftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "loadResponse",FirstVersion = "8.21")]
+	public partial class loadResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.21")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.21")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "unloadResponse",FirstVersion = "8.21")]
+	public partial class unloadResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.21")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.21")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
+	public partial class giftCardResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "txnTime",FirstVersion = "11.0")]
+		public DateTime txnTime { get; set; }
+
+		[XMLElement(Name = "refCode",FirstVersion = "11.0")]
+		public string refCode { get; set; }
+
+		[XMLElement(Name = "systemTraceId",FirstVersion = "11.0")]
+		public int? systemTraceId { get; set; }
+
+		[XMLElement(Name = "sequenceNumber",FirstVersion = "11.0")]
+		public sequenceType? sequenceNumber { get; set; }
+
+		[XMLElement(Name = "availableBalance",FirstVersion = "8.21")]
+		public string availableBalance { get; set; }
+
+		[XMLElement(Name = "beginningBalance",FirstVersion = "8.21")]
+		public string beginningBalance { get; set; }
+
+		[XMLElement(Name = "endingBalance",FirstVersion = "8.21")]
+		public string endingBalance { get; set; }
+
+		[XMLElement(Name = "cashBackAmount",FirstVersion = "8.21")]
+		public string cashBackAmount { get; set; }
+
+	}
+
+	[XMLElement(Name = "virtualGiftCardResponse",FirstVersion = "8.22")]
+	public partial class virtualGiftCardResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "accountNumber",FirstVersion = "8.22")]
+		public string accountNumber { get; set; }
+
+		[XMLElement(Name = "pin",FirstVersion = "9.9",RemovedVersion = "10.0")]
+		[XMLElement(Name = "pin",FirstVersion = "10.3")]
+		public string pin { get; set; }
+
+		[XMLElement(Name = "cardValidationNum",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public string cardValidationNum { get; set; }
+
+	}
+
+	[XMLElement(Name = "balanceInquiryResponse",FirstVersion = "8.21")]
+	public partial class balanceInquiryResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.21")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.21")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+	}
+
+	[XMLElement(Name = "deactivateResponse",FirstVersion = "8.21")]
+	public partial class deactivateResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.21")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.21")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
+		public fraudResult fraudResult { get; set; }
+
+		[XMLElement(Name = "approvedAmount",FirstVersion = "8.21")]
+		public int? approvedAmount { get; set; }
+
+		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
+		public giftCardResponse giftCardResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckSale")]
+	public partial class echeckSale : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "amount")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "customBilling",RemovedVersion = "8.2")]
+		[XMLElement(Name = "customBilling",FirstVersion = "8.3")]
+		public customBilling customBilling { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "11.0")]
+		public string customIdentifier { get; set; }
+
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "verify")]
+		public bool? verify { get; set; }
+
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
+		public int? secondaryAmount { get; set; }
+
+		[XMLElement(Name = "orderSource")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "billToAddress")]
+		public billToAddress billToAddress { get; set; }
+
+		[XMLElement(Name = "shipToAddress")]
+		public shipToAddress shipToAddress { get; set; }
+
+		[XMLElement(Name = "echeck",RemovedVersion = "8.2")]
+		[XMLElement(Name = "echeck",FirstVersion = "12.0")]
+		public echeckType echeck { get; set; }
+
+		[XMLElement(Name = "echeckToken",FirstVersion = "12.0")]
+		public echeckTokenType echeckToken { get; set; }
+
+		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
+		public merchantDataType merchantData { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "echeckOrEcheckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
+		public echeckOrEcheckToken echeckOrEcheckToken { get; set; }
+
+		[XMLElement(Name = "redeliveryCycle",RemovedVersion = "8.1")]
+		public int? redeliveryCycle { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckCredit")]
+	public partial class echeckCredit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "amount")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
+		public int? secondaryAmount { get; set; }
+
+		[XMLElement(Name = "customBilling",RemovedVersion = "8.2")]
+		[XMLElement(Name = "customBilling",FirstVersion = "8.3")]
+		public customBilling customBilling { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "11.0")]
+		public string customIdentifier { get; set; }
+
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "orderSource")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "billToAddress")]
+		public billToAddress billToAddress { get; set; }
+
+		[XMLElement(Name = "echeck",RemovedVersion = "8.2")]
+		[XMLElement(Name = "echeck",FirstVersion = "12.0")]
+		public echeckType echeck { get; set; }
+
+		[XMLElement(Name = "echeckToken",FirstVersion = "12.0")]
+		public echeckTokenType echeckToken { get; set; }
+
+		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
+		public merchantDataType merchantData { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "echeckOrEcheckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
+		public echeckOrEcheckToken echeckOrEcheckToken { get; set; }
+
+		[XMLElement(Name = "txnReversalUserId",FirstVersion = "8.13",RemovedVersion = "8.14")]
+		public string txnReversalUserId { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckVerification")]
+	public partial class echeckVerification : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "amount")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "orderSource")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "billToAddress")]
+		public billToAddress billToAddress { get; set; }
+
+		[XMLElement(Name = "echeck",RemovedVersion = "8.2")]
+		[XMLElement(Name = "echeck",FirstVersion = "12.0")]
+		public echeckType echeck { get; set; }
+
+		[XMLElement(Name = "echeckToken",FirstVersion = "12.0")]
+		public echeckTokenType echeckToken { get; set; }
+
+		[XMLElement(Name = "merchantData",FirstVersion = "8.15")]
+		public merchantDataType merchantData { get; set; }
+
+		[XMLElement(Name = "echeckOrEcheckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
+		public echeckOrEcheckToken echeckOrEcheckToken { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "11.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckSalesResponse")]
+	public partial class echeckSalesResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "verificationCode")]
+		public string verificationCode { get; set; }
+
+		[XMLElement(Name = "postDate")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "accountUpdater")]
+		public accountUpdater accountUpdater { get; set; }
+
+		[XMLElement(Name = "tokenResponse",FirstVersion = "8.2")]
+		public tokenResponseType tokenResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckCreditResponse")]
+	public partial class echeckCreditResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "postDate")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "accountUpdater")]
+		public accountUpdater accountUpdater { get; set; }
+
+		[XMLElement(Name = "tokenResponse",FirstVersion = "8.2")]
+		public tokenResponseType tokenResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckAccountInfoType",FirstVersion = "8.5")]
+	public partial class echeckAccountInfoType : VersionedXMLElement
+	{
+		[XMLElement(Name = "accType",FirstVersion = "8.5")]
+		public echeckAccountTypeEnum? accType { get; set; }
+
+		[XMLElement(Name = "accNum",FirstVersion = "8.5")]
+		public string accNum { get; set; }
+
+		[XMLElement(Name = "routingNum",FirstVersion = "8.5")]
+		public string routingNum { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckTokenInfoType",FirstVersion = "8.5")]
+	public partial class echeckTokenInfoType : VersionedXMLElement
+	{
+		[XMLElement(Name = "accType",FirstVersion = "8.5")]
+		public echeckAccountTypeEnum? accType { get; set; }
+
+		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
+		public string cnpToken { get; set; }
+
+		[XMLElement(Name = "routingNum",FirstVersion = "8.5")]
+		public string routingNum { get; set; }
+
+		[XMLElement(Name = "litleToken",FirstVersion = "8.5",RemovedVersion = "12.0")]
+		public string litleToken { get; set; }
+
+	}
+
+	[XMLElement(Name = "cardAccountInfoType",FirstVersion = "8.5")]
+	public partial class cardAccountInfoType : VersionedXMLElement
+	{
+		[XMLElement(Name = "type",FirstVersion = "8.5")]
+		public methodOfPaymentTypeEnum? type { get; set; }
+
+		[XMLElement(Name = "number",FirstVersion = "8.5")]
+		public string number { get; set; }
+
+		[XMLElement(Name = "expDate",FirstVersion = "8.5")]
+		public string expDate { get; set; }
+
+	}
+
+	[XMLElement(Name = "cardTokenInfoType",FirstVersion = "8.5")]
+	public partial class cardTokenInfoType : VersionedXMLElement
+	{
+		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
+		public string cnpToken { get; set; }
+
+		[XMLElement(Name = "type",FirstVersion = "8.5")]
+		public methodOfPaymentTypeEnum? type { get; set; }
+
+		[XMLElement(Name = "expDate",FirstVersion = "8.5")]
+		public string expDate { get; set; }
+
+		[XMLElement(Name = "bin",FirstVersion = "8.5")]
+		public string bin { get; set; }
+
+		[XMLElement(Name = "litleToken",FirstVersion = "8.5",RemovedVersion = "12.0")]
+		public string litleToken { get; set; }
+
+	}
+
+	[XMLElement(Name = "extendedCardResponseType",FirstVersion = "8.5")]
+	public partial class extendedCardResponseType : VersionedXMLElement
+	{
+		[XMLElement(Name = "message",FirstVersion = "8.5")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "code",FirstVersion = "8.5")]
+		public string code { get; set; }
+
+	}
+
+	[XMLElement(Name = "accountUpdater")]
+	public partial class accountUpdater : VersionedXMLElement
+	{
+		[XMLElement(Name = "originalAccountInfo")]
+		public echeckAccountInfoType originalAccountInfo { get; set; }
+
+		[XMLElement(Name = "newAccountInfo")]
+		public echeckAccountInfoType newAccountInfo { get; set; }
+
+		[XMLElement(Name = "originalTokenInfo",FirstVersion = "8.2")]
+		public echeckTokenInfoType originalTokenInfo { get; set; }
+
+		[XMLElement(Name = "newTokenInfo",FirstVersion = "8.2")]
+		public echeckTokenInfoType newTokenInfo { get; set; }
+
+		[XMLElement(Name = "originalCardInfo",FirstVersion = "8.3")]
+		public cardAccountInfoType originalCardInfo { get; set; }
+
+		[XMLElement(Name = "newCardInfo",FirstVersion = "8.3")]
+		public cardAccountInfoType newCardInfo { get; set; }
+
+		[XMLElement(Name = "extendedCardResponse",FirstVersion = "8.5")]
+		public extendedCardResponseType extendedCardResponse { get; set; }
+
+		[XMLElement(Name = "accountUpdateSource",FirstVersion = "12.10")]
+		public accountUpdateSourceType? accountUpdateSource { get; set; }
+
+		[XMLElement(Name = "originalCardTokenInfo",FirstVersion = "8.5")]
+		public cardTokenInfoType originalCardTokenInfo { get; set; }
+
+		[XMLElement(Name = "newCardTokenInfo",FirstVersion = "8.5")]
+		public cardTokenInfoType newCardTokenInfo { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckVerificationResponse")]
+	public partial class echeckVerificationResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "postDate")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "tokenResponse",FirstVersion = "8.2")]
+		public tokenResponseType tokenResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "accountUpdater",RemovedVersion = "8.2")]
+		public accountUpdater accountUpdater { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckRedeposit",FirstVersion = "8.1")]
+	public partial class echeckRedeposit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "echeck",FirstVersion = "8.1",RemovedVersion = "8.2")]
+		[XMLElement(Name = "echeck",FirstVersion = "12.0")]
+		public echeckType echeck { get; set; }
+
+		[XMLElement(Name = "echeckToken",FirstVersion = "12.0")]
+		public echeckTokenType echeckToken { get; set; }
+
+		[XMLElement(Name = "merchantData",FirstVersion = "8.15")]
+		public merchantDataType merchantData { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "11.0")]
+		public string customIdentifier { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.1",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "echeckOrEcheckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
+		public echeckOrEcheckToken echeckOrEcheckToken { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckRedepositResponse",FirstVersion = "8.1")]
+	public partial class echeckRedepositResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.1")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.1")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.1")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.1")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "accountUpdater",FirstVersion = "8.1")]
+		public accountUpdater accountUpdater { get; set; }
+
+		[XMLElement(Name = "tokenResponse",FirstVersion = "8.2")]
+		public tokenResponseType tokenResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.1",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "redepositCount",FirstVersion = "8.1",RemovedVersion = "8.2")]
+		public short? redepositCount { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckType",FirstVersion = "8.2")]
+	public partial class echeckType : VersionedXMLElement
+	{
+		[XMLElement(Name = "accType",FirstVersion = "8.2")]
+		public echeckAccountTypeEnum? accType { get; set; }
+
+		[XMLElement(Name = "accNum",FirstVersion = "8.2")]
+		public string accNum { get; set; }
+
+		[XMLElement(Name = "routingNum",FirstVersion = "8.2")]
+		public string routingNum { get; set; }
+
+		[XMLElement(Name = "checkNum",FirstVersion = "8.2")]
+		public string checkNum { get; set; }
+
+		[XMLElement(Name = "ccdPaymentInformation",FirstVersion = "9.3")]
+		public string ccdPaymentInformation { get; set; }
+
+		[XMLElement(Name = "ctxPaymentInformation",FirstVersion = "12.10")]
+		public ctxPaymentInformationType ctxPaymentInformation { get; set; }
+
+	}
+
+	[XMLElement(Name = "ctxPaymentInformationType",FirstVersion = "12.7")]
+	public partial class ctxPaymentInformationType : VersionedXMLElement
+	{
+		[XMLElement(Name = "ctxPaymentDetail",FirstVersion = "12.7")]
+		public string ctxPaymentDetail { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckForTokenType",FirstVersion = "8.2")]
+	public partial class echeckForTokenType : VersionedXMLElement
+	{
+		[XMLElement(Name = "accNum",FirstVersion = "8.2")]
+		public string accNum { get; set; }
+
+		[XMLElement(Name = "routingNum",FirstVersion = "8.2")]
+		public string routingNum { get; set; }
+
+	}
+
+	[XMLElement(Name = "filteringType",FirstVersion = "8.3")]
+	public partial class filteringType : VersionedXMLElement
+	{
+		[XMLElement(Name = "prepaid",FirstVersion = "8.3")]
+		public bool? prepaid { get; set; }
+
+		[XMLElement(Name = "international",FirstVersion = "8.3")]
+		public bool? international { get; set; }
+
+		[XMLElement(Name = "chargeback",FirstVersion = "8.3")]
+		public bool? chargeback { get; set; }
+
+	}
+
+	[XMLElement(Name = "updateCardValidationNumOnToken",FirstVersion = "8.14")]
+	public partial class updateCardValidationNumOnToken : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.14")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
+		public string cnpToken { get; set; }
+
+		[XMLElement(Name = "cardValidationNum",FirstVersion = "8.14")]
+		public string cardValidationNum { get; set; }
+
+		[XMLElement(Name = "litleToken",FirstVersion = "8.14",RemovedVersion = "12.0")]
+		public string litleToken { get; set; }
+
+	}
+
+	[XMLElement(Name = "updateCardValidationNumOnTokenResponse",FirstVersion = "8.14")]
+	public partial class updateCardValidationNumOnTokenResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.14")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.14")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.14")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.14",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "8.14",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+	}
+
+	[XMLElement(Name = "virtualGiftCardType",FirstVersion = "8.22")]
+	public partial class virtualGiftCardType : VersionedXMLElement
+	{
+		[XMLElement(Name = "accountNumberLength",FirstVersion = "8.22")]
+		public int? accountNumberLength { get; set; }
+
+		[XMLElement(Name = "giftCardBin",FirstVersion = "8.22")]
+		public string giftCardBin { get; set; }
+
+	}
+
+	[XMLElement(Name = "fraudCheck",FirstVersion = "8.25")]
+	public partial class fraudCheck : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "advancedFraudChecks",FirstVersion = "8.25")]
+		public advancedFraudChecksType advancedFraudChecks { get; set; }
+
+		[XMLElement(Name = "billToAddress",FirstVersion = "9.3")]
+		public billToAddress billToAddress { get; set; }
+
+		[XMLElement(Name = "shipToAddress",FirstVersion = "9.3")]
+		public shipToAddress shipToAddress { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "9.3")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "eventType",FirstVersion = "12.2")]
+		public eventType? eventType { get; set; }
+
+		[XMLElement(Name = "accountLogin",FirstVersion = "12.2")]
+		public string accountLogin { get; set; }
+
+		[XMLElement(Name = "accountPasshash",FirstVersion = "12.2")]
+		public string accountPasshash { get; set; }
+
+	}
+
+	[XMLElement(Name = "fraudCheckResponse",FirstVersion = "8.25")]
+	public partial class fraudCheckResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.25")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.25")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.25")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "advancedFraudResults",FirstVersion = "8.25")]
+		public advancedFraudResultsType advancedFraudResults { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.25",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "wallet",FirstVersion = "8.27")]
+	public partial class wallet : VersionedXMLElement
+	{
+		[XMLElement(Name = "walletSourceType",FirstVersion = "8.27")]
+		public walletSourceType? walletSourceType { get; set; }
+
+		[XMLElement(Name = "walletSourceTypeId",FirstVersion = "8.27")]
+		public string walletSourceTypeId { get; set; }
+
+	}
+
+	[XMLElement(Name = "applepayType",FirstVersion = "8.29",RemovedVersion = "9.0")]
+	[XMLElement(Name = "applepayType",FirstVersion = "9.2")]
+	public partial class applepayType : VersionedXMLElement
+	{
+		[XMLElement(Name = "data",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "data",FirstVersion = "9.2")]
+		public string data { get; set; }
+
+		[XMLElement(Name = "header",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "header",FirstVersion = "9.2")]
+		public applepayHeaderType header { get; set; }
+
+		[XMLElement(Name = "signature",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "signature",FirstVersion = "9.2")]
+		public string signature { get; set; }
+
+		[XMLElement(Name = "version",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "version",FirstVersion = "9.2")]
+		public string version { get; set; }
+
+	}
+
+	[XMLElement(Name = "applepayHeaderType",FirstVersion = "8.29",RemovedVersion = "9.0")]
+	[XMLElement(Name = "applepayHeaderType",FirstVersion = "9.2")]
+	public partial class applepayHeaderType : VersionedXMLElement
+	{
+		[XMLElement(Name = "applicationData",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "applicationData",FirstVersion = "9.2")]
+		public string applicationData { get; set; }
+
+		[XMLElement(Name = "ephemeralPublicKey",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "ephemeralPublicKey",FirstVersion = "9.2")]
+		public string ephemeralPublicKey { get; set; }
+
+		[XMLElement(Name = "publicKeyHash",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "publicKeyHash",FirstVersion = "9.2")]
+		public string publicKeyHash { get; set; }
+
+		[XMLElement(Name = "transactionId",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "transactionId",FirstVersion = "9.2")]
+		public string transactionId { get; set; }
+
+	}
+
+	[XMLElement(Name = "applepayResponse",FirstVersion = "8.29",RemovedVersion = "9.0")]
+	[XMLElement(Name = "applepayResponse",FirstVersion = "9.2")]
+	public partial class applepayResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "applicationPrimaryAccountNumber",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "applicationPrimaryAccountNumber",FirstVersion = "9.2")]
+		public string applicationPrimaryAccountNumber { get; set; }
+
+		[XMLElement(Name = "applicationExpirationDate",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "applicationExpirationDate",FirstVersion = "9.2")]
+		public string applicationExpirationDate { get; set; }
+
+		[XMLElement(Name = "currencyCode",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "currencyCode",FirstVersion = "9.2")]
+		public string currencyCode { get; set; }
+
+		[XMLElement(Name = "transactionAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "transactionAmount",FirstVersion = "9.2")]
+		public int? transactionAmount { get; set; }
+
+		[XMLElement(Name = "cardholderName",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "cardholderName",FirstVersion = "9.2")]
+		public string cardholderName { get; set; }
+
+		[XMLElement(Name = "deviceManufacturerIdentifier",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "deviceManufacturerIdentifier",FirstVersion = "9.2")]
+		public string deviceManufacturerIdentifier { get; set; }
+
+		[XMLElement(Name = "paymentDataType",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "paymentDataType",FirstVersion = "9.2")]
+		public string paymentDataType { get; set; }
+
+		[XMLElement(Name = "onlinePaymentCryptogram",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "onlinePaymentCryptogram",FirstVersion = "9.2")]
+		public string onlinePaymentCryptogram { get; set; }
+
+		[XMLElement(Name = "eciIndicator",FirstVersion = "8.29",RemovedVersion = "9.0")]
+		[XMLElement(Name = "eciIndicator",FirstVersion = "9.2")]
+		public string eciIndicator { get; set; }
+
+	}
+
+	[XMLElement(Name = "androidpayResponse",FirstVersion = "9.8",RemovedVersion = "10.0")]
+	[XMLElement(Name = "androidpayResponse",FirstVersion = "10.1")]
+	public partial class androidpayResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "cryptogram",FirstVersion = "9.8",RemovedVersion = "10.0")]
+		[XMLElement(Name = "cryptogram",FirstVersion = "10.1")]
+		public string cryptogram { get; set; }
+
+		[XMLElement(Name = "expMonth",FirstVersion = "9.8",RemovedVersion = "10.0")]
+		[XMLElement(Name = "expMonth",FirstVersion = "10.1")]
+		public string expMonth { get; set; }
+
+		[XMLElement(Name = "expYear",FirstVersion = "9.8",RemovedVersion = "10.0")]
+		[XMLElement(Name = "expYear",FirstVersion = "10.1")]
+		public string expYear { get; set; }
+
+		[XMLElement(Name = "eciIndicator",FirstVersion = "9.11",RemovedVersion = "10.0")]
+		[XMLElement(Name = "eciIndicator",FirstVersion = "10.6")]
+		public string eciIndicator { get; set; }
+
+	}
+
+	[XMLElement(Name = "sepaDirectDebitType",FirstVersion = "9.12",RemovedVersion = "10.0")]
+	[XMLElement(Name = "sepaDirectDebitType",FirstVersion = "10.4")]
+	public partial class sepaDirectDebitType : VersionedXMLElement
+	{
+		[XMLElement(Name = "mandateProvider",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "mandateProvider",FirstVersion = "10.4")]
+		public mandateProvider? mandateProvider { get; set; }
+
+		[XMLElement(Name = "sequenceType",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "sequenceType",FirstVersion = "10.4")]
+		public sequenceType? sequenceType { get; set; }
+
+		[XMLElement(Name = "mandateReference",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "mandateReference",FirstVersion = "10.4")]
+		public string mandateReference { get; set; }
+
+		[XMLElement(Name = "mandateUrl",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "mandateUrl",FirstVersion = "10.4")]
+		public string mandateUrl { get; set; }
+
+		[XMLElement(Name = "mandateSignatureDate",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "mandateSignatureDate",FirstVersion = "10.4")]
+		public DateTime mandateSignatureDate { get; set; }
+
+		[XMLElement(Name = "iban",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "iban",FirstVersion = "10.4")]
+		public string iban { get; set; }
+
+		[XMLElement(Name = "preferredLanguage",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "preferredLanguage",FirstVersion = "10.4")]
+		public countryTypeEnum? preferredLanguage { get; set; }
+
+	}
+
+	[XMLElement(Name = "sepaDirectDebitResponse",FirstVersion = "9.12",RemovedVersion = "10.0")]
+	[XMLElement(Name = "sepaDirectDebitResponse",FirstVersion = "10.4")]
+	public partial class sepaDirectDebitResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "redirectUrl",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "redirectUrl",FirstVersion = "10.4")]
+		public string redirectUrl { get; set; }
+
+		[XMLElement(Name = "redirectToken",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "redirectToken",FirstVersion = "10.4")]
+		public string redirectToken { get; set; }
+
+		[XMLElement(Name = "mandateReference",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "mandateReference",FirstVersion = "10.4")]
+		public string mandateReference { get; set; }
+
+	}
+
+	[XMLElement(Name = "idealType",FirstVersion = "9.12",RemovedVersion = "10.0")]
+	[XMLElement(Name = "idealType",FirstVersion = "11.0")]
+	public partial class idealType : VersionedXMLElement
+	{
+		[XMLElement(Name = "preferredLanguage",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "preferredLanguage",FirstVersion = "11.0")]
+		public countryTypeEnum? preferredLanguage { get; set; }
+
+	}
+
+	[XMLElement(Name = "idealResponse",FirstVersion = "9.12",RemovedVersion = "10.0")]
+	[XMLElement(Name = "idealResponse",FirstVersion = "11.0")]
+	public partial class idealResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "redirectUrl",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "redirectUrl",FirstVersion = "11.0")]
+		public string redirectUrl { get; set; }
+
+		[XMLElement(Name = "redirectToken",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "redirectToken",FirstVersion = "11.0")]
+		public string redirectToken { get; set; }
+
+		[XMLElement(Name = "paymentPurpose",FirstVersion = "9.12",RemovedVersion = "10.0")]
+		[XMLElement(Name = "paymentPurpose",FirstVersion = "11.0")]
+		public string paymentPurpose { get; set; }
+
+	}
+
+	[XMLElement(Name = "giropayType",FirstVersion = "9.13",RemovedVersion = "10.0")]
+	[XMLElement(Name = "giropayType",FirstVersion = "11.0")]
+	public partial class giropayType : VersionedXMLElement
+	{
+		[XMLElement(Name = "preferredLanguage",FirstVersion = "9.13",RemovedVersion = "10.0")]
+		[XMLElement(Name = "preferredLanguage",FirstVersion = "11.0")]
+		public countryTypeEnum? preferredLanguage { get; set; }
+
+	}
+
+	[XMLElement(Name = "giropayResponse",FirstVersion = "9.13",RemovedVersion = "10.0")]
+	[XMLElement(Name = "giropayResponse",FirstVersion = "11.0")]
+	public partial class giropayResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "redirectUrl",FirstVersion = "9.13",RemovedVersion = "10.0")]
+		[XMLElement(Name = "redirectUrl",FirstVersion = "11.0")]
+		public string redirectUrl { get; set; }
+
+		[XMLElement(Name = "redirectToken",FirstVersion = "9.13",RemovedVersion = "10.0")]
+		[XMLElement(Name = "redirectToken",FirstVersion = "11.0")]
+		public string redirectToken { get; set; }
+
+		[XMLElement(Name = "paymentPurpose",FirstVersion = "9.13",RemovedVersion = "10.0")]
+		[XMLElement(Name = "paymentPurpose",FirstVersion = "11.0")]
+		public string paymentPurpose { get; set; }
+
+	}
+
+	[XMLElement(Name = "sofortType",FirstVersion = "9.13",RemovedVersion = "10.0")]
+	[XMLElement(Name = "sofortType",FirstVersion = "11.0")]
+	public partial class sofortType : VersionedXMLElement
+	{
+		[XMLElement(Name = "preferredLanguage",FirstVersion = "9.13",RemovedVersion = "10.0")]
+		[XMLElement(Name = "preferredLanguage",FirstVersion = "11.0")]
+		public countryTypeEnum? preferredLanguage { get; set; }
+
+	}
+
+	[XMLElement(Name = "sofortResponse",FirstVersion = "9.13",RemovedVersion = "10.0")]
+	[XMLElement(Name = "sofortResponse",FirstVersion = "11.0")]
+	public partial class sofortResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "redirectUrl",FirstVersion = "9.13",RemovedVersion = "10.0")]
+		[XMLElement(Name = "redirectUrl",FirstVersion = "11.0")]
+		public string redirectUrl { get; set; }
+
+		[XMLElement(Name = "redirectToken",FirstVersion = "9.13",RemovedVersion = "10.0")]
+		[XMLElement(Name = "redirectToken",FirstVersion = "11.0")]
+		public string redirectToken { get; set; }
+
+		[XMLElement(Name = "paymentPurpose",FirstVersion = "9.13",RemovedVersion = "10.0")]
+		[XMLElement(Name = "paymentPurpose",FirstVersion = "11.0")]
+		public string paymentPurpose { get; set; }
+
+	}
+
+	[XMLElement(Name = "submerchantCreditResponse",FirstVersion = "9.0")]
+	public partial class submerchantCreditResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.0")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.0")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "submerchantDebitResponse",FirstVersion = "9.0")]
+	public partial class submerchantDebitResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.0")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.0")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "payFacDebit",FirstVersion = "9.0")]
+	public partial class payFacDebit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.0")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "9.0")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "payFacCredit",FirstVersion = "9.0")]
+	public partial class payFacCredit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.0")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "9.0")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "payFacCreditResponse",FirstVersion = "9.0")]
+	public partial class payFacCreditResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.0")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.0")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "payFacDebitResponse",FirstVersion = "9.0")]
+	public partial class payFacDebitResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.0")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.0")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "reserveCredit",FirstVersion = "9.0")]
+	public partial class reserveCredit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.0")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "9.0")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "reserveDebit",FirstVersion = "9.0")]
+	public partial class reserveDebit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.0")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "9.0")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "reserveCreditResponse",FirstVersion = "9.0")]
+	public partial class reserveCreditResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.0")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.0")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "reserveDebitResponse",FirstVersion = "9.0")]
+	public partial class reserveDebitResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.0")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.0")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "physicalCheckCredit",FirstVersion = "9.2")]
+	public partial class physicalCheckCredit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.2")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "9.2")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "physicalCheckCreditResponse",FirstVersion = "9.2")]
+	public partial class physicalCheckCreditResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.2")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.2")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.2")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.2",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "physicalCheckDebit",FirstVersion = "9.2")]
+	public partial class physicalCheckDebit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.2")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "9.2")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "physicalCheckDebitResponse",FirstVersion = "9.2")]
+	public partial class physicalCheckDebitResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.2")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.2")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.2")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.2",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "vendorDebitResponse",FirstVersion = "9.2")]
+	public partial class vendorDebitResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.2")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.2")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.2")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.2",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "vendorCreditResponse",FirstVersion = "9.2")]
+	public partial class vendorCreditResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.2")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.2")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.2")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.2",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "fundingInstructionVoid",FirstVersion = "10.1")]
+	public partial class fundingInstructionVoid : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "10.1",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "fundingInstructionVoidResponse",FirstVersion = "10.1")]
+	public partial class fundingInstructionVoidResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "10.1")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "10.1")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "10.1")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "10.1",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "pinlessDebitResponse",FirstVersion = "12.1")]
+	public partial class pinlessDebitResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "networkName",FirstVersion = "12.1")]
+		public string networkName { get; set; }
+
+	}
+
+	[XMLElement(Name = "fastAccessFunding",FirstVersion = "11.3")]
+	public partial class fastAccessFunding : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "11.3")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "customerName",FirstVersion = "12.9")]
+		public string customerName { get; set; }
+
+		[XMLElement(Name = "submerchantName",FirstVersion = "11.3")]
+		public string submerchantName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "11.3")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "11.3")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "disbursementType",FirstVersion = "12.4")]
+		public disbursementTypeEnum? disbursementType { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "11.3")]
+		public cardType card { get; set; }
+
+		[XMLElement(Name = "token",FirstVersion = "11.3")]
+		public cardTokenType token { get; set; }
+
+		[XMLElement(Name = "paypage",FirstVersion = "11.3")]
+		public cardPaypageType paypage { get; set; }
+
+	}
+
+	[XMLElement(Name = "fastAccessFundingResponse",FirstVersion = "11.3")]
+	public partial class fastAccessFundingResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "11.3")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "11.3")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "11.3")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "11.3")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "tokenResponse",FirstVersion = "11.3")]
+		public tokenResponseType tokenResponse { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "11.3",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "customerCreditResponse",FirstVersion = "12.9")]
+	public partial class customerCreditResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.9")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "12.9")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "12.9")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "12.9")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "12.9")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "12.9")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "customerDebitResponse",FirstVersion = "12.9")]
+	public partial class customerDebitResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.9")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "12.9")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "12.9")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "12.9")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "12.9")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "12.9")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "payoutOrgDebit",FirstVersion = "12.9")]
+	public partial class payoutOrgDebit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "12.9")]
+		public int? amount { get; set; }
+
+	}
+
+	[XMLElement(Name = "payoutOrgCredit",FirstVersion = "12.9")]
+	public partial class payoutOrgCredit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "12.9")]
+		public int? amount { get; set; }
+
+	}
+
+	[XMLElement(Name = "payoutOrgCreditResponse",FirstVersion = "12.9")]
+	public partial class payoutOrgCreditResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.9")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "12.9")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "12.9")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "12.9")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "12.9")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "12.9")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "payoutOrgDebitResponse",FirstVersion = "12.9")]
+	public partial class payoutOrgDebitResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.9")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "12.9")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "12.9")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "12.9")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "12.9")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "12.9")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "translateToLowValueTokenRequestType",FirstVersion = "12.2")]
+	public partial class translateToLowValueTokenRequestType : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId",FirstVersion = "12.2")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "token",FirstVersion = "12.2")]
+		public string token { get; set; }
+
+	}
+
+	[XMLElement(Name = "translateToLowValueTokenResponse",FirstVersion = "12.2")]
+	public partial class translateToLowValueTokenResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId",FirstVersion = "12.2")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "paypageRegistrationId",FirstVersion = "12.2")]
+		public string paypageRegistrationId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "12.2")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "12.2")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "12.2")]
+		public DateTime responseTime { get; set; }
+
+	}
+
+	[XMLElement(Name = "pinlessDebitRequestType",FirstVersion = "12.2")]
+	public partial class pinlessDebitRequestType : VersionedXMLElement
+	{
+		[XMLElement(Name = "routingPreference",FirstVersion = "12.2")]
+		public routingPreferenceEnum? routingPreference { get; set; }
+
+		[XMLElement(Name = "preferredDebitNetworks",FirstVersion = "12.3")]
+		public preferredDebitNetworksType preferredDebitNetworks { get; set; }
+
+	}
+
+	[XMLElement(Name = "preferredDebitNetworksType",FirstVersion = "12.3")]
+	public partial class preferredDebitNetworksType : VersionedXMLElement
+	{
+		[XMLElement(Name = "debitNetworkName",FirstVersion = "12.3")]
+		public string debitNetworkName { get; set; }
+
+	}
+
+	[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
+	public partial class lodgingInfo : VersionedXMLElement
+	{
+		[XMLElement(Name = "hotelFolioNumber",FirstVersion = "12.2")]
+		public string hotelFolioNumber { get; set; }
+
+		[XMLElement(Name = "checkInDate",FirstVersion = "12.2")]
+		public DateTime checkInDate { get; set; }
+
+		[XMLElement(Name = "checkOutDate",FirstVersion = "12.2")]
+		public DateTime checkOutDate { get; set; }
+
+		[XMLElement(Name = "duration",FirstVersion = "12.2")]
+		public int? duration { get; set; }
+
+		[XMLElement(Name = "customerServicePhone",FirstVersion = "12.2")]
+		public string customerServicePhone { get; set; }
+
+		[XMLElement(Name = "programCode",FirstVersion = "12.2")]
+		public lodgingProgramCodeType? programCode { get; set; } = lodgingProgramCodeType.LODGING;
+
+		[XMLElement(Name = "roomRate",FirstVersion = "12.2")]
+		public int? roomRate { get; set; }
+
+		[XMLElement(Name = "roomTax",FirstVersion = "12.2")]
+		public int? roomTax { get; set; }
+
+		[XMLElement(Name = "numAdults",FirstVersion = "12.2")]
+		public int? numAdults { get; set; }
+
+		[XMLElement(Name = "propertyLocalPhone",FirstVersion = "12.2")]
+		public string propertyLocalPhone { get; set; }
+
+		[XMLElement(Name = "fireSafetyIndicator",FirstVersion = "12.2")]
+		public bool? fireSafetyIndicator { get; set; }
+
+		[XMLElement(Name = "lodgingCharge",FirstVersion = "12.2")]
+		public lodgingCharge lodgingCharge { get; set; }
+
+	}
+
+	[XMLElement(Name = "litleRequest",RemovedVersion = "12.0")]
+	[XMLElement(Name = "cnpRequest",FirstVersion = "12.0")]
+	public partial class cnpRequest : VersionedXMLElement
+	{
+		[XMLElement(Name = "authentication")]
+		public authentication authentication { get; set; }
+
+		[XMLElement(Name = "batchRequest")]
+		public batchRequest batchRequest { get; set; }
+
+		[XMLElement(Name = "RFRRequest")]
+		public RFRRequest RFRRequest { get; set; }
+
+		[XMLAttribute(Name = "version")]
+		public string version { get; set; }
+
+		[XMLAttribute(Name = "id")]
+		public string id { get; set; }
+
+		[XMLAttribute(Name = "numBatchRequests")]
+		public int? numBatchRequests { get; set; }
+
+	}
+
+	[XMLElement(Name = "RFRRequest")]
+	public partial class RFRRequest : VersionedXMLElement
+	{
+		[XMLElement(Name = "cnpSessionId",FirstVersion = "12.0")]
+		public long? cnpSessionId { get; set; }
+
+		[XMLElement(Name = "accountUpdateFileRequestData")]
+		public accountUpdateFileRequestData accountUpdateFileRequestData { get; set; }
+
+		[XMLElement(Name = "litleSessionId",RemovedVersion = "12.0")]
+		public long? litleSessionId { get; set; }
+
+	}
+
+	[XMLElement(Name = "batchRequest")]
+	public partial class batchRequest : VersionedXMLElement
+	{
+		[XMLElement(Name = "transaction")]
+		public transaction transaction { get; set; }
+
+		[XMLElement(Name = "recurringTransaction",FirstVersion = "8.20")]
+		public recurringTransaction recurringTransaction { get; set; }
+
+		[XMLAttribute(Name = "merchantSdk",FirstVersion = "8.21")]
+		public string merchantSdk { get; set; }
+
+		[XMLAttribute(Name = "id")]
+		public string id { get; set; }
+
+		[XMLAttribute(Name = "numAuths")]
+		public int? numAuths { get; set; } = 0;
+
+		[XMLAttribute(Name = "authAmount")]
+		public int? authAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numAuthReversals")]
+		public int? numAuthReversals { get; set; } = 0;
+
+		[XMLAttribute(Name = "authReversalAmount")]
+		public int? authReversalAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numGiftCardAuthReversals",FirstVersion = "11.0")]
+		public int? numGiftCardAuthReversals { get; set; } = 0;
+
+		[XMLAttribute(Name = "giftCardAuthReversalOriginalAmount",FirstVersion = "11.0")]
+		public int? giftCardAuthReversalOriginalAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numCaptures")]
+		public int? numCaptures { get; set; } = 0;
+
+		[XMLAttribute(Name = "captureAmount")]
+		public int? captureAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numGiftCardCaptures",FirstVersion = "11.0")]
+		public int? numGiftCardCaptures { get; set; } = 0;
+
+		[XMLAttribute(Name = "giftCardCaptureAmount",FirstVersion = "11.0")]
+		public int? giftCardCaptureAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numExtCaptures")]
+		public int? numExtCaptures { get; set; } = 0;
+
+		[XMLAttribute(Name = "extCaptureAmount")]
+		public int? extCaptureAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numCredits")]
+		public int? numCredits { get; set; } = 0;
+
+		[XMLAttribute(Name = "creditAmount")]
+		public int? creditAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numGiftCardCredits",FirstVersion = "11.0")]
+		public int? numGiftCardCredits { get; set; } = 0;
+
+		[XMLAttribute(Name = "giftCardCreditAmount",FirstVersion = "11.0")]
+		public int? giftCardCreditAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numForceCaptures")]
+		public int? numForceCaptures { get; set; } = 0;
+
+		[XMLAttribute(Name = "forceCaptureAmount")]
+		public int? forceCaptureAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numSales")]
+		public int? numSales { get; set; } = 0;
+
+		[XMLAttribute(Name = "saleAmount")]
+		public int? saleAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numCaptureGivenAuths")]
+		public int? numCaptureGivenAuths { get; set; } = 0;
+
+		[XMLAttribute(Name = "captureGivenAuthAmount")]
+		public int? captureGivenAuthAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numEcheckSales")]
+		public int? numEcheckSales { get; set; } = 0;
+
+		[XMLAttribute(Name = "echeckSalesAmount")]
+		public int? echeckSalesAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numEcheckCredit")]
+		public int? numEcheckCredit { get; set; } = 0;
+
+		[XMLAttribute(Name = "echeckCreditAmount")]
+		public int? echeckCreditAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numEcheckVerification")]
+		public int? numEcheckVerification { get; set; } = 0;
+
+		[XMLAttribute(Name = "echeckVerificationAmount")]
+		public int? echeckVerificationAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numEcheckRedeposit",FirstVersion = "8.1")]
+		public int? numEcheckRedeposit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numEcheckPreNoteSale",FirstVersion = "9.1")]
+		public int? numEcheckPreNoteSale { get; set; } = 0;
+
+		[XMLAttribute(Name = "numEcheckPreNoteCredit",FirstVersion = "9.1")]
+		public int? numEcheckPreNoteCredit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numAccountUpdates")]
+		public int? numAccountUpdates { get; set; } = 0;
+
+		[XMLAttribute(Name = "numTokenRegistrations")]
+		public int? numTokenRegistrations { get; set; } = 0;
+
+		[XMLAttribute(Name = "numUpdateCardValidationNumOnTokens",FirstVersion = "8.14")]
+		public int? numUpdateCardValidationNumOnTokens { get; set; } = 0;
+
+		[XMLAttribute(Name = "numCancelSubscriptions",FirstVersion = "8.20")]
+		public int? numCancelSubscriptions { get; set; } = 0;
+
+		[XMLAttribute(Name = "numUpdateSubscriptions",FirstVersion = "8.20")]
+		public int? numUpdateSubscriptions { get; set; } = 0;
+
+		[XMLAttribute(Name = "numCreatePlans",FirstVersion = "8.21")]
+		public int? numCreatePlans { get; set; } = 0;
+
+		[XMLAttribute(Name = "numUpdatePlans",FirstVersion = "8.21")]
+		public int? numUpdatePlans { get; set; } = 0;
+
+		[XMLAttribute(Name = "numActivates",FirstVersion = "8.21")]
+		public int? numActivates { get; set; } = 0;
+
+		[XMLAttribute(Name = "numDeactivates",FirstVersion = "8.21")]
+		public int? numDeactivates { get; set; } = 0;
+
+		[XMLAttribute(Name = "activateAmount",FirstVersion = "8.21")]
+		public int? activateAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numLoads",FirstVersion = "8.21")]
+		public int? numLoads { get; set; } = 0;
+
+		[XMLAttribute(Name = "loadAmount",FirstVersion = "8.21")]
+		public int? loadAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numUnloads",FirstVersion = "8.21")]
+		public int? numUnloads { get; set; } = 0;
+
+		[XMLAttribute(Name = "unloadAmount",FirstVersion = "8.21")]
+		public int? unloadAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "numBalanceInquirys",FirstVersion = "8.21")]
+		public int? numBalanceInquirys { get; set; } = 0;
+
+		[XMLAttribute(Name = "numPayFacCredit",FirstVersion = "9.0")]
+		public int? numPayFacCredit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numPayFacDebit",FirstVersion = "9.0")]
+		public int? numPayFacDebit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numSubmerchantCredit",FirstVersion = "9.0")]
+		public int? numSubmerchantCredit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numSubmerchantDebit",FirstVersion = "9.0")]
+		public int? numSubmerchantDebit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numReserveCredit",FirstVersion = "9.0")]
+		public int? numReserveCredit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numReserveDebit",FirstVersion = "9.0")]
+		public int? numReserveDebit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numVendorDebit",FirstVersion = "9.2")]
+		public int? numVendorDebit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numVendorCredit",FirstVersion = "9.2")]
+		public int? numVendorCredit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numPhysicalCheckDebit",FirstVersion = "9.2")]
+		public int? numPhysicalCheckDebit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numPhysicalCheckCredit",FirstVersion = "9.2")]
+		public int? numPhysicalCheckCredit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numFundingInstructionVoid",FirstVersion = "10.1")]
+		public int? numFundingInstructionVoid { get; set; } = 0;
+
+		[XMLAttribute(Name = "numFastAccessFunding",FirstVersion = "12.1")]
+		public int? numFastAccessFunding { get; set; } = 0;
+
+		[XMLAttribute(Name = "numPayoutOrgCredit",FirstVersion = "12.9")]
+		public int? numPayoutOrgCredit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numPayoutOrgDebit",FirstVersion = "12.9")]
+		public int? numPayoutOrgDebit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numCustomerCredit",FirstVersion = "12.9")]
+		public int? numCustomerCredit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numCustomerDebit",FirstVersion = "12.9")]
+		public int? numCustomerDebit { get; set; } = 0;
+
+		[XMLAttribute(Name = "numTranslateToLowValueTokenRequests",FirstVersion = "12.2")]
+		public int? numTranslateToLowValueTokenRequests { get; set; } = 0;
+
+		[XMLAttribute(Name = "payFacCreditAmount",FirstVersion = "9.0")]
+		public int? payFacCreditAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "payFacDebitAmount",FirstVersion = "9.0")]
+		public int? payFacDebitAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "submerchantCreditAmount",FirstVersion = "9.0")]
+		public int? submerchantCreditAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "submerchantDebitAmount",FirstVersion = "9.0")]
+		public int? submerchantDebitAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "reserveCreditAmount",FirstVersion = "9.0")]
+		public int? reserveCreditAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "reserveDebitAmount",FirstVersion = "9.0")]
+		public int? reserveDebitAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "vendorDebitAmount",FirstVersion = "9.2")]
+		public int? vendorDebitAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "vendorCreditAmount",FirstVersion = "9.2")]
+		public int? vendorCreditAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "physicalCheckDebitAmount",FirstVersion = "9.2")]
+		public int? physicalCheckDebitAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "physicalCheckCreditAmount",FirstVersion = "9.2")]
+		public int? physicalCheckCreditAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "fastAccessFundingAmount",FirstVersion = "12.1")]
+		public int? fastAccessFundingAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "payoutOrgCreditAmount",FirstVersion = "12.9")]
+		public int? payoutOrgCreditAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "payoutOrgDebitAmount",FirstVersion = "12.9")]
+		public int? payoutOrgDebitAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "customerCreditAmount",FirstVersion = "12.9")]
+		public int? customerCreditAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "customerDebitAmount",FirstVersion = "12.9")]
+		public int? customerDebitAmount { get; set; } = 0;
+
+		[XMLAttribute(Name = "sameDayFunding",FirstVersion = "11.1")]
+		public bool? sameDayFunding { get; set; } = false;
+
+		[XMLAttribute(Name = "merchantId")]
+		public string merchantId { get; set; }
+
+		[XMLAttribute(Name = "numEmails",RemovedVersion = "8.5")]
+		public int? numEmails { get; set; }
+
+		[XMLAttribute(Name = "emailAmount",RemovedVersion = "8.5")]
+		public int? emailAmount { get; set; }
+
+	}
+
+	[XMLElement(Name = "accountUpdate")]
+	public partial class accountUpdate : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "cardOrToken",FirstVersion = "8.1")]
+		public cardOrToken cardOrToken { get; set; }
+
+		[XMLElement(Name = "card",RemovedVersion = "8.1")]
+		public cardType card { get; set; }
+
+	}
+
+	[XMLElement(Name = "litleResponse",RemovedVersion = "12.0")]
+	[XMLElement(Name = "cnpResponse",FirstVersion = "12.0")]
+	public partial class cnpResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "batchResponse")]
+		public batchResponse batchResponse { get; set; }
+
+		[XMLElement(Name = "RFRResponse")]
+		public RFRResponse RFRResponse { get; set; }
+
+		[XMLAttribute(Name = "version")]
+		public string version { get; set; }
+
+		[XMLAttribute(Name = "id")]
+		public string id { get; set; }
+
+		[XMLAttribute(Name = "response")]
+		public string response { get; set; }
+
+		[XMLAttribute(Name = "message")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "cnpSessionId",FirstVersion = "12.0")]
+		public long? cnpSessionId { get; set; }
+
+		[XMLAttribute(Name = "litleSessionId",RemovedVersion = "12.0")]
+		public long? litleSessionId { get; set; }
+
+	}
+
+	[XMLElement(Name = "RFRResponse")]
+	public partial class RFRResponse : VersionedXMLElement
+	{
+		[XMLAttribute(Name = "response")]
+		public string response { get; set; }
+
+		[XMLAttribute(Name = "message")]
+		public string message { get; set; }
+
+	}
+
+	[XMLElement(Name = "batchResponse")]
+	public partial class batchResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "transactionResponse")]
+		public transactionResponse transactionResponse { get; set; }
+
+		[XMLElement(Name = "recurringTransactionResponse",FirstVersion = "8.20")]
+		public recurringTransactionResponse recurringTransactionResponse { get; set; }
+
+		[XMLAttribute(Name = "id")]
+		public string id { get; set; }
+
+		[XMLAttribute(Name = "cnpBatchId",FirstVersion = "12.0")]
+		public long? cnpBatchId { get; set; }
+
+		[XMLAttribute(Name = "merchantId")]
+		public string merchantId { get; set; }
+
+		[XMLAttribute(Name = "numAccountUpdates",FirstVersion = "12.10")]
+		public int? numAccountUpdates { get; set; } = 0;
+
+		[XMLAttribute(Name = "litleBatchId",RemovedVersion = "12.0")]
+		public long? litleBatchId { get; set; }
+
+	}
+
+	[XMLElement(Name = "accountUpdateResponse")]
+	public partial class accountUpdateResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		[XMLElement(Name = "orderId",FirstVersion = "10.7",RemovedVersion = "11.0")]
+		[XMLElement(Name = "orderId",FirstVersion = "11.2")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "updatedCard")]
+		public cardType updatedCard { get; set; }
+
+		[XMLElement(Name = "originalCard")]
+		public cardType originalCard { get; set; }
+
+		[XMLElement(Name = "updatedToken",FirstVersion = "8.1")]
+		public cardTokenTypeAU updatedToken { get; set; }
+
+		[XMLElement(Name = "originalToken",FirstVersion = "8.1")]
+		public cardTokenTypeAU originalToken { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "cardTokenTypeAU",FirstVersion = "8.9")]
+	public partial class cardTokenTypeAU : cardTokenType
+	{
+		[XMLElement(Name = "bin",FirstVersion = "8.9")]
+		public string bin { get; set; }
+
+	}
+
+	[XMLElement(Name = "accountUpdateFileRequestData")]
+	public partial class accountUpdateFileRequestData : VersionedXMLElement
+	{
+		[XMLElement(Name = "merchantId")]
+		public string merchantId { get; set; }
+
+		[XMLElement(Name = "postDay")]
+		public DateTime postDay { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckPreNoteSale",FirstVersion = "9.1")]
+	public partial class echeckPreNoteSale : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId",FirstVersion = "9.1")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "orderSource",FirstVersion = "9.1")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "billToAddress",FirstVersion = "9.1")]
+		public billToAddress billToAddress { get; set; }
+
+		[XMLElement(Name = "echeck",FirstVersion = "9.1")]
+		public echeckType echeck { get; set; }
+
+		[XMLElement(Name = "merchantData",FirstVersion = "9.1")]
+		public merchantDataType merchantData { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckPreNoteCredit",FirstVersion = "9.1")]
+	public partial class echeckPreNoteCredit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "orderId",FirstVersion = "9.1")]
+		public string orderId { get; set; }
+
+		[XMLElement(Name = "orderSource",FirstVersion = "9.1")]
+		public orderSourceType? orderSource { get; set; }
+
+		[XMLElement(Name = "billToAddress",FirstVersion = "9.1")]
+		public billToAddress billToAddress { get; set; }
+
+		[XMLElement(Name = "echeck",FirstVersion = "9.1")]
+		public echeckType echeck { get; set; }
+
+		[XMLElement(Name = "merchantData",FirstVersion = "9.1")]
+		public merchantDataType merchantData { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckPreNoteSaleResponse",FirstVersion = "9.1")]
+	public partial class echeckPreNoteSaleResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.1")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.1")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.1")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.1",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "9.1",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "9.1",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckPreNoteCreditResponse",FirstVersion = "9.1")]
+	public partial class echeckPreNoteCreditResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.1")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.1")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.1")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.1",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "orderId",FirstVersion = "9.1",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "9.1",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "vendorCredit",FirstVersion = "9.2")]
+	public partial class vendorCredit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.2")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "vendorName",FirstVersion = "9.2")]
+		public string vendorName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "9.2")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "accountInfo",FirstVersion = "9.2")]
+		public echeckType accountInfo { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "vendorDebit",FirstVersion = "9.2")]
+	public partial class vendorDebit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.2")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "vendorName",FirstVersion = "9.2")]
+		public string vendorName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "9.2")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "accountInfo",FirstVersion = "9.2")]
+		public echeckType accountInfo { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "submerchantCredit",FirstVersion = "9.0")]
+	public partial class submerchantCredit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.0")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "submerchantName",FirstVersion = "9.0")]
+		public string submerchantName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "9.0")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "accountInfo",FirstVersion = "9.0")]
+		public echeckType accountInfo { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "submerchantDebit",FirstVersion = "9.0")]
+	public partial class submerchantDebit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.0")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "submerchantName",FirstVersion = "9.0")]
+		public string submerchantName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "9.0")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "accountInfo",FirstVersion = "9.0")]
+		public echeckType accountInfo { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "customerCredit",FirstVersion = "12.9")]
+	public partial class customerCredit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "customerName",FirstVersion = "12.9")]
+		public string customerName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "12.9")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "accountInfo",FirstVersion = "12.9")]
+		public echeckType accountInfo { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "12.9")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "customerDebit",FirstVersion = "12.9")]
+	public partial class customerDebit : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "customerName",FirstVersion = "12.9")]
+		public string customerName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "12.9")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "accountInfo",FirstVersion = "12.9")]
+		public echeckType accountInfo { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "12.9")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "baseRequest",FirstVersion = "8.2")]
+	public partial class baseRequest : VersionedXMLElement
+	{
+		[XMLElement(Name = "authentication")]
+		public authentication authentication { get; set; }
+
+		[XMLElement(Name = "transaction")]
+		public transaction transaction { get; set; }
+
+		[XMLElement(Name = "recurringTransaction",FirstVersion = "8.20")]
+		public recurringTransaction recurringTransaction { get; set; }
+
+		[XMLAttribute(Name = "version")]
+		public string version { get; set; }
+
+	}
+
+	[XMLElement(Name = "litleOnlineRequest",RemovedVersion = "12.0")]
+	[XMLElement(Name = "cnpOnlineRequest",FirstVersion = "12.0")]
+	public partial class cnpOnlineRequest : baseRequest
+	{
+		[XMLAttribute(Name = "merchantId")]
+		public string merchantId { get; set; }
+
+		[XMLAttribute(Name = "merchantSdk",FirstVersion = "8.12")]
+		public string merchantSdk { get; set; }
+
+		[XMLAttribute(Name = "loggedInUser",FirstVersion = "8.14")]
+		public string loggedInUser { get; set; }
+
+		[XMLAttribute(Name = "sameDayFunding",FirstVersion = "11.3")]
+		public bool? sameDayFunding { get; set; }
+
+	}
+
+	[XMLElement(Name = "litleOnlineResponse",RemovedVersion = "12.0")]
+	[XMLElement(Name = "cnpOnlineResponse",FirstVersion = "12.0")]
+	public partial class cnpOnlineResponse : VersionedXMLElement
+	{
+		[XMLElement(Name = "transactionResponse")]
+		public transactionResponse transactionResponse { get; set; }
+
+		[XMLElement(Name = "recurringTransactionResponse",FirstVersion = "8.20")]
+		public recurringTransactionResponse recurringTransactionResponse { get; set; }
+
+		[XMLAttribute(Name = "response")]
+		public string response { get; set; }
+
+		[XMLAttribute(Name = "message")]
+		public string message { get; set; }
+
+		[XMLAttribute(Name = "version")]
+		public string version { get; set; }
+
+	}
+
+	[XMLElement(Name = "void")]
+	public partial class voidTxn : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "processingInstructions")]
+		public processingInstructions processingInstructions { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "txnReversalUserId",FirstVersion = "8.13",RemovedVersion = "8.14")]
+		public string txnReversalUserId { get; set; }
+
+	}
+
+	[XMLElement(Name = "voidResponse")]
+	public partial class voidResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "recyclingResponse",FirstVersion = "12.0")]
+		public voidRecyclingResponseType recyclingResponse { get; set; }
+
+		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "recycling",FirstVersion = "8.16",RemovedVersion = "12.0")]
+		public voidRecyclingResponseType recycling { get; set; }
+
+		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+	}
+
+	[XMLElement(Name = "voidRecyclingResponseType",FirstVersion = "8.16")]
+	public partial class voidRecyclingResponseType : VersionedXMLElement
+	{
+		[XMLElement(Name = "creditCnpTxnId",FirstVersion = "12.0")]
+		public long? creditCnpTxnId { get; set; }
+
+		[XMLElement(Name = "creditLitleTxnId",FirstVersion = "8.16",RemovedVersion = "12.0")]
+		public long? creditLitleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckVoid",FirstVersion = "8.1")]
+	public partial class echeckVoid : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.1",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLElement(Name = "txnReversalUserId",FirstVersion = "8.13",RemovedVersion = "8.14")]
+		public string txnReversalUserId { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckVoidResponse",FirstVersion = "8.1")]
+	public partial class echeckVoidResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "8.1")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "8.1")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "postDate",FirstVersion = "8.1")]
+		public DateTime postDate { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "8.1")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.1",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+		[XMLAttribute(Name = "duplicate",FirstVersion = "8.1",RemovedVersion = "10.0")]
+		public bool? duplicate { get; set; }
+
+		[XMLElement(Name = "numberOfDeposits",FirstVersion = "8.1",RemovedVersion = "8.2")]
+		public int? numberOfDeposits { get; set; }
+
+	}
+
+	[XMLElement(Name = "depositReversal",FirstVersion = "8.22")]
+	public partial class depositReversal : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "11.0")]
+		public giftCardCardType card { get; set; }
+
+		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
+		public string originalRefCode { get; set; }
+
+		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
+		public int? originalAmount { get; set; }
+
+		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
+		public DateTime originalTxnTime { get; set; }
+
+		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
+		public int? originalSystemTraceId { get; set; }
+
+		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
+		public sequenceType? originalSequenceNumber { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "refundReversal",FirstVersion = "8.22")]
+	public partial class refundReversal : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "11.0")]
+		public giftCardCardType card { get; set; }
+
+		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
+		public string originalRefCode { get; set; }
+
+		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
+		public int? originalAmount { get; set; }
+
+		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
+		public DateTime originalTxnTime { get; set; }
+
+		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
+		public int? originalSystemTraceId { get; set; }
+
+		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
+		public sequenceType? originalSequenceNumber { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "activateReversal",FirstVersion = "8.22")]
+	public partial class activateReversal : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "11.0")]
+		public giftCardCardType card { get; set; }
+
+		[XMLElement(Name = "virtualGiftCardBin",FirstVersion = "11.0")]
+		public string virtualGiftCardBin { get; set; }
+
+		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
+		public string originalRefCode { get; set; }
+
+		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
+		public int? originalAmount { get; set; }
+
+		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
+		public DateTime originalTxnTime { get; set; }
+
+		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
+		public int? originalSystemTraceId { get; set; }
+
+		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
+		public sequenceType? originalSequenceNumber { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "deactivateReversal",FirstVersion = "8.22")]
+	public partial class deactivateReversal : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "11.0")]
+		public giftCardCardType card { get; set; }
+
+		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
+		public string originalRefCode { get; set; }
+
+		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
+		public DateTime originalTxnTime { get; set; }
+
+		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
+		public int? originalSystemTraceId { get; set; }
+
+		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
+		public sequenceType? originalSequenceNumber { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "loadReversal",FirstVersion = "8.22")]
+	public partial class loadReversal : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "11.0")]
+		public giftCardCardType card { get; set; }
+
+		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
+		public string originalRefCode { get; set; }
+
+		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
+		public int? originalAmount { get; set; }
+
+		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
+		public DateTime originalTxnTime { get; set; }
+
+		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
+		public int? originalSystemTraceId { get; set; }
+
+		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
+		public sequenceType? originalSequenceNumber { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "unloadReversal",FirstVersion = "8.22")]
+	public partial class unloadReversal : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "card",FirstVersion = "11.0")]
+		public giftCardCardType card { get; set; }
+
+		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
+		public string originalRefCode { get; set; }
+
+		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
+		public int? originalAmount { get; set; }
+
+		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
+		public DateTime originalTxnTime { get; set; }
+
+		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
+		public int? originalSystemTraceId { get; set; }
+
+		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
+		public sequenceType? originalSequenceNumber { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "queryTransaction",FirstVersion = "9.5")]
+	public partial class queryTransaction : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "origId",FirstVersion = "9.5")]
+		public string origId { get; set; }
+
+		[XMLElement(Name = "origActionType",FirstVersion = "9.5")]
+		public actionTypeEnum? origActionType { get; set; }
+
+		[XMLElement(Name = "origCnpTxnId",FirstVersion = "12.0")]
+		public long? origCnpTxnId { get; set; }
+
+		[XMLElement(Name = "showStatusOnly",FirstVersion = "12.3")]
+		public yesNoType? showStatusOnly { get; set; }
+
+		[XMLElement(Name = "origLitleTxnId",FirstVersion = "9.5",RemovedVersion = "12.0")]
+		public long? origLitleTxnId { get; set; }
+
+		[XMLElement(Name = "origOrderId",FirstVersion = "9.5",RemovedVersion = "11.0")]
+		public string origOrderId { get; set; }
+
+		[XMLElement(Name = "origAccountNumber",FirstVersion = "9.5",RemovedVersion = "11.0")]
+		public string origAccountNumber { get; set; }
+
+	}
+
+	[XMLElement(Name = "results_max10",FirstVersion = "9.5")]
+	public partial class results_max10 : VersionedXMLElement
+	{
+		[XMLElement(Name = "transactionResponse",FirstVersion = "9.5")]
+		public transactionResponse transactionResponse { get; set; }
+
+	}
+
+	[XMLElement(Name = "queryTransactionResponse",FirstVersion = "9.5")]
+	public partial class queryTransactionResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "response",FirstVersion = "9.5")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "9.5")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.5")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "matchCount",FirstVersion = "9.5")]
+		public int? matchCount { get; set; }
+
+		[XMLElement(Name = "results_max10",FirstVersion = "9.5")]
+		public results_max10 results_max10 { get; set; }
+
+	}
+
+	[XMLElement(Name = "queryTransactionUnavailableResponse",FirstVersion = "9.5")]
+	public partial class queryTransactionUnavailableResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "9.5")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "9.5")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "9.5",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "serviceStatusRequest",FirstVersion = "10.0")]
+	public partial class serviceStatusRequest : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "serviceId",FirstVersion = "10.0")]
+		public long? serviceId { get; set; }
+
+		[XMLElement(Name = "pathId",FirstVersion = "10.0")]
+		public long? pathId { get; set; }
+
+	}
+
+	[XMLElement(Name = "serviceStatusResponse",FirstVersion = "10.0")]
+	public partial class serviceStatusResponse : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
+
+		[XMLElement(Name = "response",FirstVersion = "10.0")]
+		public string response { get; set; }
+
+		[XMLElement(Name = "responseTime",FirstVersion = "10.0")]
+		public DateTime responseTime { get; set; }
+
+		[XMLElement(Name = "message",FirstVersion = "10.0")]
+		public string message { get; set; }
+
+		[XMLElement(Name = "litleTxnId",FirstVersion = "10.0",RemovedVersion = "12.0")]
+		public long? litleTxnId { get; set; }
+
+	}
+
+	[XMLElement(Name = "echeckTypeCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
+	public partial class echeckTypeCtx : VersionedXMLElement
+	{
+		[XMLElement(Name = "accType",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public echeckAccountTypeEnum? accType { get; set; }
+
+		[XMLElement(Name = "accNum",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string accNum { get; set; }
+
+		[XMLElement(Name = "routingNum",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string routingNum { get; set; }
+
+		[XMLElement(Name = "checkNum",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string checkNum { get; set; }
+
+		[XMLElement(Name = "ccdPaymentInformation",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string ccdPaymentInformation { get; set; }
+
+		[XMLElement(Name = "ctxPaymentInformation",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public ctxPaymentInformationType ctxPaymentInformation { get; set; }
+
+	}
+
+	[XMLElement(Name = "vendorCreditCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
+	public partial class vendorCreditCtx : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "vendorName",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string vendorName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "accountInfo",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public echeckTypeCtx accountInfo { get; set; }
+
+	}
+
+	[XMLElement(Name = "vendorDebitCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
+	public partial class vendorDebitCtx : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "vendorName",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string vendorName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "accountInfo",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public echeckTypeCtx accountInfo { get; set; }
+
+	}
+
+	[XMLElement(Name = "submerchantCreditCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
+	public partial class submerchantCreditCtx : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "submerchantName",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string submerchantName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "accountInfo",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public echeckTypeCtx accountInfo { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "submerchantDebitCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
+	public partial class submerchantDebitCtx : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string fundingSubmerchantId { get; set; }
+
+		[XMLElement(Name = "submerchantName",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string submerchantName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "accountInfo",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public echeckTypeCtx accountInfo { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "12.7",RemovedVersion = "12.10")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "customerCreditCtx",FirstVersion = "12.9",RemovedVersion = "12.10")]
+	public partial class customerCreditCtx : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "customerName",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public string customerName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "accountInfo",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public echeckTypeCtx accountInfo { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "customerDebitCtx",FirstVersion = "12.9",RemovedVersion = "12.10")]
+	public partial class customerDebitCtx : transactionTypeWithReportGroup
+	{
+		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public string fundingCustomerId { get; set; }
+
+		[XMLElement(Name = "customerName",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public string customerName { get; set; }
+
+		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public string fundsTransferId { get; set; }
+
+		[XMLElement(Name = "amount",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public int? amount { get; set; }
+
+		[XMLElement(Name = "accountInfo",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public echeckTypeCtx accountInfo { get; set; }
+
+		[XMLElement(Name = "customIdentifier",FirstVersion = "12.9",RemovedVersion = "12.10")]
+		public string customIdentifier { get; set; }
+
+	}
+
+	[XMLElement(Name = "litleInternalRecurringRequestType",FirstVersion = "8.18",RemovedVersion = "12.0")]
+	public partial class litleInternalRecurringRequestType : VersionedXMLElement
+	{
+		[XMLElement(Name = "subscriptionId",FirstVersion = "8.18",RemovedVersion = "12.0")]
+		public long? subscriptionId { get; set; }
+
+		[XMLElement(Name = "recurringTxnId",FirstVersion = "8.18",RemovedVersion = "12.0")]
+		public long? recurringTxnId { get; set; }
+
+		[XMLElement(Name = "finalPayment",FirstVersion = "8.21",RemovedVersion = "12.0")]
+		public bool? finalPayment { get; set; }
+
+	}
+
 	[XMLElement(Name = "billMeLaterRequest",RemovedVersion = "12.0")]
-	public class billMeLaterRequest : VersionedXMLElement
+	public partial class billMeLaterRequest : VersionedXMLElement
 	{
 		[XMLElement(Name = "bmlMerchantId",RemovedVersion = "12.0")]
 		public long? bmlMerchantId { get; set; }
@@ -1743,7 +7216,7 @@ namespace Cnp.Sdk
 	}
 
 	[XMLElement(Name = "billMeLaterResponseData",RemovedVersion = "12.0")]
-	public class billMeLaterResponseData : VersionedXMLElement
+	public partial class billMeLaterResponseData : VersionedXMLElement
 	{
 		[XMLElement(Name = "bmlMerchantId",RemovedVersion = "12.0")]
 		public long? bmlMerchantId { get; set; }
@@ -1771,755 +7244,8 @@ namespace Cnp.Sdk
 
 	}
 
-	[XMLElement(Name = "fraudCheckType")]
-	public class fraudCheckType : VersionedXMLElement
-	{
-		[XMLElement(Name = "authenticationValue")]
-		public string authenticationValue { get; set; }
-
-		[XMLElement(Name = "authenticationTransactionId")]
-		public string authenticationTransactionId { get; set; }
-
-		[XMLElement(Name = "customerIpAddress")]
-		public string customerIpAddress { get; set; }
-
-		[XMLElement(Name = "authenticatedByMerchant")]
-		public bool? authenticatedByMerchant { get; set; }
-
-	}
-
-	[XMLElement(Name = "authorization")]
-	public class authorization : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "amount")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "orderSource")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "customerInfo")]
-		public customerInfo customerInfo { get; set; }
-
-		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
-
-		[XMLElement(Name = "shipToAddress")]
-		public shipToAddress shipToAddress { get; set; }
-
-		[XMLElement(Name = "card")]
-		public cardType card { get; set; }
-
-		[XMLElement(Name = "paypal")]
-		public paypal paypal { get; set; }
-
-		[XMLElement(Name = "token")]
-		public tokenType token { get; set; }
-
-		[XMLElement(Name = "billMeLaterRequest",RemovedVersion = "12.0")]
-		public billMeLaterRequest billMeLaterRequest { get; set; }
-
-		[XMLElement(Name = "cardholderAuthentication")]
-		public fraudCheckType cardholderAuthentication { get; set; }
-
-		[XMLElement(Name = "processingInstructions")]
-		public processingInstructions processingInstructions { get; set; }
-
-		[XMLElement(Name = "pos")]
-		public pos pos { get; set; }
-
-		[XMLElement(Name = "customBilling")]
-		public customBilling customBilling { get; set; }
-
-		[XMLElement(Name = "enhancedData")]
-		public enhancedData enhancedData { get; set; }
-
-		[XMLElement(Name = "amexAggregatorData",RemovedVersion = "12.0")]
-		public amexAggregatorData amexAggregatorData { get; set; }
-
-		[XMLElement(Name = "allowPartialAuth")]
-		public bool? allowPartialAuth { get; set; }
-
-		[XMLElement(Name = "healthcareIIAS")]
-		public healthcareIIAS healthcareIIAS { get; set; }
-
-		[XMLElement(Name = "filtering",FirstVersion = "8.3")]
-		public filteringType filtering { get; set; }
-
-		[XMLElement(Name = "paypage",FirstVersion = "8.5")]
-		public cardPaypageType paypage { get; set; }
-
-		[XMLElement(Name = "taxType",FirstVersion = "8.8")]
-		public govtTaxTypeEnum? taxType { get; set; }
-
-		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
-		public merchantDataType merchantData { get; set; }
-
-		[XMLElement(Name = "recyclingRequest",FirstVersion = "8.10")]
-		public recyclingRequestType recyclingRequest { get; set; }
-
-		[XMLElement(Name = "fraudFilterOverride",FirstVersion = "8.13")]
-		public bool? fraudFilterOverride { get; set; }
-
-		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
-		public int? surchargeAmount { get; set; }
-
-		[XMLElement(Name = "recurringRequest",FirstVersion = "8.19")]
-		public recurringRequestType recurringRequest { get; set; }
-
-		[XMLElement(Name = "debtRepayment",FirstVersion = "8.19")]
-		public bool? debtRepayment { get; set; }
-
-		[XMLElement(Name = "advancedFraudChecks",FirstVersion = "8.23")]
-		public advancedFraudChecksType advancedFraudChecks { get; set; }
-
-		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
-		public mposType mpos { get; set; }
-
-		[XMLElement(Name = "wallet",FirstVersion = "8.27")]
-		public wallet wallet { get; set; }
-
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
-		public int? secondaryAmount { get; set; }
-
-		[XMLElement(Name = "applepay",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "applepay",FirstVersion = "9.2")]
-		public applepayType applepay { get; set; }
-
-		[XMLElement(Name = "processingType",FirstVersion = "8.30",RemovedVersion = "9.0")]
-		[XMLElement(Name = "processingType",FirstVersion = "9.6",RemovedVersion = "10.0")]
-		[XMLElement(Name = "processingType",FirstVersion = "10.5")]
-		public processingTypeEnum? processingType { get; set; }
-
-		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "8.30",RemovedVersion = "9.0")]
-		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "9.10",RemovedVersion = "10.0")]
-		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "10.5")]
-		public string originalNetworkTransactionId { get; set; }
-
-		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "8.30",RemovedVersion = "9.0")]
-		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "9.10",RemovedVersion = "10.0")]
-		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "10.5")]
-		public int? originalTransactionAmount { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
-		public lodgingInfo lodgingInfo { get; set; }
-
-		[XMLElement(Name = "pinlessDebitRequest",FirstVersion = "12.8")]
-		public pinlessDebitRequestType pinlessDebitRequest { get; set; }
-
-		[XMLElement(Name = "skipRealtimeAU",FirstVersion = "12.10")]
-		public bool? skipRealtimeAU { get; set; }
-
-	}
-
-	[XMLElement(Name = "authReversal")]
-	public class authReversal : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "amount")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "payPalNotes")]
-		public string payPalNotes { get; set; }
-
-		[XMLElement(Name = "reversalReason",FirstVersion = "8.8",RemovedVersion = "8.9")]
-		public string reversalReason { get; set; }
-
-		[XMLElement(Name = "actionReason",FirstVersion = "8.9")]
-		public string actionReason { get; set; }
-
-		[XMLElement(Name = "txnReversalUserId",FirstVersion = "8.13",RemovedVersion = "8.14")]
-		public string txnReversalUserId { get; set; }
-
-		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
-		public int? surchargeAmount { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "capture")]
-	public class capture : transactionTypeWithReportGroupAndPartial
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "amount")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "enhancedData")]
-		public enhancedData enhancedData { get; set; }
-
-		[XMLElement(Name = "processingInstructions")]
-		public processingInstructions processingInstructions { get; set; }
-
-		[XMLElement(Name = "payPalOrderComplete")]
-		public bool? payPalOrderComplete { get; set; }
-
-		[XMLElement(Name = "payPalNotes")]
-		public string payPalNotes { get; set; }
-
-		[XMLElement(Name = "customBilling",FirstVersion = "8.12")]
-		public customBilling customBilling { get; set; }
-
-		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
-		public int? surchargeAmount { get; set; }
-
-		[XMLElement(Name = "pin",FirstVersion = "9.9",RemovedVersion = "10.0")]
-		[XMLElement(Name = "pin",FirstVersion = "10.3")]
-		public string pin { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
-		public lodgingInfo lodgingInfo { get; set; }
-
-	}
-
-	[XMLElement(Name = "forceCapture")]
-	public class forceCapture : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "amount")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "orderSource")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
-
-		[XMLElement(Name = "card",RemovedVersion = "8.2")]
-		[XMLElement(Name = "card",FirstVersion = "8.7")]
-		public cardType card { get; set; }
-
-		[XMLElement(Name = "token",RemovedVersion = "8.2")]
-		[XMLElement(Name = "token",FirstVersion = "8.7")]
-		public tokenType token { get; set; }
-
-		[XMLElement(Name = "customBilling")]
-		public customBilling customBilling { get; set; }
-
-		[XMLElement(Name = "enhancedData")]
-		public enhancedData enhancedData { get; set; }
-
-		[XMLElement(Name = "processingInstructions")]
-		public processingInstructions processingInstructions { get; set; }
-
-		[XMLElement(Name = "pos")]
-		public pos pos { get; set; }
-
-		[XMLElement(Name = "amexAggregatorData",RemovedVersion = "12.0")]
-		public amexAggregatorData amexAggregatorData { get; set; }
-
-		[XMLElement(Name = "cardOrToken",FirstVersion = "8.2",RemovedVersion = "8.7")]
-		public cardOrToken cardOrToken { get; set; }
-
-		[XMLElement(Name = "paypage",FirstVersion = "8.7")]
-		public cardPaypageType paypage { get; set; }
-
-		[XMLElement(Name = "taxType",FirstVersion = "8.8")]
-		public govtTaxTypeEnum? taxType { get; set; }
-
-		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
-		public merchantDataType merchantData { get; set; }
-
-		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
-		public int? surchargeAmount { get; set; }
-
-		[XMLElement(Name = "debtRepayment",FirstVersion = "8.19")]
-		public bool? debtRepayment { get; set; }
-
-		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
-		public mposType mpos { get; set; }
-
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
-		public int? secondaryAmount { get; set; }
-
-		[XMLElement(Name = "processingType",FirstVersion = "8.30",RemovedVersion = "9.0")]
-		[XMLElement(Name = "processingType",FirstVersion = "9.6",RemovedVersion = "10.0")]
-		[XMLElement(Name = "processingType",FirstVersion = "10.5")]
-		public processingTypeEnum? processingType { get; set; }
-
-		[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
-		public lodgingInfo lodgingInfo { get; set; }
-
-	}
-
-	[XMLElement(Name = "captureGivenAuth")]
-	public class captureGivenAuth : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "authInformation")]
-		public authInformation authInformation { get; set; }
-
-		[XMLElement(Name = "amount")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "orderSource")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
-
-		[XMLElement(Name = "shipToAddress")]
-		public shipToAddress shipToAddress { get; set; }
-
-		[XMLElement(Name = "card",RemovedVersion = "8.2")]
-		[XMLElement(Name = "card",FirstVersion = "8.7")]
-		public cardType card { get; set; }
-
-		[XMLElement(Name = "token",RemovedVersion = "8.2")]
-		[XMLElement(Name = "token",FirstVersion = "8.7")]
-		public tokenType token { get; set; }
-
-		[XMLElement(Name = "customBilling")]
-		public customBilling customBilling { get; set; }
-
-		[XMLElement(Name = "billMeLaterRequest",RemovedVersion = "12.0")]
-		public billMeLaterRequest billMeLaterRequest { get; set; }
-
-		[XMLElement(Name = "enhancedData")]
-		public enhancedData enhancedData { get; set; }
-
-		[XMLElement(Name = "processingInstructions")]
-		public processingInstructions processingInstructions { get; set; }
-
-		[XMLElement(Name = "pos")]
-		public pos pos { get; set; }
-
-		[XMLElement(Name = "amexAggregatorData",RemovedVersion = "12.0")]
-		public amexAggregatorData amexAggregatorData { get; set; }
-
-		[XMLElement(Name = "cardOrToken",FirstVersion = "8.2",RemovedVersion = "8.7")]
-		public cardOrToken cardOrToken { get; set; }
-
-		[XMLElement(Name = "paypage",FirstVersion = "8.7")]
-		public cardPaypageType paypage { get; set; }
-
-		[XMLElement(Name = "taxType",FirstVersion = "8.8")]
-		public govtTaxTypeEnum? taxType { get; set; }
-
-		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
-		public merchantDataType merchantData { get; set; }
-
-		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
-		public int? surchargeAmount { get; set; }
-
-		[XMLElement(Name = "debtRepayment",FirstVersion = "8.19")]
-		public bool? debtRepayment { get; set; }
-
-		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
-		public mposType mpos { get; set; }
-
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
-		public int? secondaryAmount { get; set; }
-
-		[XMLElement(Name = "processingType",FirstVersion = "8.30",RemovedVersion = "9.0")]
-		[XMLElement(Name = "processingType",FirstVersion = "9.6",RemovedVersion = "10.0")]
-		[XMLElement(Name = "processingType",FirstVersion = "10.5")]
-		public processingTypeEnum? processingType { get; set; }
-
-		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "8.30",RemovedVersion = "9.0")]
-		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "9.10",RemovedVersion = "10.0")]
-		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "10.5")]
-		public string originalNetworkTransactionId { get; set; }
-
-		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "8.30",RemovedVersion = "9.0")]
-		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "9.10",RemovedVersion = "10.0")]
-		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "10.5")]
-		public int? originalTransactionAmount { get; set; }
-
-		[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
-		public lodgingInfo lodgingInfo { get; set; }
-
-	}
-
-	[XMLElement(Name = "sale")]
-	public class sale : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "amount")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "orderSource")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "customerInfo")]
-		public customerInfo customerInfo { get; set; }
-
-		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
-
-		[XMLElement(Name = "shipToAddress")]
-		public shipToAddress shipToAddress { get; set; }
-
-		[XMLElement(Name = "card")]
-		public cardType card { get; set; }
-
-		[XMLElement(Name = "token")]
-		public tokenType token { get; set; }
-
-		[XMLElement(Name = "paypal")]
-		public paypal paypal { get; set; }
-
-		[XMLElement(Name = "billMeLaterRequest",RemovedVersion = "12.0")]
-		public billMeLaterRequest billMeLaterRequest { get; set; }
-
-		[XMLElement(Name = "fraudCheck")]
-		public fraudCheckType fraudCheck { get; set; }
-
-		[XMLElement(Name = "cardholderAuthentication")]
-		public fraudCheckType cardholderAuthentication { get; set; }
-
-		[XMLElement(Name = "customBilling")]
-		public customBilling customBilling { get; set; }
-
-		[XMLElement(Name = "enhancedData")]
-		public enhancedData enhancedData { get; set; }
-
-		[XMLElement(Name = "processingInstructions")]
-		public processingInstructions processingInstructions { get; set; }
-
-		[XMLElement(Name = "pos")]
-		public pos pos { get; set; }
-
-		[XMLElement(Name = "payPalOrderComplete")]
-		public bool? payPalOrderComplete { get; set; }
-
-		[XMLElement(Name = "payPalNotes")]
-		public string payPalNotes { get; set; }
-
-		[XMLElement(Name = "amexAggregatorData",RemovedVersion = "12.0")]
-		public amexAggregatorData amexAggregatorData { get; set; }
-
-		[XMLElement(Name = "allowPartialAuth")]
-		public bool? allowPartialAuth { get; set; }
-
-		[XMLElement(Name = "healthcareIIAS")]
-		public healthcareIIAS healthcareIIAS { get; set; }
-
-		[XMLElement(Name = "filtering",FirstVersion = "8.3")]
-		public filteringType filtering { get; set; }
-
-		[XMLElement(Name = "paypage",FirstVersion = "8.5")]
-		public cardPaypageType paypage { get; set; }
-
-		[XMLElement(Name = "taxType",FirstVersion = "8.8")]
-		public govtTaxTypeEnum? taxType { get; set; }
-
-		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
-		public merchantDataType merchantData { get; set; }
-
-		[XMLElement(Name = "recyclingRequest",FirstVersion = "8.10")]
-		public recyclingRequestType recyclingRequest { get; set; }
-
-		[XMLElement(Name = "fraudFilterOverride",FirstVersion = "8.13")]
-		public bool? fraudFilterOverride { get; set; }
-
-		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
-		public int? surchargeAmount { get; set; }
-
-		[XMLElement(Name = "recurringRequest",FirstVersion = "8.18")]
-		public recurringRequestType recurringRequest { get; set; }
-
-		[XMLElement(Name = "litleInternalRecurringRequest",FirstVersion = "8.18",RemovedVersion = "12.0")]
-		public litleInternalRecurringRequestType litleInternalRecurringRequest { get; set; }
-
-		[XMLElement(Name = "debtRepayment",FirstVersion = "8.19")]
-		public bool? debtRepayment { get; set; }
-
-		[XMLElement(Name = "advancedFraudChecks",FirstVersion = "8.23")]
-		public advancedFraudChecksType advancedFraudChecks { get; set; }
-
-		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
-		public mposType mpos { get; set; }
-
-		[XMLElement(Name = "wallet",FirstVersion = "8.27")]
-		public wallet wallet { get; set; }
-
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
-		public int? secondaryAmount { get; set; }
-
-		[XMLElement(Name = "applepay",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "applepay",FirstVersion = "9.2")]
-		public applepayType applepay { get; set; }
-
-		[XMLElement(Name = "processingType",FirstVersion = "8.30",RemovedVersion = "9.0")]
-		[XMLElement(Name = "processingType",FirstVersion = "9.6",RemovedVersion = "10.0")]
-		[XMLElement(Name = "processingType",FirstVersion = "10.5")]
-		public processingTypeEnum? processingType { get; set; }
-
-		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "8.30",RemovedVersion = "9.0")]
-		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "9.10",RemovedVersion = "10.0")]
-		[XMLElement(Name = "originalNetworkTransactionId",FirstVersion = "10.5")]
-		public string originalNetworkTransactionId { get; set; }
-
-		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "8.30",RemovedVersion = "9.0")]
-		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "9.10",RemovedVersion = "10.0")]
-		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "10.5")]
-		public int? originalTransactionAmount { get; set; }
-
-		[XMLElement(Name = "sepaDirectDebit",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "sepaDirectDebit",FirstVersion = "10.4")]
-		public sepaDirectDebitType sepaDirectDebit { get; set; }
-
-		[XMLElement(Name = "ideal",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "ideal",FirstVersion = "11.0")]
-		public idealType ideal { get; set; }
-
-		[XMLElement(Name = "giropay",FirstVersion = "9.13",RemovedVersion = "10.0")]
-		[XMLElement(Name = "giropay",FirstVersion = "11.0")]
-		public giropayType giropay { get; set; }
-
-		[XMLElement(Name = "sofort",FirstVersion = "9.13",RemovedVersion = "10.0")]
-		[XMLElement(Name = "sofort",FirstVersion = "11.0")]
-		public sofortType sofort { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "cnpInternalRecurringRequest",FirstVersion = "12.0")]
-		public cnpInternalRecurringRequestType cnpInternalRecurringRequest { get; set; }
-
-		[XMLElement(Name = "routingPreference",FirstVersion = "12.1",RemovedVersion = "12.2")]
-		public routingPreferenceEnum? routingPreference { get; set; }
-
-		[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
-		public lodgingInfo lodgingInfo { get; set; }
-
-		[XMLElement(Name = "pinlessDebitRequest",FirstVersion = "12.2")]
-		public pinlessDebitRequestType pinlessDebitRequest { get; set; }
-
-		[XMLElement(Name = "skipRealtimeAU",FirstVersion = "12.10")]
-		public bool? skipRealtimeAU { get; set; }
-
-	}
-
-	[XMLElement(Name = "paypal")]
-	public class paypal : VersionedXMLElement
-	{
-		[XMLElement(Name = "payerId")]
-		public string payerId { get; set; }
-
-		[XMLElement(Name = "payerEmail")]
-		public string payerEmail { get; set; }
-
-		[XMLElement(Name = "token")]
-		public string token { get; set; }
-
-		[XMLElement(Name = "transactionId")]
-		public string transactionId { get; set; }
-
-	}
-
-	[XMLElement(Name = "credit")]
-	public class credit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "amount")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "customBilling")]
-		public customBilling customBilling { get; set; }
-
-		[XMLElement(Name = "enhancedData")]
-		public enhancedData enhancedData { get; set; }
-
-		[XMLElement(Name = "processingInstructions")]
-		public processingInstructions processingInstructions { get; set; }
-
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "orderSource")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
-
-		[XMLElement(Name = "card")]
-		public cardType card { get; set; }
-
-		[XMLElement(Name = "token")]
-		public tokenType token { get; set; }
-
-		[XMLElement(Name = "paypal")]
-		public paypal paypal { get; set; }
-
-		[XMLElement(Name = "billMeLaterRequest",RemovedVersion = "12.0")]
-		public billMeLaterRequest billMeLaterRequest { get; set; }
-
-		[XMLElement(Name = "pos")]
-		public pos pos { get; set; }
-
-		[XMLElement(Name = "amexAggregatorData",RemovedVersion = "12.0")]
-		public amexAggregatorData amexAggregatorData { get; set; }
-
-		[XMLElement(Name = "payPalNotes")]
-		public string payPalNotes { get; set; }
-
-		[XMLElement(Name = "paypage",FirstVersion = "8.7")]
-		public cardPaypageType paypage { get; set; }
-
-		[XMLElement(Name = "taxType",FirstVersion = "8.8")]
-		public govtTaxTypeEnum? taxType { get; set; }
-
-		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
-		public merchantDataType merchantData { get; set; }
-
-		[XMLElement(Name = "actionReason",FirstVersion = "8.12")]
-		public string actionReason { get; set; }
-
-		[XMLElement(Name = "txnReversalUserId",FirstVersion = "8.13",RemovedVersion = "8.14")]
-		public string txnReversalUserId { get; set; }
-
-		[XMLElement(Name = "surchargeAmount",FirstVersion = "8.17")]
-		public int? surchargeAmount { get; set; }
-
-		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
-		public mposType mpos { get; set; }
-
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
-		public int? secondaryAmount { get; set; }
-
-		[XMLElement(Name = "pin",FirstVersion = "9.9",RemovedVersion = "10.0")]
-		[XMLElement(Name = "pin",FirstVersion = "10.3")]
-		public string pin { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
-		public lodgingInfo lodgingInfo { get; set; }
-
-	}
-
-	[XMLElement(Name = "authInformation")]
-	public class authInformation : VersionedXMLElement
-	{
-		[XMLElement(Name = "authDate")]
-		public DateTime authDate { get; set; }
-
-		[XMLElement(Name = "authCode")]
-		public string authCode { get; set; }
-
-		[XMLElement(Name = "fraudResult")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "authAmount")]
-		public int? authAmount { get; set; }
-
-	}
-
-	[XMLElement(Name = "healthcareIIAS")]
-	public class healthcareIIAS : VersionedXMLElement
-	{
-		[XMLElement(Name = "healthcareAmounts")]
-		public healthcareAmounts healthcareAmounts { get; set; }
-
-		[XMLElement(Name = "IIASFlag")]
-		public IIASFlagType? IIASFlag { get; set; }
-
-	}
-
-	[XMLElement(Name = "healthcareAmounts")]
-	public class healthcareAmounts : VersionedXMLElement
-	{
-		[XMLElement(Name = "totalHealthcareAmount")]
-		public int? totalHealthcareAmount { get; set; }
-
-		[XMLElement(Name = "RxAmount")]
-		public int? RxAmount { get; set; }
-
-		[XMLElement(Name = "visionAmount")]
-		public int? visionAmount { get; set; }
-
-		[XMLElement(Name = "clinicOtherAmount")]
-		public int? clinicOtherAmount { get; set; }
-
-		[XMLElement(Name = "dentalAmount")]
-		public int? dentalAmount { get; set; }
-
-	}
-
-	[XMLElement(Name = "enhancedData")]
-	public class enhancedData : VersionedXMLElement
-	{
-		[XMLElement(Name = "customerReference")]
-		public string customerReference { get; set; }
-
-		[XMLElement(Name = "salesTax")]
-		public int? salesTax { get; set; }
-
-		[XMLElement(Name = "deliveryType")]
-		public enhancedDataDeliveryType deliveryType { get; set; } = enhancedDataDeliveryType.TBD;
-
-		[XMLElement(Name = "taxExempt")]
-		public bool? taxExempt { get; set; }
-
-		[XMLElement(Name = "discountAmount")]
-		public int? discountAmount { get; set; }
-
-		[XMLElement(Name = "shippingAmount")]
-		public int? shippingAmount { get; set; }
-
-		[XMLElement(Name = "dutyAmount")]
-		public int? dutyAmount { get; set; }
-
-		[XMLElement(Name = "shipFromPostalCode")]
-		public string shipFromPostalCode { get; set; }
-
-		[XMLElement(Name = "destinationPostalCode")]
-		public string destinationPostalCode { get; set; }
-
-		[XMLElement(Name = "destinationCountryCode")]
-		public countryTypeEnum? destinationCountryCode { get; set; }
-
-		[XMLElement(Name = "invoiceReferenceNumber")]
-		public string invoiceReferenceNumber { get; set; }
-
-		[XMLElement(Name = "orderDate")]
-		public DateTime orderDate { get; set; }
-
-		[XMLElement(Name = "detailTax")]
-		public detailTax detailTax { get; set; }
-
-		[XMLElement(Name = "lineItemData")]
-		public lineItemData lineItemData { get; set; }
-
-	}
-
 	[XMLElement(Name = "amexAggregatorData",RemovedVersion = "12.0")]
-	public class amexAggregatorData : VersionedXMLElement
+	public partial class amexAggregatorData : VersionedXMLElement
 	{
 		[XMLElement(Name = "sellerId",RemovedVersion = "12.0")]
 		public string sellerId { get; set; }
@@ -2529,104 +7255,103 @@ namespace Cnp.Sdk
 
 	}
 
-	[XMLElement(Name = "detailTax")]
-	public class detailTax : VersionedXMLElement
+	[XMLElement(Name = "recyclingType",FirstVersion = "8.6",RemovedVersion = "12.0")]
+	public partial class recyclingType : VersionedXMLElement
 	{
-		[XMLElement(Name = "taxIncludedInTotal")]
-		public bool? taxIncludedInTotal { get; set; }
+		[XMLElement(Name = "recycleAdvice",FirstVersion = "8.6",RemovedVersion = "12.0")]
+		public recycleAdviceType recycleAdvice { get; set; }
 
-		[XMLElement(Name = "taxAmount")]
-		public int? taxAmount { get; set; }
-
-		[XMLElement(Name = "taxRate")]
-		public string taxRate { get; set; }
-
-		[XMLElement(Name = "taxTypeIdentifier")]
-		public taxTypeIdentifierEnum? taxTypeIdentifier { get; set; }
-
-		[XMLElement(Name = "cardAcceptorTaxId")]
-		public string cardAcceptorTaxId { get; set; }
+		[XMLElement(Name = "recycleEngineActive",FirstVersion = "8.6",RemovedVersion = "12.0")]
+		public bool? recycleEngineActive { get; set; }
 
 	}
 
-	[XMLElement(Name = "lineItemData")]
-	public class lineItemData : VersionedXMLElement
+	[XMLElement(Name = "originalAccountInfo",RemovedVersion = "8.5")]
+	public partial class originalAccountInfo : VersionedXMLElement
 	{
-		[XMLElement(Name = "itemSequenceNumber")]
-		public int? itemSequenceNumber { get; set; }
+		[XMLElement(Name = "accType",RemovedVersion = "8.5")]
+		public echeckAccountTypeEnum? accType { get; set; }
 
-		[XMLElement(Name = "itemDescription")]
-		public string itemDescription { get; set; }
+		[XMLElement(Name = "accNum",RemovedVersion = "8.5")]
+		public string accNum { get; set; }
 
-		[XMLElement(Name = "productCode")]
-		public string productCode { get; set; }
-
-		[XMLElement(Name = "quantity")]
-		public string quantity { get; set; }
-
-		[XMLElement(Name = "unitOfMeasure")]
-		public string unitOfMeasure { get; set; }
-
-		[XMLElement(Name = "taxAmount")]
-		public int? taxAmount { get; set; }
-
-		[XMLElement(Name = "lineItemTotal")]
-		public int? lineItemTotal { get; set; }
-
-		[XMLElement(Name = "lineItemTotalWithTax")]
-		public int? lineItemTotalWithTax { get; set; }
-
-		[XMLElement(Name = "itemDiscountAmount")]
-		public int? itemDiscountAmount { get; set; }
-
-		[XMLElement(Name = "commodityCode")]
-		public string commodityCode { get; set; }
-
-		[XMLElement(Name = "unitCost")]
-		public string unitCost { get; set; }
-
-		[XMLElement(Name = "detailTax")]
-		public detailTax detailTax { get; set; }
+		[XMLElement(Name = "routingNum",RemovedVersion = "8.5")]
+		public string routingNum { get; set; }
 
 	}
 
-	[XMLElement(Name = "accountInfoType")]
-	public class accountInfoType : VersionedXMLElement
+	[XMLElement(Name = "newAccountInfo",RemovedVersion = "8.5")]
+	public partial class newAccountInfo : VersionedXMLElement
 	{
-		[XMLElement(Name = "type")]
+		[XMLElement(Name = "accType",RemovedVersion = "8.5")]
+		public echeckAccountTypeEnum? accType { get; set; }
+
+		[XMLElement(Name = "accNum",RemovedVersion = "8.5")]
+		public string accNum { get; set; }
+
+		[XMLElement(Name = "routingNum",RemovedVersion = "8.5")]
+		public string routingNum { get; set; }
+
+	}
+
+	[XMLElement(Name = "originalTokenInfo",FirstVersion = "8.2",RemovedVersion = "8.5")]
+	public partial class originalTokenInfo : VersionedXMLElement
+	{
+		[XMLElement(Name = "accType",FirstVersion = "8.2",RemovedVersion = "8.5")]
+		public echeckAccountTypeEnum? accType { get; set; }
+
+		[XMLElement(Name = "litleToken",FirstVersion = "8.2",RemovedVersion = "8.5")]
+		public string litleToken { get; set; }
+
+		[XMLElement(Name = "routingNum",FirstVersion = "8.2",RemovedVersion = "8.5")]
+		public string routingNum { get; set; }
+
+	}
+
+	[XMLElement(Name = "newTokenInfo",FirstVersion = "8.2",RemovedVersion = "8.5")]
+	public partial class newTokenInfo : VersionedXMLElement
+	{
+		[XMLElement(Name = "accType",FirstVersion = "8.2",RemovedVersion = "8.5")]
+		public echeckAccountTypeEnum? accType { get; set; }
+
+		[XMLElement(Name = "litleToken",FirstVersion = "8.2",RemovedVersion = "8.5")]
+		public string litleToken { get; set; }
+
+		[XMLElement(Name = "routingNum",FirstVersion = "8.2",RemovedVersion = "8.5")]
+		public string routingNum { get; set; }
+
+	}
+
+	[XMLElement(Name = "originalCardInfo",FirstVersion = "8.3",RemovedVersion = "8.5")]
+	public partial class originalCardInfo : VersionedXMLElement
+	{
+		[XMLElement(Name = "type",FirstVersion = "8.3",RemovedVersion = "8.5")]
 		public methodOfPaymentTypeEnum? type { get; set; }
 
-		[XMLElement(Name = "number")]
+		[XMLElement(Name = "number",FirstVersion = "8.3",RemovedVersion = "8.5")]
 		public string number { get; set; }
 
-	}
-
-	[XMLElement(Name = "cardType")]
-	public class cardType : VersionedXMLElement
-	{
-		[XMLElement(Name = "type")]
-		public methodOfPaymentTypeEnum? type { get; set; }
-
-		[XMLElement(Name = "number")]
-		public string number { get; set; }
-
-		[XMLElement(Name = "expDate")]
+		[XMLElement(Name = "expDate",FirstVersion = "8.3",RemovedVersion = "8.5")]
 		public string expDate { get; set; }
 
-		[XMLElement(Name = "track")]
-		public string track { get; set; }
+	}
 
-		[XMLElement(Name = "cardValidationNum")]
-		public string cardValidationNum { get; set; }
+	[XMLElement(Name = "newCardInfo",FirstVersion = "8.3",RemovedVersion = "8.5")]
+	public partial class newCardInfo : VersionedXMLElement
+	{
+		[XMLElement(Name = "type",FirstVersion = "8.3",RemovedVersion = "8.5")]
+		public methodOfPaymentTypeEnum? type { get; set; }
 
-		[XMLElement(Name = "pin",FirstVersion = "9.9",RemovedVersion = "10.0")]
-		[XMLElement(Name = "pin",FirstVersion = "10.3")]
-		public string pin { get; set; }
+		[XMLElement(Name = "number",FirstVersion = "8.3",RemovedVersion = "8.5")]
+		public string number { get; set; }
+
+		[XMLElement(Name = "expDate",FirstVersion = "8.3",RemovedVersion = "8.5")]
+		public string expDate { get; set; }
 
 	}
 
 	[XMLElement(Name = "tokenType",RemovedVersion = "8.2")]
-	public class tokenType : VersionedXMLElement
+	public partial class tokenType : VersionedXMLElement
 	{
 		[XMLElement(Name = "litleToken",RemovedVersion = "8.2")]
 		public string litleToken { get; set; }
@@ -2642,79 +7367,8 @@ namespace Cnp.Sdk
 
 	}
 
-	[XMLElement(Name = "tokenResponseType")]
-	public class tokenResponseType : VersionedXMLElement
-	{
-		[XMLElement(Name = "litleToken",RemovedVersion = "12.0")]
-		public string litleToken { get; set; }
-
-		[XMLElement(Name = "tokenResponseCode")]
-		public string tokenResponseCode { get; set; }
-
-		[XMLElement(Name = "tokenMessage")]
-		public string tokenMessage { get; set; }
-
-		[XMLElement(Name = "type")]
-		public methodOfPaymentTypeEnum? type { get; set; }
-
-		[XMLElement(Name = "bin")]
-		public string bin { get; set; }
-
-		[XMLElement(Name = "eCheckAccountSuffix",FirstVersion = "8.2")]
-		public string eCheckAccountSuffix { get; set; }
-
-		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
-		public string cnpToken { get; set; }
-
-	}
-
-	[XMLElement(Name = "customBilling")]
-	public class customBilling : VersionedXMLElement
-	{
-		[XMLElement(Name = "phone")]
-		public string phone { get; set; }
-
-		[XMLElement(Name = "city")]
-		public string city { get; set; }
-
-		[XMLElement(Name = "url")]
-		public string url { get; set; }
-
-		[XMLElement(Name = "descriptor")]
-		public string descriptor { get; set; }
-
-	}
-
-	[XMLElement(Name = "processingInstructions")]
-	public class processingInstructions : VersionedXMLElement
-	{
-		[XMLElement(Name = "bypassVelocityCheck")]
-		public bool? bypassVelocityCheck { get; set; }
-
-	}
-
-	[XMLElement(Name = "pos")]
-	public class pos : VersionedXMLElement
-	{
-		[XMLElement(Name = "capability")]
-		public posCapabilityTypeEnum? capability { get; set; }
-
-		[XMLElement(Name = "entryMode")]
-		public posEntryModeTypeEnum? entryMode { get; set; }
-
-		[XMLElement(Name = "cardholderId")]
-		public posCardholderIdTypeEnum? cardholderId { get; set; }
-
-		[XMLElement(Name = "terminalId",FirstVersion = "8.17")]
-		public string terminalId { get; set; }
-
-		[XMLElement(Name = "catLevel",FirstVersion = "8.23")]
-		public posCatLevelEnum? catLevel { get; set; }
-
-	}
-
 	[XMLElement(Name = "registerTokenRequest",RemovedVersion = "8.2")]
-	public class registerTokenRequest : transactionTypeWithReportGroup
+	public partial class registerTokenRequest : transactionTypeWithReportGroup
 	{
 		[XMLElement(Name = "orderId",RemovedVersion = "8.2")]
 		public string orderId { get; set; }
@@ -2724,807 +7378,8 @@ namespace Cnp.Sdk
 
 	}
 
-	[XMLElement(Name = "registerTokenResponse")]
-	public class registerTokenResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "litleToken",RemovedVersion = "12.0")]
-		public string litleToken { get; set; }
-
-		[XMLElement(Name = "bin")]
-		public string bin { get; set; }
-
-		[XMLElement(Name = "type")]
-		public methodOfPaymentTypeEnum? type { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "eCheckAccountSuffix",FirstVersion = "8.2")]
-		public string eCheckAccountSuffix { get; set; }
-
-		[XMLElement(Name = "applepayResponse",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "applepayResponse",FirstVersion = "9.2")]
-		public applepayResponse applepayResponse { get; set; }
-
-		[XMLElement(Name = "androidpayResponse",FirstVersion = "9.8",RemovedVersion = "10.0")]
-		[XMLElement(Name = "androidpayResponse",FirstVersion = "10.1")]
-		public androidpayResponse androidpayResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
-		public string cnpToken { get; set; }
-
-		[XMLElement(Name = "accountRangeId",FirstVersion = "12.3")]
-		public long? accountRangeId { get; set; }
-
-	}
-
-	[XMLElement(Name = "authorizationResponse")]
-	public class authorizationResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "cardProductId")]
-		public string cardProductId { get; set; }
-
-		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "authCode")]
-		public string authCode { get; set; }
-
-		[XMLElement(Name = "authorizationResponseSubCode")]
-		public string authorizationResponseSubCode { get; set; }
-
-		[XMLElement(Name = "approvedAmount")]
-		public int? approvedAmount { get; set; }
-
-		[XMLElement(Name = "accountInformation")]
-		public accountInfoType accountInformation { get; set; }
-
-		[XMLElement(Name = "fraudResult")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "billMeLaterResponseData",RemovedVersion = "12.0")]
-		public billMeLaterResponseData billMeLaterResponseData { get; set; }
-
-		[XMLElement(Name = "tokenResponse")]
-		public tokenResponseType tokenResponse { get; set; }
-
-		[XMLElement(Name = "enhancedAuthResponse")]
-		public enhancedAuthResponse enhancedAuthResponse { get; set; }
-
-		[XMLElement(Name = "accountUpdater",FirstVersion = "8.3")]
-		public accountUpdater accountUpdater { get; set; }
-
-		[XMLElement(Name = "recycling",FirstVersion = "8.6",RemovedVersion = "12.0")]
-		public recyclingType recycling { get; set; }
-
-		[XMLElement(Name = "recurringResponse",FirstVersion = "8.19")]
-		public recurringResponseType recurringResponse { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "applepayResponse",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "applepayResponse",FirstVersion = "9.2")]
-		public applepayResponse applepayResponse { get; set; }
-
-		[XMLElement(Name = "networkTransactionId",FirstVersion = "8.30",RemovedVersion = "9.0")]
-		[XMLElement(Name = "networkTransactionId",FirstVersion = "9.10",RemovedVersion = "10.0")]
-		[XMLElement(Name = "networkTransactionId",FirstVersion = "10.5")]
-		public string networkTransactionId { get; set; }
-
-		[XMLElement(Name = "cardSuffix",FirstVersion = "9.4")]
-		public string cardSuffix { get; set; }
-
-		[XMLElement(Name = "androidpayResponse",FirstVersion = "9.8",RemovedVersion = "10.0")]
-		[XMLElement(Name = "androidpayResponse",FirstVersion = "10.1")]
-		public androidpayResponse androidpayResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "recyclingResponse",FirstVersion = "12.0")]
-		public recyclingResponseType recyclingResponse { get; set; }
-
-		[XMLElement(Name = "paymentAccountReferenceNumber",FirstVersion = "12.4")]
-		public string paymentAccountReferenceNumber { get; set; }
-
-		[XMLElement(Name = "pinlessDebitResponse",FirstVersion = "12.8")]
-		public pinlessDebitResponse pinlessDebitResponse { get; set; }
-
-	}
-
-	[XMLElement(Name = "fundingSource")]
-	public class fundingSource : VersionedXMLElement
-	{
-		[XMLElement(Name = "type")]
-		public fundingSourceTypeEnum? type { get; set; }
-
-		[XMLElement(Name = "availableBalance")]
-		public string availableBalance { get; set; }
-
-		[XMLElement(Name = "reloadable",FirstVersion = "8.4")]
-		public string reloadable { get; set; }
-
-		[XMLElement(Name = "prepaidCardType",FirstVersion = "8.4")]
-		public string prepaidCardType { get; set; }
-
-	}
-
-	[XMLElement(Name = "enhancedAuthResponse")]
-	public class enhancedAuthResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "fundingSource")]
-		public fundingSource fundingSource { get; set; }
-
-		[XMLElement(Name = "affluence")]
-		public affluenceTypeEnum? affluence { get; set; }
-
-		[XMLElement(Name = "issuerCountry",FirstVersion = "8.4")]
-		public string issuerCountry { get; set; }
-
-		[XMLElement(Name = "cardProductType",FirstVersion = "8.5")]
-		public cardProductTypeEnum? cardProductType { get; set; }
-
-		[XMLElement(Name = "virtualAccountNumber",FirstVersion = "8.22")]
-		public bool? virtualAccountNumber { get; set; }
-
-		[XMLElement(Name = "networkResponse",FirstVersion = "10.4")]
-		public networkResponse networkResponse { get; set; }
-
-		[XMLElement(Name = "accountRangeId",FirstVersion = "12.3")]
-		public long? accountRangeId { get; set; }
-
-	}
-
-	[XMLElement(Name = "authReversalResponse")]
-	public class authReversalResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21",RemovedVersion = "11.0")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "9.3",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "captureResponse")]
-	public class captureResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "accountUpdater",FirstVersion = "8.3")]
-		public accountUpdater accountUpdater { get; set; }
-
-		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21",RemovedVersion = "11.0")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "forceCaptureResponse")]
-	public class forceCaptureResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "tokenResponse")]
-		public tokenResponseType tokenResponse { get; set; }
-
-		[XMLElement(Name = "accountUpdater",FirstVersion = "8.3")]
-		public accountUpdater accountUpdater { get; set; }
-
-		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "captureGivenAuthResponse")]
-	public class captureGivenAuthResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "tokenResponse")]
-		public tokenResponseType tokenResponse { get; set; }
-
-		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "saleResponse")]
-	public class saleResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "cardProductId")]
-		public string cardProductId { get; set; }
-
-		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "authCode")]
-		public string authCode { get; set; }
-
-		[XMLElement(Name = "authorizationResponseSubCode")]
-		public string authorizationResponseSubCode { get; set; }
-
-		[XMLElement(Name = "approvedAmount")]
-		public int? approvedAmount { get; set; }
-
-		[XMLElement(Name = "accountInformation")]
-		public accountInfoType accountInformation { get; set; }
-
-		[XMLElement(Name = "fraudResult")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "billMeLaterResponseData",RemovedVersion = "12.0")]
-		public billMeLaterResponseData billMeLaterResponseData { get; set; }
-
-		[XMLElement(Name = "tokenResponse")]
-		public tokenResponseType tokenResponse { get; set; }
-
-		[XMLElement(Name = "enhancedAuthResponse")]
-		public enhancedAuthResponse enhancedAuthResponse { get; set; }
-
-		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "accountUpdater",FirstVersion = "8.3")]
-		public accountUpdater accountUpdater { get; set; }
-
-		[XMLElement(Name = "recycling",FirstVersion = "8.6",RemovedVersion = "12.0")]
-		public recyclingType recycling { get; set; }
-
-		[XMLElement(Name = "recurringResponse",FirstVersion = "8.18")]
-		public recurringResponseType recurringResponse { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "applepayResponse",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "applepayResponse",FirstVersion = "9.2")]
-		public applepayResponse applepayResponse { get; set; }
-
-		[XMLElement(Name = "networkTransactionId",FirstVersion = "8.30",RemovedVersion = "9.0")]
-		[XMLElement(Name = "networkTransactionId",FirstVersion = "9.10",RemovedVersion = "10.0")]
-		[XMLElement(Name = "networkTransactionId",FirstVersion = "10.5")]
-		public string networkTransactionId { get; set; }
-
-		[XMLElement(Name = "cardSuffix",FirstVersion = "9.4")]
-		public string cardSuffix { get; set; }
-
-		[XMLElement(Name = "androidpayResponse",FirstVersion = "9.8",RemovedVersion = "10.0")]
-		[XMLElement(Name = "androidpayResponse",FirstVersion = "10.1")]
-		public androidpayResponse androidpayResponse { get; set; }
-
-		[XMLElement(Name = "sepaDirectDebitResponse",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "sepaDirectDebitResponse",FirstVersion = "10.4")]
-		public sepaDirectDebitResponse sepaDirectDebitResponse { get; set; }
-
-		[XMLElement(Name = "idealResponse",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "idealResponse",FirstVersion = "11.0")]
-		public idealResponse idealResponse { get; set; }
-
-		[XMLElement(Name = "giropayResponse",FirstVersion = "9.13",RemovedVersion = "10.0")]
-		[XMLElement(Name = "giropayResponse",FirstVersion = "11.0")]
-		public giropayResponse giropayResponse { get; set; }
-
-		[XMLElement(Name = "sofortResponse",FirstVersion = "9.13",RemovedVersion = "10.0")]
-		[XMLElement(Name = "sofortResponse",FirstVersion = "11.0")]
-		public sofortResponse sofortResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "recyclingResponse",FirstVersion = "12.0")]
-		public recyclingResponseType recyclingResponse { get; set; }
-
-		[XMLElement(Name = "pinlessDebitResponse",FirstVersion = "12.1")]
-		public pinlessDebitResponse pinlessDebitResponse { get; set; }
-
-		[XMLElement(Name = "paymentAccountReferenceNumber",FirstVersion = "12.4")]
-		public string paymentAccountReferenceNumber { get; set; }
-
-	}
-
-	[XMLElement(Name = "creditResponse")]
-	public class creditResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "tokenResponse")]
-		public tokenResponseType tokenResponse { get; set; }
-
-		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21",RemovedVersion = "11.0")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "fraudResult")]
-	public class fraudResult : VersionedXMLElement
-	{
-		[XMLElement(Name = "avsResult")]
-		public string avsResult { get; set; }
-
-		[XMLElement(Name = "cardValidationResult")]
-		public string cardValidationResult { get; set; }
-
-		[XMLElement(Name = "authenticationResult")]
-		public string authenticationResult { get; set; }
-
-		[XMLElement(Name = "advancedAVSResult")]
-		public string advancedAVSResult { get; set; }
-
-		[XMLElement(Name = "advancedFraudResults",FirstVersion = "8.23")]
-		public advancedFraudResultsType advancedFraudResults { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckSale")]
-	public class echeckSale : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "amount")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "customBilling",RemovedVersion = "8.2")]
-		[XMLElement(Name = "customBilling",FirstVersion = "8.3")]
-		public customBilling customBilling { get; set; }
-
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "verify")]
-		public bool? verify { get; set; }
-
-		[XMLElement(Name = "orderSource")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
-
-		[XMLElement(Name = "shipToAddress")]
-		public shipToAddress shipToAddress { get; set; }
-
-		[XMLElement(Name = "echeck",RemovedVersion = "8.2")]
-		[XMLElement(Name = "echeck",FirstVersion = "12.0")]
-		public echeck echeck { get; set; }
-
-		[XMLElement(Name = "redeliveryCycle",RemovedVersion = "8.1")]
-		public int? redeliveryCycle { get; set; }
-
-		[XMLElement(Name = "echeckOrEcheckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
-		public echeckOrEcheckToken echeckOrEcheckToken { get; set; }
-
-		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
-		public merchantDataType merchantData { get; set; }
-
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
-		public int? secondaryAmount { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "11.0")]
-		public string customIdentifier { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "echeckToken",FirstVersion = "12.0")]
-		public echeckTokenType echeckToken { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckCredit")]
-	public class echeckCredit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "amount")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "customBilling",RemovedVersion = "8.2")]
-		[XMLElement(Name = "customBilling",FirstVersion = "8.3")]
-		public customBilling customBilling { get; set; }
-
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "orderSource")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
-
-		[XMLElement(Name = "echeck",RemovedVersion = "8.2")]
-		[XMLElement(Name = "echeck",FirstVersion = "12.0")]
-		public echeck echeck { get; set; }
-
-		[XMLElement(Name = "echeckOrEcheckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
-		public echeckOrEcheckToken echeckOrEcheckToken { get; set; }
-
-		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
-		public merchantDataType merchantData { get; set; }
-
-		[XMLElement(Name = "txnReversalUserId",FirstVersion = "8.13",RemovedVersion = "8.14")]
-		public string txnReversalUserId { get; set; }
-
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "secondaryAmount",FirstVersion = "9.2")]
-		public int? secondaryAmount { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "11.0")]
-		public string customIdentifier { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "echeckToken",FirstVersion = "12.0")]
-		public echeckTokenType echeckToken { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckVerification")]
-	public class echeckVerification : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "11.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "amount")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "orderSource")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
-
-		[XMLElement(Name = "echeck",RemovedVersion = "8.2")]
-		[XMLElement(Name = "echeck",FirstVersion = "12.0")]
-		public echeck echeck { get; set; }
-
-		[XMLElement(Name = "echeckOrEcheckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
-		public echeckOrEcheckToken echeckOrEcheckToken { get; set; }
-
-		[XMLElement(Name = "merchantData",FirstVersion = "8.15")]
-		public merchantDataType merchantData { get; set; }
-
-		[XMLElement(Name = "echeckToken",FirstVersion = "12.0")]
-		public echeckTokenType echeckToken { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckSalesResponse")]
-	public class echeckSalesResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "verificationCode")]
-		public string verificationCode { get; set; }
-
-		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "accountUpdater")]
-		public accountUpdater accountUpdater { get; set; }
-
-		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "tokenResponse",FirstVersion = "8.2")]
-		public tokenResponseType tokenResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckCreditResponse")]
-	public class echeckCreditResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "accountUpdater")]
-		public accountUpdater accountUpdater { get; set; }
-
-		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "tokenResponse",FirstVersion = "8.2")]
-		public tokenResponseType tokenResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "originalAccountInfo",RemovedVersion = "8.5")]
-	public class originalAccountInfo : VersionedXMLElement
-	{
-		[XMLElement(Name = "accType",RemovedVersion = "8.5")]
-		public echeckAccountTypeEnum? accType { get; set; }
-
-		[XMLElement(Name = "accNum",RemovedVersion = "8.5")]
-		public string accNum { get; set; }
-
-		[XMLElement(Name = "routingNum",RemovedVersion = "8.5")]
-		public string routingNum { get; set; }
-
-	}
-
-	[XMLElement(Name = "newAccountInfo",RemovedVersion = "8.5")]
-	public class newAccountInfo : VersionedXMLElement
-	{
-		[XMLElement(Name = "accType",RemovedVersion = "8.5")]
-		public echeckAccountTypeEnum? accType { get; set; }
-
-		[XMLElement(Name = "accNum",RemovedVersion = "8.5")]
-		public string accNum { get; set; }
-
-		[XMLElement(Name = "routingNum",RemovedVersion = "8.5")]
-		public string routingNum { get; set; }
-
-	}
-
-	[XMLElement(Name = "accountUpdater")]
-	public class accountUpdater : VersionedXMLElement
-	{
-		[XMLElement(Name = "originalAccountInfo")]
-		public originalAccountInfo originalAccountInfo { get; set; }
-
-		[XMLElement(Name = "newAccountInfo")]
-		public newAccountInfo newAccountInfo { get; set; }
-
-		[XMLElement(Name = "originalTokenInfo",FirstVersion = "8.2")]
-		public originalTokenInfo originalTokenInfo { get; set; }
-
-		[XMLElement(Name = "newTokenInfo",FirstVersion = "8.2")]
-		public newTokenInfo newTokenInfo { get; set; }
-
-		[XMLElement(Name = "originalCardInfo",FirstVersion = "8.3")]
-		public originalCardInfo originalCardInfo { get; set; }
-
-		[XMLElement(Name = "newCardInfo",FirstVersion = "8.3")]
-		public newCardInfo newCardInfo { get; set; }
-
-		[XMLElement(Name = "extendedCardResponse",FirstVersion = "8.5")]
-		public extendedCardResponseType extendedCardResponse { get; set; }
-
-		[XMLElement(Name = "originalCardTokenInfo",FirstVersion = "8.5")]
-		public cardTokenInfoType originalCardTokenInfo { get; set; }
-
-		[XMLElement(Name = "newCardTokenInfo",FirstVersion = "8.5")]
-		public cardTokenInfoType newCardTokenInfo { get; set; }
-
-		[XMLElement(Name = "accountUpdateSource",FirstVersion = "12.10")]
-		public accountUpdateSourceType? accountUpdateSource { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckVerificationResponse")]
-	public class echeckVerificationResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "accountUpdater",RemovedVersion = "8.2")]
-		public accountUpdater accountUpdater { get; set; }
-
-		[XMLElement(Name = "tokenResponse",FirstVersion = "8.2")]
-		public tokenResponseType tokenResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
 	[XMLElement(Name = "echeck",RemovedVersion = "8.2")]
-	public class echeck : VersionedXMLElement
+	public partial class echeck : VersionedXMLElement
 	{
 		[XMLElement(Name = "accType",RemovedVersion = "8.2")]
 		public echeckAccountTypeEnum? accType { get; set; }
@@ -3540,3955 +7395,73 @@ namespace Cnp.Sdk
 
 	}
 
-	[XMLElement(Name = "litleRequest",RemovedVersion = "12.0")]
-	[XMLElement(Name = "cnpRequest",FirstVersion = "12.0")]
-	public class cnpRequest : VersionedXMLElement
-	{
-		[XMLElement(Name = "authentication")]
-		public authentication authentication { get; set; }
-
-		[XMLElement(Name = "batchRequest")]
-		public batchRequest batchRequest { get; set; }
-
-		[XMLElement(Name = "RFRRequest")]
-		public RFRRequest RFRRequest { get; set; }
-
-		[XMLAttribute(Name = "version")]
-		public string version { get; set; }
-
-		[XMLAttribute(Name = "id")]
-		public string id { get; set; }
-
-		[XMLAttribute(Name = "numBatchRequests")]
-		public int? numBatchRequests { get; set; }
-
-	}
-
-	[XMLElement(Name = "RFRRequest")]
-	public class RFRRequest : VersionedXMLElement
-	{
-		[XMLElement(Name = "litleSessionId",RemovedVersion = "12.0")]
-		public long? litleSessionId { get; set; }
-
-		[XMLElement(Name = "accountUpdateFileRequestData")]
-		public accountUpdateFileRequestData accountUpdateFileRequestData { get; set; }
-
-		[XMLElement(Name = "cnpSessionId",FirstVersion = "12.0")]
-		public long? cnpSessionId { get; set; }
-
-	}
-
-	[XMLElement(Name = "batchRequest")]
-	public class batchRequest : VersionedXMLElement
-	{
-		[XMLElement(Name = "transaction")]
-		public transaction transaction { get; set; }
-
-		[XMLAttribute(Name = "id")]
-		public string id { get; set; }
-
-		[XMLAttribute(Name = "numAuths")]
-		public int? numAuths { get; set; }
-
-		[XMLAttribute(Name = "authAmount")]
-		public int? authAmount { get; set; }
-
-		[XMLAttribute(Name = "numAuthReversals")]
-		public int? numAuthReversals { get; set; }
-
-		[XMLAttribute(Name = "authReversalAmount")]
-		public int? authReversalAmount { get; set; }
-
-		[XMLAttribute(Name = "numCaptures")]
-		public int? numCaptures { get; set; }
-
-		[XMLAttribute(Name = "captureAmount")]
-		public int? captureAmount { get; set; }
-
-		[XMLAttribute(Name = "numExtCaptures")]
-		public int? numExtCaptures { get; set; }
-
-		[XMLAttribute(Name = "extCaptureAmount")]
-		public int? extCaptureAmount { get; set; }
-
-		[XMLAttribute(Name = "numCredits")]
-		public int? numCredits { get; set; }
-
-		[XMLAttribute(Name = "creditAmount")]
-		public int? creditAmount { get; set; }
-
-		[XMLAttribute(Name = "numForceCaptures")]
-		public int? numForceCaptures { get; set; }
-
-		[XMLAttribute(Name = "forceCaptureAmount")]
-		public int? forceCaptureAmount { get; set; }
-
-		[XMLAttribute(Name = "numSales")]
-		public int? numSales { get; set; }
-
-		[XMLAttribute(Name = "saleAmount")]
-		public int? saleAmount { get; set; }
-
-		[XMLAttribute(Name = "numEmails",RemovedVersion = "8.5")]
-		public int? numEmails { get; set; }
-
-		[XMLAttribute(Name = "emailAmount",RemovedVersion = "8.5")]
-		public int? emailAmount { get; set; }
-
-		[XMLAttribute(Name = "numCaptureGivenAuths")]
-		public int? numCaptureGivenAuths { get; set; }
-
-		[XMLAttribute(Name = "captureGivenAuthAmount")]
-		public int? captureGivenAuthAmount { get; set; }
-
-		[XMLAttribute(Name = "numEcheckSales")]
-		public int? numEcheckSales { get; set; }
-
-		[XMLAttribute(Name = "echeckSalesAmount")]
-		public int? echeckSalesAmount { get; set; }
-
-		[XMLAttribute(Name = "numEcheckCredit")]
-		public int? numEcheckCredit { get; set; }
-
-		[XMLAttribute(Name = "echeckCreditAmount")]
-		public int? echeckCreditAmount { get; set; }
-
-		[XMLAttribute(Name = "numEcheckVerification")]
-		public int? numEcheckVerification { get; set; }
-
-		[XMLAttribute(Name = "echeckVerificationAmount")]
-		public int? echeckVerificationAmount { get; set; }
-
-		[XMLAttribute(Name = "numAccountUpdates")]
-		public int? numAccountUpdates { get; set; }
-
-		[XMLAttribute(Name = "numTokenRegistrations")]
-		public int? numTokenRegistrations { get; set; }
-
-		[XMLAttribute(Name = "merchantId")]
-		public string merchantId { get; set; }
-
-		[XMLAttribute(Name = "numEcheckRedeposit",FirstVersion = "8.1")]
-		public int? numEcheckRedeposit { get; set; }
-
-		[XMLAttribute(Name = "numUpdateCardValidationNumOnTokens",FirstVersion = "8.14")]
-		public int? numUpdateCardValidationNumOnTokens { get; set; }
-
-		[XMLElement(Name = "recurringTransaction",FirstVersion = "8.20")]
-		public recurringTransaction recurringTransaction { get; set; }
-
-		[XMLAttribute(Name = "numCancelSubscriptions",FirstVersion = "8.20")]
-		public int? numCancelSubscriptions { get; set; }
-
-		[XMLAttribute(Name = "numUpdateSubscriptions",FirstVersion = "8.20")]
-		public int? numUpdateSubscriptions { get; set; }
-
-		[XMLAttribute(Name = "merchantSdk",FirstVersion = "8.21")]
-		public string merchantSdk { get; set; }
-
-		[XMLAttribute(Name = "numCreatePlans",FirstVersion = "8.21")]
-		public int? numCreatePlans { get; set; }
-
-		[XMLAttribute(Name = "numUpdatePlans",FirstVersion = "8.21")]
-		public int? numUpdatePlans { get; set; }
-
-		[XMLAttribute(Name = "numActivates",FirstVersion = "8.21")]
-		public int? numActivates { get; set; }
-
-		[XMLAttribute(Name = "numDeactivates",FirstVersion = "8.21")]
-		public int? numDeactivates { get; set; }
-
-		[XMLAttribute(Name = "activateAmount",FirstVersion = "8.21")]
-		public int? activateAmount { get; set; }
-
-		[XMLAttribute(Name = "numLoads",FirstVersion = "8.21")]
-		public int? numLoads { get; set; }
-
-		[XMLAttribute(Name = "loadAmount",FirstVersion = "8.21")]
-		public int? loadAmount { get; set; }
-
-		[XMLAttribute(Name = "numUnloads",FirstVersion = "8.21")]
-		public int? numUnloads { get; set; }
-
-		[XMLAttribute(Name = "unloadAmount",FirstVersion = "8.21")]
-		public int? unloadAmount { get; set; }
-
-		[XMLAttribute(Name = "numBalanceInquirys",FirstVersion = "8.21")]
-		public int? numBalanceInquirys { get; set; }
-
-		[XMLAttribute(Name = "numPayFacCredit",FirstVersion = "9.0")]
-		public int? numPayFacCredit { get; set; }
-
-		[XMLAttribute(Name = "numPayFacDebit",FirstVersion = "9.0")]
-		public int? numPayFacDebit { get; set; }
-
-		[XMLAttribute(Name = "numSubmerchantCredit",FirstVersion = "9.0")]
-		public int? numSubmerchantCredit { get; set; }
-
-		[XMLAttribute(Name = "numSubmerchantDebit",FirstVersion = "9.0")]
-		public int? numSubmerchantDebit { get; set; }
-
-		[XMLAttribute(Name = "numReserveCredit",FirstVersion = "9.0")]
-		public int? numReserveCredit { get; set; }
-
-		[XMLAttribute(Name = "numReserveDebit",FirstVersion = "9.0")]
-		public int? numReserveDebit { get; set; }
-
-		[XMLAttribute(Name = "payFacCreditAmount",FirstVersion = "9.0")]
-		public int? payFacCreditAmount { get; set; }
-
-		[XMLAttribute(Name = "payFacDebitAmount",FirstVersion = "9.0")]
-		public int? payFacDebitAmount { get; set; }
-
-		[XMLAttribute(Name = "submerchantCreditAmount",FirstVersion = "9.0")]
-		public int? submerchantCreditAmount { get; set; }
-
-		[XMLAttribute(Name = "submerchantDebitAmount",FirstVersion = "9.0")]
-		public int? submerchantDebitAmount { get; set; }
-
-		[XMLAttribute(Name = "reserveCreditAmount",FirstVersion = "9.0")]
-		public int? reserveCreditAmount { get; set; }
-
-		[XMLAttribute(Name = "reserveDebitAmount",FirstVersion = "9.0")]
-		public int? reserveDebitAmount { get; set; }
-
-		[XMLAttribute(Name = "numEcheckPreNoteSale",FirstVersion = "9.1")]
-		public int? numEcheckPreNoteSale { get; set; }
-
-		[XMLAttribute(Name = "numEcheckPreNoteCredit",FirstVersion = "9.1")]
-		public int? numEcheckPreNoteCredit { get; set; }
-
-		[XMLAttribute(Name = "numVendorDebit",FirstVersion = "9.2")]
-		public int? numVendorDebit { get; set; }
-
-		[XMLAttribute(Name = "numVendorCredit",FirstVersion = "9.2")]
-		public int? numVendorCredit { get; set; }
-
-		[XMLAttribute(Name = "numPhysicalCheckDebit",FirstVersion = "9.2")]
-		public int? numPhysicalCheckDebit { get; set; }
-
-		[XMLAttribute(Name = "numPhysicalCheckCredit",FirstVersion = "9.2")]
-		public int? numPhysicalCheckCredit { get; set; }
-
-		[XMLAttribute(Name = "vendorDebitAmount",FirstVersion = "9.2")]
-		public int? vendorDebitAmount { get; set; }
-
-		[XMLAttribute(Name = "vendorCreditAmount",FirstVersion = "9.2")]
-		public int? vendorCreditAmount { get; set; }
-
-		[XMLAttribute(Name = "physicalCheckDebitAmount",FirstVersion = "9.2")]
-		public int? physicalCheckDebitAmount { get; set; }
-
-		[XMLAttribute(Name = "physicalCheckCreditAmount",FirstVersion = "9.2")]
-		public int? physicalCheckCreditAmount { get; set; }
-
-		[XMLAttribute(Name = "numFundingInstructionVoid",FirstVersion = "10.1")]
-		public int? numFundingInstructionVoid { get; set; }
-
-		[XMLAttribute(Name = "numGiftCardAuthReversals",FirstVersion = "11.0")]
-		public int? numGiftCardAuthReversals { get; set; }
-
-		[XMLAttribute(Name = "giftCardAuthReversalOriginalAmount",FirstVersion = "11.0")]
-		public int? giftCardAuthReversalOriginalAmount { get; set; }
-
-		[XMLAttribute(Name = "numGiftCardCaptures",FirstVersion = "11.0")]
-		public int? numGiftCardCaptures { get; set; }
-
-		[XMLAttribute(Name = "giftCardCaptureAmount",FirstVersion = "11.0")]
-		public int? giftCardCaptureAmount { get; set; }
-
-		[XMLAttribute(Name = "numGiftCardCredits",FirstVersion = "11.0")]
-		public int? numGiftCardCredits { get; set; }
-
-		[XMLAttribute(Name = "giftCardCreditAmount",FirstVersion = "11.0")]
-		public int? giftCardCreditAmount { get; set; }
-
-		[XMLAttribute(Name = "sameDayFunding",FirstVersion = "11.1")]
-		public bool? sameDayFunding { get; set; }
-
-		[XMLAttribute(Name = "numFastAccessFunding",FirstVersion = "12.1")]
-		public int? numFastAccessFunding { get; set; } = 0;
-
-		[XMLAttribute(Name = "fastAccessFundingAmount",FirstVersion = "12.1")]
-		public int? fastAccessFundingAmount { get; set; } = 0;
-
-		[XMLAttribute(Name = "numTranslateToLowValueTokenRequests",FirstVersion = "12.2")]
-		public int? numTranslateToLowValueTokenRequests { get; set; } = 0;
-
-		[XMLAttribute(Name = "numPayoutOrgCredit",FirstVersion = "12.9")]
-		public int? numPayoutOrgCredit { get; set; } = 0;
-
-		[XMLAttribute(Name = "numPayoutOrgDebit",FirstVersion = "12.9")]
-		public int? numPayoutOrgDebit { get; set; } = 0;
-
-		[XMLAttribute(Name = "numCustomerCredit",FirstVersion = "12.9")]
-		public int? numCustomerCredit { get; set; } = 0;
-
-		[XMLAttribute(Name = "numCustomerDebit",FirstVersion = "12.9")]
-		public int? numCustomerDebit { get; set; } = 0;
-
-		[XMLAttribute(Name = "payoutOrgCreditAmount",FirstVersion = "12.9")]
-		public int? payoutOrgCreditAmount { get; set; } = 0;
-
-		[XMLAttribute(Name = "payoutOrgDebitAmount",FirstVersion = "12.9")]
-		public int? payoutOrgDebitAmount { get; set; } = 0;
-
-		[XMLAttribute(Name = "customerCreditAmount",FirstVersion = "12.9")]
-		public int? customerCreditAmount { get; set; } = 0;
-
-		[XMLAttribute(Name = "customerDebitAmount",FirstVersion = "12.9")]
-		public int? customerDebitAmount { get; set; } = 0;
-
-	}
-
-	[XMLElement(Name = "accountUpdate")]
-	public class accountUpdate : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "card",RemovedVersion = "8.1")]
-		public cardType card { get; set; }
-
-		[XMLElement(Name = "cardOrToken",FirstVersion = "8.1")]
-		public cardOrToken cardOrToken { get; set; }
-
-	}
-
-	[XMLElement(Name = "litleResponse",RemovedVersion = "12.0")]
-	[XMLElement(Name = "cnpResponse",FirstVersion = "12.0")]
-	public class cnpResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "batchResponse")]
-		public batchResponse batchResponse { get; set; }
-
-		[XMLElement(Name = "RFRResponse")]
-		public RFRResponse RFRResponse { get; set; }
-
-		[XMLAttribute(Name = "version")]
-		public string version { get; set; }
-
-		[XMLAttribute(Name = "id")]
-		public string id { get; set; }
-
-		[XMLAttribute(Name = "response")]
-		public string response { get; set; }
-
-		[XMLAttribute(Name = "message")]
-		public string message { get; set; }
-
-		[XMLAttribute(Name = "litleSessionId",RemovedVersion = "12.0")]
-		public long? litleSessionId { get; set; }
-
-		[XMLAttribute(Name = "cnpSessionId",FirstVersion = "12.0")]
-		public long? cnpSessionId { get; set; }
-
-	}
-
-	[XMLElement(Name = "RFRResponse")]
-	public class RFRResponse : VersionedXMLElement
-	{
-		[XMLAttribute(Name = "response")]
-		public string response { get; set; }
-
-		[XMLAttribute(Name = "message")]
-		public string message { get; set; }
-
-	}
-
-	[XMLElement(Name = "batchResponse")]
-	public class batchResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "transactionResponse")]
-		public transactionResponse transactionResponse { get; set; }
-
-		[XMLAttribute(Name = "id")]
-		public string id { get; set; }
-
-		[XMLAttribute(Name = "litleBatchId",RemovedVersion = "12.0")]
-		public long? litleBatchId { get; set; }
-
-		[XMLAttribute(Name = "merchantId")]
-		public string merchantId { get; set; }
-
-		[XMLElement(Name = "recurringTransactionResponse",FirstVersion = "8.20")]
-		public recurringTransactionResponse recurringTransactionResponse { get; set; }
-
-		[XMLAttribute(Name = "cnpBatchId",FirstVersion = "12.0")]
-		public long? cnpBatchId { get; set; }
-
-		[XMLAttribute(Name = "numAccountUpdates",FirstVersion = "12.10")]
-		public int? numAccountUpdates { get; set; } = 0;
-
-	}
-
-	[XMLElement(Name = "accountUpdateResponse")]
-	public class accountUpdateResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		[XMLElement(Name = "orderId",FirstVersion = "10.7",RemovedVersion = "11.0")]
-		[XMLElement(Name = "orderId",FirstVersion = "11.2")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "updatedCard")]
-		public cardType updatedCard { get; set; }
-
-		[XMLElement(Name = "originalCard")]
-		public cardType originalCard { get; set; }
-
-		[XMLElement(Name = "updatedToken",FirstVersion = "8.1")]
-		public tokenType updatedToken { get; set; }
-
-		[XMLElement(Name = "originalToken",FirstVersion = "8.1")]
-		public tokenType originalToken { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "accountUpdateFileRequestData")]
-	public class accountUpdateFileRequestData : VersionedXMLElement
-	{
-		[XMLElement(Name = "merchantId")]
-		public string merchantId { get; set; }
-
-		[XMLElement(Name = "postDay")]
-		public DateTime postDay { get; set; }
-
-	}
-
-	[XMLElement(Name = "litleOnlineRequest",RemovedVersion = "12.0")]
-	[XMLElement(Name = "cnpOnlineRequest",FirstVersion = "12.0")]
-	public class cnpOnlineRequest : VersionedXMLElement
-	{
-		[XMLElement(Name = "authentication",RemovedVersion = "8.2")]
-		public authentication authentication { get; set; }
-
-		[XMLElement(Name = "transaction",RemovedVersion = "8.2")]
-		public transaction transaction { get; set; }
-
-		[XMLAttribute(Name = "version",RemovedVersion = "8.2")]
-		public string version { get; set; }
-
-		[XMLAttribute(Name = "merchantId")]
-		public string merchantId { get; set; }
-
-		[XMLAttribute(Name = "merchantSdk",FirstVersion = "8.12")]
-		public string merchantSdk { get; set; }
-
-		[XMLAttribute(Name = "loggedInUser",FirstVersion = "8.14")]
-		public string loggedInUser { get; set; }
-
-		[XMLAttribute(Name = "sameDayFunding",FirstVersion = "11.3")]
-		public bool? sameDayFunding { get; set; }
-
-	}
-
-	[XMLElement(Name = "litleOnlineResponse",RemovedVersion = "12.0")]
-	[XMLElement(Name = "cnpOnlineResponse",FirstVersion = "12.0")]
-	public class cnpOnlineResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "transactionResponse")]
-		public transactionResponse transactionResponse { get; set; }
-
-		[XMLAttribute(Name = "response")]
-		public string response { get; set; }
-
-		[XMLAttribute(Name = "message")]
-		public string message { get; set; }
-
-		[XMLAttribute(Name = "version")]
-		public string version { get; set; }
-
-		[XMLElement(Name = "recurringTransactionResponse",FirstVersion = "8.20")]
-		public recurringTransactionResponse recurringTransactionResponse { get; set; }
-
-	}
-
-	[XMLElement(Name = "void")]
-	public class voidTxn : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "processingInstructions")]
-		public processingInstructions processingInstructions { get; set; }
-
-		[XMLElement(Name = "txnReversalUserId",FirstVersion = "8.13",RemovedVersion = "8.14")]
-		public string txnReversalUserId { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "voidResponse")]
-	public class voidResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "response")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message")]
-		public string message { get; set; }
-
-		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "recycling",FirstVersion = "8.16",RemovedVersion = "12.0")]
-		public voidRecyclingResponseType recycling { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "recyclingResponse",FirstVersion = "12.0")]
-		public voidRecyclingResponseType recyclingResponse { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckRedeposit",FirstVersion = "8.1")]
-	public class echeckRedeposit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.1",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "echeck",FirstVersion = "8.1",RemovedVersion = "8.2")]
-		[XMLElement(Name = "echeck",FirstVersion = "12.0")]
-		public echeck echeck { get; set; }
-
-		[XMLElement(Name = "echeckOrEcheckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
-		public echeckOrEcheckToken echeckOrEcheckToken { get; set; }
-
-		[XMLElement(Name = "merchantData",FirstVersion = "8.15")]
-		public merchantDataType merchantData { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "11.0")]
-		public string customIdentifier { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "echeckToken",FirstVersion = "12.0")]
-		public echeckTokenType echeckToken { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckRedepositResponse",FirstVersion = "8.1")]
-	public class echeckRedepositResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.1",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "redepositCount",FirstVersion = "8.1",RemovedVersion = "8.2")]
-		public short? redepositCount { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.1")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.1")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.1")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.1")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "accountUpdater",FirstVersion = "8.1")]
-		public accountUpdater accountUpdater { get; set; }
-
-		[XMLElement(Name = "tokenResponse",FirstVersion = "8.2")]
-		public tokenResponseType tokenResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckVoid",FirstVersion = "8.1")]
-	public class echeckVoid : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.1",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "txnReversalUserId",FirstVersion = "8.13",RemovedVersion = "8.14")]
-		public string txnReversalUserId { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckVoidResponse",FirstVersion = "8.1")]
-	public class echeckVoidResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.1",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.1")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.1")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.1")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.1")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "numberOfDeposits",FirstVersion = "8.1",RemovedVersion = "8.2")]
-		public int? numberOfDeposits { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "8.1",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "cardTokenType",FirstVersion = "8.2")]
-	public class cardTokenType : VersionedXMLElement
-	{
-		[XMLElement(Name = "litleToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
-		public string litleToken { get; set; }
-
-		[XMLElement(Name = "expDate",FirstVersion = "8.2")]
-		public string expDate { get; set; }
-
-		[XMLElement(Name = "cardValidationNum",FirstVersion = "8.2")]
-		public string cardValidationNum { get; set; }
-
-		[XMLElement(Name = "type",FirstVersion = "8.2")]
-		public methodOfPaymentTypeEnum? type { get; set; }
-
-		[XMLElement(Name = "checkoutId",FirstVersion = "11.1")]
-		public string checkoutId { get; set; }
-
-		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
-		public string cnpToken { get; set; }
-
-		[XMLElement(Name = "tokenURL",FirstVersion = "12.8")]
-		public string tokenURL { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckTokenType",FirstVersion = "8.2")]
-	public class echeckTokenType : VersionedXMLElement
-	{
-		[XMLElement(Name = "litleToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
-		public string litleToken { get; set; }
-
-		[XMLElement(Name = "routingNum",FirstVersion = "8.2")]
-		public string routingNum { get; set; }
-
-		[XMLElement(Name = "accType",FirstVersion = "8.2")]
-		public echeckAccountTypeEnum? accType { get; set; }
-
-		[XMLElement(Name = "checkNum",FirstVersion = "8.2")]
-		public string checkNum { get; set; }
-
-		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
-		public string cnpToken { get; set; }
-
-	}
-
-	[XMLElement(Name = "registerTokenRequestType",FirstVersion = "8.2")]
-	public class registerTokenRequestType : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId",FirstVersion = "8.2")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "accountNumber",FirstVersion = "8.2")]
-		public string accountNumber { get; set; }
-
-		[XMLElement(Name = "echeckForToken",FirstVersion = "8.2")]
-		public echeckForTokenType echeckForToken { get; set; }
-
-		[XMLElement(Name = "paypageRegistrationId",FirstVersion = "8.5")]
-		public string paypageRegistrationId { get; set; }
-
-		[XMLElement(Name = "cardValidationNum",FirstVersion = "8.14")]
-		public string cardValidationNum { get; set; }
-
-		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
-		public mposType mpos { get; set; }
-
-		[XMLElement(Name = "applepay",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "applepay",FirstVersion = "9.2")]
-		public applepayType applepay { get; set; }
-
-		[XMLElement(Name = "encryptionKeyId",FirstVersion = "12.5")]
-		public string encryptionKeyId { get; set; }
-
-		[XMLElement(Name = "encryptedAccountNumber",FirstVersion = "12.5")]
-		public string encryptedAccountNumber { get; set; }
-
-		[XMLElement(Name = "encryptedCardValidationNum",FirstVersion = "12.5")]
-		public string encryptedCardValidationNum { get; set; }
-
-	}
-
-	[XMLElement(Name = "originalTokenInfo",FirstVersion = "8.2",RemovedVersion = "8.5")]
-	public class originalTokenInfo : VersionedXMLElement
-	{
-		[XMLElement(Name = "accType",FirstVersion = "8.2",RemovedVersion = "8.5")]
-		public echeckAccountTypeEnum? accType { get; set; }
-
-		[XMLElement(Name = "litleToken",FirstVersion = "8.2",RemovedVersion = "8.5")]
-		public string litleToken { get; set; }
-
-		[XMLElement(Name = "routingNum",FirstVersion = "8.2",RemovedVersion = "8.5")]
-		public string routingNum { get; set; }
-
-	}
-
-	[XMLElement(Name = "newTokenInfo",FirstVersion = "8.2",RemovedVersion = "8.5")]
-	public class newTokenInfo : VersionedXMLElement
-	{
-		[XMLElement(Name = "accType",FirstVersion = "8.2",RemovedVersion = "8.5")]
-		public echeckAccountTypeEnum? accType { get; set; }
-
-		[XMLElement(Name = "litleToken",FirstVersion = "8.2",RemovedVersion = "8.5")]
-		public string litleToken { get; set; }
-
-		[XMLElement(Name = "routingNum",FirstVersion = "8.2",RemovedVersion = "8.5")]
-		public string routingNum { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckType",FirstVersion = "8.2")]
-	public class echeckType : VersionedXMLElement
-	{
-		[XMLElement(Name = "accType",FirstVersion = "8.2")]
-		public echeckAccountTypeEnum? accType { get; set; }
-
-		[XMLElement(Name = "accNum",FirstVersion = "8.2")]
-		public string accNum { get; set; }
-
-		[XMLElement(Name = "routingNum",FirstVersion = "8.2")]
-		public string routingNum { get; set; }
-
-		[XMLElement(Name = "checkNum",FirstVersion = "8.2")]
-		public string checkNum { get; set; }
-
-		[XMLElement(Name = "ccdPaymentInformation",FirstVersion = "9.3")]
-		public string ccdPaymentInformation { get; set; }
-
-		[XMLElement(Name = "ctxPaymentInformation",FirstVersion = "12.10")]
-		public ctxPaymentInformationType ctxPaymentInformation { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckForTokenType",FirstVersion = "8.2")]
-	public class echeckForTokenType : VersionedXMLElement
-	{
-		[XMLElement(Name = "accNum",FirstVersion = "8.2")]
-		public string accNum { get; set; }
-
-		[XMLElement(Name = "routingNum",FirstVersion = "8.2")]
-		public string routingNum { get; set; }
-
-	}
-
-	[XMLElement(Name = "baseRequest",FirstVersion = "8.2")]
-	public class baseRequest : VersionedXMLElement
-	{
-		[XMLElement(Name = "authentication",FirstVersion = "8.2")]
-		public authentication authentication { get; set; }
-
-		[XMLElement(Name = "transaction",FirstVersion = "8.2")]
-		public transaction transaction { get; set; }
-
-		[XMLAttribute(Name = "version",FirstVersion = "8.2")]
-		public string version { get; set; }
-
-		[XMLElement(Name = "recurringTransaction",FirstVersion = "8.20")]
-		public recurringTransaction recurringTransaction { get; set; }
-
-	}
-
-	[XMLElement(Name = "originalCardInfo",FirstVersion = "8.3",RemovedVersion = "8.5")]
-	public class originalCardInfo : VersionedXMLElement
-	{
-		[XMLElement(Name = "type",FirstVersion = "8.3",RemovedVersion = "8.5")]
-		public methodOfPaymentTypeEnum? type { get; set; }
-
-		[XMLElement(Name = "number",FirstVersion = "8.3",RemovedVersion = "8.5")]
-		public string number { get; set; }
-
-		[XMLElement(Name = "expDate",FirstVersion = "8.3",RemovedVersion = "8.5")]
-		public string expDate { get; set; }
-
-	}
-
-	[XMLElement(Name = "newCardInfo",FirstVersion = "8.3",RemovedVersion = "8.5")]
-	public class newCardInfo : VersionedXMLElement
-	{
-		[XMLElement(Name = "type",FirstVersion = "8.3",RemovedVersion = "8.5")]
-		public methodOfPaymentTypeEnum? type { get; set; }
-
-		[XMLElement(Name = "number",FirstVersion = "8.3",RemovedVersion = "8.5")]
-		public string number { get; set; }
-
-		[XMLElement(Name = "expDate",FirstVersion = "8.3",RemovedVersion = "8.5")]
-		public string expDate { get; set; }
-
-	}
-
-	[XMLElement(Name = "filteringType",FirstVersion = "8.3")]
-	public class filteringType : VersionedXMLElement
-	{
-		[XMLElement(Name = "prepaid",FirstVersion = "8.3")]
-		public bool? prepaid { get; set; }
-
-		[XMLElement(Name = "international",FirstVersion = "8.3")]
-		public bool? international { get; set; }
-
-		[XMLElement(Name = "chargeback",FirstVersion = "8.3")]
-		public bool? chargeback { get; set; }
-
-	}
-
-	[XMLElement(Name = "cardPaypageType",FirstVersion = "8.5")]
-	public class cardPaypageType : VersionedXMLElement
-	{
-		[XMLElement(Name = "paypageRegistrationId",FirstVersion = "8.5")]
-		public string paypageRegistrationId { get; set; }
-
-		[XMLElement(Name = "expDate",FirstVersion = "8.5")]
-		public string expDate { get; set; }
-
-		[XMLElement(Name = "cardValidationNum",FirstVersion = "8.5")]
-		public string cardValidationNum { get; set; }
-
-		[XMLElement(Name = "type",FirstVersion = "8.5")]
-		public methodOfPaymentTypeEnum? type { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckAccountInfoType",FirstVersion = "8.5")]
-	public class echeckAccountInfoType : VersionedXMLElement
-	{
-		[XMLElement(Name = "accType",FirstVersion = "8.5")]
-		public echeckAccountTypeEnum? accType { get; set; }
-
-		[XMLElement(Name = "accNum",FirstVersion = "8.5")]
-		public string accNum { get; set; }
-
-		[XMLElement(Name = "routingNum",FirstVersion = "8.5")]
-		public string routingNum { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckTokenInfoType",FirstVersion = "8.5")]
-	public class echeckTokenInfoType : VersionedXMLElement
-	{
-		[XMLElement(Name = "accType",FirstVersion = "8.5")]
-		public echeckAccountTypeEnum? accType { get; set; }
-
-		[XMLElement(Name = "litleToken",FirstVersion = "8.5",RemovedVersion = "12.0")]
-		public string litleToken { get; set; }
-
-		[XMLElement(Name = "routingNum",FirstVersion = "8.5")]
-		public string routingNum { get; set; }
-
-		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
-		public string cnpToken { get; set; }
-
-	}
-
-	[XMLElement(Name = "cardAccountInfoType",FirstVersion = "8.5")]
-	public class cardAccountInfoType : VersionedXMLElement
-	{
-		[XMLElement(Name = "type",FirstVersion = "8.5")]
-		public methodOfPaymentTypeEnum? type { get; set; }
-
-		[XMLElement(Name = "number",FirstVersion = "8.5")]
-		public string number { get; set; }
-
-		[XMLElement(Name = "expDate",FirstVersion = "8.5")]
-		public string expDate { get; set; }
-
-	}
-
-	[XMLElement(Name = "cardTokenInfoType",FirstVersion = "8.5")]
-	public class cardTokenInfoType : VersionedXMLElement
-	{
-		[XMLElement(Name = "litleToken",FirstVersion = "8.5",RemovedVersion = "12.0")]
-		public string litleToken { get; set; }
-
-		[XMLElement(Name = "type",FirstVersion = "8.5")]
-		public methodOfPaymentTypeEnum? type { get; set; }
-
-		[XMLElement(Name = "expDate",FirstVersion = "8.5")]
-		public string expDate { get; set; }
-
-		[XMLElement(Name = "bin",FirstVersion = "8.5")]
-		public string bin { get; set; }
-
-		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
-		public string cnpToken { get; set; }
-
-	}
-
-	[XMLElement(Name = "extendedCardResponseType",FirstVersion = "8.5")]
-	public class extendedCardResponseType : VersionedXMLElement
-	{
-		[XMLElement(Name = "message",FirstVersion = "8.5")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "code",FirstVersion = "8.5")]
-		public string code { get; set; }
-
-	}
-
-	[XMLElement(Name = "recycleAdviceType",FirstVersion = "8.6")]
-	public class recycleAdviceType : VersionedXMLElement
-	{
-		[XMLElement(Name = "nextRecycleTime",FirstVersion = "8.6")]
-		public DateTime nextRecycleTime { get; set; }
-
-		[XMLElement(Name = "recycleAdviceEnd",FirstVersion = "8.6")]
-		public string recycleAdviceEnd { get; set; }
-
-	}
-
-	[XMLElement(Name = "recyclingType",FirstVersion = "8.6",RemovedVersion = "12.0")]
-	public class recyclingType : VersionedXMLElement
-	{
-		[XMLElement(Name = "recycleAdvice",FirstVersion = "8.6",RemovedVersion = "12.0")]
-		public recycleAdviceType recycleAdvice { get; set; }
-
-		[XMLElement(Name = "recycleEngineActive",FirstVersion = "8.6",RemovedVersion = "12.0")]
-		public bool? recycleEngineActive { get; set; }
-
-	}
-
-	[XMLElement(Name = "merchantDataType",FirstVersion = "8.8")]
-	public class merchantDataType : VersionedXMLElement
-	{
-		[XMLElement(Name = "campaign",FirstVersion = "8.8")]
-		public string campaign { get; set; }
-
-		[XMLElement(Name = "affiliate",FirstVersion = "8.8")]
-		public string affiliate { get; set; }
-
-		[XMLElement(Name = "merchantGroupingId",FirstVersion = "8.8")]
-		public string merchantGroupingId { get; set; }
-
-	}
-
-	[XMLElement(Name = "cardTokenTypeAU",FirstVersion = "8.9")]
-	public class cardTokenTypeAU : cardTokenType
-	{
-		[XMLElement(Name = "bin",FirstVersion = "8.9")]
-		public string bin { get; set; }
-
-	}
-
-	[XMLElement(Name = "recyclingRequestType",FirstVersion = "8.10")]
-	public class recyclingRequestType : VersionedXMLElement
-	{
-		[XMLElement(Name = "recycleBy",FirstVersion = "8.10")]
-		public recycleByTypeEnum? recycleBy { get; set; }
-
-		[XMLElement(Name = "recycleId",FirstVersion = "8.10")]
-		public string recycleId { get; set; }
-
-	}
-
-	[XMLElement(Name = "updateCardValidationNumOnToken",FirstVersion = "8.14")]
-	public class updateCardValidationNumOnToken : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId",FirstVersion = "8.14")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "litleToken",FirstVersion = "8.14",RemovedVersion = "12.0")]
-		public string litleToken { get; set; }
-
-		[XMLElement(Name = "cardValidationNum",FirstVersion = "8.14")]
-		public string cardValidationNum { get; set; }
-
-		[XMLElement(Name = "cnpToken",FirstVersion = "12.0")]
-		public string cnpToken { get; set; }
-
-	}
-
-	[XMLElement(Name = "updateCardValidationNumOnTokenResponse",FirstVersion = "8.14")]
-	public class updateCardValidationNumOnTokenResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.14",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.14",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.14")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.14")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.14")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "voidRecyclingResponseType",FirstVersion = "8.16")]
-	public class voidRecyclingResponseType : VersionedXMLElement
-	{
-		[XMLElement(Name = "creditLitleTxnId",FirstVersion = "8.16",RemovedVersion = "12.0")]
-		public long? creditLitleTxnId { get; set; }
-
-		[XMLElement(Name = "creditCnpTxnId",FirstVersion = "12.0")]
-		public long? creditCnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "recurringSubscriptionType",FirstVersion = "8.18")]
-	public class recurringSubscriptionType : VersionedXMLElement
-	{
-		[XMLElement(Name = "planCode",FirstVersion = "8.18")]
-		public string planCode { get; set; }
-
-		[XMLElement(Name = "numberOfPaymentsRemaining",FirstVersion = "8.18",RemovedVersion = "8.19")]
-		public int? numberOfPaymentsRemaining { get; set; }
-
-		[XMLElement(Name = "numberOfPayments",FirstVersion = "8.19")]
-		public int? numberOfPayments { get; set; }
-
-		[XMLElement(Name = "startDate",FirstVersion = "8.19")]
-		public DateTime startDate { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "8.19")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "createDiscount",FirstVersion = "8.21")]
-		public createDiscountType createDiscount { get; set; }
-
-		[XMLElement(Name = "createAddOn",FirstVersion = "8.21")]
-		public createAddOnType createAddOn { get; set; }
-
-	}
-
-	[XMLElement(Name = "litleInternalRecurringRequestType",FirstVersion = "8.18",RemovedVersion = "12.0")]
-	public class litleInternalRecurringRequestType : VersionedXMLElement
-	{
-		[XMLElement(Name = "subscriptionId",FirstVersion = "8.18",RemovedVersion = "12.0")]
-		public long? subscriptionId { get; set; }
-
-		[XMLElement(Name = "recurringTxnId",FirstVersion = "8.18",RemovedVersion = "12.0")]
-		public long? recurringTxnId { get; set; }
-
-		[XMLElement(Name = "finalPayment",FirstVersion = "8.21",RemovedVersion = "12.0")]
-		public bool? finalPayment { get; set; }
-
-	}
-
-	[XMLElement(Name = "recurringRequestType",FirstVersion = "8.18")]
-	public class recurringRequestType : VersionedXMLElement
-	{
-		[XMLElement(Name = "subscription",FirstVersion = "8.18",RemovedVersion = "12.0")]
-		public recurringSubscriptionType subscription { get; set; }
-
-		[XMLElement(Name = "createSubscription",FirstVersion = "12.0")]
-		public recurringSubscriptionType createSubscription { get; set; }
-
-	}
-
-	[XMLElement(Name = "recurringResponseType",FirstVersion = "8.18")]
-	public class recurringResponseType : VersionedXMLElement
-	{
-		[XMLElement(Name = "subscriptionId",FirstVersion = "8.18")]
-		public long? subscriptionId { get; set; }
-
-		[XMLElement(Name = "responseCode",FirstVersion = "8.18")]
-		public string responseCode { get; set; }
-
-		[XMLElement(Name = "responseMessage",FirstVersion = "8.18")]
-		public string responseMessage { get; set; }
-
-		[XMLElement(Name = "recurringTxnId",FirstVersion = "8.18")]
-		public long? recurringTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "recurringTransactionType",FirstVersion = "8.20")]
-	public class recurringTransactionType : VersionedXMLElement
-	{
-	}
-
-	[XMLElement(Name = "recurringTransactionResponseType",FirstVersion = "8.20")]
-	public class recurringTransactionResponseType : VersionedXMLElement
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.20",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.20")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.20")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.20")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "cancelSubscription",FirstVersion = "8.20")]
-	public class cancelSubscription : recurringTransactionType
-	{
-		[XMLElement(Name = "subscriptionId",FirstVersion = "8.20")]
-		public long? subscriptionId { get; set; }
-
-	}
-
-	[XMLElement(Name = "updateSubscription",FirstVersion = "8.20")]
-	public class updateSubscription : recurringTransactionType
-	{
-		[XMLElement(Name = "subscriptionId",FirstVersion = "8.20")]
-		public long? subscriptionId { get; set; }
-
-		[XMLElement(Name = "planCode",FirstVersion = "8.20")]
-		public string planCode { get; set; }
-
-		[XMLElement(Name = "billToAddress",FirstVersion = "8.20")]
-		public billToAddress billToAddress { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "8.20")]
-		public cardType card { get; set; }
-
-		[XMLElement(Name = "billingDate",FirstVersion = "8.20")]
-		public DateTime billingDate { get; set; }
-
-		[XMLElement(Name = "createDiscount",FirstVersion = "8.21")]
-		public createDiscountType createDiscount { get; set; }
-
-		[XMLElement(Name = "updateDiscount",FirstVersion = "8.21")]
-		public updateDiscountType updateDiscount { get; set; }
-
-		[XMLElement(Name = "deleteDiscount",FirstVersion = "8.21")]
-		public deleteDiscountType deleteDiscount { get; set; }
-
-		[XMLElement(Name = "createAddOn",FirstVersion = "8.21")]
-		public createAddOnType createAddOn { get; set; }
-
-		[XMLElement(Name = "updateAddOn",FirstVersion = "8.21")]
-		public updateAddOnType updateAddOn { get; set; }
-
-		[XMLElement(Name = "deleteAddOn",FirstVersion = "8.21")]
-		public deleteAddOnType deleteAddOn { get; set; }
-
-		[XMLElement(Name = "token",FirstVersion = "8.22")]
-		public cardTokenType token { get; set; }
-
-		[XMLElement(Name = "paypage",FirstVersion = "8.22")]
-		public cardPaypageType paypage { get; set; }
-
-	}
-
-	[XMLElement(Name = "cancelSubscriptionResponse",FirstVersion = "8.20")]
-	public class cancelSubscriptionResponse : recurringTransactionResponseType
-	{
-		[XMLElement(Name = "subscriptionId",FirstVersion = "8.20")]
-		public long? subscriptionId { get; set; }
-
-	}
-
-	[XMLElement(Name = "updateSubscriptionResponse",FirstVersion = "8.20")]
-	public class updateSubscriptionResponse : recurringTransactionResponseType
-	{
-		[XMLElement(Name = "subscriptionId",FirstVersion = "8.20")]
-		public long? subscriptionId { get; set; }
-
-		[XMLElement(Name = "tokenResponse",FirstVersion = "8.22")]
-		public tokenResponseType tokenResponse { get; set; }
-
-	}
-
-	[XMLElement(Name = "createPlan",FirstVersion = "8.21")]
-	public class createPlan : recurringTransactionType
-	{
-		[XMLElement(Name = "planCode",FirstVersion = "8.21")]
-		public string planCode { get; set; }
-
-		[XMLElement(Name = "name",FirstVersion = "8.21")]
-		public string name { get; set; }
-
-		[XMLElement(Name = "description",FirstVersion = "8.21")]
-		public string description { get; set; }
-
-		[XMLElement(Name = "intervalType",FirstVersion = "8.21")]
-		public intervalTypeEnum? intervalType { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "8.21")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "numberOfPayments",FirstVersion = "8.21")]
-		public int? numberOfPayments { get; set; }
-
-		[XMLElement(Name = "trialNumberOfIntervals",FirstVersion = "8.21")]
-		public int? trialNumberOfIntervals { get; set; }
-
-		[XMLElement(Name = "trialIntervalType",FirstVersion = "8.21")]
-		public trialIntervalTypeEnum? trialIntervalType { get; set; }
-
-		[XMLElement(Name = "active",FirstVersion = "8.21")]
-		public bool? active { get; set; }
-
-	}
-
-	[XMLElement(Name = "updatePlan",FirstVersion = "8.21")]
-	public class updatePlan : recurringTransactionType
-	{
-		[XMLElement(Name = "planCode",FirstVersion = "8.21")]
-		public string planCode { get; set; }
-
-		[XMLElement(Name = "active",FirstVersion = "8.21")]
-		public bool? active { get; set; }
-
-	}
-
-	[XMLElement(Name = "createPlanResponse",FirstVersion = "8.21")]
-	public class createPlanResponse : recurringTransactionResponseType
-	{
-		[XMLElement(Name = "planCode",FirstVersion = "8.21")]
-		public string planCode { get; set; }
-
-	}
-
-	[XMLElement(Name = "updatePlanResponse",FirstVersion = "8.21")]
-	public class updatePlanResponse : recurringTransactionResponseType
-	{
-		[XMLElement(Name = "planCode",FirstVersion = "8.21")]
-		public string planCode { get; set; }
-
-	}
-
-	[XMLElement(Name = "createDiscountType",FirstVersion = "8.21")]
-	public class createDiscountType : VersionedXMLElement
-	{
-		[XMLElement(Name = "discountCode",FirstVersion = "8.21")]
-		public string discountCode { get; set; }
-
-		[XMLElement(Name = "name",FirstVersion = "8.21")]
-		public string name { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "8.21")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "startDate",FirstVersion = "8.21")]
-		public DateTime startDate { get; set; }
-
-		[XMLElement(Name = "endDate",FirstVersion = "8.21")]
-		public DateTime endDate { get; set; }
-
-	}
-
-	[XMLElement(Name = "updateDiscountType",FirstVersion = "8.21")]
-	public class updateDiscountType : VersionedXMLElement
-	{
-		[XMLElement(Name = "discountCode",FirstVersion = "8.21")]
-		public string discountCode { get; set; }
-
-		[XMLElement(Name = "name",FirstVersion = "8.21")]
-		public string name { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "8.21")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "startDate",FirstVersion = "8.21")]
-		public DateTime startDate { get; set; }
-
-		[XMLElement(Name = "endDate",FirstVersion = "8.21")]
-		public DateTime endDate { get; set; }
-
-	}
-
-	[XMLElement(Name = "deleteDiscountType",FirstVersion = "8.21")]
-	public class deleteDiscountType : VersionedXMLElement
-	{
-		[XMLElement(Name = "discountCode",FirstVersion = "8.21")]
-		public string discountCode { get; set; }
-
-	}
-
-	[XMLElement(Name = "createAddOnType",FirstVersion = "8.21")]
-	public class createAddOnType : VersionedXMLElement
-	{
-		[XMLElement(Name = "addOnCode",FirstVersion = "8.21")]
-		public string addOnCode { get; set; }
-
-		[XMLElement(Name = "name",FirstVersion = "8.21")]
-		public string name { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "8.21")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "startDate",FirstVersion = "8.21")]
-		public DateTime startDate { get; set; }
-
-		[XMLElement(Name = "endDate",FirstVersion = "8.21")]
-		public DateTime endDate { get; set; }
-
-	}
-
-	[XMLElement(Name = "updateAddOnType",FirstVersion = "8.21")]
-	public class updateAddOnType : VersionedXMLElement
-	{
-		[XMLElement(Name = "addOnCode",FirstVersion = "8.21")]
-		public string addOnCode { get; set; }
-
-		[XMLElement(Name = "name",FirstVersion = "8.21")]
-		public string name { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "8.21")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "startDate",FirstVersion = "8.21")]
-		public DateTime startDate { get; set; }
-
-		[XMLElement(Name = "endDate",FirstVersion = "8.21")]
-		public DateTime endDate { get; set; }
-
-	}
-
-	[XMLElement(Name = "deleteAddOnType",FirstVersion = "8.21")]
-	public class deleteAddOnType : VersionedXMLElement
-	{
-		[XMLElement(Name = "addOnCode",FirstVersion = "8.21")]
-		public string addOnCode { get; set; }
-
-	}
-
-	[XMLElement(Name = "activate",FirstVersion = "8.21")]
-	public class activate : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId",FirstVersion = "8.21")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "8.21")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "orderSource",FirstVersion = "8.21")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "8.21")]
-		public cardType card { get; set; }
-
-		[XMLElement(Name = "virtualGiftCard",FirstVersion = "8.22")]
-		public virtualGiftCardType virtualGiftCard { get; set; }
-
-	}
-
-	[XMLElement(Name = "deactivate",FirstVersion = "8.21")]
-	public class deactivate : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId",FirstVersion = "8.21")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "orderSource",FirstVersion = "8.21")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "8.21")]
-		public cardType card { get; set; }
-
-	}
-
-	[XMLElement(Name = "load",FirstVersion = "8.21")]
-	public class load : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId",FirstVersion = "8.21")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "8.21")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "orderSource",FirstVersion = "8.21")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "8.21")]
-		public cardType card { get; set; }
-
-	}
-
-	[XMLElement(Name = "unload",FirstVersion = "8.21")]
-	public class unload : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId",FirstVersion = "8.21")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "8.21")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "orderSource",FirstVersion = "8.21")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "8.21")]
-		public cardType card { get; set; }
-
-	}
-
-	[XMLElement(Name = "balanceInquiry",FirstVersion = "8.21")]
-	public class balanceInquiry : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId",FirstVersion = "8.21")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "orderSource",FirstVersion = "8.21")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "8.21")]
-		public cardType card { get; set; }
-
-	}
-
-	[XMLElement(Name = "activateResponse",FirstVersion = "8.21")]
-	public class activateResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.21")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.21")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "virtualGiftCardResponse",FirstVersion = "8.22")]
-		public virtualGiftCardResponse virtualGiftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "loadResponse",FirstVersion = "8.21")]
-	public class loadResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.21")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.21")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "unloadResponse",FirstVersion = "8.21")]
-	public class unloadResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.21")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.21")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
-	public class giftCardResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "availableBalance",FirstVersion = "8.21")]
-		public string availableBalance { get; set; }
-
-		[XMLElement(Name = "beginningBalance",FirstVersion = "8.21")]
-		public string beginningBalance { get; set; }
-
-		[XMLElement(Name = "endingBalance",FirstVersion = "8.21")]
-		public string endingBalance { get; set; }
-
-		[XMLElement(Name = "cashBackAmount",FirstVersion = "8.21")]
-		public string cashBackAmount { get; set; }
-
-		[XMLElement(Name = "txnTime",FirstVersion = "11.0")]
-		public DateTime txnTime { get; set; }
-
-		[XMLElement(Name = "refCode",FirstVersion = "11.0")]
-		public string refCode { get; set; }
-
-		[XMLElement(Name = "systemTraceId",FirstVersion = "11.0")]
-		public int? systemTraceId { get; set; }
-
-		[XMLElement(Name = "sequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? sequenceNumber { get; set; }
-
-	}
-
-	[XMLElement(Name = "balanceInquiryResponse",FirstVersion = "8.21")]
-	public class balanceInquiryResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.21")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.21")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "deactivateResponse",FirstVersion = "8.21")]
-	public class deactivateResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.21")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.21")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "fraudResult",FirstVersion = "8.21")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "approvedAmount",FirstVersion = "8.21")]
-		public int? approvedAmount { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "depositReversalResponse",FirstVersion = "8.22")]
-	public class depositReversalResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.22")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.22")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.22")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "refundReversalResponse",FirstVersion = "8.22")]
-	public class refundReversalResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.22")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.22")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.22")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "activateReversalResponse",FirstVersion = "8.22")]
-	public class activateReversalResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.22")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.22")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.22")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "deactivateReversalResponse",FirstVersion = "8.22")]
-	public class deactivateReversalResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.22")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.22")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.22")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "loadReversalResponse",FirstVersion = "8.22")]
-	public class loadReversalResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.22")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.22")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.22")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "unloadReversalResponse",FirstVersion = "8.22")]
-	public class unloadReversalResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.22")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.22")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.22")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "virtualGiftCardResponse",FirstVersion = "8.22")]
-	public class virtualGiftCardResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "accountNumber",FirstVersion = "8.22")]
-		public string accountNumber { get; set; }
-
-		[XMLElement(Name = "cardValidationNum",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public string cardValidationNum { get; set; }
-
-		[XMLElement(Name = "pin",FirstVersion = "9.9",RemovedVersion = "10.0")]
-		[XMLElement(Name = "pin",FirstVersion = "10.3")]
-		public string pin { get; set; }
-
-	}
-
-	[XMLElement(Name = "virtualGiftCardType",FirstVersion = "8.22")]
-	public class virtualGiftCardType : VersionedXMLElement
-	{
-		[XMLElement(Name = "accountNumberLength",FirstVersion = "8.22")]
-		public int? accountNumberLength { get; set; }
-
-		[XMLElement(Name = "giftCardBin",FirstVersion = "8.22")]
-		public string giftCardBin { get; set; }
-
-	}
-
-	[XMLElement(Name = "depositReversal",FirstVersion = "8.22")]
-	public class depositReversal : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "11.0")]
-		public giftCardCardType card { get; set; }
-
-		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
-		public string originalRefCode { get; set; }
-
-		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
-		public int? originalAmount { get; set; }
-
-		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
-
-		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
-		public int? originalSystemTraceId { get; set; }
-
-		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "refundReversal",FirstVersion = "8.22")]
-	public class refundReversal : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "11.0")]
-		public giftCardCardType card { get; set; }
-
-		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
-		public string originalRefCode { get; set; }
-
-		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
-		public int? originalAmount { get; set; }
-
-		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
-
-		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
-		public int? originalSystemTraceId { get; set; }
-
-		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "activateReversal",FirstVersion = "8.22")]
-	public class activateReversal : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "11.0")]
-		public giftCardCardType card { get; set; }
-
-		[XMLElement(Name = "virtualGiftCardBin",FirstVersion = "11.0")]
-		public string virtualGiftCardBin { get; set; }
-
-		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
-		public string originalRefCode { get; set; }
-
-		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
-		public int? originalAmount { get; set; }
-
-		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
-
-		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
-		public int? originalSystemTraceId { get; set; }
-
-		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "deactivateReversal",FirstVersion = "8.22")]
-	public class deactivateReversal : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "11.0")]
-		public giftCardCardType card { get; set; }
-
-		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
-		public string originalRefCode { get; set; }
-
-		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
-
-		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
-		public int? originalSystemTraceId { get; set; }
-
-		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "loadReversal",FirstVersion = "8.22")]
-	public class loadReversal : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "11.0")]
-		public giftCardCardType card { get; set; }
-
-		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
-		public string originalRefCode { get; set; }
-
-		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
-		public int? originalAmount { get; set; }
-
-		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
-
-		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
-		public int? originalSystemTraceId { get; set; }
-
-		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "unloadReversal",FirstVersion = "8.22")]
-	public class unloadReversal : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "11.0")]
-		public giftCardCardType card { get; set; }
-
-		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
-		public string originalRefCode { get; set; }
-
-		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
-		public int? originalAmount { get; set; }
-
-		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
-
-		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
-		public int? originalSystemTraceId { get; set; }
-
-		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "advancedFraudChecksType",FirstVersion = "8.23")]
-	public class advancedFraudChecksType : VersionedXMLElement
-	{
-		[XMLElement(Name = "threatMetrixSessionId",FirstVersion = "8.23")]
-		public threatMetrixSessionIdType threatMetrixSessionId { get; set; }
-
-		[XMLElement(Name = "customAttribute1",FirstVersion = "9.3")]
-		public string customAttribute1 { get; set; }
-
-		[XMLElement(Name = "customAttribute2",FirstVersion = "9.3")]
-		public string customAttribute2 { get; set; }
-
-		[XMLElement(Name = "customAttribute3",FirstVersion = "9.3")]
-		public string customAttribute3 { get; set; }
-
-		[XMLElement(Name = "customAttribute4",FirstVersion = "9.3")]
-		public string customAttribute4 { get; set; }
-
-		[XMLElement(Name = "customAttribute5",FirstVersion = "9.3")]
-		public string customAttribute5 { get; set; }
-
-		[XMLElement(Name = "webSessionId",FirstVersion = "12.3")]
-		public webSessionIdType webSessionId { get; set; }
-
-	}
-
-	[XMLElement(Name = "advancedFraudResultsType",FirstVersion = "8.23")]
-	public class advancedFraudResultsType : VersionedXMLElement
-	{
-		[XMLElement(Name = "deviceReviewStatus",FirstVersion = "8.23")]
-		public string deviceReviewStatus { get; set; }
-
-		[XMLElement(Name = "deviceReputationScore",FirstVersion = "8.23")]
-		public int? deviceReputationScore { get; set; }
-
-		[XMLElement(Name = "triggeredRule",FirstVersion = "8.24")]
-		public string triggeredRule { get; set; }
-
-	}
-
-	[XMLElement(Name = "mposType",FirstVersion = "8.25")]
-	public class mposType : VersionedXMLElement
-	{
-		[XMLElement(Name = "ksn",FirstVersion = "8.25")]
-		public string ksn { get; set; }
-
-		[XMLElement(Name = "formatId",FirstVersion = "8.25")]
-		public string formatId { get; set; }
-
-		[XMLElement(Name = "encryptedTrack",FirstVersion = "8.25")]
-		public string encryptedTrack { get; set; }
-
-		[XMLElement(Name = "track1Status",FirstVersion = "8.25")]
-		public int? track1Status { get; set; }
-
-		[XMLElement(Name = "track2Status",FirstVersion = "8.25")]
-		public int? track2Status { get; set; }
-
-	}
-
-	[XMLElement(Name = "fraudCheck",FirstVersion = "8.25")]
-	public class fraudCheck : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "advancedFraudChecks",FirstVersion = "8.25")]
-		public advancedFraudChecksType advancedFraudChecks { get; set; }
-
-		[XMLElement(Name = "billToAddress",FirstVersion = "9.3")]
-		public billToAddress billToAddress { get; set; }
-
-		[XMLElement(Name = "shipToAddress",FirstVersion = "9.3")]
-		public shipToAddress shipToAddress { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "9.3")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "eventType",FirstVersion = "12.2")]
-		public eventType? eventType { get; set; }
-
-		[XMLElement(Name = "accountLogin",FirstVersion = "12.2")]
-		public string accountLogin { get; set; }
-
-		[XMLElement(Name = "accountPasshash",FirstVersion = "12.2")]
-		public string accountPasshash { get; set; }
-
-	}
-
-	[XMLElement(Name = "fraudCheckResponse",FirstVersion = "8.25")]
-	public class fraudCheckResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "8.25",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "8.25")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "8.25")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "8.25")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "advancedFraudResults",FirstVersion = "8.25")]
-		public advancedFraudResultsType advancedFraudResults { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "wallet",FirstVersion = "8.27")]
-	public class wallet : VersionedXMLElement
-	{
-		[XMLElement(Name = "walletSourceType",FirstVersion = "8.27")]
-		public walletSourceType? walletSourceType { get; set; }
-
-		[XMLElement(Name = "walletSourceTypeId",FirstVersion = "8.27")]
-		public string walletSourceTypeId { get; set; }
-
-	}
-
-	[XMLElement(Name = "applepayType",FirstVersion = "8.29",RemovedVersion = "9.0")]
-	[XMLElement(Name = "applepayType",FirstVersion = "9.2")]
-	public class applepayType : VersionedXMLElement
-	{
-		[XMLElement(Name = "data",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "data",FirstVersion = "9.2")]
-		public string data { get; set; }
-
-		[XMLElement(Name = "header",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "header",FirstVersion = "9.2")]
-		public applepayHeaderType header { get; set; }
-
-		[XMLElement(Name = "signature",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "signature",FirstVersion = "9.2")]
-		public string signature { get; set; }
-
-		[XMLElement(Name = "version",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "version",FirstVersion = "9.2")]
-		public string version { get; set; }
-
-	}
-
-	[XMLElement(Name = "applepayHeaderType",FirstVersion = "8.29",RemovedVersion = "9.0")]
-	[XMLElement(Name = "applepayHeaderType",FirstVersion = "9.2")]
-	public class applepayHeaderType : VersionedXMLElement
-	{
-		[XMLElement(Name = "applicationData",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "applicationData",FirstVersion = "9.2")]
-		public string applicationData { get; set; }
-
-		[XMLElement(Name = "ephemeralPublicKey",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "ephemeralPublicKey",FirstVersion = "9.2")]
-		public string ephemeralPublicKey { get; set; }
-
-		[XMLElement(Name = "publicKeyHash",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "publicKeyHash",FirstVersion = "9.2")]
-		public string publicKeyHash { get; set; }
-
-		[XMLElement(Name = "transactionId",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "transactionId",FirstVersion = "9.2")]
-		public string transactionId { get; set; }
-
-	}
-
-	[XMLElement(Name = "applepayResponse",FirstVersion = "8.29",RemovedVersion = "9.0")]
-	[XMLElement(Name = "applepayResponse",FirstVersion = "9.2")]
-	public class applepayResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "applicationPrimaryAccountNumber",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "applicationPrimaryAccountNumber",FirstVersion = "9.2")]
-		public string applicationPrimaryAccountNumber { get; set; }
-
-		[XMLElement(Name = "applicationExpirationDate",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "applicationExpirationDate",FirstVersion = "9.2")]
-		public string applicationExpirationDate { get; set; }
-
-		[XMLElement(Name = "currencyCode",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "currencyCode",FirstVersion = "9.2")]
-		public string currencyCode { get; set; }
-
-		[XMLElement(Name = "transactionAmount",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "transactionAmount",FirstVersion = "9.2")]
-		public int? transactionAmount { get; set; }
-
-		[XMLElement(Name = "cardholderName",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "cardholderName",FirstVersion = "9.2")]
-		public string cardholderName { get; set; }
-
-		[XMLElement(Name = "deviceManufacturerIdentifier",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "deviceManufacturerIdentifier",FirstVersion = "9.2")]
-		public string deviceManufacturerIdentifier { get; set; }
-
-		[XMLElement(Name = "paymentDataType",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "paymentDataType",FirstVersion = "9.2")]
-		public string paymentDataType { get; set; }
-
-		[XMLElement(Name = "onlinePaymentCryptogram",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "onlinePaymentCryptogram",FirstVersion = "9.2")]
-		public string onlinePaymentCryptogram { get; set; }
-
-		[XMLElement(Name = "eciIndicator",FirstVersion = "8.29",RemovedVersion = "9.0")]
-		[XMLElement(Name = "eciIndicator",FirstVersion = "9.2")]
-		public string eciIndicator { get; set; }
-
-	}
-
-	[XMLElement(Name = "payFacCredit",FirstVersion = "9.0")]
-	public class payFacCredit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.0")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "9.0")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
-		public string customIdentifier { get; set; }
-
-	}
-
-	[XMLElement(Name = "payFacCreditResponse",FirstVersion = "9.0")]
-	public class payFacCreditResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.0")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.0")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "payFacDebit",FirstVersion = "9.0")]
-	public class payFacDebit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.0")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "9.0")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
-		public string customIdentifier { get; set; }
-
-	}
-
-	[XMLElement(Name = "payFacDebitResponse",FirstVersion = "9.0")]
-	public class payFacDebitResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.0")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.0")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "submerchantCredit",FirstVersion = "9.0")]
-	public class submerchantCredit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.0")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "submerchantName",FirstVersion = "9.0")]
-		public string submerchantName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "9.0")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "accountInfo",FirstVersion = "9.0")]
-		public echeckType accountInfo { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4")]
-		public string customIdentifier { get; set; }
-
-	}
-
-	[XMLElement(Name = "submerchantDebit",FirstVersion = "9.0")]
-	public class submerchantDebit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.0")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "submerchantName",FirstVersion = "9.0")]
-		public string submerchantName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "9.0")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "accountInfo",FirstVersion = "9.0")]
-		public echeckType accountInfo { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4")]
-		public string customIdentifier { get; set; }
-
-	}
-
-	[XMLElement(Name = "submerchantCreditResponse",FirstVersion = "9.0")]
-	public class submerchantCreditResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.0")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.0")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "submerchantDebitResponse",FirstVersion = "9.0")]
-	public class submerchantDebitResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.0")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.0")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "reserveCredit",FirstVersion = "9.0")]
-	public class reserveCredit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.0")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "9.0")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
-		public string customIdentifier { get; set; }
-
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
-		public string fundingCustomerId { get; set; }
-
-	}
-
-	[XMLElement(Name = "reserveCreditResponse",FirstVersion = "9.0")]
-	public class reserveCreditResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.0")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.0")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "reserveDebit",FirstVersion = "9.0")]
-	public class reserveDebit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.0")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "9.0")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
-		public string customIdentifier { get; set; }
-
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
-		public string fundingCustomerId { get; set; }
-
-	}
-
-	[XMLElement(Name = "reserveDebitResponse",FirstVersion = "9.0")]
-	public class reserveDebitResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.0")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.0")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.0")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckPreNoteSale",FirstVersion = "9.1")]
-	public class echeckPreNoteSale : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId",FirstVersion = "9.1")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "orderSource",FirstVersion = "9.1")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "billToAddress",FirstVersion = "9.1")]
-		public billToAddress billToAddress { get; set; }
-
-		[XMLElement(Name = "echeck",FirstVersion = "9.1")]
-		public echeck echeck { get; set; }
-
-		[XMLElement(Name = "merchantData",FirstVersion = "9.1")]
-		public merchantDataType merchantData { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckPreNoteCredit",FirstVersion = "9.1")]
-	public class echeckPreNoteCredit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId",FirstVersion = "9.1")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "orderSource",FirstVersion = "9.1")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "billToAddress",FirstVersion = "9.1")]
-		public billToAddress billToAddress { get; set; }
-
-		[XMLElement(Name = "echeck",FirstVersion = "9.1")]
-		public echeck echeck { get; set; }
-
-		[XMLElement(Name = "merchantData",FirstVersion = "9.1")]
-		public merchantDataType merchantData { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckPreNoteSaleResponse",FirstVersion = "9.1")]
-	public class echeckPreNoteSaleResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.1",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "9.1",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.1")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.1")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.1")]
-		public string message { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "9.1",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckPreNoteCreditResponse",FirstVersion = "9.1")]
-	public class echeckPreNoteCreditResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.1",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "9.1",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.1")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.1")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.1")]
-		public string message { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "9.1",RemovedVersion = "10.0")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "vendorDebit",FirstVersion = "9.2")]
-	public class vendorDebit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.2")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "vendorName",FirstVersion = "9.2")]
-		public string vendorName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "9.2")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "accountInfo",FirstVersion = "9.2")]
-		public echeckType accountInfo { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
-		public string customIdentifier { get; set; }
-
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
-		public string fundingCustomerId { get; set; }
-
-	}
-
-	[XMLElement(Name = "vendorDebitResponse",FirstVersion = "9.2")]
-	public class vendorDebitResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.2",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.2")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.2")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.2")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "vendorCredit",FirstVersion = "9.2")]
-	public class vendorCredit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.2")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "vendorName",FirstVersion = "9.2")]
-		public string vendorName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "9.2")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "accountInfo",FirstVersion = "9.2")]
-		public echeckType accountInfo { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
-		public string customIdentifier { get; set; }
-
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
-		public string fundingCustomerId { get; set; }
-
-	}
-
-	[XMLElement(Name = "vendorCreditResponse",FirstVersion = "9.2")]
-	public class vendorCreditResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.2",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.2")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.2")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.2")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "physicalCheckDebit",FirstVersion = "9.2")]
-	public class physicalCheckDebit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.2")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "9.2")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
-		public string customIdentifier { get; set; }
-
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
-		public string fundingCustomerId { get; set; }
-
-	}
-
-	[XMLElement(Name = "physicalCheckDebitResponse",FirstVersion = "9.2")]
-	public class physicalCheckDebitResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.2",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.2")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.2")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.2")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "physicalCheckCredit",FirstVersion = "9.2")]
-	public class physicalCheckCredit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "9.2")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "9.2")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "10.4",RemovedVersion = "11.0")]
-		public string customIdentifier { get; set; }
-
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
-		public string fundingCustomerId { get; set; }
-
-	}
-
-	[XMLElement(Name = "physicalCheckCreditResponse",FirstVersion = "9.2")]
-	public class physicalCheckCreditResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.2",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "9.2")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.2")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.2")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.2")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "queryTransaction",FirstVersion = "9.5")]
-	public class queryTransaction : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "origId",FirstVersion = "9.5")]
-		public string origId { get; set; }
-
-		[XMLElement(Name = "origActionType",FirstVersion = "9.5")]
-		public actionTypeEnum? origActionType { get; set; }
-
-		[XMLElement(Name = "origLitleTxnId",FirstVersion = "9.5",RemovedVersion = "12.0")]
-		public long? origLitleTxnId { get; set; }
-
-		[XMLElement(Name = "origOrderId",FirstVersion = "9.5",RemovedVersion = "11.0")]
-		public string origOrderId { get; set; }
-
-		[XMLElement(Name = "origAccountNumber",FirstVersion = "9.5",RemovedVersion = "11.0")]
-		public string origAccountNumber { get; set; }
-
-		[XMLElement(Name = "origCnpTxnId",FirstVersion = "12.0")]
-		public long? origCnpTxnId { get; set; }
-
-		[XMLElement(Name = "showStatusOnly",FirstVersion = "12.3")]
-		public yesNoType? showStatusOnly { get; set; }
-
-	}
-
-	[XMLElement(Name = "results_max10",FirstVersion = "9.5")]
-	public class results_max10 : VersionedXMLElement
-	{
-		[XMLElement(Name = "transactionResponse",FirstVersion = "9.5")]
-		public transactionResponse transactionResponse { get; set; }
-
-	}
-
-	[XMLElement(Name = "queryTransactionResponse",FirstVersion = "9.5")]
-	public class queryTransactionResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "response",FirstVersion = "9.5")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "9.5")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.5")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "matchCount",FirstVersion = "9.5")]
-		public int? matchCount { get; set; }
-
-		[XMLElement(Name = "results_max10",FirstVersion = "9.5")]
-		public results_max10 results_max10 { get; set; }
-
-	}
-
-	[XMLElement(Name = "queryTransactionUnavailableResponse",FirstVersion = "9.5")]
-	public class queryTransactionUnavailableResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "9.5",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "9.5")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "9.5")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "androidpayResponse",FirstVersion = "9.8",RemovedVersion = "10.0")]
-	[XMLElement(Name = "androidpayResponse",FirstVersion = "10.1")]
-	public class androidpayResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "cryptogram",FirstVersion = "9.8",RemovedVersion = "10.0")]
-		[XMLElement(Name = "cryptogram",FirstVersion = "10.1")]
-		public string cryptogram { get; set; }
-
-		[XMLElement(Name = "expMonth",FirstVersion = "9.8",RemovedVersion = "10.0")]
-		[XMLElement(Name = "expMonth",FirstVersion = "10.1")]
-		public string expMonth { get; set; }
-
-		[XMLElement(Name = "expYear",FirstVersion = "9.8",RemovedVersion = "10.0")]
-		[XMLElement(Name = "expYear",FirstVersion = "10.1")]
-		public string expYear { get; set; }
-
-		[XMLElement(Name = "eciIndicator",FirstVersion = "9.11",RemovedVersion = "10.0")]
-		[XMLElement(Name = "eciIndicator",FirstVersion = "10.6")]
-		public string eciIndicator { get; set; }
-
-	}
-
-	[XMLElement(Name = "sepaDirectDebitType",FirstVersion = "9.12",RemovedVersion = "10.0")]
-	[XMLElement(Name = "sepaDirectDebitType",FirstVersion = "10.4")]
-	public class sepaDirectDebitType : VersionedXMLElement
-	{
-		[XMLElement(Name = "mandateProvider",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "mandateProvider",FirstVersion = "10.4")]
-		public mandateProvider? mandateProvider { get; set; }
-
-		[XMLElement(Name = "sequenceType",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "sequenceType",FirstVersion = "10.4")]
-		public sequenceType? sequenceType { get; set; }
-
-		[XMLElement(Name = "mandateReference",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "mandateReference",FirstVersion = "10.4")]
-		public string mandateReference { get; set; }
-
-		[XMLElement(Name = "mandateUrl",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "mandateUrl",FirstVersion = "10.4")]
-		public string mandateUrl { get; set; }
-
-		[XMLElement(Name = "mandateSignatureDate",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "mandateSignatureDate",FirstVersion = "10.4")]
-		public DateTime mandateSignatureDate { get; set; }
-
-		[XMLElement(Name = "iban",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "iban",FirstVersion = "10.4")]
-		public string iban { get; set; }
-
-		[XMLElement(Name = "preferredLanguage",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "preferredLanguage",FirstVersion = "10.4")]
-		public countryTypeEnum? preferredLanguage { get; set; }
-
-	}
-
-	[XMLElement(Name = "sepaDirectDebitResponse",FirstVersion = "9.12",RemovedVersion = "10.0")]
-	[XMLElement(Name = "sepaDirectDebitResponse",FirstVersion = "10.4")]
-	public class sepaDirectDebitResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "redirectUrl",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "redirectUrl",FirstVersion = "10.4")]
-		public string redirectUrl { get; set; }
-
-		[XMLElement(Name = "redirectToken",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "redirectToken",FirstVersion = "10.4")]
-		public string redirectToken { get; set; }
-
-		[XMLElement(Name = "mandateReference",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "mandateReference",FirstVersion = "10.4")]
-		public string mandateReference { get; set; }
-
-	}
-
-	[XMLElement(Name = "idealType",FirstVersion = "9.12",RemovedVersion = "10.0")]
-	[XMLElement(Name = "idealType",FirstVersion = "11.0")]
-	public class idealType : VersionedXMLElement
-	{
-		[XMLElement(Name = "preferredLanguage",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "preferredLanguage",FirstVersion = "11.0")]
-		public countryTypeEnum? preferredLanguage { get; set; }
-
-	}
-
-	[XMLElement(Name = "idealResponse",FirstVersion = "9.12",RemovedVersion = "10.0")]
-	[XMLElement(Name = "idealResponse",FirstVersion = "11.0")]
-	public class idealResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "redirectUrl",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "redirectUrl",FirstVersion = "11.0")]
-		public string redirectUrl { get; set; }
-
-		[XMLElement(Name = "redirectToken",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "redirectToken",FirstVersion = "11.0")]
-		public string redirectToken { get; set; }
-
-		[XMLElement(Name = "paymentPurpose",FirstVersion = "9.12",RemovedVersion = "10.0")]
-		[XMLElement(Name = "paymentPurpose",FirstVersion = "11.0")]
-		public string paymentPurpose { get; set; }
-
-	}
-
-	[XMLElement(Name = "giropayType",FirstVersion = "9.13",RemovedVersion = "10.0")]
-	[XMLElement(Name = "giropayType",FirstVersion = "11.0")]
-	public class giropayType : VersionedXMLElement
-	{
-		[XMLElement(Name = "preferredLanguage",FirstVersion = "9.13",RemovedVersion = "10.0")]
-		[XMLElement(Name = "preferredLanguage",FirstVersion = "11.0")]
-		public countryTypeEnum? preferredLanguage { get; set; }
-
-	}
-
-	[XMLElement(Name = "giropayResponse",FirstVersion = "9.13",RemovedVersion = "10.0")]
-	[XMLElement(Name = "giropayResponse",FirstVersion = "11.0")]
-	public class giropayResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "redirectUrl",FirstVersion = "9.13",RemovedVersion = "10.0")]
-		[XMLElement(Name = "redirectUrl",FirstVersion = "11.0")]
-		public string redirectUrl { get; set; }
-
-		[XMLElement(Name = "redirectToken",FirstVersion = "9.13",RemovedVersion = "10.0")]
-		[XMLElement(Name = "redirectToken",FirstVersion = "11.0")]
-		public string redirectToken { get; set; }
-
-		[XMLElement(Name = "paymentPurpose",FirstVersion = "9.13",RemovedVersion = "10.0")]
-		[XMLElement(Name = "paymentPurpose",FirstVersion = "11.0")]
-		public string paymentPurpose { get; set; }
-
-	}
-
-	[XMLElement(Name = "sofortType",FirstVersion = "9.13",RemovedVersion = "10.0")]
-	[XMLElement(Name = "sofortType",FirstVersion = "11.0")]
-	public class sofortType : VersionedXMLElement
-	{
-		[XMLElement(Name = "preferredLanguage",FirstVersion = "9.13",RemovedVersion = "10.0")]
-		[XMLElement(Name = "preferredLanguage",FirstVersion = "11.0")]
-		public countryTypeEnum? preferredLanguage { get; set; }
-
-	}
-
-	[XMLElement(Name = "sofortResponse",FirstVersion = "9.13",RemovedVersion = "10.0")]
-	[XMLElement(Name = "sofortResponse",FirstVersion = "11.0")]
-	public class sofortResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "redirectUrl",FirstVersion = "9.13",RemovedVersion = "10.0")]
-		[XMLElement(Name = "redirectUrl",FirstVersion = "11.0")]
-		public string redirectUrl { get; set; }
-
-		[XMLElement(Name = "redirectToken",FirstVersion = "9.13",RemovedVersion = "10.0")]
-		[XMLElement(Name = "redirectToken",FirstVersion = "11.0")]
-		public string redirectToken { get; set; }
-
-		[XMLElement(Name = "paymentPurpose",FirstVersion = "9.13",RemovedVersion = "10.0")]
-		[XMLElement(Name = "paymentPurpose",FirstVersion = "11.0")]
-		public string paymentPurpose { get; set; }
-
-	}
-
-	[XMLElement(Name = "serviceStatusRequest",FirstVersion = "10.0")]
-	public class serviceStatusRequest : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "serviceId",FirstVersion = "10.0")]
-		public long? serviceId { get; set; }
-
-		[XMLElement(Name = "pathId",FirstVersion = "10.0")]
-		public long? pathId { get; set; }
-
-	}
-
-	[XMLElement(Name = "serviceStatusResponse",FirstVersion = "10.0")]
-	public class serviceStatusResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "10.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "10.0")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "10.0")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "10.0")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "fundingInstructionVoid",FirstVersion = "10.1")]
-	public class fundingInstructionVoid : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "10.1",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "fundingInstructionVoidResponse",FirstVersion = "10.1")]
-	public class fundingInstructionVoidResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "10.1",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "10.1")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "10.1")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "10.1")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "networkSubField",FirstVersion = "10.4")]
-	public class networkSubField : VersionedXMLElement
-	{
-		[XMLElement(Name = "fieldValue",FirstVersion = "10.4")]
-		public string fieldValue { get; set; }
-
-		[XMLAttribute(Name = "fieldNumber",FirstVersion = "10.4")]
-		public int? fieldNumber { get; set; }
-
-	}
-
-	[XMLElement(Name = "networkField",FirstVersion = "10.4")]
-	public class networkField : VersionedXMLElement
-	{
-		[XMLElement(Name = "fieldValue",FirstVersion = "10.4")]
-		public string fieldValue { get; set; }
-
-		[XMLElement(Name = "networkSubField",FirstVersion = "10.4")]
-		public networkSubField networkSubField { get; set; }
-
-		[XMLAttribute(Name = "fieldNumber",FirstVersion = "10.4")]
-		public int? fieldNumber { get; set; }
-
-		[XMLAttribute(Name = "fieldName",FirstVersion = "10.4")]
-		public networkFieldNameEnumType? fieldName { get; set; }
-
-	}
-
-	[XMLElement(Name = "networkResponse",FirstVersion = "10.4")]
-	public class networkResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "endpoint",FirstVersion = "10.4")]
-		public string endpoint { get; set; }
-
-		[XMLElement(Name = "networkField",FirstVersion = "10.4")]
-		public networkField networkField { get; set; }
-
-	}
-
-	[XMLElement(Name = "giftCardCardType",FirstVersion = "11.0")]
-	public class giftCardCardType : cardType
-	{
-		[XMLElement(Name = "type",FirstVersion = "11.0")]
-		public methodOfPaymentTypeEnum? type { get; set; }
-
-		[XMLElement(Name = "number",FirstVersion = "11.0")]
-		public string number { get; set; }
-
-		[XMLElement(Name = "expDate",FirstVersion = "11.0")]
-		public string expDate { get; set; }
-
-		[XMLElement(Name = "track",FirstVersion = "11.0")]
-		public string track { get; set; }
-
-		[XMLElement(Name = "cardValidationNum",FirstVersion = "11.0")]
-		public string cardValidationNum { get; set; }
-
-		[XMLElement(Name = "pin",FirstVersion = "11.0")]
-		public string pin { get; set; }
-
-	}
-
-	[XMLElement(Name = "giftCardAuthReversal",FirstVersion = "11.0")]
-	public class giftCardAuthReversal : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "11.0")]
-		public giftCardCardType card { get; set; }
-
-		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
-		public string originalRefCode { get; set; }
-
-		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
-		public int? originalAmount { get; set; }
-
-		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
-
-		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
-		public int? originalSystemTraceId { get; set; }
-
-		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "giftCardCapture",FirstVersion = "11.0")]
-	public class giftCardCapture : transactionTypeWithReportGroupAndPartial
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "captureAmount",FirstVersion = "11.0")]
-		public int? captureAmount { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "11.0")]
-		public giftCardCardType card { get; set; }
-
-		[XMLElement(Name = "originalRefCode",FirstVersion = "11.0")]
-		public string originalRefCode { get; set; }
-
-		[XMLElement(Name = "originalAmount",FirstVersion = "11.0")]
-		public int? originalAmount { get; set; }
-
-		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "giftCardCredit",FirstVersion = "11.0")]
-	public class giftCardCredit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "creditAmount",FirstVersion = "11.0")]
-		public int? creditAmount { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "11.0")]
-		public giftCardCardType card { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "11.0")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "orderSource",FirstVersion = "11.0")]
-		public orderSourceType? orderSource { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "giftCardAuthReversalResponse",FirstVersion = "11.0")]
-	public class giftCardAuthReversalResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "11.0")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "11.0")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.0")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "11.0")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "11.0")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "giftCardCaptureResponse",FirstVersion = "11.0")]
-	public class giftCardCaptureResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "11.0")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "11.0")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.0")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "11.0")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "fraudResult",FirstVersion = "11.0")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "11.0")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "giftCardCreditResponse",FirstVersion = "11.0")]
-	public class giftCardCreditResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "11.0")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "11.0")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.0")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "11.0")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "fraudResult",FirstVersion = "11.0")]
-		public fraudResult fraudResult { get; set; }
-
-		[XMLElement(Name = "giftCardResponse",FirstVersion = "11.0")]
-		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "fastAccessFunding",FirstVersion = "11.3")]
-	public class fastAccessFunding : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "11.3")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "submerchantName",FirstVersion = "11.3")]
-		public string submerchantName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "11.3")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "11.3")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "card",FirstVersion = "11.3")]
-		public cardType card { get; set; }
-
-		[XMLElement(Name = "token",FirstVersion = "11.3")]
-		public cardTokenType token { get; set; }
-
-		[XMLElement(Name = "paypage",FirstVersion = "11.3")]
-		public cardPaypageType paypage { get; set; }
-
-		[XMLElement(Name = "disbursementType",FirstVersion = "12.4")]
-		public disbursementTypeEnum? disbursementType { get; set; }
-
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
-		public string fundingCustomerId { get; set; }
-
-		[XMLElement(Name = "customerName",FirstVersion = "12.9")]
-		public string customerName { get; set; }
-
-	}
-
-	[XMLElement(Name = "fastAccessFundingResponse",FirstVersion = "11.3")]
-	public class fastAccessFundingResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "litleTxnId",FirstVersion = "11.3",RemovedVersion = "12.0")]
-		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "11.3")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "11.3")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "11.3")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "11.3")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "tokenResponse",FirstVersion = "11.3")]
-		public tokenResponseType tokenResponse { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "11.3")]
-		public bool? duplicate { get; set; }
-
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
-	}
-
-	[XMLElement(Name = "cnpInternalRecurringRequestType",FirstVersion = "12.0")]
-	public class cnpInternalRecurringRequestType : VersionedXMLElement
-	{
-		[XMLElement(Name = "subscriptionId",FirstVersion = "12.0")]
-		public long? subscriptionId { get; set; }
-
-		[XMLElement(Name = "recurringTxnId",FirstVersion = "12.0")]
-		public long? recurringTxnId { get; set; }
-
-		[XMLElement(Name = "finalPayment",FirstVersion = "12.0")]
-		public bool? finalPayment { get; set; }
-
-	}
-
-	[XMLElement(Name = "cnpTransactionInterface",FirstVersion = "12.0")]
-	public class cnpTransactionInterface : VersionedXMLElement
-	{
-	}
-
-	[XMLElement(Name = "recyclingResponseType",FirstVersion = "12.0")]
-	public class recyclingResponseType : VersionedXMLElement
-	{
-		[XMLElement(Name = "recycleAdvice",FirstVersion = "12.0")]
-		public recycleAdviceType recycleAdvice { get; set; }
-
-		[XMLElement(Name = "recycleEngineActive",FirstVersion = "12.0")]
-		public bool? recycleEngineActive { get; set; }
-
-	}
-
-	[XMLElement(Name = "pinlessDebitResponse",FirstVersion = "12.1")]
-	public class pinlessDebitResponse : VersionedXMLElement
-	{
-		[XMLElement(Name = "networkName",FirstVersion = "12.1")]
-		public string networkName { get; set; }
-
-	}
-
-	[XMLElement(Name = "lodgingCharge",FirstVersion = "12.2")]
-	public class lodgingCharge : VersionedXMLElement
-	{
-		[XMLElement(Name = "name",FirstVersion = "12.2")]
-		public lodgingExtraChargeEnum? name { get; set; }
-
-	}
-
-	[XMLElement(Name = "translateToLowValueTokenRequestType",FirstVersion = "12.2")]
-	public class translateToLowValueTokenRequestType : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId",FirstVersion = "12.2")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "token",FirstVersion = "12.2")]
-		public string token { get; set; }
-
-	}
-
-	[XMLElement(Name = "translateToLowValueTokenResponse",FirstVersion = "12.2")]
-	public class translateToLowValueTokenResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId",FirstVersion = "12.2")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "paypageRegistrationId",FirstVersion = "12.2")]
-		public string paypageRegistrationId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "12.2")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "12.2")]
-		public string message { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "12.2")]
-		public DateTime responseTime { get; set; }
-
-	}
-
-	[XMLElement(Name = "pinlessDebitRequestType",FirstVersion = "12.2")]
-	public class pinlessDebitRequestType : VersionedXMLElement
-	{
-		[XMLElement(Name = "routingPreference",FirstVersion = "12.2")]
-		public routingPreferenceEnum? routingPreference { get; set; }
-
-		[XMLElement(Name = "preferredDebitNetworks",FirstVersion = "12.3")]
-		public preferredDebitNetworksType preferredDebitNetworks { get; set; }
-
-	}
-
-	[XMLElement(Name = "lodgingInfo",FirstVersion = "12.2")]
-	public class lodgingInfo : VersionedXMLElement
-	{
-		[XMLElement(Name = "hotelFolioNumber",FirstVersion = "12.2")]
-		public string hotelFolioNumber { get; set; }
-
-		[XMLElement(Name = "checkInDate",FirstVersion = "12.2")]
-		public DateTime checkInDate { get; set; }
-
-		[XMLElement(Name = "checkOutDate",FirstVersion = "12.2")]
-		public DateTime checkOutDate { get; set; }
-
-		[XMLElement(Name = "duration",FirstVersion = "12.2")]
-		public int? duration { get; set; }
-
-		[XMLElement(Name = "customerServicePhone",FirstVersion = "12.2")]
-		public string customerServicePhone { get; set; }
-
-		[XMLElement(Name = "programCode",FirstVersion = "12.2")]
-		public lodgingProgramCodeType? programCode { get; set; } = lodgingProgramCodeType.LODGING;
-
-		[XMLElement(Name = "roomRate",FirstVersion = "12.2")]
-		public int? roomRate { get; set; }
-
-		[XMLElement(Name = "roomTax",FirstVersion = "12.2")]
-		public int? roomTax { get; set; }
-
-		[XMLElement(Name = "numAdults",FirstVersion = "12.2")]
-		public int? numAdults { get; set; }
-
-		[XMLElement(Name = "propertyLocalPhone",FirstVersion = "12.2")]
-		public string propertyLocalPhone { get; set; }
-
-		[XMLElement(Name = "fireSafetyIndicator",FirstVersion = "12.2")]
-		public bool? fireSafetyIndicator { get; set; }
-
-		[XMLElement(Name = "lodgingCharge",FirstVersion = "12.2")]
-		public lodgingCharge lodgingCharge { get; set; }
-
-	}
-
-	[XMLElement(Name = "preferredDebitNetworksType",FirstVersion = "12.3")]
-	public class preferredDebitNetworksType : VersionedXMLElement
-	{
-		[XMLElement(Name = "debitNetworkName",FirstVersion = "12.3")]
-		public string debitNetworkName { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeckTypeCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
-	public class echeckTypeCtx : VersionedXMLElement
-	{
-		[XMLElement(Name = "accType",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public echeckAccountTypeEnum? accType { get; set; }
-
-		[XMLElement(Name = "accNum",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string accNum { get; set; }
-
-		[XMLElement(Name = "routingNum",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string routingNum { get; set; }
-
-		[XMLElement(Name = "checkNum",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string checkNum { get; set; }
-
-		[XMLElement(Name = "ccdPaymentInformation",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string ccdPaymentInformation { get; set; }
-
-		[XMLElement(Name = "ctxPaymentInformation",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public ctxPaymentInformationType ctxPaymentInformation { get; set; }
-
-	}
-
-	[XMLElement(Name = "ctxPaymentInformationType",FirstVersion = "12.7")]
-	public class ctxPaymentInformationType : VersionedXMLElement
-	{
-		[XMLElement(Name = "ctxPaymentDetail",FirstVersion = "12.7")]
-		public string ctxPaymentDetail { get; set; }
-
-	}
-
-	[XMLElement(Name = "vendorCreditCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
-	public class vendorCreditCtx : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "vendorName",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string vendorName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "accountInfo",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public echeckTypeCtx accountInfo { get; set; }
-
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public string fundingCustomerId { get; set; }
-
-	}
-
-	[XMLElement(Name = "vendorDebitCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
-	public class vendorDebitCtx : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "vendorName",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string vendorName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "accountInfo",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public echeckTypeCtx accountInfo { get; set; }
-
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public string fundingCustomerId { get; set; }
-
-	}
-
-	[XMLElement(Name = "submerchantCreditCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
-	public class submerchantCreditCtx : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "submerchantName",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string submerchantName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "accountInfo",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public echeckTypeCtx accountInfo { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string customIdentifier { get; set; }
-
-	}
-
-	[XMLElement(Name = "submerchantDebitCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
-	public class submerchantDebitCtx : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingSubmerchantId",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string fundingSubmerchantId { get; set; }
-
-		[XMLElement(Name = "submerchantName",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string submerchantName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "accountInfo",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public echeckTypeCtx accountInfo { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string customIdentifier { get; set; }
-
-	}
-
-	[XMLElement(Name = "customerCreditResponse",FirstVersion = "12.9")]
-	public class customerCreditResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.9")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "12.9")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "12.9")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "12.9")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "12.9")]
-		public string message { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "12.9")]
-		public bool? duplicate { get; set; }
-
-	}
-
-	[XMLElement(Name = "customerDebitResponse",FirstVersion = "12.9")]
-	public class customerDebitResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.9")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "12.9")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "12.9")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "12.9")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "12.9")]
-		public string message { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "12.9")]
-		public bool? duplicate { get; set; }
-
-	}
-
-	[XMLElement(Name = "payoutOrgDebit",FirstVersion = "12.9")]
-	public class payoutOrgDebit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
-		public string fundingCustomerId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "12.9")]
-		public int? amount { get; set; }
-
-	}
-
-	[XMLElement(Name = "payoutOrgCredit",FirstVersion = "12.9")]
-	public class payoutOrgCredit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
-		public string fundingCustomerId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "12.9")]
-		public int? amount { get; set; }
-
-	}
-
-	[XMLElement(Name = "payoutOrgCreditResponse",FirstVersion = "12.9")]
-	public class payoutOrgCreditResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.9")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "12.9")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "12.9")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "12.9")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "12.9")]
-		public string message { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "12.9")]
-		public bool? duplicate { get; set; }
-
-	}
-
-	[XMLElement(Name = "payoutOrgDebitResponse",FirstVersion = "12.9")]
-	public class payoutOrgDebitResponse : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.9")]
-		public long? cnpTxnId { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "response",FirstVersion = "12.9")]
-		public string response { get; set; }
-
-		[XMLElement(Name = "responseTime",FirstVersion = "12.9")]
-		public DateTime responseTime { get; set; }
-
-		[XMLElement(Name = "postDate",FirstVersion = "12.9")]
-		public DateTime postDate { get; set; }
-
-		[XMLElement(Name = "message",FirstVersion = "12.9")]
-		public string message { get; set; }
-
-		[XMLAttribute(Name = "duplicate",FirstVersion = "12.9")]
-		public bool? duplicate { get; set; }
-
-	}
-
-	[XMLElement(Name = "customerCreditCtx",FirstVersion = "12.9",RemovedVersion = "12.10")]
-	public class customerCreditCtx : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public string fundingCustomerId { get; set; }
-
-		[XMLElement(Name = "customerName",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public string customerName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "accountInfo",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public echeckTypeCtx accountInfo { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public string customIdentifier { get; set; }
-
-	}
-
-	[XMLElement(Name = "customerDebitCtx",FirstVersion = "12.9",RemovedVersion = "12.10")]
-	public class customerDebitCtx : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public string fundingCustomerId { get; set; }
-
-		[XMLElement(Name = "customerName",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public string customerName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "accountInfo",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public echeckTypeCtx accountInfo { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "12.9",RemovedVersion = "12.10")]
-		public string customIdentifier { get; set; }
-
-	}
-
-	[XMLElement(Name = "customerCredit",FirstVersion = "12.9")]
-	public class customerCredit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
-		public string fundingCustomerId { get; set; }
-
-		[XMLElement(Name = "customerName",FirstVersion = "12.9")]
-		public string customerName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "12.9")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "accountInfo",FirstVersion = "12.9")]
-		public echeckType accountInfo { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "12.9")]
-		public string customIdentifier { get; set; }
-
-	}
-
-	[XMLElement(Name = "customerDebit",FirstVersion = "12.9")]
-	public class customerDebit : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "fundingCustomerId",FirstVersion = "12.9")]
-		public string fundingCustomerId { get; set; }
-
-		[XMLElement(Name = "customerName",FirstVersion = "12.9")]
-		public string customerName { get; set; }
-
-		[XMLElement(Name = "fundsTransferId",FirstVersion = "12.9")]
-		public string fundsTransferId { get; set; }
-
-		[XMLElement(Name = "amount",FirstVersion = "12.9")]
-		public int? amount { get; set; }
-
-		[XMLElement(Name = "accountInfo",FirstVersion = "12.9")]
-		public echeckType accountInfo { get; set; }
-
-		[XMLElement(Name = "customIdentifier",FirstVersion = "12.9")]
-		public string customIdentifier { get; set; }
-
-	}
-
 
 
 	/*
 	 * Element declarations.
 	 */
-	[XMLElement(Name = "transaction")]
-	public class transaction : transactionType
-	{
-	}
-
-	[XMLElement(Name = "bmlProductType",RemovedVersion = "12.0")]
-	public class bmlProductType : VersionedXMLElement
-	{
-	}
-
 	[XMLElement(Name = "billToAddress")]
-	public class billToAddress : contact
-	{
-	}
-
-	[XMLElement(Name = "shipToAddress")]
-	public class shipToAddress : contact
-	{
-	}
-
-	[XMLElement(Name = "transactionResponse")]
-	public class transactionResponse : transactionTypeWithReportGroup
-	{
-	}
-
-	[XMLElement(Name = "cardOrToken",FirstVersion = "8.1")]
-	public class cardOrToken : VersionedXMLElement
-	{
-	}
-
-	[XMLElement(Name = "card",FirstVersion = "8.1")]
-	public class card : cardType
-	{
-	}
-
-	[XMLElement(Name = "token",FirstVersion = "8.1")]
-	public class token : tokenType
-	{
-	}
-
-	[XMLElement(Name = "echeckOrEcheckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
-	public class echeckOrEcheckToken : VersionedXMLElement
-	{
-	}
-
-	[XMLElement(Name = "echeckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
-	public class echeckToken : echeckTokenType
+	public partial class billToAddress : contact
 	{
 	}
 
 	[XMLElement(Name = "recurringTransaction",FirstVersion = "8.20")]
-	public class recurringTransaction : recurringTransactionType
+	public partial class recurringTransaction : recurringTransactionType
 	{
 	}
 
 	[XMLElement(Name = "recurringTransactionResponse",FirstVersion = "8.20")]
-	public class recurringTransactionResponse : recurringTransactionResponseType
+	public partial class recurringTransactionResponse : recurringTransactionResponseType
+	{
+	}
+
+	[XMLElement(Name = "transaction")]
+	public partial class transaction : transactionType
+	{
+	}
+
+	[XMLElement(Name = "shipToAddress")]
+	public partial class shipToAddress : contact
+	{
+	}
+
+	[XMLElement(Name = "transactionResponse")]
+	public partial class transactionResponse : transactionTypeWithReportGroup
 	{
 	}
 
 	[XMLElement(Name = "translateToLowValueTokenRequest",FirstVersion = "12.2")]
-	public class translateToLowValueTokenRequest : translateToLowValueTokenRequestType
+	public partial class translateToLowValueTokenRequest : translateToLowValueTokenRequestType
+	{
+	}
+
+	[XMLElement(Name = "cardOrToken",FirstVersion = "8.1")]
+	public partial class cardOrToken : VersionedXMLElement
+	{
+	}
+
+	[XMLElement(Name = "card",FirstVersion = "8.1")]
+	public partial class card : cardType
+	{
+	}
+
+	[XMLElement(Name = "token",FirstVersion = "8.1")]
+	public partial class token : cardTokenType
+	{
+	}
+
+	[XMLElement(Name = "bmlProductType",RemovedVersion = "12.0")]
+	public partial class bmlProductType : VersionedXMLElement
+	{
+	}
+
+	[XMLElement(Name = "echeckOrEcheckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
+	public partial class echeckOrEcheckToken : VersionedXMLElement
+	{
+	}
+
+	[XMLElement(Name = "echeckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
+	public partial class echeckToken : echeckTokenType
 	{
 	}
 

@@ -93,7 +93,7 @@ namespace Cnp.Sdk
             {
                 Console.WriteLine("Version isn't defined in the configuration. It is recommended " +
                                   "to set it so the SDK version can be upgraded without needing " +
-                                  "to change your XML version. Assuming XML version" + CnpVersion.CurrentCNPXMLVersion);
+                                  "to change your XML version. Assuming XML version " + CnpVersion.CurrentCNPXMLVersion);
 
                 return XMLVersion.FromString(CnpVersion.CurrentCNPXMLVersion);
             }

@@ -5,9 +5,7 @@
  * using Sandbox.
  */
 
-using System;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Threading;
 using NUnit.Framework;
 
@@ -34,7 +32,8 @@ namespace Cnp.Sdk.Test.Functional
                 {"proxyHost", Properties.Settings.Default.proxyHost},
                 {"proxyPort", Properties.Settings.Default.proxyPort},
                 {"logFile", Properties.Settings.Default.logFile},
-                {"neuterAccountNums", "true"}
+                {"neuterAccountNums", "true"},
+                {"version", CnpVersion.CurrentCNPXMLVersion}
             };
 
             cnp = new CnpOnline(config);

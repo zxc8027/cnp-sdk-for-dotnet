@@ -12,9 +12,43 @@ using Cnp.Sdk.VersionedXML;
 
 namespace Cnp.Sdk
 {
+    /*
+     * Additional functionality for handling responses.
+     */
+    public partial class cnpOnlineResponse
+    {
+        private string onlineResponse;
+        private XMLVersion parsedVersion;
+        
+        /*
+         * Returns the response object.
+         */
+        public T GetOnlineResponse<T>()
+        {
+            return VersionedXMLDeserializer.Deserialize<T>(this.onlineResponse,this.parsedVersion);
+        }
+        
+        /*
+         * Parses elements that aren't defined by properties.
+         */
+        public override void ParseAdditionalElements(XMLVersion version,List<string> elements)
+        {
+            this.parsedVersion = version;
+            if (elements.Count != 0)
+            {
+                this.onlineResponse = elements[0];
+            }
+        }
+    }
+    
+    /*
+     * Class for sending CNP online requests.
+     */
     public class CnpOnline
     {
         public const string XML_HEADER = "<?xml version='1.0' encoding='utf-8'?>";
+        public const string LITLE_NAMESPACE = "http://www.litle.com/schema";
+        public const string CNP_NAMESPACE = "http://www.vantivcnp.com/schema";
         
         private Communications communication;
         private ConfigManager config;
@@ -67,18 +101,20 @@ namespace Cnp.Sdk
         }
 */
         
-        private cnpOnlineRequest CreateRequest(transactionRequest transaction)
+        private cnpOnlineRequest CreateRequest(transactionType transactionObject)
         {
             // Create the request.
             var request = CreateCnpOnlineRequest();
-            request.AddTransaction(transaction);
 
             // Add the report group.
-            if (transaction is transactionTypeWithReportGroup)
+            if (transactionObject is transactionTypeWithReportGroup)
             {
-                ((transactionTypeWithReportGroup) transaction).reportGroup = this.config.GetValue("reportGroup");
+                ((transactionTypeWithReportGroup) transactionObject).reportGroup = this.config.GetValue("reportGroup");
             }
             
+            // Add the element.
+            request.AddAdditionalElement(transactionObject.Serialize(this.config.GetVersion()));
+
             // Return the request.
             return request;
         }
@@ -485,27 +521,27 @@ namespace Cnp.Sdk
         /*
          * Sends a transaction request.
          */
-        public T SendTransaction<T>(transactionRequest transaction)
+        public T SendTransaction<T>(transactionType transaction)
         {
             // Create the CNP Online request.
             var request = CreateRequest(transaction);
             
             // Send the request and return the response.
             var cnpResponse = this.SendToCnp(request);
-            return cnpResponse.GetResponse<T>();
+            return cnpResponse.GetOnlineResponse<T>();
         }
         
         /*
          * Sends a transaction request asynchronously.
          */
-        public async Task<T> SendTransactionAsync<T>(transactionRequest transaction, CancellationToken cancellationToken)
+        public async Task<T> SendTransactionAsync<T>(transactionType transaction, CancellationToken cancellationToken)
         {
             // Create the CNP Online request.
             var request = CreateRequest(transaction);
 
             // Send the request and return the response.
             var cnpResponse = await this.SendToCnpAsync(request,cancellationToken).ConfigureAwait(false);
-            return cnpResponse.GetResponse<T>();
+            return cnpResponse.GetOnlineResponse<T>();
         }
         
         /*
@@ -516,6 +552,18 @@ namespace Cnp.Sdk
             // Create the request.
             var request = new cnpOnlineRequest();
             request.merchantId = this.config.GetValue("merchantId");
+            request.version = this.config.GetVersion().ToString();
+            request.merchantSdk = CnpVersion.CurrentCNPSDKVersion;
+            
+            // Add the schema.
+            if (this.config.GetVersion() < new XMLVersion(12,0))
+            {
+                request.SetAdditionalAttribute("xmlns",LITLE_NAMESPACE);
+            }
+            else
+            {
+                request.SetAdditionalAttribute("xmlns",CNP_NAMESPACE);
+            }
             
             // Create and add the authentication.
             var authentication = new authentication();
