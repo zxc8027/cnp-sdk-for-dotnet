@@ -20,14 +20,14 @@ namespace Cnp.Sdk.Test.Functional
     {
         private List<Task> activeTasks = new List<Task>();
         private BaseCnpOnlineTest test;
-        private transactionType request;
+        private cnpTransactionInterface request;
         private List<XMLVersion> versions;
         private int maxThreads;
         
         /*
          * Creates a thread pool object.
          */
-        public CnpOnlineRequestThreadPool(BaseCnpOnlineTest test,transactionType request,List<XMLVersion> versions,int maxThreads)
+        public CnpOnlineRequestThreadPool(BaseCnpOnlineTest test,cnpTransactionInterface request,List<XMLVersion> versions,int maxThreads)
         {
             this.test = test;
             this.request = request;
@@ -265,7 +265,7 @@ namespace Cnp.Sdk.Test.Functional
         /*
          * Runs a test transaction for a specific version.
          */
-        public void RunCnpTest<T>(transactionType transaction,XMLVersion version)
+        public void RunCnpTest<T>(cnpTransactionInterface transaction,XMLVersion version)
         {
             // Create the configuration.
             var config = new ConfigManager(new Dictionary<string,string>
@@ -310,7 +310,7 @@ namespace Cnp.Sdk.Test.Functional
         /*
          * Runs a test transaction for all versions.
          */
-        public void RunCnpTest<T>(transactionType transaction)
+        public void RunCnpTest<T>(cnpTransactionInterface transaction)
         {
             foreach (var version in this.GetVersionsToRun())
             {
@@ -322,7 +322,7 @@ namespace Cnp.Sdk.Test.Functional
         /*
          * Runs a test transaction for all versions with threading.
          */
-        public void RunCnpTestThreaded<T>(transactionType transaction)
+        public void RunCnpTestThreaded<T>(cnpTransactionInterface transaction)
         {
             var pool = new CnpOnlineRequestThreadPool<T>(this,transaction,this.GetVersionsToRun(),MAX_REQUEST_THREADS);
             pool.RunTestPool();
