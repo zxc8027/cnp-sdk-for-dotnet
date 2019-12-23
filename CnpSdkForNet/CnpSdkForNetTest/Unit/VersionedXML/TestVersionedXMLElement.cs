@@ -418,10 +418,10 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
         public class DateTimeElement : VersionedXMLElement
         {
             [XMLAttribute(Name = "testAttribute")]
-            public DateTime TestAttribute { get; set; }
+            public DateTime? TestAttribute { get; set; }
 
             [XMLElement(Name = "testElement")]
-            public DateTime TestElement { get; set; }
+            public DateTime? TestElement { get; set; }
         }
         
         /*
@@ -437,6 +437,12 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             
             // Assert the element is generated correctly.
             Assert.AreEqual(xmlObject.Serialize(new XMLVersion()),"<TestXMLElement testAttribute=\"2020-04-23\"><testElement>2020-11-04</testElement></TestXMLElement>");
+            
+            // Create a new object with the attribute and element missing.
+            xmlObject = new DateTimeElement();
+            
+            // Assert the element is generated correctly.
+            Assert.AreEqual(xmlObject.Serialize(new XMLVersion()),"<TestXMLElement></TestXMLElement>");
         }
         
         /*
