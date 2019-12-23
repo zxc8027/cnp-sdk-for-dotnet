@@ -106,7 +106,11 @@ namespace Cnp.Sdk
             {
                 ((transactionTypeWithReportGroup) transactionObject).reportGroup = this.config.GetValue("reportGroup");
             }
-            
+            if (transactionObject is transactionTypeWithReportGroupAndPartial && ((transactionTypeWithReportGroupAndPartial) transactionObject).reportGroup == null)
+            {
+                ((transactionTypeWithReportGroupAndPartial) transactionObject).reportGroup = this.config.GetValue("reportGroup");
+            }
+
             // Add the element.
             request.AddAdditionalElement(transactionObject.Serialize(this.config.GetVersion()));
 
