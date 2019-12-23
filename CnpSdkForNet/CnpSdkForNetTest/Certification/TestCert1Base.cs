@@ -1000,7 +1000,7 @@ namespace Cnp.Sdk.Test.Certification
             var response = this.SendTransaction<authorizationResponse>(authorization);
             Assert.AreEqual("010", response.response);
             Assert.AreEqual("Partially Approved", response.message);
-            Assert.AreEqual("32000", response.approvedAmount);
+            Assert.AreEqual(32000, response.approvedAmount);
         }
 
         [Test]
@@ -1021,7 +1021,7 @@ namespace Cnp.Sdk.Test.Certification
             var response = this.SendTransaction<authorizationResponse>(authorization);
             Assert.AreEqual("010", response.response);
             Assert.AreEqual("Partially Approved", response.message);
-            Assert.AreEqual("48000", response.approvedAmount);
+            Assert.AreEqual(48000, response.approvedAmount);
         }
 
         [Test]
@@ -1042,7 +1042,7 @@ namespace Cnp.Sdk.Test.Certification
             var response = this.SendTransaction<authorizationResponse>(authorization);
             Assert.AreEqual("010", response.response);
             Assert.AreEqual("Partially Approved", response.message);
-            Assert.AreEqual("40000", response.approvedAmount);
+            Assert.AreEqual(40000, response.approvedAmount);
         }
 
         [Test]
@@ -1063,7 +1063,7 @@ namespace Cnp.Sdk.Test.Certification
             var response = this.SendTransaction<authorizationResponse>(authorization);
             Assert.AreEqual("010", response.response);
             Assert.AreEqual("Partially Approved", response.message);
-            Assert.AreEqual("12000", response.approvedAmount);
+            Assert.AreEqual(12000, response.approvedAmount);
 
         }
     }
