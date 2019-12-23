@@ -14,7 +14,7 @@ namespace Cnp.Sdk.Test.Functional
     public class TestVendor
     {
         [Test]
-        public void VendorCredit()
+        public void TestVendorCredit()
         {
             var transaction = new vendorCredit()
             {
@@ -45,7 +45,7 @@ namespace Cnp.Sdk.Test.Functional
         }
         
         [Test]
-        public void VendorCreditWithFundingCustomerId()
+        public void TestVendorCreditWithFundingCustomerId()
         {
             var transaction = new vendorCredit()
             {
@@ -77,7 +77,7 @@ namespace Cnp.Sdk.Test.Functional
         }
         
         [Test]
-        public void VendorDebit()
+        public void TestVendorDebit()
         {
             var transaction = new vendorDebit
             {
@@ -108,7 +108,7 @@ namespace Cnp.Sdk.Test.Functional
         }
         
         [Test]
-        public void VendorDebitWithFundingCustomerId()
+        public void TestVendorDebitWithFundingCustomerId()
         {
             var transaction = new vendorDebit
             {
