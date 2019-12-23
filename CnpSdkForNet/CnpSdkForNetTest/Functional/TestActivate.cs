@@ -1,8 +1,7 @@
 /*
  * Zachary Cook
  *
- * Tests the Activate and VirtualGiftCard requests
- * using Sandbox.
+ * Tests the Activate requests using Sandbox.
  */
 
 using Cnp.Sdk.VersionedXML;
