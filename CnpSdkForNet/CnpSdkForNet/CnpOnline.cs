@@ -102,7 +102,7 @@ namespace Cnp.Sdk
             var request = CreateCnpOnlineRequest();
 
             // Add the report group.
-            if (transactionObject is transactionTypeWithReportGroup)
+            if (transactionObject is transactionTypeWithReportGroup && ((transactionTypeWithReportGroup) transactionObject).reportGroup == null)
             {
                 ((transactionTypeWithReportGroup) transactionObject).reportGroup = this.config.GetValue("reportGroup");
             }
