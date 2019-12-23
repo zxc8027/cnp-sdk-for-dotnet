@@ -217,34 +217,16 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             xmlObject2.TestElement = 1;
             
             // Assert a custom exception is thrown for an attribute missing a getter.
-            try
+            Assert.Catch<MissingGetterException>(() =>
             {
                 xmlObject1.Serialize(new XMLVersion());
-                Assert.Fail("No exception thrown.");
-            }
-            catch (MissingGetterException e)
-            {
-                Assert.IsTrue(e.Message.Contains("TestAttribute"),"TestAttribute is not in the exception message: " + e.Message);
-            }
-            catch (Exception e)
-            {
-                Assert.Fail("Incorrect exception thrown: " + e);
-            }
+            });
             
             // Assert a custom exception is thrown for an element missing a getter.
-            try
+            Assert.Catch<MissingGetterException>(() =>
             {
                 xmlObject2.Serialize(new XMLVersion());
-                Assert.Fail("No exception thrown.");
-            }
-            catch (MissingGetterException e)
-            {
-                Assert.IsTrue(e.Message.Contains("TestElement"),"TestElement is not in the exception message: " + e.Message);
-            }
-            catch (Exception e)
-            {
-                Assert.Fail("Incorrect exception thrown: " + e);
-            }
+            });
         }
         
         /*
@@ -289,48 +271,24 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             Assert.AreEqual(xmlObject.Serialize(new XMLVersion(2,0)),"<TestXMLElement3 testAttribute2B=\"Test 1\"><testElement1>2</testElement1></TestXMLElement3>");
             
             // Assert that overlapped versions throw errors.
-            try
+            Assert.Catch<OverlappingVersionsException>(() =>
             {
                 xmlObject.Serialize(new XMLVersion(1, 4));
-                Assert.Fail("Exception not thrown.");
-            }
-            catch (OverlappingVersionsException e)
-            {
-                Assert.IsTrue(e.Message.Contains("1.4"),"Version is not included:\n" + e.Message);
-                Assert.IsTrue(e.Message.Contains("BasicVersion"),"Element name is not included:\n" + e.Message);
-            }
-            try
+            });
+            Assert.Catch<OverlappingVersionsException>(() =>
             {
                 xmlObject.Serialize(new XMLVersion(1, 6));
-                Assert.Fail("Exception not thrown.");
-            }
-            catch (OverlappingVersionsException e)
-            {
-                Assert.IsTrue(e.Message.Contains("1.6"),"Version is not included:\n" + e.Message);
-                Assert.IsTrue(e.Message.Contains("TestAttribute2"),"Attribute name is not included:\n" + e.Message);
-            }
-            try
+            });
+            Assert.Catch<OverlappingVersionsException>(() =>
             {
                 xmlObject.Serialize(new XMLVersion(2, 6));
-                Assert.Fail("Exception not thrown.");
-            }
-            catch (OverlappingVersionsException e)
-            {
-                Assert.IsTrue(e.Message.Contains("2.6"),"Version is not included:\n" + e.Message);
-                Assert.IsTrue(e.Message.Contains("TestElement2"),"Child element name is not included:\n" + e.Message);
-            }
+            });
             
             // Assert that no valid version throws error.
-            try
+            Assert.Catch<InvalidVersionException>(() =>
             {
-                xmlObject.Serialize(new XMLVersion(-1, 0));
-                Assert.Fail("Exception not thrown.");
-            }
-            catch (InvalidVersionException e)
-            {
-                Assert.IsTrue(e.Message.Contains("-1.0"),"Version is not included:\n" + e.Message);
-                Assert.IsTrue(e.Message.Contains("BasicVersion"),"Element name is not included:\n" + e.Message);
-            }
+                xmlObject.Serialize(new XMLVersion(-1,0));
+            });
         }
         
         /*
