@@ -1786,7 +1786,7 @@ namespace Cnp.Sdk
 		public string message { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.20")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.20",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
@@ -1823,7 +1823,7 @@ namespace Cnp.Sdk
 		public cardPaypageType paypage { get; set; }
 
 		[XMLElement(Name = "billingDate",FirstVersion = "8.20")]
-		public DateTime billingDate { get; set; }
+		public DateTime? billingDate { get; set; }
 
 		[XMLElement(Name = "createDiscount",FirstVersion = "8.21")]
 		public List<createDiscountType> createDiscount { get; set; } = new List<createDiscountType>();
@@ -1933,7 +1933,7 @@ namespace Cnp.Sdk
 		public int? numberOfPayments { get; set; }
 
 		[XMLElement(Name = "startDate",FirstVersion = "8.19")]
-		public DateTime startDate { get; set; }
+		public DateTime? startDate { get; set; }
 
 		[XMLElement(Name = "amount",FirstVersion = "8.19")]
 		public int? amount { get; set; }
@@ -2004,10 +2004,10 @@ namespace Cnp.Sdk
 		public int? amount { get; set; }
 
 		[XMLElement(Name = "startDate",FirstVersion = "8.21")]
-		public DateTime startDate { get; set; }
+		public DateTime? startDate { get; set; }
 
 		[XMLElement(Name = "endDate",FirstVersion = "8.21")]
-		public DateTime endDate { get; set; }
+		public DateTime? endDate { get; set; }
 
 	}
 
@@ -2024,10 +2024,10 @@ namespace Cnp.Sdk
 		public int? amount { get; set; }
 
 		[XMLElement(Name = "startDate",FirstVersion = "8.21")]
-		public DateTime startDate { get; set; }
+		public DateTime? startDate { get; set; }
 
 		[XMLElement(Name = "endDate",FirstVersion = "8.21")]
-		public DateTime endDate { get; set; }
+		public DateTime? endDate { get; set; }
 
 	}
 
@@ -2052,10 +2052,10 @@ namespace Cnp.Sdk
 		public int? amount { get; set; }
 
 		[XMLElement(Name = "startDate",FirstVersion = "8.21")]
-		public DateTime startDate { get; set; }
+		public DateTime? startDate { get; set; }
 
 		[XMLElement(Name = "endDate",FirstVersion = "8.21")]
-		public DateTime endDate { get; set; }
+		public DateTime? endDate { get; set; }
 
 	}
 
@@ -2072,10 +2072,10 @@ namespace Cnp.Sdk
 		public int? amount { get; set; }
 
 		[XMLElement(Name = "startDate",FirstVersion = "8.21")]
-		public DateTime startDate { get; set; }
+		public DateTime? startDate { get; set; }
 
 		[XMLElement(Name = "endDate",FirstVersion = "8.21")]
-		public DateTime endDate { get; set; }
+		public DateTime? endDate { get; set; }
 
 	}
 
@@ -2160,10 +2160,10 @@ namespace Cnp.Sdk
 		public string ssn { get; set; }
 
 		[XMLElement(Name = "dob")]
-		public DateTime dob { get; set; }
+		public DateTime? dob { get; set; }
 
 		[XMLElement(Name = "customerRegistrationDate")]
-		public DateTime customerRegistrationDate { get; set; }
+		public DateTime? customerRegistrationDate { get; set; }
 
 		[XMLElement(Name = "customerType")]
 		public customerType? customerType { get; set; }
@@ -2392,7 +2392,7 @@ namespace Cnp.Sdk
 		public int? originalAmount { get; set; }
 
 		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
+		public DateTime? originalTxnTime { get; set; }
 
 		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
 		public int? originalSystemTraceId { get; set; }
@@ -2463,7 +2463,7 @@ namespace Cnp.Sdk
 		public int? originalAmount { get; set; }
 
 		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
+		public DateTime? originalTxnTime { get; set; }
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
@@ -2999,7 +2999,7 @@ namespace Cnp.Sdk
 	public partial class authInformation : VersionedXMLElement
 	{
 		[XMLElement(Name = "authDate")]
-		public DateTime authDate { get; set; }
+		public DateTime? authDate { get; set; }
 
 		[XMLElement(Name = "authCode")]
 		public string authCode { get; set; }
@@ -3094,7 +3094,7 @@ namespace Cnp.Sdk
 		public string invoiceReferenceNumber { get; set; }
 
 		[XMLElement(Name = "orderDate")]
-		public DateTime orderDate { get; set; }
+		public DateTime? orderDate { get; set; }
 
 		[XMLElement(Name = "detailTax")]
 		public List<detailTax> detailTax { get; set; } = new List<detailTax>();
@@ -3302,7 +3302,7 @@ namespace Cnp.Sdk
 		public string message { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "applepayResponse",FirstVersion = "8.29",RemovedVersion = "9.0")]
 		[XMLElement(Name = "applepayResponse",FirstVersion = "9.2")]
@@ -3339,13 +3339,13 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "cardProductId")]
 		public string cardProductId { get; set; }
 
 		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message")]
 		public string message { get; set; }
@@ -3420,7 +3420,7 @@ namespace Cnp.Sdk
 	public partial class recycleAdviceType : VersionedXMLElement
 	{
 		[XMLElement(Name = "nextRecycleTime",FirstVersion = "8.6")]
-		public DateTime nextRecycleTime { get; set; }
+		public DateTime? nextRecycleTime { get; set; }
 
 		[XMLElement(Name = "recycleAdviceEnd",FirstVersion = "8.6")]
 		public string recycleAdviceEnd { get; set; }
@@ -3541,10 +3541,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message")]
 		public string message { get; set; }
@@ -3573,10 +3573,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "11.0")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.0")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "11.0")]
 		public string message { get; set; }
@@ -3599,10 +3599,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.22")]
 		public string message { get; set; }
@@ -3628,10 +3628,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.22")]
 		public string message { get; set; }
@@ -3657,10 +3657,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.22")]
 		public string message { get; set; }
@@ -3686,10 +3686,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.22")]
 		public string message { get; set; }
@@ -3715,10 +3715,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.22")]
 		public string message { get; set; }
@@ -3744,10 +3744,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.22")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.22")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.22")]
 		public string message { get; set; }
@@ -3773,10 +3773,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message")]
 		public string message { get; set; }
@@ -3811,10 +3811,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "11.0")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.0")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "11.0")]
 		public string message { get; set; }
@@ -3840,10 +3840,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message")]
 		public string message { get; set; }
@@ -3878,10 +3878,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message")]
 		public string message { get; set; }
@@ -3916,13 +3916,13 @@ namespace Cnp.Sdk
 		public string orderId { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "cardProductId")]
 		public string cardProductId { get; set; }
 
 		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message")]
 		public string message { get; set; }
@@ -4022,10 +4022,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message")]
 		public string message { get; set; }
@@ -4060,10 +4060,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "11.0")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.0")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "11.0")]
 		public string message { get; set; }
@@ -4109,10 +4109,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.21")]
 		public string message { get; set; }
@@ -4147,10 +4147,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.21")]
 		public string message { get; set; }
@@ -4182,10 +4182,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.21")]
 		public string message { get; set; }
@@ -4211,7 +4211,7 @@ namespace Cnp.Sdk
 	public partial class giftCardResponse : VersionedXMLElement
 	{
 		[XMLElement(Name = "txnTime",FirstVersion = "11.0")]
-		public DateTime txnTime { get; set; }
+		public DateTime? txnTime { get; set; }
 
 		[XMLElement(Name = "refCode",FirstVersion = "11.0")]
 		public string refCode { get; set; }
@@ -4261,10 +4261,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.21")]
 		public string message { get; set; }
@@ -4293,10 +4293,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.21")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.21")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.21")]
 		public string message { get; set; }
@@ -4467,7 +4467,7 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "message")]
 		public string message { get; set; }
@@ -4476,7 +4476,7 @@ namespace Cnp.Sdk
 		public string verificationCode { get; set; }
 
 		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "accountUpdater")]
 		public accountUpdater accountUpdater { get; set; }
@@ -4505,13 +4505,13 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "message")]
 		public string message { get; set; }
 
 		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "accountUpdater")]
 		public accountUpdater accountUpdater { get; set; }
@@ -4651,13 +4651,13 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "message")]
 		public string message { get; set; }
 
 		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "tokenResponse",FirstVersion = "8.2")]
 		public tokenResponseType tokenResponse { get; set; }
@@ -4710,13 +4710,13 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.1")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.1")]
 		public string message { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.1")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "accountUpdater",FirstVersion = "8.1")]
 		public accountUpdater accountUpdater { get; set; }
@@ -4818,7 +4818,7 @@ namespace Cnp.Sdk
 		public string message { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.14")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.14",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
@@ -4878,7 +4878,7 @@ namespace Cnp.Sdk
 		public string message { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.25")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "advancedFraudResults",FirstVersion = "8.25")]
 		public advancedFraudResultsType advancedFraudResults { get; set; }
@@ -5029,7 +5029,7 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "mandateSignatureDate",FirstVersion = "9.12",RemovedVersion = "10.0")]
 		[XMLElement(Name = "mandateSignatureDate",FirstVersion = "10.4")]
-		public DateTime mandateSignatureDate { get; set; }
+		public DateTime? mandateSignatureDate { get; set; }
 
 		[XMLElement(Name = "iban",FirstVersion = "9.12",RemovedVersion = "10.0")]
 		[XMLElement(Name = "iban",FirstVersion = "10.4")]
@@ -5156,10 +5156,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.0")]
 		public string message { get; set; }
@@ -5185,10 +5185,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.0")]
 		public string message { get; set; }
@@ -5248,10 +5248,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.0")]
 		public string message { get; set; }
@@ -5277,10 +5277,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.0")]
 		public string message { get; set; }
@@ -5346,10 +5346,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.0")]
 		public string message { get; set; }
@@ -5375,10 +5375,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.0")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.0")]
 		public string message { get; set; }
@@ -5424,10 +5424,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.2")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.2")]
 		public string message { get; set; }
@@ -5473,10 +5473,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.2")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.2")]
 		public string message { get; set; }
@@ -5502,10 +5502,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.2")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.2")]
 		public string message { get; set; }
@@ -5531,10 +5531,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.2")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.2")]
 		public string message { get; set; }
@@ -5568,10 +5568,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "10.1")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "10.1")]
 		public string message { get; set; }
@@ -5640,10 +5640,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "11.3")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "11.3")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "11.3")]
 		public string message { get; set; }
@@ -5672,10 +5672,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "12.9")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "12.9")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "12.9")]
 		public string message { get; set; }
@@ -5698,10 +5698,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "12.9")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "12.9")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "12.9")]
 		public string message { get; set; }
@@ -5752,10 +5752,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "12.9")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "12.9")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "12.9")]
 		public string message { get; set; }
@@ -5778,10 +5778,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "12.9")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "12.9")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "12.9")]
 		public string message { get; set; }
@@ -5818,7 +5818,7 @@ namespace Cnp.Sdk
 		public string message { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "12.2")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 	}
 
@@ -5848,10 +5848,10 @@ namespace Cnp.Sdk
 		public string hotelFolioNumber { get; set; }
 
 		[XMLElement(Name = "checkInDate",FirstVersion = "12.2")]
-		public DateTime checkInDate { get; set; }
+		public DateTime? checkInDate { get; set; }
 
 		[XMLElement(Name = "checkOutDate",FirstVersion = "12.2")]
-		public DateTime checkOutDate { get; set; }
+		public DateTime? checkOutDate { get; set; }
 
 		[XMLElement(Name = "duration",FirstVersion = "12.2")]
 		public int? duration { get; set; }
@@ -6279,7 +6279,7 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "message")]
 		public string message { get; set; }
@@ -6316,7 +6316,7 @@ namespace Cnp.Sdk
 		public string merchantId { get; set; }
 
 		[XMLElement(Name = "postDay")]
-		public DateTime postDay { get; set; }
+		public DateTime? postDay { get; set; }
 
 	}
 
@@ -6370,7 +6370,7 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.1")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.1")]
 		public string message { get; set; }
@@ -6396,7 +6396,7 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.1")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.1")]
 		public string message { get; set; }
@@ -6639,10 +6639,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message")]
 		public string message { get; set; }
@@ -6696,10 +6696,10 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "8.1")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "postDate",FirstVersion = "8.1")]
-		public DateTime postDate { get; set; }
+		public DateTime? postDate { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "8.1")]
 		public string message { get; set; }
@@ -6731,7 +6731,7 @@ namespace Cnp.Sdk
 		public int? originalAmount { get; set; }
 
 		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
+		public DateTime? originalTxnTime { get; set; }
 
 		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
 		public int? originalSystemTraceId { get; set; }
@@ -6760,7 +6760,7 @@ namespace Cnp.Sdk
 		public int? originalAmount { get; set; }
 
 		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
+		public DateTime? originalTxnTime { get; set; }
 
 		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
 		public int? originalSystemTraceId { get; set; }
@@ -6792,7 +6792,7 @@ namespace Cnp.Sdk
 		public int? originalAmount { get; set; }
 
 		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
+		public DateTime? originalTxnTime { get; set; }
 
 		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
 		public int? originalSystemTraceId { get; set; }
@@ -6818,7 +6818,7 @@ namespace Cnp.Sdk
 		public string originalRefCode { get; set; }
 
 		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
+		public DateTime? originalTxnTime { get; set; }
 
 		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
 		public int? originalSystemTraceId { get; set; }
@@ -6847,7 +6847,7 @@ namespace Cnp.Sdk
 		public int? originalAmount { get; set; }
 
 		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
+		public DateTime? originalTxnTime { get; set; }
 
 		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
 		public int? originalSystemTraceId { get; set; }
@@ -6876,7 +6876,7 @@ namespace Cnp.Sdk
 		public int? originalAmount { get; set; }
 
 		[XMLElement(Name = "originalTxnTime",FirstVersion = "11.0")]
-		public DateTime originalTxnTime { get; set; }
+		public DateTime? originalTxnTime { get; set; }
 
 		[XMLElement(Name = "originalSystemTraceId",FirstVersion = "11.0")]
 		public int? originalSystemTraceId { get; set; }
@@ -6930,7 +6930,7 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "9.5")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "9.5")]
 		public string message { get; set; }
@@ -6981,7 +6981,7 @@ namespace Cnp.Sdk
 		public string response { get; set; }
 
 		[XMLElement(Name = "responseTime",FirstVersion = "10.0")]
-		public DateTime responseTime { get; set; }
+		public DateTime? responseTime { get; set; }
 
 		[XMLElement(Name = "message",FirstVersion = "10.0")]
 		public string message { get; set; }
