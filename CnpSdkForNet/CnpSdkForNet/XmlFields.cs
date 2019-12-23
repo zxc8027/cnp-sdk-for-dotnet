@@ -1418,7 +1418,7 @@ namespace Cnp.Sdk
 
 	}
 
-	public enum sequenceType
+	public enum sequenceTypeEnum
 	{
 		[XMLEnum(Name = "OneTime",FirstVersion = "9.12",RemovedVersion = "10.0")]
 		[XMLEnum(Name = "OneTime",FirstVersion = "10.4")]
@@ -2398,7 +2398,7 @@ namespace Cnp.Sdk
 		public int? originalSystemTraceId { get; set; }
 
 		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
+		public string originalSequenceNumber { get; set; }
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "11.0",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
@@ -4220,7 +4220,7 @@ namespace Cnp.Sdk
 		public int? systemTraceId { get; set; }
 
 		[XMLElement(Name = "sequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? sequenceNumber { get; set; }
+		public string sequenceNumber { get; set; }
 
 		[XMLElement(Name = "availableBalance",FirstVersion = "8.21")]
 		public string availableBalance { get; set; }
@@ -5017,7 +5017,7 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "sequenceType",FirstVersion = "9.12",RemovedVersion = "10.0")]
 		[XMLElement(Name = "sequenceType",FirstVersion = "10.4")]
-		public sequenceType? sequenceType { get; set; }
+		public sequenceTypeEnum? sequenceType { get; set; }
 
 		[XMLElement(Name = "mandateReference",FirstVersion = "9.12",RemovedVersion = "10.0")]
 		[XMLElement(Name = "mandateReference",FirstVersion = "10.4")]
@@ -6737,7 +6737,7 @@ namespace Cnp.Sdk
 		public int? originalSystemTraceId { get; set; }
 
 		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
+		public string originalSequenceNumber { get; set; }
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
@@ -6766,7 +6766,7 @@ namespace Cnp.Sdk
 		public int? originalSystemTraceId { get; set; }
 
 		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
+		public string originalSequenceNumber { get; set; }
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
@@ -6798,7 +6798,7 @@ namespace Cnp.Sdk
 		public int? originalSystemTraceId { get; set; }
 
 		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
+		public string originalSequenceNumber { get; set; }
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
@@ -6824,7 +6824,7 @@ namespace Cnp.Sdk
 		public int? originalSystemTraceId { get; set; }
 
 		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
+		public string originalSequenceNumber { get; set; }
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
@@ -6853,7 +6853,7 @@ namespace Cnp.Sdk
 		public int? originalSystemTraceId { get; set; }
 
 		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
+		public string originalSequenceNumber { get; set; }
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
@@ -6882,7 +6882,7 @@ namespace Cnp.Sdk
 		public int? originalSystemTraceId { get; set; }
 
 		[XMLElement(Name = "originalSequenceNumber",FirstVersion = "11.0")]
-		public sequenceType? originalSequenceNumber { get; set; }
+		public string originalSequenceNumber { get; set; }
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
