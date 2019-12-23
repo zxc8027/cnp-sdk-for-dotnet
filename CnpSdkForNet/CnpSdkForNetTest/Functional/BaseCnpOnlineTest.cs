@@ -174,17 +174,17 @@ namespace Cnp.Sdk.Test.Functional
                                     var expectedValue = this.expectedPopulatedObjects[expectedPopulatedRange];
                                     if (!expectedValue.Equals(value))
                                     {
-                                        Assert.Fail(name + " is expected to be populated with:\n" + expectedValue + "\n\nbut is populated with:\n" + value);
+                                        Assert.Fail(name + " (" + version + ") is expected to be populated with:\n" + expectedValue + "\n\nbut is populated with:\n" + value);
                                     }
                                 }
                             }
                             else if (valueExpectedPopulated)
                             {
-                                Assert.Fail(name + " is expected to be populated in " + responseType.Name + " but isn't.");
+                                Assert.Fail(name + " is expected to be populated in " + responseType.Name + " (" + version + ") but isn't.");
                             }
                             else if (valueDefined)
                             {
-                                Assert.Fail(name + " is expected to be unpopulated in " + responseType.Name + " but is with:\n" + value);
+                                Assert.Fail(name + " is expected to be unpopulated in " + responseType.Name + " (" + version + ") but is with:\n" + value);
                             }
                         }
                     }
@@ -211,7 +211,7 @@ namespace Cnp.Sdk.Test.Functional
                     }
                     else
                     {
-                        Assert.Fail("Exception does not match.\n\tExpected exception: " + expectedExceptionType.Name + "\n\tActual exception: " + actualExceptionType.Name + "\n\n" + exception);
+                        Assert.Fail("Exception does not match for " + version + ".\n\tExpected exception: " + expectedExceptionType.Name + "\n\tActual exception: " + actualExceptionType.Name + "\n\n" + exception);
                     }
                 }
             }
@@ -219,7 +219,7 @@ namespace Cnp.Sdk.Test.Functional
             // Fail the test for an unexpected exception.
             if (!exceptionExpected)
             {
-                Assert.Fail("Unexpected exception:\n" + exception);
+                Assert.Fail("Unexpected exception for " + version + ":\n" + exception);
             }
         }
         
