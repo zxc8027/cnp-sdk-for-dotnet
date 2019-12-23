@@ -496,7 +496,7 @@ namespace Cnp.Sdk
          * Sends a BalanceInquiry request.
          */
         [Obsolete("Deprecated in favor of CnpOnline.SendTransaction<balanceInquiryResponse>(cnpTransactionInterface transaction)")]
-        public balanceInquiryResponse BalanceInquiry(updateCardValidationNumOnToken transaction)
+        public balanceInquiryResponse BalanceInquiry(balanceInquiry transaction)
         {
             return this.SendTransaction<balanceInquiryResponse>(transaction);
         }
