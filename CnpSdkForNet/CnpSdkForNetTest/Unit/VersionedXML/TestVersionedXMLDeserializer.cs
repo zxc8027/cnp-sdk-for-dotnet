@@ -301,38 +301,20 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             Assert.AreEqual(xmlObject6.TestElement,TestEnum.Value5);
             
             //  Assert that exceptions are thrown for invalid versions.
-            try
+            Assert.Catch<InvalidVersionException>(() =>
             {
-                VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"Value6\"><testElement>Value3</testElement></TestXMLElement>", new XMLVersion(-1,0));
-                Assert.Fail("Exception not thrown.");
-            }
-            catch (InvalidVersionException e)
-            {
-                Assert.IsTrue(e.Message.Contains("-1.0"),"Version is not included:\n" + e.Message);
-                Assert.IsTrue(e.Message.Contains("TestEnum.Value3"),"Enum name is not included:\n" + e.Message);
-            }
-            try
+                VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"Value6\"><testElement>Value3</testElement></TestXMLElement>",new XMLVersion(-1, 0));
+            });
+            Assert.Catch<InvalidVersionException>(() =>
             {
                 VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"Value3\"><testElement>Value6</testElement></TestXMLElement>", new XMLVersion(-1,0));
-                Assert.Fail("Exception not thrown.");
-            }
-            catch (InvalidVersionException e)
-            {
-                Assert.IsTrue(e.Message.Contains("-1.0"),"Version is not included:\n" + e.Message);
-                Assert.IsTrue(e.Message.Contains("TestEnum.Value3"),"Enum name is not included:\n" + e.Message);
-            }
-            
+            });
+
             // Assert that exceptions are thrown for unusable enums.
-            try
+            Assert.Catch<InvalidVersionException>(() =>
             {
                 VersionedXMLDeserializer.Deserialize<XMLWithEnums>("<TestXMLElement testAttribute=\"Value5\"><testElement>Value5</testElement></TestXMLElement>", new XMLVersion());
-                Assert.Fail("Exception not thrown.");
-            }
-            catch (InvalidVersionException e)
-            {
-                Assert.IsTrue(e.Message.Contains("0.0"),"Version is not included:\n" + e.Message);
-                Assert.IsTrue(e.Message.Contains("TestEnum.Value5"),"Enum name is not included:\n" + e.Message);
-            }
+            });
         }
     }
 }

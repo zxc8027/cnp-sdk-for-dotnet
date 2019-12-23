@@ -532,40 +532,24 @@ namespace Cnp.Sdk.Test.Unit.VersionedXML
             Assert.AreEqual(xmlObject.Serialize(new XMLVersion(3,0)),"<TestXMLElement testAttribute=\"Value7\"><testElement>Value7</testElement></TestXMLElement>");
             
             // Assert the exceptions are thrown.
-            try
+            xmlObject.TestAttribute = TestEnum.Value3;
+            xmlObject.TestElement = TestEnum.Value1;
+            Assert.Catch<InvalidVersionException>(() =>
             {
-                xmlObject.TestAttribute = TestEnum.Value3;
-                xmlObject.TestElement = TestEnum.Value1;
-                xmlObject.Serialize(new XMLVersion(3,0));
-                Assert.Fail("Exception not thrown.");
-            }
-            catch (InvalidVersionException e)
+                xmlObject.Serialize(new XMLVersion(3, 0));
+            });
+            
+            xmlObject.TestAttribute = TestEnum.Value4;
+            Assert.Catch<InvalidVersionException>(() =>
             {
-                Assert.IsTrue(e.Message.Contains("3.0"),"Version is not included:\n" + e.Message);
-                Assert.IsTrue(e.Message.Contains("TestEnum.Value3"),"Element name is not included:\n" + e.Message);
-            }
-            try
-            {
-                xmlObject.TestAttribute = TestEnum.Value4;
                 xmlObject.Serialize(new XMLVersion(1,0));
-                Assert.Fail("Exception not thrown.");
-            }
-            catch (InvalidVersionException e)
+            });
+            
+            xmlObject.TestAttribute = TestEnum.Value5;
+            Assert.Catch<OverlappingVersionsException>(() =>
             {
-                Assert.IsTrue(e.Message.Contains("1.0"),"Version is not included:\n" + e.Message);
-                Assert.IsTrue(e.Message.Contains("TestEnum.Value4"),"Attribute name is not included:\n" + e.Message);
-            }
-            try
-            {
-                xmlObject.TestAttribute = TestEnum.Value5;
                 xmlObject.Serialize(new XMLVersion(2,0));
-                Assert.Fail("Exception not thrown.");
-            }
-            catch (OverlappingVersionsException e)
-            {
-                Assert.IsTrue(e.Message.Contains("2.0"),"Version is not included:\n" + e.Message);
-                Assert.IsTrue(e.Message.Contains("TestEnum.Value5"),"Element name is not included:\n" + e.Message);
-            }
+            });
         }
     }
 }
