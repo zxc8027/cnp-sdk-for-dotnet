@@ -20,7 +20,7 @@ namespace Cnp.Sdk.Test.Certification
             verification.orderId = "37";
             verification.amount = 3001;
             verification.orderSource = orderSourceType.telephone;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "Tom";
             billToAddress.lastName = "Black";
             verification.billToAddress = billToAddress;
@@ -43,7 +43,7 @@ namespace Cnp.Sdk.Test.Certification
             verification.orderId = "38";
             verification.amount = 3002;
             verification.orderSource = orderSourceType.telephone;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "John";
             billToAddress.lastName = "Smith";
             billToAddress.phone = "999-999-9999";
@@ -67,7 +67,7 @@ namespace Cnp.Sdk.Test.Certification
             verification.orderId = "39";
             verification.amount = 3003;
             verification.orderSource = orderSourceType.telephone;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "Robert";
             billToAddress.lastName = "Jones";
             billToAddress.companyName = "Good Goods Inc";
@@ -91,7 +91,7 @@ namespace Cnp.Sdk.Test.Certification
             verification.orderId = "40";
             verification.amount = 3004;
             verification.orderSource = orderSourceType.telephone;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "Peter";
             billToAddress.lastName = "Green";
             billToAddress.companyName = "Green Co";
@@ -116,7 +116,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "41";
             sale.amount = 2008;
             sale.orderSource = orderSourceType.telephone;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "Mike";
             billToAddress.middleInitial = "J";
             billToAddress.lastName = "Hammer";
@@ -140,7 +140,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "42";
             sale.amount = 2004;
             sale.orderSource = orderSourceType.telephone;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "Tom";
             billToAddress.lastName = "Black";
             sale.billToAddress = billToAddress;
@@ -163,7 +163,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "43";
             sale.amount = 2007;
             sale.orderSource = orderSourceType.telephone;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "Peter";
             billToAddress.lastName = "Green";
             billToAddress.companyName = "Green Co";
@@ -187,7 +187,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "44";
             sale.amount = 2009;
             sale.orderSource = orderSourceType.telephone;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "Peter";
             billToAddress.lastName = "Green";
             billToAddress.companyName = "Green Co";
@@ -211,7 +211,7 @@ namespace Cnp.Sdk.Test.Certification
             credit.orderId = "45";
             credit.amount = 1001;
             credit.orderSource = orderSourceType.telephone;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "John";
             billToAddress.lastName = "Smith";
             credit.billToAddress = billToAddress;
@@ -233,7 +233,7 @@ namespace Cnp.Sdk.Test.Certification
             credit.orderId = "46";
             credit.amount = 1003;
             credit.orderSource = orderSourceType.telephone;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "Robert";
             billToAddress.lastName = "Jones";
             billToAddress.companyName = "Widget Inc";
@@ -257,7 +257,7 @@ namespace Cnp.Sdk.Test.Certification
             credit.orderId = "47";
             credit.amount = 1007;
             credit.orderSource = orderSourceType.telephone;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "Peter";
             billToAddress.lastName = "Green";
             billToAddress.companyName = "Green Co";

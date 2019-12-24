@@ -207,7 +207,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "61";
             sale.amount = 15000;
             sale.orderSource = orderSourceType.ecommerce;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "Tom";
             billToAddress.lastName = "Black";
             sale.billToAddress = billToAddress;
@@ -233,7 +233,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "62";
             sale.amount = 15000;
             sale.orderSource = orderSourceType.ecommerce;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "Tom";
             billToAddress.lastName = "Black";
             sale.billToAddress = billToAddress;
@@ -260,7 +260,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "63";
             sale.amount = 15000;
             sale.orderSource = orderSourceType.ecommerce;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.firstName = "Tom";
             billToAddress.lastName = "Black";
             sale.billToAddress = billToAddress;

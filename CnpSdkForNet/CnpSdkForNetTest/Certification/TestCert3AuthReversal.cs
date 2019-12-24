@@ -20,7 +20,7 @@ namespace Cnp.Sdk.Test.Certification
             auth.orderId = "32";
             auth.amount = 10010;
             auth.orderSource = orderSourceType.ecommerce;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.name = "John Smith";
             billToAddress.addressLine1 = "1 Main St.";
             billToAddress.city = "Burlington";
@@ -66,7 +66,7 @@ namespace Cnp.Sdk.Test.Certification
             auth.orderId = "33";
             auth.amount = 20020;
             auth.orderSource = orderSourceType.ecommerce;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.name = "Mike J. Hammer";
             billToAddress.addressLine1 = "2 Main St.";
             billToAddress.addressLine2 = "Apt. 222";
@@ -109,7 +109,7 @@ namespace Cnp.Sdk.Test.Certification
             auth.orderId = "34";
             auth.amount = 30030;
             auth.orderSource = orderSourceType.ecommerce;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.name = "Eileen Jones";
             billToAddress.addressLine1 = "3 Main St.";
             billToAddress.city = "Bloomfield";
@@ -147,7 +147,7 @@ namespace Cnp.Sdk.Test.Certification
             auth.orderId = "35";
             auth.amount = 10100;
             auth.orderSource = orderSourceType.ecommerce;
-            var billToAddress = new billToAddress();
+            var billToAddress = new contact();
             billToAddress.name = "Bob Black";
             billToAddress.addressLine1 = "4 Main St.";
             billToAddress.city = "Laurel";

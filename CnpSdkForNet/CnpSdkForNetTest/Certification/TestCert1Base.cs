@@ -21,7 +21,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "1";
             authorization.amount = 10100;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "John & Mary Smith";
             contact.addressLine1 = "1 Main St.";
             contact.city = "Burlington";
@@ -73,7 +73,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "1";
             authorization.amount = 0;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "John Smith";
             contact.addressLine1 = "1 Main St.";
             contact.city = "Burlington";
@@ -104,7 +104,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "1";
             sale.amount = 10010;
             sale.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "John Smith";
             contact.addressLine1 = "1 Main St.";
             contact.city = "Burlington";
@@ -149,7 +149,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "2";
             authorization.amount = 20020;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Mike J. Hammer";
             contact.addressLine1 = "2 Main St.";
             contact.addressLine2 = "Apt. 222";
@@ -205,7 +205,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "2";
             authorization.amount = 0;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Mike J. Hammer";
             contact.addressLine1 = "2 Main St.";
             contact.addressLine2 = "Apt. 222";
@@ -241,7 +241,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "2";
             sale.amount = 20020;
             sale.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Mike J. Hammer";
             contact.addressLine1 = "2 Main St.";
             contact.addressLine2 = "Apt. 222";
@@ -290,7 +290,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "3";
             authorization.amount = 30030;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Eileen Jones";
             contact.addressLine1 = "3 Main St.";
             contact.city = "Bloomfield";
@@ -342,7 +342,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "3";
             authorization.amount = 0;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Eileen Jones";
             contact.addressLine1 = "3 Main St.";
             contact.city = "Bloomfield";
@@ -374,7 +374,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "3";
             sale.amount = 30030;
             sale.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Eileen Jones";
             contact.addressLine1 = "3 Main St.";
             contact.city = "Bloomfield";
@@ -419,7 +419,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "4";
             authorization.amount = 10100;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Bob Black";
             contact.addressLine1 = "4 Main St.";
             contact.city = "Laurel";
@@ -470,7 +470,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "4";
             authorization.amount = 0;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Bob Black";
             contact.addressLine1 = "4 Main St.";
             contact.city = "Laurel";
@@ -499,7 +499,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "4";
             sale.amount = 40040;
             sale.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Bob Black";
             contact.addressLine1 = "4 Main St.";
             contact.city = "Laurel";
@@ -656,7 +656,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "6";
             authorization.amount = 60060;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Joe Green";
             contact.addressLine1 = "6 Main St.";
             contact.city = "Derry";
@@ -686,7 +686,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "6";
             sale.amount = 60060;
             sale.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Joe Green";
             contact.addressLine1 = "6 Main St.";
             contact.city = "Derry";
@@ -723,7 +723,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "7";
             authorization.amount = 70070;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Jane Murray";
             contact.addressLine1 = "7 Main St.";
             contact.city = "Amesbury";
@@ -753,7 +753,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "7";
             authorization.amount = 0;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Jane Murray";
             contact.addressLine1 = "7 Main St.";
             contact.city = "Amesbury";
@@ -783,7 +783,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "7";
             sale.amount = 70070;
             sale.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Jane Murray";
             contact.addressLine1 = "7 Main St.";
             contact.city = "Amesbury";
@@ -813,7 +813,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "8";
             authorization.amount = 80080;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Mark Johnson";
             contact.addressLine1 = "8 Main St.";
             contact.city = "Manchester";
@@ -843,7 +843,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "8";
             authorization.amount = 0;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Mark Johnson";
             contact.addressLine1 = "8 Main St.";
             contact.city = "Manchester";
@@ -873,7 +873,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "8";
             sale.amount = 80080;
             sale.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "Mark Johnson";
             contact.addressLine1 = "8 Main St.";
             contact.city = "Manchester";
@@ -903,7 +903,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "9";
             authorization.amount = 90090;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "James Miller";
             contact.addressLine1 = "9 Main St.";
             contact.city = "Boston";
@@ -932,7 +932,7 @@ namespace Cnp.Sdk.Test.Certification
             authorization.orderId = "9";
             authorization.amount = 0;
             authorization.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "James Miller";
             contact.addressLine1 = "9 Main St.";
             contact.city = "Boston";
@@ -961,7 +961,7 @@ namespace Cnp.Sdk.Test.Certification
             sale.orderId = "9";
             sale.amount = 90090;
             sale.orderSource = orderSourceType.ecommerce;
-            var contact = new billToAddress();
+            var contact = new contact();
             contact.name = "James Miller";
             contact.addressLine1 = "9 Main St.";
             contact.city = "Boston";

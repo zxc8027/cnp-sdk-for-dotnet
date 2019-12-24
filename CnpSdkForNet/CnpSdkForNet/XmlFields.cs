@@ -1811,7 +1811,7 @@ namespace Cnp.Sdk
 		public string planCode { get; set; }
 
 		[XMLElement(Name = "billToAddress",FirstVersion = "8.20")]
-		public billToAddress billToAddress { get; set; }
+		public contact billToAddress { get; set; }
 
 		[XMLElement(Name = "card",FirstVersion = "8.20")]
 		public cardType card { get; set; }
@@ -2217,11 +2217,11 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "authorization")]
 	public partial class authorization : transactionTypeWithReportGroup
 	{
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
 		[XMLElement(Name = "orderId")]
 		public string orderId { get; set; }
+
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
 
 		[XMLElement(Name = "amount")]
 		public int? amount { get; set; }
@@ -2240,10 +2240,10 @@ namespace Cnp.Sdk
 		public customerInfo customerInfo { get; set; }
 
 		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
+		public contact billToAddress { get; set; }
 
 		[XMLElement(Name = "shipToAddress")]
-		public shipToAddress shipToAddress { get; set; }
+		public contact shipToAddress { get; set; }
 
 		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
 		public mposType mpos { get; set; }
@@ -2490,7 +2490,7 @@ namespace Cnp.Sdk
 		public orderSourceType? orderSource { get; set; }
 
 		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
+		public contact billToAddress { get; set; }
 
 		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
 		public mposType mpos { get; set; }
@@ -2566,10 +2566,10 @@ namespace Cnp.Sdk
 		public orderSourceType? orderSource { get; set; }
 
 		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
+		public contact billToAddress { get; set; }
 
 		[XMLElement(Name = "shipToAddress")]
-		public shipToAddress shipToAddress { get; set; }
+		public contact shipToAddress { get; set; }
 
 		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
 		public mposType mpos { get; set; }
@@ -2638,11 +2638,11 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "sale")]
 	public partial class sale : transactionTypeWithReportGroup
 	{
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
 		[XMLElement(Name = "orderId")]
 		public string orderId { get; set; }
+
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
 
 		[XMLElement(Name = "amount")]
 		public int? amount { get; set; }
@@ -2661,10 +2661,10 @@ namespace Cnp.Sdk
 		public customerInfo customerInfo { get; set; }
 
 		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
+		public contact billToAddress { get; set; }
 
 		[XMLElement(Name = "shipToAddress")]
-		public shipToAddress shipToAddress { get; set; }
+		public contact shipToAddress { get; set; }
 
 		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
 		public mposType mpos { get; set; }
@@ -2822,6 +2822,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "credit")]
 	public partial class credit : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -2854,14 +2857,11 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "pin",FirstVersion = "10.3")]
 		public string pin { get; set; }
 
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
 		[XMLElement(Name = "orderSource")]
 		public orderSourceType? orderSource { get; set; }
 
 		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
+		public contact billToAddress { get; set; }
 
 		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
 		public mposType mpos { get; set; }
@@ -2907,6 +2907,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "giftCardCredit",FirstVersion = "11.0")]
 	public partial class giftCardCredit : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "11.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -2915,9 +2918,6 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "card",FirstVersion = "11.0")]
 		public giftCardCardType card { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "11.0")]
-		public string orderId { get; set; }
 
 		[XMLElement(Name = "orderSource",FirstVersion = "11.0")]
 		public orderSourceType? orderSource { get; set; }
@@ -3244,11 +3244,11 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "registerTokenRequestType",FirstVersion = "8.2")]
 	public partial class registerTokenRequestType : transactionTypeWithReportGroup
 	{
-		[XMLElement(Name = "encryptionKeyId",FirstVersion = "12.5")]
-		public string encryptionKeyId { get; set; }
-
 		[XMLElement(Name = "orderId",FirstVersion = "8.2")]
 		public string orderId { get; set; }
+
+		[XMLElement(Name = "encryptionKeyId",FirstVersion = "12.5")]
+		public string encryptionKeyId { get; set; }
 
 		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
 		public mposType mpos { get; set; }
@@ -3280,6 +3280,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "registerTokenResponse")]
 	public partial class registerTokenResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -3321,19 +3324,16 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "litleToken",RemovedVersion = "12.0")]
 		public string litleToken { get; set; }
 
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
 	}
 
 	[XMLElement(Name = "authorizationResponse")]
 	public partial class authorizationResponse : transactionTypeWithReportGroup
 	{
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
 		[XMLElement(Name = "orderId")]
 		public string orderId { get; set; }
+
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
 
 		[XMLElement(Name = "response")]
 		public string response { get; set; }
@@ -3534,6 +3534,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "authReversalResponse")]
 	public partial class authReversalResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -3554,9 +3557,6 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21",RemovedVersion = "11.0")]
 		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 		[XMLAttribute(Name = "duplicate",FirstVersion = "9.3",RemovedVersion = "10.0")]
 		public bool? duplicate { get; set; }
@@ -3592,6 +3592,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "depositReversalResponse",FirstVersion = "8.22")]
 	public partial class depositReversalResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -3612,15 +3615,15 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 	}
 
 	[XMLElement(Name = "refundReversalResponse",FirstVersion = "8.22")]
 	public partial class refundReversalResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -3641,15 +3644,15 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 	}
 
 	[XMLElement(Name = "activateReversalResponse",FirstVersion = "8.22")]
 	public partial class activateReversalResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -3670,15 +3673,15 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 	}
 
 	[XMLElement(Name = "deactivateReversalResponse",FirstVersion = "8.22")]
 	public partial class deactivateReversalResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -3699,15 +3702,15 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 	}
 
 	[XMLElement(Name = "loadReversalResponse",FirstVersion = "8.22")]
 	public partial class loadReversalResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -3728,15 +3731,15 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 	}
 
 	[XMLElement(Name = "unloadReversalResponse",FirstVersion = "8.22")]
 	public partial class unloadReversalResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -3758,14 +3761,14 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.22",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
 
-		[XMLElement(Name = "orderId",FirstVersion = "8.22",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
 	}
 
 	[XMLElement(Name = "captureResponse")]
 	public partial class captureResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -3792,9 +3795,6 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21",RemovedVersion = "11.0")]
 		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
 		public bool? duplicate { get; set; }
@@ -3833,6 +3833,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "forceCaptureResponse")]
 	public partial class forceCaptureResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -3863,14 +3866,14 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
 
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
 	}
 
 	[XMLElement(Name = "captureGivenAuthResponse")]
 	public partial class captureGivenAuthResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -3898,22 +3901,19 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
 
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
 	}
 
 	[XMLElement(Name = "saleResponse")]
 	public partial class saleResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
 		[XMLElement(Name = "response")]
 		public string response { get; set; }
-
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
 
 		[XMLElement(Name = "responseTime")]
 		public DateTime? responseTime { get; set; }
@@ -4015,6 +4015,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "creditResponse")]
 	public partial class creditResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -4041,9 +4044,6 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "giftCardResponse",FirstVersion = "8.21",RemovedVersion = "11.0")]
 		public giftCardResponse giftCardResponse { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
 		public bool? duplicate { get; set; }
@@ -4102,6 +4102,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "activateResponse",FirstVersion = "8.21")]
 	public partial class activateResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -4129,9 +4132,6 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
 
-		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
 		[XMLAttribute(Name = "duplicate",FirstVersion = "8.21",RemovedVersion = "10.0")]
 		public bool? duplicate { get; set; }
 
@@ -4140,6 +4140,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "loadResponse",FirstVersion = "8.21")]
 	public partial class loadResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -4163,9 +4166,6 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 		[XMLAttribute(Name = "duplicate",FirstVersion = "8.21",RemovedVersion = "10.0")]
 		public bool? duplicate { get; set; }
@@ -4175,6 +4175,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "unloadResponse",FirstVersion = "8.21")]
 	public partial class unloadResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -4198,9 +4201,6 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 		[XMLAttribute(Name = "duplicate",FirstVersion = "8.21",RemovedVersion = "10.0")]
 		public bool? duplicate { get; set; }
@@ -4254,6 +4254,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "balanceInquiryResponse",FirstVersion = "8.21")]
 	public partial class balanceInquiryResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -4278,14 +4281,14 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
 
-		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
 	}
 
 	[XMLElement(Name = "deactivateResponse",FirstVersion = "8.21")]
 	public partial class deactivateResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -4313,14 +4316,14 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.21",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
 
-		[XMLElement(Name = "orderId",FirstVersion = "8.21",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
 	}
 
 	[XMLElement(Name = "echeckSale")]
 	public partial class echeckSale : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -4334,9 +4337,6 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "customIdentifier",FirstVersion = "11.0")]
 		public string customIdentifier { get; set; }
 
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
 		[XMLElement(Name = "verify")]
 		public bool? verify { get; set; }
 
@@ -4348,10 +4348,10 @@ namespace Cnp.Sdk
 		public orderSourceType? orderSource { get; set; }
 
 		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
+		public contact billToAddress { get; set; }
 
 		[XMLElement(Name = "shipToAddress")]
-		public shipToAddress shipToAddress { get; set; }
+		public contact shipToAddress { get; set; }
 
 		[XMLElement(Name = "echeck",RemovedVersion = "8.2")]
 		[XMLElement(Name = "echeck",FirstVersion = "12.0")]
@@ -4377,6 +4377,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "echeckCredit")]
 	public partial class echeckCredit : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -4394,14 +4397,11 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "customIdentifier",FirstVersion = "11.0")]
 		public string customIdentifier { get; set; }
 
-		[XMLElement(Name = "orderId")]
-		public string orderId { get; set; }
-
 		[XMLElement(Name = "orderSource")]
 		public orderSourceType? orderSource { get; set; }
 
 		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
+		public contact billToAddress { get; set; }
 
 		[XMLElement(Name = "echeck",RemovedVersion = "8.2")]
 		[XMLElement(Name = "echeck",FirstVersion = "12.0")]
@@ -4437,7 +4437,7 @@ namespace Cnp.Sdk
 		public orderSourceType? orderSource { get; set; }
 
 		[XMLElement(Name = "billToAddress")]
-		public billToAddress billToAddress { get; set; }
+		public contact billToAddress { get; set; }
 
 		[XMLElement(Name = "echeck",RemovedVersion = "8.2")]
 		[XMLElement(Name = "echeck",FirstVersion = "12.0")]
@@ -4460,6 +4460,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "echeckSalesResponse")]
 	public partial class echeckSalesResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -4487,9 +4490,6 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
 
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
-
 		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
 		public bool? duplicate { get; set; }
 
@@ -4498,6 +4498,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "echeckCreditResponse")]
 	public partial class echeckCreditResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -4521,9 +4524,6 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 		[XMLAttribute(Name = "duplicate",RemovedVersion = "10.0")]
 		public bool? duplicate { get; set; }
@@ -4644,6 +4644,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "echeckVerificationResponse")]
 	public partial class echeckVerificationResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -4664,9 +4667,6 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 		[XMLElement(Name = "accountUpdater",RemovedVersion = "8.2")]
 		public accountUpdater accountUpdater { get; set; }
@@ -4808,6 +4808,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "updateCardValidationNumOnTokenResponse",FirstVersion = "8.14")]
 	public partial class updateCardValidationNumOnTokenResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "8.14",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -4822,9 +4825,6 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "8.14",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "8.14",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 	}
 
@@ -4846,10 +4846,10 @@ namespace Cnp.Sdk
 		public advancedFraudChecksType advancedFraudChecks { get; set; }
 
 		[XMLElement(Name = "billToAddress",FirstVersion = "9.3")]
-		public billToAddress billToAddress { get; set; }
+		public contact billToAddress { get; set; }
 
 		[XMLElement(Name = "shipToAddress",FirstVersion = "9.3")]
-		public shipToAddress shipToAddress { get; set; }
+		public contact shipToAddress { get; set; }
 
 		[XMLElement(Name = "amount",FirstVersion = "9.3")]
 		public int? amount { get; set; }
@@ -5924,10 +5924,10 @@ namespace Cnp.Sdk
 	public partial class batchRequest : VersionedXMLElement
 	{
 		[XMLElement(Name = "transaction")]
-		public List<transaction> transaction { get; set; } = new List<transaction>();
+		public List<transactionType> transaction { get; set; } = new List<transactionType>();
 
 		[XMLElement(Name = "recurringTransaction",FirstVersion = "8.20")]
-		public List<recurringTransaction> recurringTransaction { get; set; } = new List<recurringTransaction>();
+		public List<recurringTransactionType> recurringTransaction { get; set; } = new List<recurringTransactionType>();
 
 		[XMLAttribute(Name = "merchantSdk",FirstVersion = "8.21")]
 		public string merchantSdk { get; set; }
@@ -6242,10 +6242,10 @@ namespace Cnp.Sdk
 	public partial class batchResponse : VersionedXMLElement
 	{
 		[XMLElement(Name = "transactionResponse")]
-		public List<transactionResponse> transactionResponse { get; set; } = new List<transactionResponse>();
+		public List<transactionTypeWithReportGroup> transactionResponse { get; set; } = new List<transactionTypeWithReportGroup>();
 
 		[XMLElement(Name = "recurringTransactionResponse",FirstVersion = "8.20")]
-		public List<recurringTransactionResponse> recurringTransactionResponse { get; set; } = new List<recurringTransactionResponse>();
+		public List<recurringTransactionResponseType> recurringTransactionResponse { get; set; } = new List<recurringTransactionResponseType>();
 
 		[XMLAttribute(Name = "id")]
 		public string id { get; set; }
@@ -6267,13 +6267,13 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "accountUpdateResponse")]
 	public partial class accountUpdateResponse : transactionTypeWithReportGroup
 	{
-		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
-		public long? cnpTxnId { get; set; }
-
 		[XMLElement(Name = "orderId",RemovedVersion = "10.0")]
 		[XMLElement(Name = "orderId",FirstVersion = "10.7",RemovedVersion = "11.0")]
 		[XMLElement(Name = "orderId",FirstVersion = "11.2")]
 		public string orderId { get; set; }
+
+		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
+		public long? cnpTxnId { get; set; }
 
 		[XMLElement(Name = "response")]
 		public string response { get; set; }
@@ -6330,7 +6330,7 @@ namespace Cnp.Sdk
 		public orderSourceType? orderSource { get; set; }
 
 		[XMLElement(Name = "billToAddress",FirstVersion = "9.1")]
-		public billToAddress billToAddress { get; set; }
+		public contact billToAddress { get; set; }
 
 		[XMLElement(Name = "echeck",FirstVersion = "9.1")]
 		public echeckType echeck { get; set; }
@@ -6350,7 +6350,7 @@ namespace Cnp.Sdk
 		public orderSourceType? orderSource { get; set; }
 
 		[XMLElement(Name = "billToAddress",FirstVersion = "9.1")]
-		public billToAddress billToAddress { get; set; }
+		public contact billToAddress { get; set; }
 
 		[XMLElement(Name = "echeck",FirstVersion = "9.1")]
 		public echeckType echeck { get; set; }
@@ -6363,6 +6363,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "echeckPreNoteSaleResponse",FirstVersion = "9.1")]
 	public partial class echeckPreNoteSaleResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "9.1",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -6377,9 +6380,6 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "9.1",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "9.1",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 		[XMLAttribute(Name = "duplicate",FirstVersion = "9.1",RemovedVersion = "10.0")]
 		public bool? duplicate { get; set; }
@@ -6389,6 +6389,9 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "echeckPreNoteCreditResponse",FirstVersion = "9.1")]
 	public partial class echeckPreNoteCreditResponse : transactionTypeWithReportGroup
 	{
+		[XMLElement(Name = "orderId",FirstVersion = "9.1",RemovedVersion = "10.0")]
+		public string orderId { get; set; }
+
 		[XMLElement(Name = "cnpTxnId",FirstVersion = "12.0")]
 		public long? cnpTxnId { get; set; }
 
@@ -6403,9 +6406,6 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "litleTxnId",FirstVersion = "9.1",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
-
-		[XMLElement(Name = "orderId",FirstVersion = "9.1",RemovedVersion = "10.0")]
-		public string orderId { get; set; }
 
 		[XMLAttribute(Name = "duplicate",FirstVersion = "9.1",RemovedVersion = "10.0")]
 		public bool? duplicate { get; set; }
@@ -6563,10 +6563,10 @@ namespace Cnp.Sdk
 		public authentication authentication { get; set; }
 
 		[XMLElement(Name = "transaction")]
-		public transaction transaction { get; set; }
+		public transactionType transaction { get; set; }
 
 		[XMLElement(Name = "recurringTransaction",FirstVersion = "8.20")]
-		public recurringTransaction recurringTransaction { get; set; }
+		public recurringTransactionType recurringTransaction { get; set; }
 
 		[XMLAttribute(Name = "version")]
 		public string version { get; set; }
@@ -6596,10 +6596,10 @@ namespace Cnp.Sdk
 	public partial class cnpOnlineResponse : VersionedXMLElement
 	{
 		[XMLElement(Name = "transactionResponse")]
-		public transactionResponse transactionResponse { get; set; }
+		public transactionTypeWithReportGroup transactionResponse { get; set; }
 
 		[XMLElement(Name = "recurringTransactionResponse",FirstVersion = "8.20")]
-		public recurringTransactionResponse recurringTransactionResponse { get; set; }
+		public recurringTransactionResponseType recurringTransactionResponse { get; set; }
 
 		[XMLAttribute(Name = "response")]
 		public string response { get; set; }
@@ -6919,7 +6919,7 @@ namespace Cnp.Sdk
 	public partial class results_max10 : VersionedXMLElement
 	{
 		[XMLElement(Name = "transactionResponse",FirstVersion = "9.5")]
-		public List<transactionResponse> transactionResponse { get; set; } = new List<transactionResponse>();
+		public List<transactionTypeWithReportGroup> transactionResponse { get; set; } = new List<transactionTypeWithReportGroup>();
 
 	}
 

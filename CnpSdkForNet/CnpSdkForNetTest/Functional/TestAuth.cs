@@ -132,7 +132,7 @@ namespace Cnp.Sdk.Test.Functional
                 orderId = "7",
                 amount = 10010,
                 orderSource = orderSourceType.ecommerce,
-                billToAddress = new billToAddress()
+                billToAddress = new contact()
                 {
                     name = "John & Jane Smith",
                     addressLine1 = "1 Main St.",
