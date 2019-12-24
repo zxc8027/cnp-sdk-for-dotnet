@@ -3244,7 +3244,7 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "registerTokenRequestType",FirstVersion = "8.2")]
 	public partial class registerTokenRequestType : transactionTypeWithReportGroup
 	{
-		[XMLElement(Name = "orderId",FirstVersion = "8.2")]
+		[XMLElement(Name = "orderId")]
 		public string orderId { get; set; }
 
 		[XMLElement(Name = "encryptionKeyId",FirstVersion = "12.5")]
@@ -3253,7 +3253,7 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "mpos",FirstVersion = "8.25")]
 		public mposType mpos { get; set; }
 
-		[XMLElement(Name = "accountNumber",FirstVersion = "8.2")]
+		[XMLElement(Name = "accountNumber")]
 		public string accountNumber { get; set; }
 
 		[XMLElement(Name = "encryptedAccountNumber",FirstVersion = "12.5")]
@@ -4735,16 +4735,16 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "echeckType",FirstVersion = "8.2")]
 	public partial class echeckType : VersionedXMLElement
 	{
-		[XMLElement(Name = "accType",FirstVersion = "8.2")]
+		[XMLElement(Name = "accType")]
 		public echeckAccountTypeEnum? accType { get; set; }
 
-		[XMLElement(Name = "accNum",FirstVersion = "8.2")]
+		[XMLElement(Name = "accNum")]
 		public string accNum { get; set; }
 
-		[XMLElement(Name = "routingNum",FirstVersion = "8.2")]
+		[XMLElement(Name = "routingNum")]
 		public string routingNum { get; set; }
 
-		[XMLElement(Name = "checkNum",FirstVersion = "8.2")]
+		[XMLElement(Name = "checkNum")]
 		public string checkNum { get; set; }
 
 		[XMLElement(Name = "ccdPaymentInformation",FirstVersion = "9.3")]
@@ -6991,6 +6991,61 @@ namespace Cnp.Sdk
 
 	}
 
+	[XMLElement(Name = "billToAddress")]
+	public partial class billToAddress : contact
+	{
+	}
+
+	[XMLElement(Name = "recurringTransaction",FirstVersion = "8.20")]
+	public partial class recurringTransaction : recurringTransactionType
+	{
+	}
+
+	[XMLElement(Name = "recurringTransactionResponse",FirstVersion = "8.20")]
+	public partial class recurringTransactionResponse : recurringTransactionResponseType
+	{
+	}
+
+	[XMLElement(Name = "transaction")]
+	public partial class transaction : transactionType
+	{
+	}
+
+	[XMLElement(Name = "shipToAddress")]
+	public partial class shipToAddress : contact
+	{
+	}
+
+	[XMLElement(Name = "registerTokenRequest")]
+	public partial class registerTokenRequest : registerTokenRequestType
+	{
+	}
+
+	[XMLElement(Name = "transactionResponse")]
+	public partial class transactionResponse : transactionTypeWithReportGroup
+	{
+	}
+
+	[XMLElement(Name = "translateToLowValueTokenRequest",FirstVersion = "12.2")]
+	public partial class translateToLowValueTokenRequest : translateToLowValueTokenRequestType
+	{
+	}
+
+	[XMLElement(Name = "cardOrToken",FirstVersion = "8.1")]
+	public partial class cardOrToken : VersionedXMLElement
+	{
+	}
+
+	[XMLElement(Name = "card",FirstVersion = "8.1")]
+	public partial class card : cardType
+	{
+	}
+
+	[XMLElement(Name = "token",FirstVersion = "8.1")]
+	public partial class token : cardTokenType
+	{
+	}
+
 	[XMLElement(Name = "echeckTypeCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
 	public partial class echeckTypeCtx : VersionedXMLElement
 	{
@@ -7267,6 +7322,26 @@ namespace Cnp.Sdk
 
 	}
 
+	[XMLElement(Name = "bmlProductType",RemovedVersion = "12.0")]
+	public partial class bmlProductType : VersionedXMLElement
+	{
+	}
+
+	[XMLElement(Name = "echeckOrEcheckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
+	public partial class echeckOrEcheckToken : VersionedXMLElement
+	{
+	}
+
+	[XMLElement(Name = "echeck",RemovedVersion = "12.0")]
+	public partial class echeck : echeckType
+	{
+	}
+
+	[XMLElement(Name = "echeckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
+	public partial class echeckToken : echeckTokenType
+	{
+	}
+
 	[XMLElement(Name = "originalAccountInfo",RemovedVersion = "8.5")]
 	public partial class originalAccountInfo : VersionedXMLElement
 	{
@@ -7366,104 +7441,6 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "type",FirstVersion = "8.1",RemovedVersion = "8.2")]
 		public methodOfPaymentTypeEnum? type { get; set; }
 
-	}
-
-	[XMLElement(Name = "registerTokenRequest",RemovedVersion = "8.2")]
-	public partial class registerTokenRequest : transactionTypeWithReportGroup
-	{
-		[XMLElement(Name = "orderId",RemovedVersion = "8.2")]
-		public string orderId { get; set; }
-
-		[XMLElement(Name = "accountNumber",RemovedVersion = "8.2")]
-		public string accountNumber { get; set; }
-
-	}
-
-	[XMLElement(Name = "echeck",RemovedVersion = "8.2")]
-	public partial class echeck : VersionedXMLElement
-	{
-		[XMLElement(Name = "accType",RemovedVersion = "8.2")]
-		public echeckAccountTypeEnum? accType { get; set; }
-
-		[XMLElement(Name = "accNum",RemovedVersion = "8.2")]
-		public string accNum { get; set; }
-
-		[XMLElement(Name = "routingNum",RemovedVersion = "8.2")]
-		public string routingNum { get; set; }
-
-		[XMLElement(Name = "checkNum",RemovedVersion = "8.2")]
-		public string checkNum { get; set; }
-
-	}
-
-
-
-	/*
-	 * Element declarations.
-	 */
-	[XMLElement(Name = "billToAddress")]
-	public partial class billToAddress : contact
-	{
-	}
-
-	[XMLElement(Name = "recurringTransaction",FirstVersion = "8.20")]
-	public partial class recurringTransaction : recurringTransactionType
-	{
-	}
-
-	[XMLElement(Name = "recurringTransactionResponse",FirstVersion = "8.20")]
-	public partial class recurringTransactionResponse : recurringTransactionResponseType
-	{
-	}
-
-	[XMLElement(Name = "transaction")]
-	public partial class transaction : transactionType
-	{
-	}
-
-	[XMLElement(Name = "shipToAddress")]
-	public partial class shipToAddress : contact
-	{
-	}
-
-	[XMLElement(Name = "transactionResponse")]
-	public partial class transactionResponse : transactionTypeWithReportGroup
-	{
-	}
-
-	[XMLElement(Name = "translateToLowValueTokenRequest",FirstVersion = "12.2")]
-	public partial class translateToLowValueTokenRequest : translateToLowValueTokenRequestType
-	{
-	}
-
-	[XMLElement(Name = "cardOrToken",FirstVersion = "8.1")]
-	public partial class cardOrToken : VersionedXMLElement
-	{
-	}
-
-	[XMLElement(Name = "card",FirstVersion = "8.1")]
-	public partial class card : cardType
-	{
-	}
-
-	[XMLElement(Name = "token",FirstVersion = "8.1")]
-	public partial class token : cardTokenType
-	{
-	}
-
-	[XMLElement(Name = "bmlProductType",RemovedVersion = "12.0")]
-	public partial class bmlProductType : VersionedXMLElement
-	{
-	}
-
-	[XMLElement(Name = "echeckOrEcheckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
-	public partial class echeckOrEcheckToken : VersionedXMLElement
-	{
-	}
-
-	[XMLElement(Name = "echeckToken",FirstVersion = "8.2",RemovedVersion = "12.0")]
-	public partial class echeckToken : echeckTokenType
-	{
 	}
 
 }

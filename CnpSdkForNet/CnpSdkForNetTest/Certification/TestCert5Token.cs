@@ -15,7 +15,7 @@ namespace Cnp.Sdk.Test.Certification
         [Test]
         public void Test50()
         {
-            var request = new registerTokenRequestType();
+            var request = new registerTokenRequest();
             request.id = "1";
             request.orderId = "50";
             request.accountNumber = "4457119922390123";
@@ -32,7 +32,7 @@ namespace Cnp.Sdk.Test.Certification
         [Test]
         public void Test51()
         {
-            var request = new registerTokenRequestType();
+            var request = new registerTokenRequest();
             request.id = "1";
             request.orderId = "51";
             request.accountNumber = "4457119999999999";
@@ -45,7 +45,7 @@ namespace Cnp.Sdk.Test.Certification
         [Test]
         public void Test52()
         {
-            var request = new registerTokenRequestType();
+            var request = new registerTokenRequest();
             request.id = "1";
             request.orderId = "52";
             request.accountNumber = "4457119922390123";
@@ -61,7 +61,7 @@ namespace Cnp.Sdk.Test.Certification
         [Test]
         public void Test53()
         {
-            var request = new registerTokenRequestType();
+            var request = new registerTokenRequest();
             request.id = "1";
             request.orderId = "53";
             var echeck = new echeckForTokenType();
@@ -84,7 +84,7 @@ namespace Cnp.Sdk.Test.Certification
         [Test]
         public void Test54()
         {
-            var request = new registerTokenRequestType();
+            var request = new registerTokenRequest();
             request.id = "1";
             request.orderId = "54";
             var echeck = new echeckForTokenType();
