@@ -13,6 +13,7 @@
         <PackageProjectUrl>https://github.com/Vantiv/cnp-sdk-for-dotnet</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/Vantiv/cnp-sdk-for-dotnet/blob/12.x/LICENSE</PackageLicenseUrl>
         <PackageTags>Vantiv eCommerce Payments</PackageTags>
+        <RootNamespace>Cnp.Sdk</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
