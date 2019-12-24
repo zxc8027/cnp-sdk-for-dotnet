@@ -176,7 +176,7 @@ namespace Cnp.Sdk
         private CNPTime cnpTime;
         private CNPFile cnpFile;
         private RFRRequest rfrRequest;
-        private List<batchRequest> batchRequests = new List<batchRequest>();
+        private List<CnpBatchRequest> batchRequests = new List<CnpBatchRequest>();
         
         /*
          * Construct a CNP Batch using the built-in configuration.
@@ -274,7 +274,7 @@ namespace Cnp.Sdk
         }
 
         // Add a single batch to batch request.
-        public void AddBatch(batchRequest cnpBatchRequest)
+        public void AddBatch(CnpBatchRequest cnpBatchRequest)
         {
             // Throw an exception if an RFRrequest already exsits.
             if (this.numOfRFRRequest != 0)
@@ -421,7 +421,10 @@ namespace Cnp.Sdk
             request.authentication = authentication;
             request.RFRRequest = this.rfrRequest;
             request.numBatchRequests = this.batchRequests.Count;
-            request.batchRequest = this.batchRequests;
+            foreach (var batchRequest in this.batchRequests)
+            {
+                request.batchRequest.Add(batchRequest.GetBatchRequest());
+            }
             
             // Create the Session file.
             finalFilePath = cnpFile.CreateRandomFile(requestDirectory,Path.GetFileName(finalFilePath), ".xml", cnpTime);
