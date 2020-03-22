@@ -1244,6 +1244,16 @@ namespace Cnp.Sdk
 
 	}
 
+	public enum authenticationProtocolVersionType
+	{
+		[XMLEnum(Name = "1",FirstVersion = "12.11")]
+		item1,
+
+		[XMLEnum(Name = "2",FirstVersion = "12.11")]
+		item2,
+
+	}
+
 	public enum orderSourceType
 	{
 		[XMLEnum(Name = "ecommerce")]
@@ -2212,6 +2222,9 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "authenticatedByMerchant")]
 		public bool? authenticatedByMerchant { get; set; }
 
+		[XMLElement(Name = "authenticationProtocolVersion",FirstVersion = "12.11")]
+		public authenticationProtocolVersionType? authenticationProtocolVersion { get; set; }
+
 	}
 
 	[XMLElement(Name = "authorization")]
@@ -2335,6 +2348,9 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "skipRealtimeAU",FirstVersion = "12.10")]
 		public bool? skipRealtimeAU { get; set; }
+
+		[XMLElement(Name = "merchantCategoryCode",FirstVersion = "12.11")]
+		public string merchantCategoryCode { get; set; }
 
 		[XMLElement(Name = "litleTxnId",RemovedVersion = "12.0")]
 		public long? litleTxnId { get; set; }
@@ -2535,6 +2551,9 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "processingType",FirstVersion = "10.5")]
 		public processingTypeEnum? processingType { get; set; }
 
+		[XMLElement(Name = "merchantCategoryCode",FirstVersion = "12.11")]
+		public string merchantCategoryCode { get; set; }
+
 		[XMLElement(Name = "amexAggregatorData",RemovedVersion = "12.0")]
 		public amexAggregatorData amexAggregatorData { get; set; }
 
@@ -2623,6 +2642,9 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "9.10",RemovedVersion = "10.0")]
 		[XMLElement(Name = "originalTransactionAmount",FirstVersion = "10.5")]
 		public int? originalTransactionAmount { get; set; }
+
+		[XMLElement(Name = "merchantCategoryCode",FirstVersion = "12.11")]
+		public string merchantCategoryCode { get; set; }
 
 		[XMLElement(Name = "billMeLaterRequest",RemovedVersion = "12.0")]
 		public billMeLaterRequest billMeLaterRequest { get; set; }
@@ -2785,6 +2807,9 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "skipRealtimeAU",FirstVersion = "12.10")]
 		public bool? skipRealtimeAU { get; set; }
 
+		[XMLElement(Name = "merchantCategoryCode",FirstVersion = "12.11")]
+		public string merchantCategoryCode { get; set; }
+
 		[XMLElement(Name = "routingPreference",FirstVersion = "12.1",RemovedVersion = "12.2")]
 		public routingPreferenceEnum? routingPreference { get; set; }
 
@@ -2883,6 +2908,9 @@ namespace Cnp.Sdk
 
 		[XMLElement(Name = "merchantData",FirstVersion = "8.8")]
 		public merchantDataType merchantData { get; set; }
+
+		[XMLElement(Name = "merchantCategoryCode",FirstVersion = "12.11")]
+		public string merchantCategoryCode { get; set; }
 
 		[XMLElement(Name = "payPalNotes")]
 		public string payPalNotes { get; set; }
@@ -4750,9 +4778,15 @@ namespace Cnp.Sdk
 		[XMLElement(Name = "ccdPaymentInformation",FirstVersion = "9.3")]
 		public string ccdPaymentInformation { get; set; }
 
-		[XMLElement(Name = "ctxPaymentInformation",FirstVersion = "12.10")]
+		[XMLElement(Name = "ctxPaymentInformation",FirstVersion = "12.7")]
 		public ctxPaymentInformationType ctxPaymentInformation { get; set; }
 
+	}
+
+	[XMLElement(Name = "echeckTypeCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
+	[XMLElement(Name = "echeckTypeCtx",FirstVersion = "12.11")]
+	public partial class echeckTypeCtx : echeckType
+	{
 	}
 
 	[XMLElement(Name = "ctxPaymentInformationType",FirstVersion = "12.7")]
@@ -7044,29 +7078,6 @@ namespace Cnp.Sdk
 	[XMLElement(Name = "token",FirstVersion = "8.1")]
 	public partial class token : cardTokenType
 	{
-	}
-
-	[XMLElement(Name = "echeckTypeCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
-	public partial class echeckTypeCtx : VersionedXMLElement
-	{
-		[XMLElement(Name = "accType",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public echeckAccountTypeEnum? accType { get; set; }
-
-		[XMLElement(Name = "accNum",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string accNum { get; set; }
-
-		[XMLElement(Name = "routingNum",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string routingNum { get; set; }
-
-		[XMLElement(Name = "checkNum",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string checkNum { get; set; }
-
-		[XMLElement(Name = "ccdPaymentInformation",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public string ccdPaymentInformation { get; set; }
-
-		[XMLElement(Name = "ctxPaymentInformation",FirstVersion = "12.7",RemovedVersion = "12.10")]
-		public ctxPaymentInformationType ctxPaymentInformation { get; set; }
-
 	}
 
 	[XMLElement(Name = "vendorCreditCtx",FirstVersion = "12.7",RemovedVersion = "12.10")]
